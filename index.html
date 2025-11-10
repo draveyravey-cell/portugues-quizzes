@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Exercícios de Português</title>
+
+    <!-- Preferências de cor do sistema -->
+    <meta name="color-scheme" content="light dark" />
+    <!-- Cor da barra do navegador (atualizada via JS conforme o tema) -->
+    <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
+
+    <!-- Evita "flash" de tema ao carregar -->
+    <script>
+      (function () {
+        try {
+          const saved = localStorage.getItem("theme");
+          const prefersDark =
+            window.matchMedia &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches;
+          const theme = saved || (prefersDark ? "dark" : "light");
+          document.documentElement.setAttribute("data-theme", theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar__inner">
+        <div class="brand">Português Prático</div>
+
+        <nav class="nav" aria-label="Navegação principal">
+          <a href="#inicio">Início</a>
+          <a href="#exercicios">Exercícios</a>
+          <a href="#sobre">Sobre</a>
+        </nav>
+
+        <div class="actions">
+          <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
+            <span class="theme-icon" aria-hidden="true">🌙</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="inicio">
+      <section class="hero" id="inicio">
+        <h1>Exercícios de Português</h1>
+        <p>Pratique ortografia, acentuação, crase, concordância e muito mais. 🚀</p>
+      </section>
+
+      <section class="controls" id="exercicios">
+        <div class="controls__row">
+          <label for="busca" class="sr-only">Buscar exercícios</label>
+          <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..." />
+          <span class="hint">Dica: experimente “crase”, “acentuação”, “por que”...</span>
+        </div>
+        <!-- Filtros por categoria/dificuldade virão na Parte 3 -->
+      </section>
+
+      <section class="lista">
+        <h2>Lista de questões</h2>
+        <div id="msg" class="msg" aria-live="polite"></div>
+        <div id="lista-questoes" class="grid"></div>
+      </section>
+    </main>
+
+    <footer class="footer" id="sobre">
+      <div class="container">
+        <p>Feito para estudar Português. Interface e código em evolução nas próximas partes.</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>

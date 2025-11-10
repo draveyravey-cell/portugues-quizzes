@@ -1,0 +1,211 @@
+/* Tema + layout responsivo + navegação ativa */
+
+:root{
+  /* comportamento de rolagem suave para âncoras */
+  scroll-behavior: smooth;
+
+  /* variáveis base */
+  --radius: 12px;
+  --shadow: 0 6px 24px rgba(0,0,0,.12);
+  --header-h: 64px; /* atualizado via JS conforme altura real */
+}
+
+/* Tema escuro (padrão se salvo/OS = dark) */
+[data-theme="dark"]{
+  color-scheme: dark;
+  --bg: #0e0f11;
+  --card: #15171a;
+  --muted: #8a9099;
+  --text: #e8ecf1;
+  --primary: #6aa6ff;
+  --primary-2: #85c1ff;
+  --accent: #ffe08a;
+  --ok: #30d158;
+  --warn: #ff9f0a;
+  --err: #ff453a;
+  --border: #24272c;
+  --topbar-bg: rgba(14,15,17,.6);
+}
+
+/* Tema claro */
+[data-theme="light"]{
+  color-scheme: light;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --muted: #5a6572;
+  --text: #121417;
+  --primary: #2b6efe;
+  --primary-2: #2b6efe;
+  --accent: #b7791f;
+  --ok: #1f8f4d;
+  --warn: #b86500;
+  --err: #d63939;
+  --border: #e6e8ef;
+  --topbar-bg: rgba(255,255,255,.75);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
+}
+
+.container{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.topbar{
+  position: sticky; top:0; z-index:10;
+  backdrop-filter: blur(8px);
+  background: var(--topbar-bg);
+  border-bottom: 1px solid var(--border);
+}
+.topbar__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: .8rem 0;
+  min-height: 56px;
+}
+.brand{
+  font-weight: 700;
+  letter-spacing: .4px;
+}
+
+/* Navegação principal */
+.nav{
+  display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+}
+.nav a{
+  color: var(--text);
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: 8px;
+  opacity:.95;
+}
+.nav a:hover{ color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
+.nav a.active{
+  color: var(--primary-2);
+  background: color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+/* Botão de alternância de tema */
+.actions{ display:flex; align-items:center; }
+.icon-btn{
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 10px;
+  padding: .45rem .6rem;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+.icon-btn:hover{
+  border-color: color-mix(in oklab, var(--primary) 60%, var(--border));
+  color: var(--primary-2);
+}
+
+.hero{ padding: 2.2rem 0 1rem; }
+.hero h1{
+  margin: 0 0 .2rem 0;
+  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.2rem);
+}
+.hero p{ color: var(--muted); margin:0; }
+
+.controls{ padding: .8rem 0 0; }
+.controls__row{
+  display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;
+}
+.controls input[type="search"]{
+  flex: 1 1 360px;
+  padding: .8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  outline: none;
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+.hint{ color: var(--muted); font-size:.9rem; }
+
+.lista h2{ margin-top: 1.6rem; }
+.msg{ margin: .6rem 0; color: var(--muted); }
+
+/* Grid responsivo */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+.card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: var(--shadow);
+  display:flex; flex-direction:column; gap:.6rem;
+}
+.card .tags{ display:flex; flex-wrap:wrap; gap:.4rem; font-size:.8rem; }
+.tag{
+  border:1px solid var(--border);
+  border-radius: 999px;
+  padding:.15rem .6rem;
+  color: var(--muted);
+}
+.tag.primary{ border-color: color-mix(in oklab, var(--primary) 60%, var(--border)); color: var(--primary-2); }
+.tag.warn{ border-color: color-mix(in oklab, var(--warn) 60%, var(--border)); color: var(--warn); }
+.tag.ok{ border-color: color-mix(in oklab, var(--ok) 60%, var(--border)); color: var(--ok); }
+.card h3{
+  margin:.2rem 0 .2rem;
+  font-size: 1rem;
+}
+.card p{ margin:0; color: var(--muted); }
+.card .actions{ margin-top:auto; display:flex; gap:.6rem; }
+
+/* Botões genéricos (para cards, etc.) */
+.button{
+  appearance: none;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .6rem .8rem;
+}
+.button.primary{
+  border-color: var(--primary);
+  color: var(--primary-2);
+}
+.button[disabled]{
+  cursor: not-allowed;
+  opacity: .7;
+}
+
+.footer{
+  border-top: 1px solid var(--border);
+  padding: 2rem 0;
+  color: var(--muted);
+  text-align:center;
+  font-size:.95rem;
+}
+
+/* Alinhar rolagem das âncoras abaixo do header sticky */
+section[id], footer#sobre{
+  scroll-margin-top: calc(var(--header-h) + 12px);
+}
+
+/* Acessibilidade básica */
+.sr-only{
+  position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
+  clip:rect(0,0,0,0); white-space:nowrap; border:0;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 720px){
+  .topbar__inner{ gap:.6rem; }
+  .nav{ flex: 1 1 auto; justify-content:center; }
+  .brand{ display:none; } /* economiza espaço no mobile */
+}

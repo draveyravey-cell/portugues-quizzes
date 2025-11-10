@@ -1,0 +1,163 @@
+[
+  {
+    "id": 1,
+    "categoria": "Ortografia",
+    "tema": "Mas x Mais",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa em que o uso de 'mas' e 'mais' está correto.",
+    "alternativas": [
+      "Queria ir, mais estava cansado.",
+      "Queria ir, mas estava cansado.",
+      "Mais que nada, vou, mas cedo."
+    ],
+    "resposta": 1,
+    "explicacao": "'Mas' indica oposição; 'mais' indica intensidade/adição."
+  },
+  {
+    "id": 2,
+    "categoria": "Acentuação",
+    "tema": "Pode x Pôde",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a frase correta quanto à acentuação de 'pode/pôde'.",
+    "alternativas": [
+      "Ontem ele pode sair mais cedo.",
+      "Ontem ele pôde sair mais cedo.",
+      "Amanhã ele pôde sair mais cedo."
+    ],
+    "resposta": 1,
+    "explicacao": "'Pôde' (passado) é acentuado; 'pode' (presente) não."
+  },
+  {
+    "id": 3,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa em que o uso da crase está correto.",
+    "alternativas": [
+      "Fui à escola pela manhã.",
+      "Assisti à o filme ontem.",
+      "Cheguei à umas três horas."
+    ],
+    "resposta": 0,
+    "explicacao": "Usa-se crase em 'à escola'; em 'assistir' (ver), o correto é 'assistir ao filme'; não se usa crase antes de numeral indefinido ('umas')."
+  },
+  {
+    "id": 4,
+    "categoria": "Ortografia",
+    "tema": "Por que / Por quê / Porque / Porquê",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Não fui à festa ______ estava cansado.",
+    "resposta": ["porque"],
+    "explicacao": "Explicação/causa: usa-se 'porque' (junto, sem acento)."
+  },
+  {
+    "id": 5,
+    "categoria": "Concordância verbal",
+    "tema": "Concordância",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Os dados do relatório ______ corretos.",
+    "alternativas": [
+      "está",
+      "estão",
+      "tá"
+    ],
+    "resposta": 1,
+    "explicacao": "Sujeito no plural pede verbo no plural: 'estão'."
+  },
+  {
+    "id": 6,
+    "categoria": "Pontuação",
+    "tema": "Vírgula entre sujeito e verbo",
+    "tipo": "verdadeiro_falso",
+    "dificuldade": "médio",
+    "enunciado": "É correto usar vírgula para separar sujeito e verbo.",
+    "resposta": false,
+    "explicacao": "Regra geral: não se separa sujeito e verbo por vírgula."
+  },
+  {
+    "id": 7,
+    "categoria": "Regência verbal",
+    "tema": "Assistir (ver)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta quanto à regência do verbo 'assistir' (no sentido de ver).",
+    "alternativas": [
+      "Assisti o filme ontem.",
+      "Assisti ao filme ontem.",
+      "Assisti o médico ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "No sentido de ver: 'assistir a' algo. Logo, 'assisti ao filme'."
+  },
+  {
+    "id": 8,
+    "categoria": "Ortografia",
+    "tema": "Mau x Mal",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Ele acordou de ______ humor.",
+    "alternativas": [
+      "mau",
+      "mal",
+      "mál"
+    ],
+    "resposta": 0,
+    "explicacao": "'Mau' (adjetivo) opõe-se a 'bom'; 'mal' (advérbio) opõe-se a 'bem'."
+  },
+  {
+    "id": 9,
+    "categoria": "Ortografia",
+    "tema": "A gente x Agente",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: ______ precisa estudar mais.",
+    "resposta": ["a gente", "A gente"],
+    "explicacao": "'A gente' (locução pronominal) = nós; 'agente' é substantivo (profissional)."
+  },
+  {
+    "id": 10,
+    "categoria": "Colocação pronominal",
+    "tema": "Próclise/Ênclise",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a frase em que a colocação pronominal está adequada à norma-padrão.",
+    "alternativas": [
+      "Me diga isso, por favor.",
+      "Diga-me isso, por favor.",
+      "Ele viu-me ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "No imperativo afirmativo, usa-se ênclise: 'Diga-me'."
+  },
+  {
+    "id": 11,
+    "categoria": "Interpretação",
+    "tema": "Leitura",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "texto_base": "As bibliotecas públicas desempenham papel essencial na democratização do acesso à informação, promovendo a leitura e a cidadania.",
+    "enunciado": "O tema principal do texto é:",
+    "alternativas": [
+      "A importância das bibliotecas públicas para o acesso à informação.",
+      "O financiamento privado das bibliotecas universitárias.",
+      "Os desafios da alfabetização de adultos no campo."
+    ],
+    "resposta": 0,
+    "explicacao": "O texto destaca o papel das bibliotecas públicas na democratização da informação."
+  },
+  {
+    "id": 12,
+    "categoria": "Acentuação",
+    "tema": "Tem x Têm",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Eles ______ razão.",
+    "resposta": ["têm"],
+    "explicacao": "No plural, 'têm' leva acento (eles/elas). No singular: 'tem'."
+  }
+]
