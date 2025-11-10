@@ -228,4 +228,7 @@
   }
 
   window.Store = { init, newSession, finishSession, recordAttempt, getStats, exportJSON, importJSON, clear };
+
+  // Auto-init: garante que a Store está pronta antes de history.js usar getStats
+  try { init(); } catch (e) { console.warn("Store: init falhou", e); }
 })();

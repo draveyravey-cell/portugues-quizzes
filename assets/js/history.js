@@ -1,6 +1,6 @@
 "use strict";
 
-/* Histórico (7.2) — sessões, por questão, import/CSV, cards, recentes */
+/* Histórico (7.2 safe) — sessões, por questão, import/CSV, cards, recentes */
 (function () {
   let datasetCache = null; // cache do JSON de exercícios
 
@@ -24,6 +24,22 @@
     } catch {
       datasetCache = { list: [], map: new Map() };
       return datasetCache;
+    }
+  }
+
+  // getStats com fallback: se a Store ainda não estiver pronta, inicializa e tenta novamente
+  function getStatsSafe() {
+    try {
+      const s = window.Store?.getStats();
+      if (s) return s;
+    } catch (_) {
+      // ignora e tenta init
+    }
+    try {
+      window.Store?.init?.();
+      return window.Store?.getStats?.() || null;
+    } catch (_) {
+      return null;
     }
   }
 
@@ -260,7 +276,7 @@
   }
 
   async function renderAll() {
-    const stats = window.Store?.getStats();
+    const stats = getStatsSafe();
     if (!stats) return;
     renderCards(stats);
     renderRecent(stats);
@@ -270,6 +286,8 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     if (!document.querySelector("#historico")) return;
+    // Garante a Store pronta antes do primeiro render
+    try { window.Store?.init?.(); } catch (_) {}
     bindActions();
     renderAll();
   });
