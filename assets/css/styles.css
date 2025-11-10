@@ -1,4 +1,4 @@
-/* Tema + layout + filtros + player + progresso + histórico (7.2) */
+/* Tema + layout + filtros + player + progresso + histórico (8) */
 
 :root{
   scroll-behavior: smooth;
@@ -49,6 +49,27 @@ body{
   color: var(--text);
   font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji","Segoe UI Emoji";
 }
+
+/* Foco visível acessível */
+:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link{
+  position: fixed;
+  top: -100px; left: 12px;
+  background: var(--card);
+  color: var(--text);
+  border: 2px solid var(--primary);
+  padding: .5rem .75rem;
+  border-radius: 8px;
+  z-index: 1001;
+  box-shadow: var(--shadow);
+  transition: top .2s ease;
+}
+.skip-link:focus{ top: 12px; }
 
 .container{
   width: min(1100px, 92vw);
@@ -193,7 +214,7 @@ body{
 /* Alinhamento da rolagem */
 section[id], footer#sobre{ scroll-margin-top: calc(var(--header-h) + 12px); }
 
-/* Acessibilidade */
+/* Acessibilidade SR */
 .sr-only{
   position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden;
   clip:rect(0,0,0,0); white-space:nowrap; border:0;
@@ -311,11 +332,7 @@ body.modal-open { overflow: hidden; }
 .history__list .options{ margin-top:.6rem; }
 
 /* ===== Histórico (7.2) ===== */
-.table{
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: .6rem;
-}
+.table{ width: 100%; border-collapse: collapse; margin-top: .6rem; }
 .table th, .table td{
   padding: .6rem .4rem;
   border-bottom: 1px solid var(--border);
@@ -329,6 +346,16 @@ body.modal-open { overflow: hidden; }
   border-radius: 999px;
   font-size: .85rem;
   color: var(--muted);
+}
+
+/* Redução de movimento */
+@media (prefers-reduced-motion: reduce){
+  html:focus-within{ scroll-behavior: auto !important; }
+  *, *::before, *::after{
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Responsivo */

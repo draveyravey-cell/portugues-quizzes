@@ -266,6 +266,7 @@ function renderLista() {
     const btn = document.createElement("button");
     btn.className = "button primary";
     btn.textContent = "Responder";
+    btn.setAttribute("aria-label", `Responder questão ${it.id} — ${it.tema || it.categoria || "Português"}`);
 
     const isSupported = tiposSuportados.has((it.tipo || "").toLowerCase());
     btn.disabled = !isSupported;

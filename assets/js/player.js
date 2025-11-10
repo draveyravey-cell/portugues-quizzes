@@ -1,16 +1,17 @@
 "use strict";
 
-/* Player (sequência, navegação, resumo) + integração Store — global: window.Player */
+/* Player (sequência, navegação, resumo) + integração Store + A11y — global: window.Player */
 (function () {
   const st = {
     aberto: false,
-    mode: "exercise", // 'exercise' | 'summary'
+    mode: "exercise",
     q: null,
     selecionada: null,  // índice (MC), boolean (V/F) ou string (lacuna)
     corrigido: false,
     correta: false,
     lastTrigger: null,
-    seq: null // { list: [], idx: 0, results: Map<id, {selected, correct, tipo}>, sessionId? }
+    seq: null,          // { list, idx, results Map, sessionId }
+    trap: null          // foco aprisionado
   };
 
   const els = {
@@ -98,6 +99,8 @@
     els.overlay?.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
 
+    if (st.trap) { st.trap.release(); st.trap = null; }
+
     if (els.content) {
       els.content.innerHTML = `<p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>`;
     }
@@ -140,6 +143,12 @@
     els.overlay?.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
 
+    // Ativa foco aprisionado no modal
+    if (!st.trap && els.modal && window.A11y?.trapFocus) {
+      st.trap = window.A11y.trapFocus(els.modal);
+      st.trap.activate();
+    }
+
     focusFirstInteractive();
   }
 
@@ -149,10 +158,12 @@
     const wrap = document.createElement("div");
     wrap.className = "player__inner";
 
+    // Progresso (se houver sequência) com ARIA
     if (st.seq && st.seq.list && st.seq.list.length) {
       wrap.appendChild(renderProgressHeader());
     }
 
+    // Texto base (se houver)
     if (q.texto_base) {
       const block = document.createElement("blockquote");
       block.className = "texto-base";
@@ -160,8 +171,10 @@
       wrap.appendChild(block);
     }
 
+    // Enunciado
     const enun = document.createElement("div");
     enun.className = "enunciado";
+    enun.id = `enun-${q.id}`;
     enun.textContent = q.enunciado || "";
     wrap.appendChild(enun);
 
@@ -170,12 +183,14 @@
     if (tipo === "multipla_escolha") {
       const ul = document.createElement("ul");
       ul.className = "options";
-      const name = `op-${q.id}`;
+      ul.setAttribute("role", "radiogroup");
+      ul.setAttribute("aria-label", "Alternativas");
+      ul.setAttribute("aria-describedby", enun.id);
 
+      const name = `op-${q.id}`;
       (q.alternativas || []).forEach((alt, i) => {
         const li = document.createElement("li");
         li.className = "option";
-        li.dataset.index = String(i);
 
         const label = document.createElement("label");
         label.style.flex = "1";
@@ -202,6 +217,9 @@
         ul.appendChild(li);
       });
 
+      // Navegação por setas
+      window.A11y?.enhanceRadioGroup?.(ul);
+
       wrap.appendChild(ul);
     }
     else if (tipo === "lacuna") {
@@ -211,6 +229,7 @@
       const label = document.createElement("label");
       label.className = "lacuna-label";
       label.textContent = "Resposta:";
+      label.setAttribute("for", `lacuna-${q.id}`);
 
       const input = document.createElement("input");
       input.type = "text";
@@ -219,9 +238,8 @@
       input.autocomplete = "off";
       input.autocapitalize = "none";
       input.spellcheck = false;
-
-      label.setAttribute("for", `lacuna-${q.id}`);
       input.id = `lacuna-${q.id}`;
+      input.setAttribute("aria-describedby", enun.id);
 
       input.addEventListener("input", () => {
         st.selecionada = input.value;
@@ -241,15 +259,18 @@
     else if (tipo === "verdadeiro_falso") {
       const ul = document.createElement("ul");
       ul.className = "options";
+      ul.setAttribute("role", "radiogroup");
+      ul.setAttribute("aria-label", "Verdadeiro ou Falso");
+      ul.setAttribute("aria-describedby", enun.id);
+
       const name = `vf-${q.id}`;
 
       [
         { label: "Verdadeiro", val: "true" },
         { label: "Falso", val: "false" }
-      ].forEach(({ label, val }) => {
+      ].forEach(({ label: text, val }) => {
         const li = document.createElement("li");
         li.className = "option";
-        li.dataset.val = val;
 
         const l = document.createElement("label");
         l.style.flex = "1";
@@ -258,7 +279,7 @@
         input.type = "radio";
         input.name = name;
         input.value = val;
-        input.setAttribute("aria-label", label);
+        input.setAttribute("aria-label", text);
 
         input.addEventListener("change", () => {
           st.selecionada = (val === "true");
@@ -268,13 +289,15 @@
         });
 
         const span = document.createElement("span");
-        span.textContent = label;
+        span.textContent = text;
 
         l.appendChild(input);
         l.appendChild(span);
         li.appendChild(l);
         ul.appendChild(li);
       });
+
+      window.A11y?.enhanceRadioGroup?.(ul);
 
       wrap.appendChild(ul);
     }
@@ -338,11 +361,7 @@
     st.correta = ok;
 
     if (st.seq && st.q && st.q.id != null) {
-      st.seq.results.set(String(st.q.id), {
-        selected: st.selecionada,
-        correct: ok,
-        tipo: tipo
-      });
+      st.seq.results.set(String(st.q.id), { selected: st.selecionada, correct: ok, tipo: tipo });
     }
 
     window.Store?.recordAttempt({
@@ -362,9 +381,7 @@
           complemento = ` Ex.: “${exemplo}”.`;
         }
       }
-      els.feedback.textContent = ok
-        ? `Correto!${expl ? " " + expl : ""}`
-        : `Incorreto.${expl ? " " + expl : ""}${complemento}`;
+      els.feedback.textContent = ok ? `Correto!${expl ? " " + expl : ""}` : `Incorreto.${expl ? " " + expl : ""}${complemento}`;
       els.feedback.focus?.();
     }
 
@@ -451,6 +468,7 @@
     const wrap = document.createElement("div");
     wrap.className = "player__summary";
 
+    // Progresso total (barra cheia + ARIA)
     const prog = renderProgressHeader(total, total);
     wrap.appendChild(prog);
 
@@ -517,6 +535,11 @@
 
     const track = document.createElement("div");
     track.className = "progress__track";
+    track.setAttribute("role", "progressbar");
+    track.setAttribute("aria-valuemin", "0");
+    track.setAttribute("aria-valuemax", String(total));
+    track.setAttribute("aria-valuenow", String(step));
+    track.setAttribute("aria-label", "Progresso");
 
     const bar = document.createElement("div");
     bar.className = "progress__bar";
@@ -540,9 +563,7 @@
     els.close?.focus();
   }
 
-  function normText(s) {
-    return String(s || "").toLowerCase().trim().replace(/\s+/g, " ");
-  }
+  function normText(s) { return String(s || "").toLowerCase().trim().replace(/\s+/g, " "); }
   function eqText(a, b) { return normText(a) === normText(b); }
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
 
