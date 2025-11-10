@@ -37,6 +37,7 @@
           <a href="#inicio">Início</a>
           <a href="#exercicios">Exercícios</a>
           <a href="#historico">Histórico</a>
+          <a href="#editor">Editor</a>
           <a href="#sobre">Sobre</a>
         </nav>
 
@@ -113,6 +114,34 @@
           <div id="hist-perq"></div>
         </div>
       </section>
+
+      <section id="editor" class="editor">
+        <h2>Editor de exercícios (JSON)</h2>
+        <p class="hint">
+          Edite e valide o JSON dos exercícios. Você pode “Aplicar (override)” para pré-visualizar no site sem alterar o arquivo no servidor.
+        </p>
+
+        <div class="editor__actions">
+          <input id="editor-file" type="file" accept="application/json" hidden />
+          <button id="ed-load-server" class="button" type="button" title="Carregar data/exercicios.json do servidor">Carregar do servidor</button>
+          <button id="ed-load-file" class="button" type="button" title="Carregar de um arquivo local">Carregar arquivo…</button>
+          <button id="ed-validate" class="button" type="button" title="Validar e formatar JSON">Validar/Formatar</button>
+          <span class="editor__spacer"></span>
+          <button id="ed-apply" class="button primary" type="button" title="Aplicar override local (preview)">Aplicar (override)</button>
+          <button id="ed-disable" class="button" type="button" title="Desativar override">Desativar override</button>
+          <button id="ed-clear" class="button" type="button" title="Limpar override do navegador">Limpar override</button>
+          <button id="ed-download" class="button" type="button" title="Baixar JSON atual">Baixar JSON</button>
+        </div>
+
+        <div class="editor__status" id="ed-status" aria-live="polite"></div>
+
+        <div class="editor__wrap">
+          <label for="editor-json" class="sr-only">Conteúdo do JSON</label>
+          <textarea id="editor-json" spellcheck="false" aria-label="Conteúdo do JSON dos exercícios"></textarea>
+        </div>
+
+        <div id="editor-validation" class="validation"></div>
+      </section>
     </main>
 
     <footer class="footer" id="sobre">
@@ -145,11 +174,12 @@
       </section>
     </div>
 
-    <!-- Ordem dos scripts: Store -> A11y -> Player -> History -> App -->
+    <!-- Ordem dos scripts: Store -> A11y -> Player -> History -> Editor -> App -->
     <script src="assets/js/storage.js" defer></script>
     <script src="assets/js/a11y.js" defer></script>
     <script src="assets/js/player.js" defer></script>
     <script src="assets/js/history.js" defer></script>
+    <script src="assets/js/editor.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
 </html>

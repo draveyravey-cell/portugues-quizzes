@@ -25,6 +25,12 @@ const STORAGE = {
   dif: "f.dif"
 };
 
+// Override local (Parte 9)
+const OV_KEYS = {
+  data: "pp.data.override",
+  enabled: "pp.data.override.enabled"
+};
+
 // Lista corrente (após filtros) — usada para sequência
 let viewItems = [];
 
@@ -102,6 +108,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Dados
   carregarQuestoes();
+
+  // Reage ao editor (override alterado)
+  window.addEventListener("dataset:override-changed", () => {
+    carregarQuestoes();
+  });
 });
 
 /* ================== Tema ================== */
@@ -184,23 +195,50 @@ function updateHeaderHeight() {
   document.documentElement.style.setProperty("--header-h", `${h}px`);
 }
 
+/* ================== Override local (Parte 9) ================== */
+function readOverrideList() {
+  try {
+    const enabled = localStorage.getItem(OV_KEYS.enabled) === "1";
+    if (!enabled) return null;
+    const raw = localStorage.getItem(OV_KEYS.data);
+    if (!raw) return null;
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed)) return parsed;
+    if (parsed && Array.isArray(parsed.questoes)) return parsed.questoes;
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 /* ================== Dados / Filtros ================== */
 async function carregarQuestoes() {
-  setMensagem("Carregando exercícios...");
+  // Tenta override local primeiro
+  const ov = readOverrideList();
+  if (ov && Array.isArray(ov)) {
+    state.questoes = ov;
+    setMensagem(`Usando conjunto local (override) com ${state.questoes.length} exercício(s).`);
+    popularFiltros(state.questoes);
+    renderLista();
+    return;
+  }
+
+  setMensagem("Carregando exercícios do servidor...");
   try {
     const resp = await fetch("data/exercicios.json", { cache: "no-store" });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const dados = await resp.json();
     state.questoes = Array.isArray(dados) ? dados : dados.questoes || [];
-    setMensagem(`Carregados ${state.questoes.length} exercícios.`);
+    setMensagem(`Carregados ${state.questoes.length} exercícios do servidor.`);
     popularFiltros(state.questoes);
     renderLista();
   } catch (err) {
     console.error(err);
-    setMensagem("Não foi possível carregar o arquivo JSON. Dica: abra localmente (Live Server) ou use seu deploy no Vercel.");
+    setMensagem("Não foi possível carregar o arquivo JSON. Você pode usar o Editor para aplicar um override local.");
     els.lista.innerHTML = "";
   }
 }
+
 function popularFiltros(questoes) {
   if (!Array.isArray(questoes) || !questoes.length) return;
 
@@ -218,6 +256,7 @@ function popularFiltros(questoes) {
     safeSetSelectValue(els.fDificuldade, state.filtroDificuldade);
   }
 }
+
 function renderLista() {
   const items = applyFilters(state.questoes);
   viewItems = items;
@@ -291,6 +330,7 @@ function renderLista() {
   els.lista.innerHTML = "";
   els.lista.appendChild(frag);
 }
+
 function applyFilters(lista) {
   const q = normalizar(state.filtroTexto);
   const cat = state.filtroCategoria;
@@ -310,6 +350,7 @@ function applyFilters(lista) {
     return true;
   });
 }
+
 function setMensagem(txt) { if (els.msg) els.msg.textContent = txt || ""; }
 
 /* ================== Utils ================== */
