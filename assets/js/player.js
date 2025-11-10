@@ -75,6 +75,11 @@
 
   // Inicia sequência (lista atual filtrada) no índice informado
   function startSequence(list, startIndex = 0, lastTrigger = null) {
+    const sessionId = window.Store?.newSession({
+    filters: context?.filters || null,
+    questionIds: (list || []).map(q => q.id)
+    });
+    st.seq = { list: arr, idx, results: new Map(), sessionId };
     const arr = Array.isArray(list) ? list.filter(Boolean) : [];
     const idx = clamp(startIndex, 0, Math.max(arr.length - 1, 0));
     st.seq = { list: arr, idx, results: new Map() };
@@ -345,6 +350,13 @@
       });
     }
 
+    window.Store?.recordAttempt({
+    sessionId: st.seq?.sessionId || null,
+    question: q,
+    selected: st.selecionada,
+    correct: ok
+    });
+
     // Feedback
     if (els.feedback) {
       els.feedback.className = "feedback " + (ok ? "ok" : "err");
@@ -423,6 +435,12 @@
     if (!st.seq) return;
 
     st.mode = "summary";
+    if (st.seq?.sessionId) {
+    const resultsArray = Array.from(st.seq.results.entries()).map(([qid, r]) => ({
+        id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo
+    }));
+    window.Store?.finishSession(st.seq.sessionId, resultsArray);
+    }
     st.q = null;
     st.selecionada = null;
     st.corrigido = false;

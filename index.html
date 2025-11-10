@@ -31,9 +31,10 @@
         <div class="brand">Português Prático</div>
 
         <nav class="nav" aria-label="Navegação principal">
-          <a href="#inicio">Início</a>
-          <a href="#exercicios">Exercícios</a>
-          <a href="#sobre">Sobre</a>
+        <a href="#inicio">Início</a>
+        <a href="#exercicios">Exercícios</a>
+        <a href="#historico">Histórico</a>
+        <a href="#sobre">Sobre</a>
         </nav>
 
         <div class="actions">
@@ -82,6 +83,32 @@
         <div id="msg" class="msg" aria-live="polite"></div>
         <div id="lista-questoes" class="grid"></div>
       </section>
+      <section id="historico" class="history">
+        <h2>Histórico de estudos</h2>
+        <p class="hint">Seus dados ficam salvos apenas no seu navegador (local).</p>
+
+        <div id="hist-stats" class="stats-grid"></div>
+
+        <div class="history__actions">
+            <button id="hist-export" class="button">Exportar JSON</button>
+            <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
+        </div>
+
+        <div class="history__list">
+            <h3>Tentativas recentes</h3>
+            <div id="hist-attempts"></div>
+        </div>
+
+        <!-- Espaços que serão usados na 7.2 -->
+        <div class="history__sessions">
+            <h3>Sessões</h3>
+            <div id="hist-sessions"></div>
+        </div>
+        <div class="history__perq">
+            <h3>Estatísticas por questão</h3>
+            <div id="hist-perq"></div>
+        </div>
+        </section>
     </main>
 
     <footer class="footer" id="sobre">
@@ -113,7 +140,9 @@
         </footer>
     </section>
     </div>
+    <script src="assets/js/storage.js" defer></script>
     <script src="assets/js/player.js" defer></script>
+    <script src="assets/js/history.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
 </html>

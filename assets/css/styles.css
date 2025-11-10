@@ -350,3 +350,27 @@ body.modal-open { overflow: hidden; }
   display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; justify-content:flex-end;
 }
 .modal__actions .button[disabled]{ opacity:.6; cursor:not-allowed; }
+
+/* ===== Histórico (7.1) ===== */
+.history{ padding: 1rem 0 2rem; }
+.stats-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin: .8rem 0 1.2rem;
+}
+.stat-card{
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+.stat-card .stat-label{ color: var(--muted); font-size:.9rem; }
+.stat-card .stat-value{ font-size: 1.4rem; font-weight: 700; margin-top:.3rem; }
+
+.history__actions{
+  display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end; margin-bottom: .8rem;
+}
+#hist-attempts .empty{ color: var(--muted); }
+.history__list .options{ margin-top:.6rem; }
