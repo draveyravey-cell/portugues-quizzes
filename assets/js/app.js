@@ -25,6 +25,9 @@ const STORAGE = {
   dif: "f.dif"
 };
 
+// Lista corrente (após filtros) — usada para sequência
+let viewItems = [];
+
 /* ================== Init ================== */
 document.addEventListener("DOMContentLoaded", () => {
   // Base
@@ -214,6 +217,7 @@ function popularFiltros(questoes) {
 }
 function renderLista() {
   const items = applyFilters(state.questoes);
+  viewItems = items; // mantém a visão atual para sequência
 
   if (!items.length) {
     els.lista.innerHTML = "";
@@ -265,7 +269,7 @@ function renderLista() {
     btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
     if (isSupported) {
       btn.addEventListener("click", (ev) => {
-        window.Player?.open(it, ev.currentTarget);
+        window.Player?.startSequence(viewItems, idx, ev.currentTarget);
       });
     }
     actions.appendChild(btn);
@@ -288,9 +292,7 @@ function applyFilters(lista) {
 
   return lista.filter((it) => {
     if (q) {
-      const alvo = normalizar(
-        [it.enunciado, it.tema, it.categoria, it.texto_base].filter(Boolean).join(" ")
-      );
+      const alvo = normalizar([it.enunciado, it.tema, it.categoria, it.texto_base].filter(Boolean).join(" "));
       if (!alvo.includes(q)) return false;
     }
     if (cat && cat !== "all") {

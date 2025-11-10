@@ -1,14 +1,16 @@
 "use strict";
 
-/* Player isolado (global: window.Player) */
+/* Player isolado (sequência, navegação, resumo) — global: window.Player */
 (function () {
   const st = {
     aberto: false,
+    mode: "exercise", // 'exercise' | 'summary'
     q: null,
     selecionada: null,  // índice (MC), boolean (V/F) ou string (lacuna)
     corrigido: false,
     correta: false,
-    lastTrigger: null
+    lastTrigger: null,
+    seq: null // { list: [], idx: 0, results: Map<id, {selected, correct, tipo}> }
   };
 
   const els = {
@@ -18,70 +20,71 @@
     close: null,
     content: null,
     verify: null,
-    feedback: null
+    feedback: null,
+    prev: null,
+    next: null,
+    finish: null
   };
 
   function qs(sel, root = document) { return root.querySelector(sel); }
 
   function init() {
-    els.overlay = qs("#player-overlay");
-    els.modal = els.overlay ? qs(".modal", els.overlay) : null;
-    els.title = qs("#player-title");
-    els.close = qs("#player-close");
-    els.content = qs("#player-content");
-    els.verify = qs("#player-verify");
+    els.overlay  = qs("#player-overlay");
+    els.modal    = els.overlay ? qs(".modal", els.overlay) : null;
+    els.title    = qs("#player-title");
+    els.close    = qs("#player-close");
+    els.content  = qs("#player-content");
+    els.verify   = qs("#player-verify");
     els.feedback = qs("#player-feedback");
+    els.prev     = qs("#player-prev");
+    els.next     = qs("#player-next");
+    els.finish   = qs("#player-finish");
 
     if (!els.overlay || !els.verify) return;
 
     // Fechar
     els.close?.addEventListener("click", close);
     els.overlay.addEventListener("mousedown", (e) => { if (e.target === els.overlay) close(); });
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && st.aberto) { e.preventDefault(); close(); }
-    });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && st.aberto) { e.preventDefault(); close(); } });
 
-    // Verificar/Fechar
+    // Verificar / Fechar
     els.verify.addEventListener("click", () => {
       const mode = els.verify.dataset.mode || "verify";
       if (mode === "close") close();
       else verificar();
     });
+
+    // Navegação
+    els.prev?.addEventListener("click", goPrev);
+    els.next?.addEventListener("click", () => {
+      if (!st.seq) return;
+      if (isLast()) openSummary();
+      else goNext();
+    });
+    els.finish?.addEventListener("click", openSummary);
   }
 
+  /* ========= APIs ========= */
+
+  // Abre exercício único (sem sequência)
   function open(q, lastTrigger = null) {
-    st.aberto = true;
-    st.q = q;
-    st.selecionada = null;
-    st.corrigido = false;
-    st.correta = false;
-    st.lastTrigger = lastTrigger;
+    st.seq = null;
+    openInternal(q, lastTrigger);
+    updateNavUI(); // esconde botões de navegação
+  }
 
-    if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
-
-    // Reset UI
-    if (els.feedback) {
-      els.feedback.textContent = "";
-      els.feedback.className = "feedback";
-    }
-    if (els.verify) {
-      els.verify.disabled = true;
-      els.verify.textContent = "Verificar";
-      els.verify.dataset.mode = "verify";
-    }
-
-    renderContent(q);
-
-    els.overlay?.classList.remove("hidden");
-    els.overlay?.setAttribute("aria-hidden", "false");
-    document.body.classList.add("modal-open");
-
-    // Foco inicial
-    focusFirstInteractive();
+  // Inicia sequência (lista atual filtrada) no índice informado
+  function startSequence(list, startIndex = 0, lastTrigger = null) {
+    const arr = Array.isArray(list) ? list.filter(Boolean) : [];
+    const idx = clamp(startIndex, 0, Math.max(arr.length - 1, 0));
+    st.seq = { list: arr, idx, results: new Map() };
+    openInternal(st.seq.list[st.seq.idx], lastTrigger);
+    updateNavUI();
   }
 
   function close() {
     st.aberto = false;
+    st.mode = "exercise";
     st.q = null;
     st.selecionada = null;
     st.corrigido = false;
@@ -111,11 +114,43 @@
     }
   }
 
+  /* ========= Internals ========= */
+
+  function openInternal(q, lastTrigger = null) {
+    st.aberto = true;
+    st.mode = "exercise";
+    st.q = q;
+    st.selecionada = null;
+    st.corrigido = false;
+    st.correta = false;
+    st.lastTrigger = lastTrigger;
+
+    if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
+
+    // Reset de UI base
+    if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
+    if (els.verify) { els.verify.disabled = true; els.verify.textContent = "Verificar"; els.verify.dataset.mode = "verify"; }
+
+    renderContent(q);
+    updateNavUI();
+
+    els.overlay?.classList.remove("hidden");
+    els.overlay?.setAttribute("aria-hidden", "false");
+    document.body.classList.add("modal-open");
+
+    focusFirstInteractive();
+  }
+
   function renderContent(q) {
     if (!els.content) return;
 
     const wrap = document.createElement("div");
     wrap.className = "player__inner";
+
+    // Progresso (se houver sequência)
+    if (st.seq && st.seq.list && st.seq.list.length) {
+      wrap.appendChild(renderProgressHeader());
+    }
 
     if (q.texto_base) {
       const block = document.createElement("blockquote");
@@ -184,20 +219,19 @@
       input.autocapitalize = "none";
       input.spellcheck = false;
 
+      label.setAttribute("for", `lacuna-${q.id}`);
+      input.id = `lacuna-${q.id}`;
+
       input.addEventListener("input", () => {
         st.selecionada = input.value;
         els.verify.disabled = !(st.selecionada && st.selecionada.trim().length);
       });
-
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !els.verify.disabled && !st.corrigido) {
           e.preventDefault();
           verificar();
         }
       });
-
-      label.setAttribute("for", `lacuna-${q.id}`);
-      input.id = `lacuna-${q.id}`;
 
       div.appendChild(label);
       div.appendChild(input);
@@ -292,7 +326,7 @@
       if (ul) {
         ul.querySelectorAll("input[type=radio]").forEach((inp) => (inp.disabled = true));
         const items = Array.from(ul.querySelectorAll(".option"));
-        const correctIdx = Boolean(q.resposta) ? 0 : 1; // 0 = Verdadeiro, 1 = Falso
+        const correctIdx = Boolean(q.resposta) ? 0 : 1;
         const selectedIdx = st.selecionada ? 0 : 1;
         if (items[correctIdx]) items[correctIdx].classList.add("is-correct");
         if (!ok && items[selectedIdx]) items[selectedIdx].classList.add("is-wrong");
@@ -302,11 +336,19 @@
     st.corrigido = true;
     st.correta = ok;
 
+    // Salva resultado na sequência (se aplicável)
+    if (st.seq && st.q && st.q.id != null) {
+      st.seq.results.set(String(st.q.id), {
+        selected: st.selecionada,
+        correct: ok,
+        tipo: tipo
+      });
+    }
+
     // Feedback
     if (els.feedback) {
       els.feedback.className = "feedback " + (ok ? "ok" : "err");
       const expl = q.explicacao ? ` ${q.explicacao}` : "";
-      // Para lacuna, opcionalmente mostra um exemplo de gabarito quando incorreto
       let complemento = "";
       if (!ok && (Array.isArray(q.resposta) || typeof q.resposta === "string")) {
         const exemplo = Array.isArray(q.resposta) ? q.resposta[0] : q.resposta;
@@ -320,12 +362,168 @@
       els.feedback.focus?.();
     }
 
-    // Botão => Fechar
+    // Botão => Fechar (mantemos navegação ativa)
     if (els.verify) {
       els.verify.textContent = "Fechar";
       els.verify.dataset.mode = "close";
       els.verify.disabled = false;
     }
+  }
+
+  /* ========= Navegação / Resumo ========= */
+
+  function goPrev() {
+    if (!st.seq) return;
+    if (st.seq.idx <= 0) return;
+    st.seq.idx -= 1;
+    openInternal(st.seq.list[st.seq.idx], null);
+  }
+
+  function goNext() {
+    if (!st.seq) return;
+    if (st.seq.idx >= st.seq.list.length - 1) return;
+    st.seq.idx += 1;
+    openInternal(st.seq.list[st.seq.idx], null);
+  }
+
+  function isLast() {
+    return !!(st.seq && st.seq.idx >= st.seq.list.length - 1);
+  }
+
+  function updateNavUI() {
+    const inSeq = !!(st.seq && st.seq.list && st.seq.list.length > 1);
+    const inAnySeq = !!(st.seq && st.seq.list && st.seq.list.length >= 1);
+
+    // Mostrar/ocultar botões
+    if (els.prev)   els.prev.hidden   = !inSeq;
+    if (els.next)   els.next.hidden   = !inAnySeq;
+    if (els.finish) els.finish.hidden = !inAnySeq;
+
+    if (!inAnySeq) return;
+
+    const atFirst = st.seq.idx <= 0;
+    const atLast  = st.seq.idx >= st.seq.list.length - 1;
+
+    if (els.prev) {
+      els.prev.disabled = atFirst;
+      els.prev.title = atFirst ? "" : "Questão anterior";
+    }
+    if (els.next) {
+      els.next.textContent = atLast ? "Resumo" : "Próxima";
+      els.next.title = atLast ? "Ver resumo" : "Próxima questão";
+      els.next.disabled = false;
+    }
+    if (els.finish) {
+      els.finish.disabled = false;
+      els.finish.title = "Ver resumo";
+    }
+  }
+
+  function openSummary() {
+    if (!st.seq) return;
+
+    st.mode = "summary";
+    st.q = null;
+    st.selecionada = null;
+    st.corrigido = false;
+    st.correta = false;
+
+    if (els.title) {
+      els.title.textContent = `Resumo — ${st.seq.list.length} questão(ões)`;
+    }
+
+    // Conteúdo do resumo
+    const total = st.seq.list.length;
+    const answered = st.seq.results.size;
+    const correct = Array.from(st.seq.results.values()).filter(r => r.correct).length;
+    const perc = total ? Math.round((correct / total) * 100) : 0;
+
+    const wrap = document.createElement("div");
+    wrap.className = "player__summary";
+
+    // Progresso total
+    const prog = renderProgressHeader(total, total); // barra cheia
+    wrap.appendChild(prog);
+
+    const p = document.createElement("p");
+    p.innerHTML = `Você respondeu <strong>${answered}</strong> de <strong>${total}</strong> e acertou <strong>${correct}</strong> (${perc}%).`;
+    wrap.appendChild(p);
+
+    const ul = document.createElement("ul");
+    ul.className = "options"; // reuso de layout
+    st.seq.list.forEach((it, i) => {
+      const li = document.createElement("li");
+      li.className = "option";
+      li.style.cursor = "default";
+
+      const res = st.seq.results.get(String(it.id));
+      const icon = document.createElement("span");
+      icon.style.minWidth = "1.2rem";
+      icon.style.display = "inline-block";
+      icon.textContent = res ? (res.correct ? "✅" : "❌") : "•";
+
+      const text = document.createElement("span");
+      text.textContent = `Q${it.id ?? (i + 1)} — ${it.tema || it.categoria || "Português"}`;
+
+      const row = document.createElement("div");
+      row.style.display = "flex";
+      row.style.gap = ".6rem";
+      row.style.alignItems = "center";
+
+      row.appendChild(icon);
+      row.appendChild(text);
+      li.appendChild(row);
+      ul.appendChild(li);
+    });
+    wrap.appendChild(ul);
+
+    if (els.content) {
+      els.content.innerHTML = "";
+      els.content.appendChild(wrap);
+    }
+
+    // Feedback / botões
+    if (els.feedback) {
+      els.feedback.textContent = "";
+      els.feedback.className = "feedback";
+    }
+    if (els.verify) {
+      els.verify.textContent = "Fechar";
+      els.verify.dataset.mode = "close";
+      els.verify.disabled = false;
+    }
+
+    // Navegação: no resumo escondemos prev/next/finish
+    if (els.prev)   els.prev.hidden = true;
+    if (els.next)   els.next.hidden = true;
+    if (els.finish) els.finish.hidden = true;
+  }
+
+  /* ========= UI helpers ========= */
+
+  function renderProgressHeader(totalOverride, currentOverride) {
+    // total/idx corrente
+    const total = totalOverride ?? (st.seq?.list?.length || 1);
+    const step  = currentOverride ?? ((st.seq?.idx ?? 0) + 1);
+
+    const box = document.createElement("div");
+    box.className = "progress";
+
+    const track = document.createElement("div");
+    track.className = "progress__track";
+
+    const bar = document.createElement("div");
+    bar.className = "progress__bar";
+    bar.style.width = `${Math.max(0, Math.min(100, (step / total) * 100))}%`;
+
+    const label = document.createElement("div");
+    label.className = "progress__label";
+    label.textContent = `Questão ${step} de ${total}`;
+
+    track.appendChild(bar);
+    box.appendChild(track);
+    box.appendChild(label);
+    return box;
   }
 
   function focusFirstInteractive() {
@@ -337,20 +535,13 @@
     els.close?.focus();
   }
 
-  // Comparação de texto para lacuna:
-  // - case-insensitive
-  // - trim
-  // - colapsa múltiplos espaços
-  // - mantém acentos (não remove diacríticos) para diferenciar "tem" de "têm"
+  // Comparação para lacuna (case-insensitive, trim, espaçamento colapsado; mantém acentos)
   function normText(s) {
-    return String(s || "")
-      .toLowerCase()
-      .trim()
-      .replace(/\s+/g, " ");
+    return String(s || "").toLowerCase().trim().replace(/\s+/g, " ");
   }
-  function eqText(a, b) {
-    return normText(a) === normText(b);
-  }
+  function eqText(a, b) { return normText(a) === normText(b); }
 
-  window.Player = { init, open, close };
+  function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
+
+  window.Player = { init, open, close, startSequence };
 })();
