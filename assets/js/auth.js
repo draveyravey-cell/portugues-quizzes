@@ -1,6 +1,6 @@
 "use strict";
 
-// Auth: Supabase (ou local-only se não configurado)
+/* Auth (Supabase) + integração de Sync (auto) */
 (function () {
     const els = {
         btn: null, overlay: null, modal: null, close: null,
@@ -51,6 +51,9 @@
         user = data?.user || null;
         setMsg("Login realizado.", "ok");
         renderFooter();
+        // Sync imediato pós-login
+        try { await window.Sync?.syncAll?.(); } catch (e) { console.warn(e); }
+        window.Sync?.startAuto?.(60000);
     }
 
     async function handleSignup() {
@@ -64,6 +67,9 @@
         user = data?.user || null;
         setMsg("Conta criada. Verifique seu e-mail (se exigido).", "ok");
         renderFooter();
+        // Opcionalmente, já tentar sync (vai puxar vazio)
+        try { await window.Sync?.syncAll?.(); } catch (e) { console.warn(e); }
+        window.Sync?.startAuto?.(60000);
     }
 
     async function handleLogout() {
@@ -72,12 +78,13 @@
         user = null;
         setMsg("Você saiu.", "ok");
         renderFooter();
+        window.Sync?.stopAuto?.();
     }
 
-    async function handleSync() {
+    async function handleSyncNow() {
+        if (!user) { setMsg("Entre para sincronizar.", "err"); return; }
+        setMsg("Sincronizando...");
         try {
-            if (!user) { setMsg("Entre para sincronizar.", "err"); return; }
-            setMsg("Sincronizando...");
             const res = await window.Sync?.syncAll?.();
             setMsg(res?.message || "Sincronização concluída.", "ok");
         } catch (e) {
@@ -116,10 +123,25 @@
             sb = initSupabase();
             const { data: { user: u } } = await sb.auth.getUser();
             user = u || null;
-            sb.auth.onAuthStateChange((_evt, sess) => {
+            updateAccountBtn();
+            renderFooter();
+
+            // Ao carregar a página logado: sincroniza e inicia auto-sync
+            if (user) {
+                try { await window.Sync?.syncAll?.(); } catch (e) { console.warn(e); }
+                window.Sync?.startAuto?.(60000);
+            }
+
+            sb.auth.onAuthStateChange(async (_evt, sess) => {
                 user = sess?.user || null;
                 updateAccountBtn();
                 renderFooter();
+                if (user) {
+                    try { await window.Sync?.syncAll?.(); } catch (e) { console.warn(e); }
+                    window.Sync?.startAuto?.(60000);
+                } else {
+                    window.Sync?.stopAuto?.();
+                }
             });
         }
 
@@ -131,11 +153,17 @@
         els.login?.addEventListener("click", handleLogin);
         els.signup?.addEventListener("click", handleSignup);
         els.logout?.addEventListener("click", handleLogout);
-        els.sync?.addEventListener("click", handleSync);
+        els.sync?.addEventListener("click", handleSyncNow);
 
-        renderFooter();
-        updateAccountBtn();
+        // Exibe status de sync no modal (opcional)
+        window.addEventListener("sync:status", (ev) => {
+            const d = ev.detail;
+            if (d?.ok) {
+                setMsg(`Sync: pull ${d.pull?.remote || 0} / push ${d.push?.pushed || 0}`, "ok");
+            }
+        });
 
+        // Exponibiliza
         window.Auth = {
             getUser: () => user,
             getClient: () => sb
