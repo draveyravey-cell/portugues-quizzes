@@ -49,6 +49,7 @@
         <a href="#exercicios">Exercícios</a>
         <a href="#historico">Histórico</a>
         <a href="#editor">Editor</a>
+        <a href="#conta">Conta</a>
         <a href="#sobre">Sobre</a>
       </nav>
 
@@ -204,6 +205,66 @@
         </section>
       </div>
     </section>
+    <section id="conta" class="account">
+      <h2>Minha conta</h2>
+      <p class="hint">Gerencie seu login, sincronização e veja seu tempo online.</p>
+
+      <div class="account__grid">
+        <div class="account-card">
+          <h3>Status da conta</h3>
+          <ul class="account-list">
+            <li><span class="label">Estado:</span> <span id="acc-status">Visitante</span></li>
+            <li><span class="label">E-mail:</span> <span id="acc-email">—</span></li>
+            <li><span class="label">User ID:</span> <span id="acc-uid">—</span></li>
+            <li><span class="label">Conectividade:</span> <span id="acc-online">—</span></li>
+          </ul>
+          <div class="account-actions">
+            <button id="acc-open-modal" class="button" type="button">Abrir painel de conta</button>
+            <button id="acc-logout" class="button" type="button">Sair</button>
+          </div>
+        </div>
+
+        <div class="account-card">
+          <h3>Sincronização</h3>
+          <div class="switch-row">
+            <label class="switch">
+              <input id="acc-auto-sync" type="checkbox" />
+              <span class="switch-slider" aria-hidden="true"></span>
+            </label>
+            <span>Sincronização automática</span>
+            <label class="sr-only" for="acc-interval">Intervalo</label>
+            <select id="acc-interval">
+              <option value="60000">1 min</option>
+              <option value="300000">5 min</option>
+              <option value="900000">15 min</option>
+            </select>
+          </div>
+
+          <ul class="account-list">
+            <li><span class="label">Locais (tentativas):</span> <span id="acc-local-attempts">0</span></li>
+            <li><span class="label">Nuvem (último pull):</span> <span id="acc-remote-attempts">0</span></li>
+            <li><span class="label">Último pull:</span> <span id="acc-last-pull">—</span></li>
+            <li><span class="label">Último push:</span> <span id="acc-last-push">—</span></li>
+          </ul>
+
+          <div class="account-actions">
+            <button id="acc-sync-now" class="button primary" type="button">Sincronizar agora</button>
+          </div>
+          <div id="acc-sync-msg" class="msg" aria-live="polite"></div>
+        </div>
+
+        <div class="account-card">
+          <h3>Tempo online</h3>
+          <ul class="account-list">
+            <li><span class="label">Sessão atual:</span> <span id="acc-time-session">00:00:00</span></li>
+            <li><span class="label">Total neste usuário:</span> <span id="acc-time-total">00:00:00</span></li>
+          </ul>
+          <div class="account-actions">
+            <button id="acc-time-reset" class="button" type="button">Zerar total</button>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="footer" id="sobre">
@@ -245,6 +306,7 @@
   <script src="assets/js/editor.js" defer></script>
   <script src="assets/js/auth.js" defer></script>
   <script src="assets/js/sync.js" defer></script>
+  <script src="assets/js/account.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 </body>
 

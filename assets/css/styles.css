@@ -827,3 +827,107 @@ body.modal-open {
   gap: .6rem;
   align-items: center;
 }
+
+/* ===== Conta (aba) ===== */
+.account {
+  padding: 1rem 0 2rem;
+}
+
+.account__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-top: .8rem;
+}
+
+.account-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1rem;
+}
+
+.account-card h3 {
+  margin: 0 0 .6rem;
+}
+
+.account-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: .35rem;
+}
+
+.account-list .label {
+  color: var(--muted);
+  margin-right: .35rem;
+}
+
+.account-actions {
+  margin-top: .8rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+
+/* Switch (toggle) */
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-wrap: wrap;
+  margin-bottom: .6rem;
+}
+
+.switch {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  display: inline-block;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.switch-slider {
+  position: absolute;
+  inset: 0;
+  background: var(--border);
+  border-radius: 999px;
+  transition: background .2s;
+}
+
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  top: 3px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transition: transform .2s, background .2s;
+}
+
+.switch input:checked+.switch-slider {
+  background: color-mix(in oklab, var(--primary) 60%, var(--border));
+}
+
+.switch input:checked+.switch-slider::before {
+  transform: translateX(20px);
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+/* Responsivo */
+@media (max-width: 720px) {
+  .account__grid {
+    grid-template-columns: 1fr;
+  }
+}
