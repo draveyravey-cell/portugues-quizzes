@@ -3,6 +3,7 @@
 /* Aba Conta — status, auto-sync e tempo online */
 (function () {
     const els = {};
+    let currentUserId = "guest";
     let sessionStart = Date.now();
     let visibleSince = (document.visibilityState === "visible") ? Date.now() : null;
     let tickTimer = null;
@@ -14,11 +15,26 @@
     };
 
     function qs(sel) { return document.querySelector(sel); }
-    function getUser() { try { return window.Auth?.getUser?.() || null; } catch { return null; } }
-    function getClient() { try { return window.Auth?.getClient?.() || null; } catch { return null; } }
+    function fmtDate(ts) {
+        if (!ts) return "—";
+        try { return new Date(ts).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }); }
+        catch { return "—"; }
+    }
+    function fmtDur(ms) {
+        ms = Math.max(0, Math.floor(ms || 0));
+        const s = Math.floor(ms / 1000);
+        const hh = String(Math.floor(s / 3600)).padStart(2, "0");
+        const mm = String(Math.floor((s % 3600) / 60)).padStart(2, "0");
+        const ss = String(s % 60).padStart(2, "0");
+        return `${hh}:${mm}:${ss}`;
+    }
+    function getUser() {
+        try { return window.Auth?.getUser?.() || null; } catch { return null; }
+    }
+    function getClient() {
+        try { return window.Auth?.getClient?.() || null; } catch { return null; }
+    }
     function setText(el, txt) { if (el) el.textContent = txt == null ? "—" : String(txt); }
-    function fmtDate(ts) { if (!ts) return "—"; try { return new Date(ts).toLocaleString("pt-BR", { dateStyle: "short", timeStyle: "short" }); } catch { return "—"; } }
-    function fmtDur(ms) { ms = Math.max(0, ms | 0); const s = (ms / 1000) | 0; const h = (s / 3600) | 0, m = ((s % 3600) / 60) | 0, ss = s % 60; return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}:${String(ss).padStart(2, "0")}`; }
 
     function loadAutoSyncPrefs() {
         let enabled = true, interval = 60000;
@@ -39,15 +55,19 @@
     }
 
     function getTotalMs(uid) {
-        try { return parseInt(localStorage.getItem(LS_KEYS.timeTotal(uid)) || "0", 10) || 0; } catch { return 0; }
+        try { return parseInt(localStorage.getItem(LS_KEYS.timeTotal(uid)) || "0", 10) || 0; }
+        catch { return 0; }
     }
     function setTotalMs(uid, ms) {
-        try { localStorage.setItem(LS_KEYS.timeTotal(uid), String(Math.max(0, ms | 0))); } catch { }
+        try { localStorage.setItem(LS_KEYS.timeTotal(uid), String(Math.max(0, Math.floor(ms || 0)))); } catch { }
     }
 
-    function computeVisibleMs() {
-        if (visibleSince == null) return 0;
-        return Date.now() - visibleSince;
+    function computeSessionMs() {
+        const now = Date.now();
+        let acc = 0;
+        // conta tempo visível
+        if (visibleSince != null) acc += (now - visibleSince);
+        return acc;
     }
 
     function renderStatus() {
@@ -73,25 +93,44 @@
     }
 
     function renderTime() {
+        // Atualiza sessão e total do usuário atual
         const u = getUser();
         const uid = u?.id || "guest";
         const baseTotal = getTotalMs(uid);
-        setText(els.timeSession, fmtDur(computeVisibleMs()));
-        setText(els.timeTotal, fmtDur(baseTotal + computeVisibleMs()));
+        const sessionMs = (Date.now() - sessionStart) - (visibleSince ? 0 : 0); // base p/ exibir
+        const visibleMs = computeSessionMs();
+        setText(els.timeSession, fmtDur(visibleMs));
+        setText(els.timeTotal, fmtDur(baseTotal + visibleMs));
     }
 
     function persistTime() {
+        // acumula o tempo visível ao total
         const u = getUser();
         const uid = u?.id || "guest";
         const base = getTotalMs(uid);
-        const add = computeVisibleMs();
-        setTotalMs(uid, base + add);
-        visibleSince = (document.visibilityState === "visible") ? Date.now() : null;
+        const visibleMs = computeSessionMs();
+        setTotalMs(uid, base + visibleMs);
+        // reinicia o marcador de visibilidade
+        if (document.visibilityState === "visible") visibleSince = Date.now();
+        else visibleSince = null;
     }
 
     function onVisibilityChange() {
-        if (document.visibilityState === "hidden") persistTime();
-        else visibleSince = Date.now();
+        if (document.visibilityState === "hidden") {
+            persistTime();
+        } else {
+            visibleSince = Date.now();
+        }
+    }
+
+    function onAuthChanged() {
+        // Ao trocar de usuário, persistir tempo do anterior e resetar contadores de sessão
+        persistTime();
+        sessionStart = Date.now();
+        visibleSince = (document.visibilityState === "visible") ? Date.now() : null;
+        currentUserId = getUser()?.id || "guest";
+        renderStatus();
+        renderTime();
     }
 
     function applyAutoSyncUI() {
@@ -99,67 +138,76 @@
         if (els.autoSync) els.autoSync.checked = !!prefs.enabled;
         if (els.interval) els.interval.value = String(prefs.interval);
     }
+
     function applyAutoSyncRuntime() {
         const u = getUser();
         const prefs = loadAutoSyncPrefs();
-        if (u && prefs.enabled) window.Sync?.startAuto?.(parseInt(prefs.interval, 10) || 60000);
+        if (u && prefs.enabled) window.Sync?.startAuto?.(prefs.interval);
         else window.Sync?.stopAuto?.();
     }
 
     function bind() {
+        // Botões/Ações
         els.modalBtn?.addEventListener("click", () => {
+            // abre modal de auth já existente
             const modal = qs("#auth-overlay");
             if (!modal) return;
             modal.classList.remove("hidden");
             modal.setAttribute("aria-hidden", "false");
             document.body.classList.add("modal-open");
-            (qs("#auth-email") || qs("#auth-close"))?.focus?.();
+            const email = qs("#auth-email");
+            (email || qs("#auth-close"))?.focus?.();
         });
+
         els.logout?.addEventListener("click", async () => {
             try { await getClient()?.auth?.signOut(); } catch { }
         });
+
         els.syncNow?.addEventListener("click", async () => {
             setText(els.syncMsg, "Sincronizando...");
             try {
                 const res = await window.Sync?.syncAll?.();
                 setText(els.syncMsg, res?.message || "Sincronização concluída.");
                 renderStatus();
-            } catch { setText(els.syncMsg, "Falha na sincronização."); }
+            } catch (e) {
+                console.error(e);
+                setText(els.syncMsg, "Falha na sincronização.");
+            }
         });
+
         els.autoSync?.addEventListener("change", () => {
             const enabled = !!els.autoSync.checked;
             const interval = parseInt(els.interval?.value || "60000", 10) || 60000;
-            saveAutoSyncPrefs(enabled, interval); applyAutoSyncRuntime();
+            saveAutoSyncPrefs(enabled, interval);
+            applyAutoSyncRuntime();
         });
+
         els.interval?.addEventListener("change", () => {
             const enabled = !!els.autoSync.checked;
             const interval = parseInt(els.interval.value || "60000", 10) || 60000;
-            saveAutoSyncPrefs(enabled, interval); applyAutoSyncRuntime();
+            saveAutoSyncPrefs(enabled, interval);
+            applyAutoSyncRuntime();
         });
+
         els.timeReset?.addEventListener("click", () => {
-            const uid = getUser()?.id || "guest";
+            const u = getUser();
+            const uid = u?.id || "guest";
             setTotalMs(uid, 0);
             visibleSince = (document.visibilityState === "visible") ? Date.now() : null;
             renderTime();
         });
 
-        window.addEventListener("online", renderStatus);
-        window.addEventListener("offline", renderStatus);
-        window.addEventListener("sync:status", renderStatus);
+        // Eventos globais
+        window.addEventListener("online", () => renderStatus());
+        window.addEventListener("offline", () => renderStatus());
+        window.addEventListener("sync:status", () => { renderStatus(); });
         document.addEventListener("visibilitychange", onVisibilityChange);
 
-        // Ouve mudanças de auth (caso auth.js já tenha client pronto)
+        // Escuta mudanças de auth diretamente do cliente
         const sb = getClient();
-        sb?.auth?.onAuthStateChange?.((_evt, _sess) => {
-            // Revela estado atual
-            renderStatus();
-            applyAutoSyncRuntime();
-            // Reinicia contadores de tempo de sessão
-            persistTime();
-            sessionStart = Date.now();
-            visibleSince = (document.visibilityState === "visible") ? Date.now() : null;
-            renderTime();
-        });
+        if (sb?.auth) {
+            sb.auth.onAuthStateChange((_evt, _sess) => onAuthChanged());
+        }
     }
 
     function cacheEls() {
@@ -189,16 +237,23 @@
 
     function startTick() {
         if (tickTimer) clearInterval(tickTimer);
-        tickTimer = setInterval(renderTime, 1000);
+        tickTimer = setInterval(() => {
+            renderTime();
+        }, 1000);
     }
 
     function init() {
-        if (!qs("#conta")) return; // só se a aba existir
+        // só inicializa se a seção existir
+        if (!qs("#conta")) return;
         cacheEls();
         bind();
         applyAutoSyncUI();
         applyAutoSyncRuntime();
-        // Primeira render
+
+        currentUserId = getUser()?.id || "guest";
+        sessionStart = Date.now();
+        if (document.visibilityState === "visible") visibleSince = Date.now();
+
         renderStatus();
         renderTime();
         startTick();
