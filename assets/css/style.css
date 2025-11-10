@@ -1,16 +1,13 @@
-/* Tema + layout responsivo + navegação ativa */
+/* Tema + layout responsivo + navegação ativa + filtros */
 
 :root{
-  /* comportamento de rolagem suave para âncoras */
   scroll-behavior: smooth;
-
-  /* variáveis base */
   --radius: 12px;
   --shadow: 0 6px 24px rgba(0,0,0,.12);
-  --header-h: 64px; /* atualizado via JS conforme altura real */
+  --header-h: 64px;
 }
 
-/* Tema escuro (padrão se salvo/OS = dark) */
+/* Tema escuro */
 [data-theme="dark"]{
   color-scheme: dark;
   --bg: #0e0f11;
@@ -91,7 +88,7 @@ body{
   background: color-mix(in oklab, var(--primary) 18%, transparent);
 }
 
-/* Botão de alternância de tema */
+/* Botão alternar tema */
 .actions{ display:flex; align-items:center; }
 .icon-btn{
   appearance: none;
@@ -131,6 +128,23 @@ body{
 }
 .hint{ color: var(--muted); font-size:.9rem; }
 
+/* Linha de filtros */
+.controls__row--filters{ margin-top:.8rem; }
+.filters{
+  display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;
+}
+.filters select{
+  flex: 1 1 220px;
+  min-height: 42px;
+  padding: .6rem .8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+/* Lista */
 .lista h2{ margin-top: 1.6rem; }
 .msg{ margin: .6rem 0; color: var(--muted); }
 
@@ -166,7 +180,7 @@ body{
 .card p{ margin:0; color: var(--muted); }
 .card .actions{ margin-top:auto; display:flex; gap:.6rem; }
 
-/* Botões genéricos (para cards, etc.) */
+/* Botões genéricos */
 .button{
   appearance: none;
   background: transparent;
@@ -179,10 +193,7 @@ body{
   border-color: var(--primary);
   color: var(--primary-2);
 }
-.button[disabled]{
-  cursor: not-allowed;
-  opacity: .7;
-}
+.button[disabled]{ cursor: not-allowed; opacity: .7; }
 
 .footer{
   border-top: 1px solid var(--border);
@@ -207,5 +218,5 @@ section[id], footer#sobre{
 @media (max-width: 720px){
   .topbar__inner{ gap:.6rem; }
   .nav{ flex: 1 1 auto; justify-content:center; }
-  .brand{ display:none; } /* economiza espaço no mobile */
+  .brand{ display:none; }
 }

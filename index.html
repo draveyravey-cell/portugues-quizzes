@@ -6,9 +6,7 @@
 
     <title>Exercícios de Português</title>
 
-    <!-- Preferências de cor do sistema -->
     <meta name="color-scheme" content="light dark" />
-    <!-- Cor da barra do navegador (atualizada via JS conforme o tema) -->
     <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
 
     <!-- Evita "flash" de tema ao carregar -->
@@ -46,7 +44,8 @@
       </div>
     </header>
 
-    <main class="container" id="inicio">
+    <!-- Removido id duplicado "inicio" do main -->
+    <main class="container">
       <section class="hero" id="inicio">
         <h1>Exercícios de Português</h1>
         <p>Pratique ortografia, acentuação, crase, concordância e muito mais. 🚀</p>
@@ -58,7 +57,24 @@
           <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..." />
           <span class="hint">Dica: experimente “crase”, “acentuação”, “por que”...</span>
         </div>
-        <!-- Filtros por categoria/dificuldade virão na Parte 3 -->
+
+        <div class="controls__row controls__row--filters">
+          <div class="filters">
+            <label for="f-categoria" class="sr-only">Filtrar por categoria</label>
+            <select id="f-categoria" aria-label="Filtrar por categoria">
+              <option value="all">Todas as categorias</option>
+              <!-- opções preenchidas via JS -->
+            </select>
+
+            <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
+            <select id="f-dificuldade" aria-label="Filtrar por dificuldade">
+              <option value="all">Todas as dificuldades</option>
+              <!-- opções preenchidas via JS -->
+            </select>
+
+            <button id="f-clear" class="button" type="button" title="Limpar filtros e busca">Limpar</button>
+          </div>
+        </div>
       </section>
 
       <section class="lista">
