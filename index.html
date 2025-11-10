@@ -9,7 +9,7 @@
     <meta name="color-scheme" content="light dark" />
     <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
 
-    <!-- Evita "flash" de tema ao carregar -->
+    <!-- Evita flash de tema -->
     <script>
       (function () {
         try {
@@ -31,10 +31,10 @@
         <div class="brand">Português Prático</div>
 
         <nav class="nav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a>
-        <a href="#exercicios">Exercícios</a>
-        <a href="#historico">Histórico</a>
-        <a href="#sobre">Sobre</a>
+          <a href="#inicio">Início</a>
+          <a href="#exercicios">Exercícios</a>
+          <a href="#historico">Histórico</a>
+          <a href="#sobre">Sobre</a>
         </nav>
 
         <div class="actions">
@@ -45,7 +45,6 @@
       </div>
     </header>
 
-    <!-- Removido id duplicado "inicio" do main -->
     <main class="container">
       <section class="hero" id="inicio">
         <h1>Exercícios de Português</h1>
@@ -64,13 +63,11 @@
             <label for="f-categoria" class="sr-only">Filtrar por categoria</label>
             <select id="f-categoria" aria-label="Filtrar por categoria">
               <option value="all">Todas as categorias</option>
-              <!-- opções preenchidas via JS -->
             </select>
 
             <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
             <select id="f-dificuldade" aria-label="Filtrar por dificuldade">
               <option value="all">Todas as dificuldades</option>
-              <!-- opções preenchidas via JS -->
             </select>
 
             <button id="f-clear" class="button" type="button" title="Limpar filtros e busca">Limpar</button>
@@ -83,6 +80,7 @@
         <div id="msg" class="msg" aria-live="polite"></div>
         <div id="lista-questoes" class="grid"></div>
       </section>
+
       <section id="historico" class="history">
         <h2>Histórico de estudos</h2>
         <p class="hint">Seus dados ficam salvos apenas no seu navegador (local).</p>
@@ -90,56 +88,59 @@
         <div id="hist-stats" class="stats-grid"></div>
 
         <div class="history__actions">
-            <button id="hist-export" class="button">Exportar JSON</button>
-            <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
+          <button id="hist-export" class="button">Exportar JSON</button>
+          <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
         </div>
 
         <div class="history__list">
-            <h3>Tentativas recentes</h3>
-            <div id="hist-attempts"></div>
+          <h3>Tentativas recentes</h3>
+          <div id="hist-attempts"></div>
         </div>
 
-        <!-- Espaços que serão usados na 7.2 -->
+        <!-- Espaços reservados para a 7.2 -->
         <div class="history__sessions">
-            <h3>Sessões</h3>
-            <div id="hist-sessions"></div>
+          <h3>Sessões</h3>
+          <div id="hist-sessions"></div>
         </div>
         <div class="history__perq">
-            <h3>Estatísticas por questão</h3>
-            <div id="hist-perq"></div>
+          <h3>Estatísticas por questão</h3>
+          <div id="hist-perq"></div>
         </div>
-        </section>
+      </section>
     </main>
 
     <footer class="footer" id="sobre">
       <div class="container">
-        <p>Feito para estudar Português. Interface e código em evolução nas próximas partes.</p>
+        <p>Feito para estudar Português. Interface e código em evolução.</p>
       </div>
     </footer>
+
     <!-- Player (modal) -->
     <div id="player-overlay" class="overlay hidden" aria-hidden="true">
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="player-title" aria-describedby="player-desc">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="player-title" aria-describedby="player-desc">
         <header class="modal__header">
-        <h2 id="player-title">Responder exercício</h2>
-        <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+          <h2 id="player-title">Responder exercício</h2>
+          <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
         </header>
 
         <div class="modal__body" id="player-content">
-        <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
-        <!-- conteúdo gerado via JS -->
+          <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
+          <!-- conteúdo gerado via JS -->
         </div>
 
         <footer class="modal__footer">
-        <div class="feedback" id="player-feedback" aria-live="polite"></div>
-        <div class="modal__actions">
+          <div class="feedback" id="player-feedback" aria-live="polite"></div>
+          <div class="modal__actions">
             <button id="player-prev" class="button" type="button">Anterior</button>
             <button id="player-next" class="button" type="button">Próxima</button>
             <button id="player-finish" class="button" type="button">Finalizar</button>
             <button id="player-verify" class="button primary" type="button" disabled>Verificar</button>
-        </div>
+          </div>
         </footer>
-    </section>
+      </section>
     </div>
+
+    <!-- Ordem dos scripts: Store -> Player -> History -> App -->
     <script src="assets/js/storage.js" defer></script>
     <script src="assets/js/player.js" defer></script>
     <script src="assets/js/history.js" defer></script>

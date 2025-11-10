@@ -1,6 +1,6 @@
 "use strict";
 
-/* Player isolado (sequência, navegação, resumo) — global: window.Player */
+/* Player (sequência, navegação, resumo) + integração Store — global: window.Player */
 (function () {
   const st = {
     aberto: false,
@@ -10,7 +10,7 @@
     corrigido: false,
     correta: false,
     lastTrigger: null,
-    seq: null // { list: [], idx: 0, results: Map<id, {selected, correct, tipo}> }
+    seq: null // { list: [], idx: 0, results: Map<id, {selected, correct, tipo}>, sessionId? }
   };
 
   const els = {
@@ -74,15 +74,17 @@
   }
 
   // Inicia sequência (lista atual filtrada) no índice informado
-  function startSequence(list, startIndex = 0, lastTrigger = null) {
-    const sessionId = window.Store?.newSession({
-    filters: context?.filters || null,
-    questionIds: (list || []).map(q => q.id)
-    });
-    st.seq = { list: arr, idx, results: new Map(), sessionId };
+  function startSequence(list, startIndex = 0, lastTrigger = null, context = null) {
     const arr = Array.isArray(list) ? list.filter(Boolean) : [];
     const idx = clamp(startIndex, 0, Math.max(arr.length - 1, 0));
-    st.seq = { list: arr, idx, results: new Map() };
+
+    // Cria sessão na Store
+    const sessionId = window.Store?.newSession({
+      filters: context?.filters || null,
+      questionIds: (arr || []).map(q => q.id)
+    });
+
+    st.seq = { list: arr, idx, results: new Map(), sessionId };
     openInternal(st.seq.list[st.seq.idx], lastTrigger);
     updateNavUI();
   }
@@ -132,7 +134,6 @@
 
     if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
 
-    // Reset de UI base
     if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
     if (els.verify) { els.verify.disabled = true; els.verify.textContent = "Verificar"; els.verify.dataset.mode = "verify"; }
 
@@ -341,7 +342,7 @@
     st.corrigido = true;
     st.correta = ok;
 
-    // Salva resultado na sequência (se aplicável)
+    // Salva resultado na sequência
     if (st.seq && st.q && st.q.id != null) {
       st.seq.results.set(String(st.q.id), {
         selected: st.selecionada,
@@ -350,11 +351,12 @@
       });
     }
 
+    // Store: registra tentativa
     window.Store?.recordAttempt({
-    sessionId: st.seq?.sessionId || null,
-    question: q,
-    selected: st.selecionada,
-    correct: ok
+      sessionId: st.seq?.sessionId || null,
+      question: q,
+      selected: st.selecionada,
+      correct: ok
     });
 
     // Feedback
@@ -374,7 +376,6 @@
       els.feedback.focus?.();
     }
 
-    // Botão => Fechar (mantemos navegação ativa)
     if (els.verify) {
       els.verify.textContent = "Fechar";
       els.verify.dataset.mode = "close";
@@ -406,7 +407,6 @@
     const inSeq = !!(st.seq && st.seq.list && st.seq.list.length > 1);
     const inAnySeq = !!(st.seq && st.seq.list && st.seq.list.length >= 1);
 
-    // Mostrar/ocultar botões
     if (els.prev)   els.prev.hidden   = !inSeq;
     if (els.next)   els.next.hidden   = !inAnySeq;
     if (els.finish) els.finish.hidden = !inAnySeq;
@@ -435,22 +435,23 @@
     if (!st.seq) return;
 
     st.mode = "summary";
-    if (st.seq?.sessionId) {
-    const resultsArray = Array.from(st.seq.results.entries()).map(([qid, r]) => ({
-        id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo
-    }));
-    window.Store?.finishSession(st.seq.sessionId, resultsArray);
-    }
     st.q = null;
     st.selecionada = null;
     st.corrigido = false;
     st.correta = false;
 
+    // Finaliza sessão na Store com snapshot dos resultados
+    if (st.seq?.sessionId) {
+      const resultsArray = Array.from(st.seq.results.entries()).map(([qid, r]) => ({
+        id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo
+      }));
+      window.Store?.finishSession(st.seq.sessionId, resultsArray);
+    }
+
     if (els.title) {
       els.title.textContent = `Resumo — ${st.seq.list.length} questão(ões)`;
     }
 
-    // Conteúdo do resumo
     const total = st.seq.list.length;
     const answered = st.seq.results.size;
     const correct = Array.from(st.seq.results.values()).filter(r => r.correct).length;
@@ -459,8 +460,8 @@
     const wrap = document.createElement("div");
     wrap.className = "player__summary";
 
-    // Progresso total
-    const prog = renderProgressHeader(total, total); // barra cheia
+    // Progresso total (barra cheia)
+    const prog = renderProgressHeader(total, total);
     wrap.appendChild(prog);
 
     const p = document.createElement("p");
@@ -468,7 +469,7 @@
     wrap.appendChild(p);
 
     const ul = document.createElement("ul");
-    ul.className = "options"; // reuso de layout
+    ul.className = "options";
     st.seq.list.forEach((it, i) => {
       const li = document.createElement("li");
       li.className = "option";
@@ -500,7 +501,6 @@
       els.content.appendChild(wrap);
     }
 
-    // Feedback / botões
     if (els.feedback) {
       els.feedback.textContent = "";
       els.feedback.className = "feedback";
@@ -511,7 +511,6 @@
       els.verify.disabled = false;
     }
 
-    // Navegação: no resumo escondemos prev/next/finish
     if (els.prev)   els.prev.hidden = true;
     if (els.next)   els.next.hidden = true;
     if (els.finish) els.finish.hidden = true;
@@ -520,7 +519,6 @@
   /* ========= UI helpers ========= */
 
   function renderProgressHeader(totalOverride, currentOverride) {
-    // total/idx corrente
     const total = totalOverride ?? (st.seq?.list?.length || 1);
     const step  = currentOverride ?? ((st.seq?.idx ?? 0) + 1);
 
@@ -545,7 +543,6 @@
   }
 
   function focusFirstInteractive() {
-    // tenta focar um input (lacuna) ou o primeiro radio; senão, o botão fechar
     const input = els.content?.querySelector(".lacuna-input");
     if (input) { input.focus(); return; }
     const firstRadio = els.content?.querySelector('input[type="radio"]');
@@ -553,7 +550,7 @@
     els.close?.focus();
   }
 
-  // Comparação para lacuna (case-insensitive, trim, espaçamento colapsado; mantém acentos)
+  // Comparação para lacuna (case-insensitive, trim, colapsa espaços; mantém acentos)
   function normText(s) {
     return String(s || "").toLowerCase().trim().replace(/\s+/g, " ");
   }

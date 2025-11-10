@@ -40,6 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
   els.fDificuldade = document.querySelector("#f-dificuldade");
   els.fClear = document.querySelector("#f-clear");
 
+  // Store
+  window.Store?.init();
+
   /* Restaura filtros e busca */
   restoreFilters();
 
@@ -94,8 +97,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderHeight();
   window.addEventListener("resize", debounce(updateHeaderHeight, 150));
 
-    // Store
-  window.Store?.init();
   // Player
   window.Player?.init();
 
@@ -271,10 +272,10 @@ function renderLista() {
     btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
     if (isSupported) {
       btn.addEventListener("click", (ev) => {
-  window.Player?.startSequence(viewItems, idx, ev.currentTarget, {
-    filters: { q: state.filtroTexto, cat: state.filtroCategoria, dif: state.filtroDificuldade }
-  });
-});
+        window.Player?.startSequence(viewItems, idx, ev.currentTarget, {
+          filters: { q: state.filtroTexto, cat: state.filtroCategoria, dif: state.filtroDificuldade }
+        });
+      });
     }
     actions.appendChild(btn);
 

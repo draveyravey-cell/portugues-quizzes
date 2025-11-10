@@ -21,7 +21,6 @@
         return fresh;
       }
       const parsed = JSON.parse(raw);
-      // sane defaults
       parsed.version = 1;
       parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
       parsed.attempts = Array.isArray(parsed.attempts) ? parsed.attempts : [];
