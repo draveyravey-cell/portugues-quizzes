@@ -1,0 +1,14 @@
+{
+  "json.schemas": [
+    {
+      "fileMatch": [
+        "/data/exercicios.json",
+        "/data/*.json",
+        "*.exercicios.json"
+      ],
+      "url": "./assets/schema/exercicios.schema.json"
+    }
+  ],
+  "editor.formatOnSave": true,
+  "files.eol": "\n"
+}

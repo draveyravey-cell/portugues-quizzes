@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/schema/exercicios.schema.json",
+  "title": "Exercícios de Português",
+  "description": "Schema para validação de exercícios.",
+  "type": ["array", "object"],
+  "oneOf": [
+    {
+      "type": "array",
+      "items": { "$ref": "#/$defs/questao" }
+    },
+    {
+      "type": "object",
+      "required": ["questoes"],
+      "properties": {
+        "questoes": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/questao" }
+        }
+      },
+      "additionalProperties": true
+    }
+  ],
+  "$defs": {
+    "questao": {
+      "type": "object",
+      "required": ["id", "categoria", "tipo", "enunciado", "dificuldade"],
+      "properties": {
+        "id": {
+          "description": "Identificador único (recomendado numérico).",
+          "oneOf": [
+            { "type": "integer" },
+            { "type": "string", "minLength": 1 }
+          ]
+        },
+        "categoria": { "type": "string", "minLength": 1 },
+        "tema": { "type": "string" },
+        "tipo": {
+          "type": "string",
+          "enum": ["multipla_escolha", "lacuna", "verdadeiro_falso"]
+        },
+        "enunciado": { "type": "string", "minLength": 1 },
+        "texto_base": { "type": "string" },
+        "explicacao": { "type": "string" },
+        "dificuldade": { "type": "string" },
+        "alternativas": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 2
+        },
+        "resposta": {}
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "tipo": { "const": "multipla_escolha" } } },
+          "then": {
+            "required": ["alternativas", "resposta"],
+            "properties": {
+              "resposta": { "type": "integer", "minimum": 0 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "tipo": { "const": "lacuna" } } },
+          "then": {
+            "required": ["resposta"],
+            "properties": {
+              "resposta": {
+                "oneOf": [
+                  { "type": "string" },
+                  {
+                    "type": "array",
+                    "items": { "type": "string" },
+                    "minItems": 1
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "tipo": { "const": "verdadeiro_falso" } } },
+          "then": {
+            "required": ["resposta"],
+            "properties": {
+              "resposta": { "type": "boolean" }
+            }
+          }
+        }
+      ],
+      "additionalProperties": true
+    }
+  }
+}
