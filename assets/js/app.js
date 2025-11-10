@@ -5,7 +5,9 @@ const state = {
   questoes: [],
   filtroTexto: "",
   filtroCategoria: "all",
-  filtroDificuldade: "all"
+  filtroDificuldade: "all",
+  page: 1,
+  pageSize: 12
 };
 
 const els = {
@@ -16,7 +18,9 @@ const els = {
   navLinks: [],
   fCategoria: null,
   fDificuldade: null,
-  fClear: null
+  fClear: null,
+  pagerTop: null,
+  pagerBottom: null
 };
 
 const STORAGE = {
@@ -25,13 +29,18 @@ const STORAGE = {
   dif: "f.dif"
 };
 
+const PAGER = {
+  page: "pg.page",
+  size: "pg.size"
+};
+
 // Override local (Parte 9)
 const OV_KEYS = {
   data: "pp.data.override",
   enabled: "pp.data.override.enabled"
 };
 
-// Lista corrente (após filtros) — usada para sequência
+// Lista da página atual (usada na sequência do Player)
 let viewItems = [];
 
 /* ================== Init ================== */
@@ -45,12 +54,15 @@ document.addEventListener("DOMContentLoaded", () => {
   els.fCategoria = document.querySelector("#f-categoria");
   els.fDificuldade = document.querySelector("#f-dificuldade");
   els.fClear = document.querySelector("#f-clear");
+  els.pagerTop = document.querySelector("#pager-top");
+  els.pagerBottom = document.querySelector("#pager-bottom");
 
   // Store
   window.Store?.init();
 
-  /* Restaura filtros e busca */
+  /* Restaura filtros, busca e paginação */
   restoreFilters();
+  restorePager();
 
   // Busca
   if (els.busca) {
@@ -58,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     els.busca.addEventListener("input", (e) => {
       state.filtroTexto = e.target.value || "";
       persist("q", state.filtroTexto);
+      resetToFirstPage();
       renderLista();
     });
     els.busca.addEventListener("keydown", (e) => {
@@ -66,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         state.filtroTexto = "";
         els.busca.value = "";
         persist("q", "");
+        resetToFirstPage();
         renderLista();
       }
     });
@@ -76,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
     els.fCategoria.addEventListener("change", () => {
       state.filtroCategoria = els.fCategoria.value || "all";
       persist("cat", state.filtroCategoria);
+      resetToFirstPage();
       renderLista();
     });
   }
@@ -83,12 +98,14 @@ document.addEventListener("DOMContentLoaded", () => {
     els.fDificuldade.addEventListener("change", () => {
       state.filtroDificuldade = els.fDificuldade.value || "all";
       persist("dif", state.filtroDificuldade);
+      resetToFirstPage();
       renderLista();
     });
   }
   if (els.fClear) {
     els.fClear.addEventListener("click", () => {
       clearFilters();
+      resetToFirstPage();
       renderLista();
     });
   }
@@ -127,7 +144,7 @@ function initTheme() {
   }
 }
 function setTheme(theme) {
-  try { localStorage.setItem("theme", theme); } catch (e) {}
+  try { localStorage.setItem("theme", theme); } catch (e) { }
   document.documentElement.setAttribute("data-theme", theme);
   updateThemeUI();
 }
@@ -211,7 +228,7 @@ function readOverrideList() {
   }
 }
 
-/* ================== Dados / Filtros ================== */
+/* ================== Dados / Filtros + Paginação ================== */
 async function carregarQuestoes() {
   // Tenta override local primeiro
   const ov = readOverrideList();
@@ -219,6 +236,7 @@ async function carregarQuestoes() {
     state.questoes = ov;
     setMensagem(`Usando conjunto local (override) com ${state.questoes.length} exercício(s).`);
     popularFiltros(state.questoes);
+    resetToFirstPage();
     renderLista();
     return;
   }
@@ -231,11 +249,13 @@ async function carregarQuestoes() {
     state.questoes = Array.isArray(dados) ? dados : dados.questoes || [];
     setMensagem(`Carregados ${state.questoes.length} exercícios do servidor.`);
     popularFiltros(state.questoes);
+    resetToFirstPage();
     renderLista();
   } catch (err) {
     console.error(err);
     setMensagem("Não foi possível carregar o arquivo JSON. Você pode usar o Editor para aplicar um override local.");
     els.lista.innerHTML = "";
+    clearPagers();
   }
 }
 
@@ -258,21 +278,32 @@ function popularFiltros(questoes) {
 }
 
 function renderLista() {
-  const items = applyFilters(state.questoes);
-  viewItems = items;
+  const filtered = applyFilters(state.questoes);
 
-  if (!items.length) {
+  const total = filtered.length;
+  if (!total) {
     els.lista.innerHTML = "";
     setMensagem("Nenhum exercício encontrado para o filtro aplicado.");
+    clearPagers();
     return;
-  } else {
-    setMensagem(`${items.length} exercício(s) encontrado(s).`);
   }
+
+  // Corrige página de acordo com total
+  const totalPages = Math.max(1, Math.ceil(total / state.pageSize));
+  if (state.page > totalPages) state.page = totalPages;
+  if (state.page < 1) state.page = 1;
+
+  const start = (state.page - 1) * state.pageSize;
+  const end = Math.min(start + state.pageSize, total);
+  const pageItems = filtered.slice(start, end);
+  viewItems = pageItems;
+
+  setMensagem(`Encontrados ${total} exercício(s). Exibindo ${start + 1}–${end}. Página ${state.page} de ${totalPages}.`);
 
   const frag = document.createDocumentFragment();
   const tiposSuportados = new Set(["multipla_escolha", "lacuna", "verdadeiro_falso"]);
 
-  items.forEach((it, idx) => {
+  pageItems.forEach((it, idx) => {
     const card = document.createElement("article");
     card.className = "card";
 
@@ -295,7 +326,7 @@ function renderLista() {
     tags.appendChild(tagTipo);
 
     const h3 = document.createElement("h3");
-    h3.textContent = `Questão ${it.id ?? idx + 1} — ${it.tema || "Português"}`;
+    h3.textContent = `Questão ${it.id ?? (start + idx + 1)} — ${it.tema || "Português"}`;
 
     const p = document.createElement("p");
     p.textContent = resumo(it.enunciado, 160);
@@ -312,6 +343,7 @@ function renderLista() {
     btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
     if (isSupported) {
       btn.addEventListener("click", (ev) => {
+        // sequência apenas com os itens da página atual (UI coerente)
         window.Player?.startSequence(viewItems, idx, ev.currentTarget, {
           filters: { q: state.filtroTexto, cat: state.filtroCategoria, dif: state.filtroDificuldade }
         });
@@ -329,8 +361,168 @@ function renderLista() {
 
   els.lista.innerHTML = "";
   els.lista.appendChild(frag);
+
+  // Renderiza paginação
+  renderPager(els.pagerTop, {
+    totalItems: total,
+    page: state.page,
+    pageSize: state.pageSize,
+    includePageSize: true
+  });
+  renderPager(els.pagerBottom, {
+    totalItems: total,
+    page: state.page,
+    pageSize: state.pageSize,
+    includePageSize: false
+  });
 }
 
+function clearPagers() {
+  if (els.pagerTop) els.pagerTop.innerHTML = "";
+  if (els.pagerBottom) els.pagerBottom.innerHTML = "";
+}
+
+/* ================== Paginação (UI) ================== */
+function renderPager(root, { totalItems, page, pageSize, includePageSize }) {
+  if (!root) return;
+  const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
+  root.innerHTML = "";
+
+  const summary = document.createElement("div");
+  summary.className = "pager__summary";
+  const start = (page - 1) * pageSize + 1;
+  const end = Math.min(page * pageSize, totalItems);
+  summary.textContent = `Exibindo ${start}–${end} de ${totalItems}`;
+
+  const nav = document.createElement("div");
+  nav.className = "pager__nav";
+  nav.setAttribute("role", "navigation");
+  nav.setAttribute("aria-label", "Paginação");
+
+  const makeBtn = (label, targetPage, disabled, active, title, aria) => {
+    const b = document.createElement("button");
+    b.type = "button";
+    b.className = "pager__btn";
+    if (active) b.classList.add("is-active");
+    if (disabled) b.disabled = true;
+    b.textContent = label;
+    if (title) b.title = title;
+    b.setAttribute("aria-label", aria || label);
+    if (active) b.setAttribute("aria-current", "page");
+    b.addEventListener("click", () => {
+      if (disabled || targetPage === state.page) return;
+      state.page = targetPage;
+      persistPager();
+      renderLista();
+      // rolar para o topo da lista (compensa header)
+      document.querySelector(".lista")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    return b;
+  };
+
+  // Primeira / Anterior
+  nav.appendChild(makeBtn("«", 1, page <= 1, false, "Primeira página", "Primeira página"));
+  nav.appendChild(makeBtn("‹", Math.max(1, page - 1), page <= 1, false, "Página anterior", "Página anterior"));
+
+  // Números com elipses
+  pageList(page, totalPages).forEach((it) => {
+    if (it === "...") {
+      const span = document.createElement("span");
+      span.className = "pager__ellipsis";
+      span.textContent = "…";
+      nav.appendChild(span);
+    } else {
+      nav.appendChild(makeBtn(String(it), it, false, it === page, `Página ${it}`, `Página ${it}`));
+    }
+  });
+
+  // Próxima / Última
+  nav.appendChild(makeBtn("›", Math.min(totalPages, page + 1), page >= totalPages, false, "Próxima página", "Próxima página"));
+  nav.appendChild(makeBtn("»", totalPages, page >= totalPages, false, "Última página", "Última página"));
+
+  // Itens por página (apenas no topo)
+  const wrap = document.createElement("div");
+  wrap.style.display = "contents";
+
+  if (includePageSize) {
+    const sizeWrap = document.createElement("div");
+    sizeWrap.className = "pager__size";
+    const lab = document.createElement("label");
+    lab.textContent = "Itens por página:";
+    lab.setAttribute("for", "pager-size");
+    const sel = document.createElement("select");
+    sel.id = "pager-size";
+    [8, 12, 16, 24, 32, 48].forEach((n) => {
+      const opt = document.createElement("option");
+      opt.value = String(n);
+      opt.textContent = String(n);
+      if (n === state.pageSize) opt.selected = true;
+      sel.appendChild(opt);
+    });
+    sel.addEventListener("change", () => {
+      const n = parseInt(sel.value, 10) || 12;
+      state.pageSize = Math.max(1, n);
+      state.page = 1; // volta ao início
+      persistPager();
+      renderLista();
+    });
+    sizeWrap.appendChild(lab);
+    sizeWrap.appendChild(sel);
+
+    root.appendChild(summary);
+    root.appendChild(nav);
+    root.appendChild(sizeWrap);
+  } else {
+    root.appendChild(summary);
+    root.appendChild(nav);
+  }
+}
+
+function pageList(current, total) {
+  const delta = 2;
+  const range = [];
+  for (let i = 1; i <= total; i++) {
+    if (i === 1 || i === total || (i >= current - delta && i <= current + delta)) {
+      range.push(i);
+    }
+  }
+  const result = [];
+  let prev = 0;
+  for (const n of range) {
+    if (prev) {
+      if (n - prev === 2) result.push(prev + 1);
+      else if (n - prev > 2) result.push("...");
+    }
+    result.push(n);
+    prev = n;
+  }
+  return result;
+}
+
+function resetToFirstPage() {
+  state.page = 1;
+  persistPager();
+}
+
+function persistPager() {
+  try {
+    localStorage.setItem(PAGER.page, String(state.page));
+    localStorage.setItem(PAGER.size, String(state.pageSize));
+  } catch (e) { }
+}
+function restorePager() {
+  try {
+    const p = parseInt(localStorage.getItem(PAGER.page) || "1", 10);
+    const s = parseInt(localStorage.getItem(PAGER.size) || "12", 10);
+    state.page = isFinite(p) && p > 0 ? p : 1;
+    state.pageSize = isFinite(s) && s > 0 ? s : 12;
+  } catch (e) {
+    state.page = 1;
+    state.pageSize = 12;
+  }
+}
+
+/* ================== Filtros / Util ================== */
 function applyFilters(lista) {
   const q = normalizar(state.filtroTexto);
   const cat = state.filtroCategoria;
@@ -350,7 +542,6 @@ function applyFilters(lista) {
     return true;
   });
 }
-
 function setMensagem(txt) { if (els.msg) els.msg.textContent = txt || ""; }
 
 /* ================== Utils ================== */
@@ -396,7 +587,7 @@ function safeSetSelectValue(selectEl, value, fallback = "all") {
   }
 }
 function persist(key, value) {
-  try { localStorage.setItem(STORAGE[key], value); } catch (e) {}
+  try { localStorage.setItem(STORAGE[key], value); } catch (e) { }
 }
 function restoreFilters() {
   try {

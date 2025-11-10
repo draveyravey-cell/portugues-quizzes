@@ -1,163 +1,2642 @@
 [
   {
-    "id": 1,
-    "categoria": "Ortografia",
-    "tema": "Mas x Mais",
-    "tipo": "multipla_escolha",
+    "id": 1001,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
     "dificuldade": "fácil",
-    "enunciado": "Assinale a alternativa em que o uso de 'mas' e 'mais' está correto.",
-    "alternativas": [
-      "Queria ir, mais estava cansado.",
-      "Queria ir, mas estava cansado.",
-      "Mais que nada, vou, mas cedo."
+    "enunciado": "Complete: Fui ____ escola pela manhã.",
+    "resposta": [
+      "à"
     ],
-    "resposta": 1,
-    "explicacao": "'Mas' indica oposição; 'mais' indica intensidade/adição."
+    "explicacao": "Verbo 'ir' + artigo feminino: 'a' + 'a' = 'à'."
   },
   {
-    "id": 2,
-    "categoria": "Acentuação",
-    "tema": "Pode x Pôde",
-    "tipo": "multipla_escolha",
+    "id": 1002,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
     "dificuldade": "fácil",
-    "enunciado": "Assinale a frase correta quanto à acentuação de 'pode/pôde'.",
-    "alternativas": [
-      "Ontem ele pode sair mais cedo.",
-      "Ontem ele pôde sair mais cedo.",
-      "Amanhã ele pôde sair mais cedo."
+    "enunciado": "Complete: Voltarei ____ praia amanhã.",
+    "resposta": [
+      "à"
     ],
-    "resposta": 1,
-    "explicacao": "'Pôde' (passado) é acentuado; 'pode' (presente) não."
+    "explicacao": "Locais femininos com artigo pedem crase após 'ir/voltar a'."
   },
   {
-    "id": 3,
+    "id": 1003,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Cheguei ____ tarde.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina ('tarde') pede crase: 'à tarde'."
+  },
+  {
+    "id": 1004,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O evento começa ____ 8h.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Indicação de hora determinada: usa-se crase (às 8h)."
+  },
+  {
+    "id": 1005,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Vamos ____ feira do bairro.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Nome feminino com artigo após 'ir a' → crase."
+  },
+  {
+    "id": 1006,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Assistimos ____ peça ontem.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'assistir (ver)' exige preposição 'a' → 'à peça'."
+  },
+  {
+    "id": 1007,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Entreguei o relatório ____ diretora.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Objeto indireto feminino ('a' + 'a'): crase."
+  },
+  {
+    "id": 1008,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Dirigi-me ____ recepção.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução/verbo 'dirigir-se a' + nome feminino com artigo."
+  },
+  {
+    "id": 1009,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Obedecemos ____ regras.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Regência: 'obedecer a' → plural feminino: 'às regras'."
+  },
+  {
+    "id": 1010,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Respondi ____ aluna por e-mail.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'responder a' + artigo feminino → crase."
+  },
+  {
+    "id": 1011,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Chegaremos ____ noite.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à noite'."
+  },
+  {
+    "id": 1012,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Vamos ____ cidade amanhã.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'ir' + nome feminino com artigo → crase."
+  },
+  {
+    "id": 1013,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ele foi ____ França nas férias.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "País feminino com artigo: 'à França'."
+  },
+  {
+    "id": 1014,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ele foi ____ Paris nas férias.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Cidade sem artigo: 'a Paris', sem crase."
+  },
+  {
+    "id": 1015,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Voltou ____ Bahia após um ano.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Estado feminino com artigo: 'à Bahia'."
+  },
+  {
+    "id": 1016,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Chegou ____ Brasília ontem.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Cidade sem artigo: 'a Brasília', sem crase."
+  },
+  {
+    "id": 1017,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Fiz o pagamento ____ vista.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à vista'."
+  },
+  {
+    "id": 1018,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Compraremos ____ prazo.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Palavra masculina ('prazo'): sem crase → 'a prazo'."
+  },
+  {
+    "id": 1019,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O prato foi feito ____ moda da casa.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução 'à moda de': crase obrigatória."
+  },
+  {
+    "id": 1020,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O bife veio ____ milanesa.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão culinária: 'à milanesa'."
+  },
+  {
+    "id": 1021,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Caminhe ____ direita do corredor.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à direita'."
+  },
+  {
+    "id": 1022,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O professor aludiu ____quele problema.",
+    "resposta": [
+      "àquele"
+    ],
+    "explicacao": "Preposição 'a' + pronome demonstrativo 'aquele' → 'àquele'."
+  },
+  {
+    "id": 1023,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ela se referiu ____quilo na reunião.",
+    "resposta": [
+      "àquilo"
+    ],
+    "explicacao": "Preposição 'a' + 'aquilo' → 'àquilo'."
+  },
+  {
+    "id": 1024,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O aviso se aplica ____quelas situações.",
+    "resposta": [
+      "àquelas"
+    ],
+    "explicacao": "Preposição 'a' + 'aquelas' → 'àquelas'."
+  },
+  {
+    "id": 1025,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Estávamos ____ beira do rio ao entardecer.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução nominal feminina: 'à beira (de)'."
+  },
+  {
+    "id": 1026,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Permaneceram ____ distância segura.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução feminina: 'à distância'."
+  },
+  {
+    "id": 1027,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Agiu ____ revelia do chefe.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução prepositiva feminina: 'à revelia (de)'."
+  },
+  {
+    "id": 1028,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Fez tudo ____ moda antiga.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão fixa: 'à moda antiga'."
+  },
+  {
+    "id": 1029,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: O navio seguia ____ deriva.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à deriva'."
+  },
+  {
+    "id": 1030,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: O acesso fica ____ esquerda do elevador.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à esquerda'."
+  },
+  {
+    "id": 1031,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a frase correta quanto ao uso da crase.",
+    "alternativas": [
+      "Fui a escola cedo.",
+      "Fui à escola cedo.",
+      "Fui á escola cedo."
+    ],
+    "resposta": 1,
+    "explicacao": "Nome feminino com artigo após 'ir a' → crase: 'à escola'."
+  },
+  {
+    "id": 1032,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "A reunião será as 10h.",
+      "A reunião será às 10h.",
+      "A reunião será à 10h."
+    ],
+    "resposta": 1,
+    "explicacao": "Horas determinadas pedem crase: 'às 10h'."
+  },
+  {
+    "id": 1033,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a frase correta.",
+    "alternativas": [
+      "Ele foi à pé.",
+      "Ele foi a pé.",
+      "Ele foi às pé."
+    ],
+    "resposta": 1,
+    "explicacao": "Antes de palavra masculina ('pé'), não há crase: 'a pé'."
+  },
+  {
+    "id": 1034,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Pagaremos a vista ou à prazo.",
+      "Pagaremos à vista ou a prazo.",
+      "Pagaremos à vista ou à prazo."
+    ],
+    "resposta": 1,
+    "explicacao": "Locução feminina: 'à vista'; masculino: 'a prazo' (sem crase)."
+  },
+  {
+    "id": 1035,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Vou à Bahia no feriado.",
+      "Vou a Bahia no feriado.",
+      "Vou à Brasília no feriado."
+    ],
+    "resposta": 0,
+    "explicacao": "Bahia (feminino com artigo) → 'à'; Brasília (sem artigo) → 'a Brasília'."
+  },
+  {
+    "id": 1036,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Cheguei à Paris ontem.",
+      "Cheguei a Paris ontem.",
+      "Cheguei às Paris ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "Cidade sem artigo: 'a Paris' (sem crase)."
+  },
+  {
+    "id": 1037,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Referi-me a aquele caso.",
+      "Referi-me àquele caso.",
+      "Referi-me à aquele caso."
+    ],
+    "resposta": 1,
+    "explicacao": "Preposição 'a' + 'aquele' contrai: 'àquele'."
+  },
+  {
+    "id": 1038,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a frase correta.",
+    "alternativas": [
+      "Entreguei o relatório a diretora.",
+      "Entreguei o relatório à diretora.",
+      "Entreguei o relatório às diretora."
+    ],
+    "resposta": 1,
+    "explicacao": "Objeto indireto feminino com artigo → crase: 'à diretora'."
+  },
+  {
+    "id": 1039,
     "categoria": "Crase",
     "tema": "Uso da crase",
     "tipo": "multipla_escolha",
     "dificuldade": "médio",
-    "enunciado": "Assinale a alternativa em que o uso da crase está correto.",
+    "enunciado": "Marque a alternativa correta.",
     "alternativas": [
-      "Fui à escola pela manhã.",
-      "Assisti à o filme ontem.",
-      "Cheguei à umas três horas."
+      "Às vezes, chego tarde.",
+      "As vezes, chego tarde.",
+      "A vezes, chego tarde."
     ],
     "resposta": 0,
-    "explicacao": "Usa-se crase em 'à escola'; em 'assistir' (ver), o correto é 'assistir ao filme'; não se usa crase antes de numeral indefinido ('umas')."
+    "explicacao": "Locução adverbial feminina no plural: 'às vezes'."
   },
   {
-    "id": 4,
-    "categoria": "Ortografia",
-    "tema": "Por que / Por quê / Porque / Porquê",
-    "tipo": "lacuna",
-    "dificuldade": "médio",
-    "enunciado": "Complete: Não fui à festa ______ estava cansado.",
-    "resposta": ["porque"],
-    "explicacao": "Explicação/causa: usa-se 'porque' (junto, sem acento)."
-  },
-  {
-    "id": 5,
-    "categoria": "Concordância verbal",
-    "tema": "Concordância",
+    "id": 1040,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
     "tipo": "multipla_escolha",
     "dificuldade": "médio",
-    "enunciado": "Complete: Os dados do relatório ______ corretos.",
+    "enunciado": "Assinale a alternativa correta.",
     "alternativas": [
-      "está",
-      "estão",
-      "tá"
-    ],
-    "resposta": 1,
-    "explicacao": "Sujeito no plural pede verbo no plural: 'estão'."
-  },
-  {
-    "id": 6,
-    "categoria": "Pontuação",
-    "tema": "Vírgula entre sujeito e verbo",
-    "tipo": "verdadeiro_falso",
-    "dificuldade": "médio",
-    "enunciado": "É correto usar vírgula para separar sujeito e verbo.",
-    "resposta": false,
-    "explicacao": "Regra geral: não se separa sujeito e verbo por vírgula."
-  },
-  {
-    "id": 7,
-    "categoria": "Regência verbal",
-    "tema": "Assistir (ver)",
-    "tipo": "multipla_escolha",
-    "dificuldade": "médio",
-    "enunciado": "Assinale a alternativa correta quanto à regência do verbo 'assistir' (no sentido de ver).",
-    "alternativas": [
-      "Assisti o filme ontem.",
-      "Assisti ao filme ontem.",
-      "Assisti o médico ontem."
-    ],
-    "resposta": 1,
-    "explicacao": "No sentido de ver: 'assistir a' algo. Logo, 'assisti ao filme'."
-  },
-  {
-    "id": 8,
-    "categoria": "Ortografia",
-    "tema": "Mau x Mal",
-    "tipo": "multipla_escolha",
-    "dificuldade": "fácil",
-    "enunciado": "Complete: Ele acordou de ______ humor.",
-    "alternativas": [
-      "mau",
-      "mal",
-      "mál"
+      "À medida que estudamos, aprendemos mais.",
+      "A medida que estudamos, aprendemos mais.",
+      "À medida de que estudamos, aprendemos mais."
     ],
     "resposta": 0,
-    "explicacao": "'Mau' (adjetivo) opõe-se a 'bom'; 'mal' (advérbio) opõe-se a 'bem'."
+    "explicacao": "Locução conjuntiva: 'à medida que'."
   },
   {
-    "id": 9,
-    "categoria": "Ortografia",
-    "tema": "A gente x Agente",
-    "tipo": "lacuna",
-    "dificuldade": "fácil",
-    "enunciado": "Complete: ______ precisa estudar mais.",
-    "resposta": ["a gente", "A gente"],
-    "explicacao": "'A gente' (locução pronominal) = nós; 'agente' é substantivo (profissional)."
+    "id": 1041,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Assisti a peça ontem.",
+      "Assisti à peça ontem.",
+      "Assisti à a peça ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "Regência de 'assistir (ver)': exige 'a' → 'à peça'."
   },
   {
-    "id": 10,
-    "categoria": "Colocação pronominal",
-    "tema": "Próclise/Ênclise",
+    "id": 1042,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Obedecemos as regras.",
+      "Obedecemos às regras.",
+      "Obedecemos à regras."
+    ],
+    "resposta": 1,
+    "explicacao": "'Obedecer a' + plural feminino: 'às regras'."
+  },
+  {
+    "id": 1043,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto ao uso de crase, assinale a correta.",
+    "alternativas": [
+      "Fui à museu ontem.",
+      "Fui ao museu ontem.",
+      "Fui a museu ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "Palavra masculina pede 'ao' (não há crase antes de masculino)."
+  },
+  {
+    "id": 1044,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Enviei a ela o convite.",
+      "Enviei à ela o convite.",
+      "Enviei às ela o convite."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de pronomes pessoais ('ela'), não há crase."
+  },
+  {
+    "id": 1045,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Bife a milanesa.",
+      "Bife à milanesa.",
+      "Bife as milanesa."
+    ],
+    "resposta": 1,
+    "explicacao": "Expressão de modo: 'à milanesa' (à moda de)."
+  },
+  {
+    "id": 1046,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Àquela altura, já sabíamos tudo.",
+      "Aquela altura, já sabíamos tudo.",
+      "À aquela altura, já sabíamos tudo."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + demonstrativo 'aquela' → 'àquela'."
+  },
+  {
+    "id": 1047,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
     "tipo": "multipla_escolha",
     "dificuldade": "difícil",
-    "enunciado": "Assinale a frase em que a colocação pronominal está adequada à norma-padrão.",
+    "enunciado": "Assinale a alternativa correta.",
     "alternativas": [
-      "Me diga isso, por favor.",
-      "Diga-me isso, por favor.",
-      "Ele viu-me ontem."
-    ],
-    "resposta": 1,
-    "explicacao": "No imperativo afirmativo, usa-se ênclise: 'Diga-me'."
-  },
-  {
-    "id": 11,
-    "categoria": "Interpretação",
-    "tema": "Leitura",
-    "tipo": "multipla_escolha",
-    "dificuldade": "médio",
-    "texto_base": "As bibliotecas públicas desempenham papel essencial na democratização do acesso à informação, promovendo a leitura e a cidadania.",
-    "enunciado": "O tema principal do texto é:",
-    "alternativas": [
-      "A importância das bibliotecas públicas para o acesso à informação.",
-      "O financiamento privado das bibliotecas universitárias.",
-      "Os desafios da alfabetização de adultos no campo."
+      "À exceção de João, todos vieram.",
+      "A exceção de João, todos vieram.",
+      "À exceção à João, todos vieram."
     ],
     "resposta": 0,
-    "explicacao": "O texto destaca o papel das bibliotecas públicas na democratização da informação."
+    "explicacao": "Locução prepositiva feminina: 'à exceção de'."
   },
   {
-    "id": 12,
-    "categoria": "Acentuação",
-    "tema": "Tem x Têm",
+    "id": 1048,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "À vista de provas, absolveu-o.",
+      "A vista de provas, absolveu-o.",
+      "À a vista de provas, absolveu-o."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução prepositiva feminina: 'à vista de'."
+  },
+  {
+    "id": 1049,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Fez o gol à maneira de Pelé.",
+      "Fez o gol a maneira de Pelé.",
+      "Fez o gol à a maneira de Pelé."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'à maneira de' → crase obrigatória."
+  },
+  {
+    "id": 1050,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Voltei à Índia no verão.",
+      "Voltei a Índia no verão.",
+      "Voltei à Israel no verão."
+    ],
+    "resposta": 0,
+    "explicacao": "País feminino com artigo ('a Índia') → 'à Índia'; Israel não admite artigo."
+  },
+  {
+    "id": 1051,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Voltou ____ casa tarde.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Casa, no sentido de lar, sem determinante, não leva artigo: 'a casa' (sem crase)."
+  },
+  {
+    "id": 1052,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Fui ____ casa da minha avó depois do trabalho.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Com determinante ('da minha avó'), há artigo: 'à casa da minha avó'."
+  },
+  {
+    "id": 1053,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Sentei-me ____ mesa para estudar.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão fixa: 'à mesa'."
+  },
+  {
+    "id": 1054,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Ele ficou ____ disposição da equipe.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à disposição (de)'."
+  },
+  {
+    "id": 1055,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Chegamos ____ conclusão rapidamente.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'chegar à conclusão'."
+  },
+  {
+    "id": 1056,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O acesso é restrito ____ mulheres.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Preposição 'a' + artigo plural feminino 'as' → 'às'."
+  },
+  {
+    "id": 1057,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Preferimos café ____ chá.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Regência: 'preferir X a Y' pede preposição 'a' simples (sem crase)."
+  },
+  {
+    "id": 1058,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
     "tipo": "lacuna",
     "dificuldade": "médio",
-    "enunciado": "Complete: Eles ______ razão.",
-    "resposta": ["têm"],
-    "explicacao": "No plural, 'têm' leva acento (eles/elas). No singular: 'tem'."
+    "enunciado": "Complete: Preferimos esta ____quela proposta.",
+    "resposta": [
+      "àquela"
+    ],
+    "explicacao": "Preposição 'a' + demonstrativo 'aquela' → 'àquela'."
+  },
+  {
+    "id": 1059,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ele aspira ____ vaga de analista.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'aspirar a' (no sentido de almejar) + nome feminino com artigo → crase."
+  },
+  {
+    "id": 1060,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ela visa ____ promoção.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'visar a' (ter em vista) + nome feminino com artigo → crase."
+  },
+  {
+    "id": 1061,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A placa faz alusão ____ negligência.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'alusão a' + artigo feminino → 'à negligência'."
+  },
+  {
+    "id": 1062,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A pesquisa se refere ____ educação básica.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'referir-se a' + artigo feminino → crase."
+  },
+  {
+    "id": 1063,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O tema diz respeito ____ infância.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'dizer respeito a' + nome feminino com artigo → 'à infância'."
+  },
+  {
+    "id": 1064,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Chegaremos ____ 14h.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Horas determinadas pedem crase: 'às 14h'."
+  },
+  {
+    "id": 1065,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O treino vai de 8 ____ 10 horas.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Intervalo 'de... a...' usa preposição 'a' simples (sem crase)."
+  },
+  {
+    "id": 1066,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Daqui ____ pouco, partiremos.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão temporal: 'daqui a pouco' (sem crase)."
+  },
+  {
+    "id": 1067,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Viajaremos ____ noite.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina de tempo: 'à noite'."
+  },
+  {
+    "id": 1068,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Chegou ____ pressas.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Locução adverbial feminina no plural: 'às pressas'."
+  },
+  {
+    "id": 1069,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Estava ____ toa quando o vi.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução adverbial feminina: 'à toa'."
+  },
+  {
+    "id": 1070,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Fez o trabalho ____ mão.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à mão'."
+  },
+  {
+    "id": 1071,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Foi ____ pé ao trabalho.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Antes de palavra masculina ('pé'), não há crase: 'a pé'."
+  },
+  {
+    "id": 1072,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Pagará ____ prazo de 10 dias.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão com masculino: 'a prazo' (sem crase)."
+  },
+  {
+    "id": 1073,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O carro funciona ____ gasolina.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Locução instrumental com masculino: 'a gasolina' (sem crase)."
+  },
+  {
+    "id": 1074,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ele ficou ____ disposição do juiz.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à disposição de'."
+  },
+  {
+    "id": 1075,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Estamos ____ espera dos resultados.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à espera de'."
+  },
+  {
+    "id": 1076,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ele ficou ____ procura de emprego.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à procura de'."
+  },
+  {
+    "id": 1077,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O documento está ____ vista da diretoria.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução prepositiva: 'à vista de'."
+  },
+  {
+    "id": 1078,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Agiram ____ revelia do gerente.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução prepositiva feminina: 'à revelia (de)'."
+  },
+  {
+    "id": 1079,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O barco seguia ____ vela.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão com masculino: 'a vela' (sem crase)."
+  },
+  {
+    "id": 1080,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Atirou ____ queima-roupa.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à queima-roupa'."
+  },
+  {
+    "id": 1081,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a forma correta.",
+    "alternativas": [
+      "Dirigi-me a casa.",
+      "Dirigi-me à casa.",
+      "Dirigi-me à a casa."
+    ],
+    "resposta": 0,
+    "explicacao": "Casa (lar), sem determinante: 'a casa' (sem crase)."
+  },
+  {
+    "id": 1082,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Cheguei a tempo.",
+      "Cheguei à tempo.",
+      "Cheguei às tempo."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão invariável: 'a tempo' (sem crase)."
+  },
+  {
+    "id": 1083,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a frase correta.",
+    "alternativas": [
+      "Voltamos a escola.",
+      "Voltamos à escola.",
+      "Voltamos às escola."
+    ],
+    "resposta": 1,
+    "explicacao": "Verbo 'voltar a' + artigo feminino → 'à escola'."
+  },
+  {
+    "id": 1084,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Chegaremos às 14h.",
+      "Chegaremos a 14h.",
+      "Chegaremos à 14h."
+    ],
+    "resposta": 0,
+    "explicacao": "Horas marcadas: usa-se crase ('às 14h')."
+  },
+  {
+    "id": 1085,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "O relatório foi entregue à diretora.",
+      "O relatório foi entregue a diretora.",
+      "O relatório foi entregue às diretora."
+    ],
+    "resposta": 0,
+    "explicacao": "Objeto indireto feminino com artigo → 'à diretora'."
+  },
+  {
+    "id": 1086,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "O barco seguia à deriva.",
+      "O barco seguia a deriva.",
+      "O barco seguia às deriva."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução adverbial feminina: 'à deriva'."
+  },
+  {
+    "id": 1087,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Ele foi a pé.",
+      "Ele foi à pé.",
+      "Ele foi às pé."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de palavra masculina ('pé'), não há crase."
+  },
+  {
+    "id": 1088,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "O atleta treinou à tarde.",
+      "O atleta treinou a tarde.",
+      "O atleta treinou às tarde."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução adverbial feminina: 'à tarde'."
+  },
+  {
+    "id": 1089,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto à crase, assinale a correta.",
+    "alternativas": [
+      "A empresa ficou a disposição da imprensa.",
+      "A empresa ficou à disposição da imprensa.",
+      "A empresa ficou às disposição da imprensa."
+    ],
+    "resposta": 1,
+    "explicacao": "Locução: 'à disposição (da)'."
+  },
+  {
+    "id": 1090,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Conferimos os dados à luz do relatório.",
+      "Conferimos os dados a luz do relatório.",
+      "Conferimos os dados às luz do relatório."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução prepositiva: 'à luz de'."
+  },
+  {
+    "id": 1091,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a frase correta.",
+    "alternativas": [
+      "O processo correu a revelia do réu.",
+      "O processo correu à revelia do réu.",
+      "O processo correu às revelia do réu."
+    ],
+    "resposta": 1,
+    "explicacao": "Locução: 'à revelia (do)'."
+  },
+  {
+    "id": 1092,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Preferimos este projeto àquele.",
+      "Preferimos este projeto a aquele.",
+      "Preferimos este projeto à aquele."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + 'aquele' → 'àquele'."
+  },
+  {
+    "id": 1093,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Em relação a prazos, devemos ser rigorosos.",
+      "Em relação à prazos, devemos ser rigorosos.",
+      "Em relação às prazos, devemos ser rigorosos."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'em relação a' pede preposição 'a' simples; 'prazos' é masculino."
+  },
+  {
+    "id": 1094,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Quanto ao uso de crase, marque a correta.",
+    "alternativas": [
+      "Junto a parede havia um cartaz.",
+      "Junto à parede havia um cartaz.",
+      "Junto às parede havia um cartaz."
+    ],
+    "resposta": 1,
+    "explicacao": "Locução prepositiva 'junto a' + artigo feminino → 'junto à parede'."
+  },
+  {
+    "id": 1095,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Indique a forma adequada.",
+    "alternativas": [
+      "Dirigi-me a Vossa Excelência.",
+      "Dirigi-me à Vossa Excelência.",
+      "Dirigi-me às Vossa Excelência."
+    ],
+    "resposta": 0,
+    "explicacao": "Pronomes de tratamento (Vossa Excelência) não admitem artigo: sem crase."
+  },
+  {
+    "id": 1096,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "A partir de amanhã, mudaremos o horário.",
+      "À partir de amanhã, mudaremos o horário.",
+      "A partir à amanhã, mudaremos o horário."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'a partir de' usa preposição 'a' simples (sem crase)."
+  },
+  {
+    "id": 1097,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a correta.",
+    "alternativas": [
+      "Fez o gol à moda de Pelé.",
+      "Fez o gol a moda de Pelé.",
+      "Fez o gol à a moda de Pelé."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'à moda de' exige crase."
+  },
+  {
+    "id": 1098,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "O gerente aludiu àquela situação.",
+      "O gerente aludiu a aquela situação.",
+      "O gerente aludiu à aquela situação."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + 'aquela' → 'àquela'."
+  },
+  {
+    "id": 1099,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a forma correta.",
+    "alternativas": [
+      "O pesquisador fez referência à infância.",
+      "O pesquisador fez referência a infância.",
+      "O pesquisador fez referência às infância."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'fazer referência a' + artigo feminino → 'à infância'."
+  },
+  {
+    "id": 1100,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Entreguei o dossiê à própria diretora.",
+      "Entreguei o dossiê a própria diretora.",
+      "Entreguei o dossiê à a própria diretora."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + artigo feminino ('a diretora') → 'à própria diretora'."
+  },
+  {
+    "id": 1101,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Dirigiu-se ____ secretaria para assinar os papéis.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'dirigir-se a' + nome feminino com artigo → crase: 'à secretaria'."
+  },
+  {
+    "id": 1102,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Ficou ____ mercê do vento durante horas.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução prepositiva feminina: 'à mercê (de)'."
+  },
+  {
+    "id": 1103,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Teve acesso ____ internet no laboratório.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Nome feminino com artigo após a preposição 'a' → 'à internet'."
+  },
+  {
+    "id": 1104,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Chegou ____ conclusão de que precisava mudar.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'chegar à conclusão'."
+  },
+  {
+    "id": 1105,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Estamos ____ procura de voluntários.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à procura de'."
+  },
+  {
+    "id": 1106,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Descansaram ____ sombra da árvore.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à sombra (de)'."
+  },
+  {
+    "id": 1107,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Voltaremos ____ rotina amanhã.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'voltar a' + nome feminino com artigo → crase: 'à rotina'."
+  },
+  {
+    "id": 1108,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Assistimos ____ palestra do professor.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Regência: 'assistir (ver) a' + artigo → 'à palestra'."
+  },
+  {
+    "id": 1109,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Ela obedeceu ____ regras do edital.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Regência: 'obedecer a' + plural feminino → 'às regras'."
+  },
+  {
+    "id": 1110,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Fui ____ igreja com meus pais.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'ir a' + nome feminino com artigo → crase."
+  },
+  {
+    "id": 1111,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Partiremos ____ meia-noite.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Indicação de hora determinada: 'à meia-noite'."
+  },
+  {
+    "id": 1112,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A resposta é contrária ____ proposta inicial.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Adjetivo 'contrário a' + artigo → 'à proposta'."
+  },
+  {
+    "id": 1113,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Sou favorável ____ mudança.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Adjetivo 'favorável a' + artigo → 'à mudança'."
+  },
+  {
+    "id": 1114,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O parecer é relativo ____ norma técnica.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "'Relativo a' + artigo feminino → 'à norma'."
+  },
+  {
+    "id": 1115,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A equipe está propensa ____ alterações.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Adjetivo 'propenso a' + plural feminino → 'às alterações'."
+  },
+  {
+    "id": 1116,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O sensor é sensível ____ luz intensa.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Adjetivo 'sensível a' + artigo → 'à luz'."
+  },
+  {
+    "id": 1117,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O anexo faz referência ____ ata anterior.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução 'fazer referência a' + artigo → 'à ata'."
+  },
+  {
+    "id": 1118,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Ela preferiu estudar ____ descansar.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Regência: 'preferir X a Y' (preposição simples, sem crase)."
+  },
+  {
+    "id": 1119,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O projeto atende ____ necessidades da comunidade.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Verbo 'atender a' (no sentido de satisfazer) + plural feminino → 'às necessidades'."
+  },
+  {
+    "id": 1120,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O curso ocorre ____ segundas-feiras.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Frequência em dias da semana no plural: 'às segundas-feiras'."
+  },
+  {
+    "id": 1121,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Fica próximo ____ entrada principal.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Adjetivo 'próximo a' + nome feminino com artigo → 'à entrada'."
+  },
+  {
+    "id": 1122,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O relatório se refere ____quilo que foi dito.",
+    "resposta": [
+      "àquilo"
+    ],
+    "explicacao": "Preposição 'a' + pronome demonstrativo 'aquilo' → 'àquilo'."
+  },
+  {
+    "id": 1123,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Reagiu ____ altura do desafio.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'à altura (de)'."
+  },
+  {
+    "id": 1124,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: A sede fica ____ margem do rio.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Nome feminino com artigo após preposição 'a' → 'à margem'."
+  },
+  {
+    "id": 1125,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O trem chegou ____ estação central.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'chegar a' + nome feminino com artigo → 'à estação'."
+  },
+  {
+    "id": 1126,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O conselheiro se opôs ____ proposta.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'opor-se a' + nome feminino com artigo → crase."
+  },
+  {
+    "id": 1127,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: As orientações são dirigidas ____queles que ingressam.",
+    "resposta": [
+      "àqueles"
+    ],
+    "explicacao": "Preposição 'a' + 'aqueles' → 'àqueles'."
+  },
+  {
+    "id": 1128,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O time voltou ____ liderança do campeonato.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Verbo 'voltar a' + nome feminino com artigo → 'à liderança'."
+  },
+  {
+    "id": 1129,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O autor se comparou ____quela obra clássica.",
+    "resposta": [
+      "àquela"
+    ],
+    "explicacao": "Preposição 'a' + 'aquela' → 'àquela'."
+  },
+  {
+    "id": 1130,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Respondeu ____ altura, sem se exaltar.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'responder à altura' (de modo adequado)."
+  },
+  {
+    "id": 1131,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a forma correta.",
+    "alternativas": [
+      "Ficamos em frente à escola.",
+      "Ficamos em frente a escola.",
+      "Ficamos em frente às escola."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'em frente a' + artigo feminino: 'à escola'."
+  },
+  {
+    "id": 1132,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "A prova ocorrerá das 8 às 10.",
+      "A prova ocorrerá das 8 à 10.",
+      "A prova ocorrerá das 8 as 10."
+    ],
+    "resposta": 0,
+    "explicacao": "Intervalo: 'das 8 às 10' (preposição + artigo no fim do intervalo)."
+  },
+  {
+    "id": 1133,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a opção correta.",
+    "alternativas": [
+      "Ele não compareceu a reunião.",
+      "Ele não compareceu à reunião.",
+      "Ele não compareceu às reunião."
+    ],
+    "resposta": 1,
+    "explicacao": "Regência: 'comparecer a' + artigo feminino → 'à reunião'."
+  },
+  {
+    "id": 1134,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Assisti a série inteira.",
+      "Assisti à série inteira.",
+      "Assisti às série inteira."
+    ],
+    "resposta": 1,
+    "explicacao": "'Assistir (ver) a' + artigo feminino → 'à série'."
+  },
+  {
+    "id": 1135,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a correta.",
+    "alternativas": [
+      "Prefiro café à chá.",
+      "Prefiro café a chá.",
+      "Prefiro café às chá."
+    ],
+    "resposta": 1,
+    "explicacao": "Regência: 'preferir X a Y' usa preposição simples (sem crase)."
+  },
+  {
+    "id": 1136,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Chegou à Roma ontem.",
+      "Chegou a Roma ontem.",
+      "Chegou às Roma ontem."
+    ],
+    "resposta": 1,
+    "explicacao": "Cidades sem artigo: 'a Roma' (sem crase)."
+  },
+  {
+    "id": 1137,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Vou à Holanda nas férias.",
+      "Vou a Holanda nas férias.",
+      "Vou à Israel nas férias."
+    ],
+    "resposta": 0,
+    "explicacao": "País feminino com artigo ('a Holanda') → crase; Israel não admite artigo."
+  },
+  {
+    "id": 1138,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Referimo-nos àquelas metas.",
+      "Referimo-nos a aquelas metas.",
+      "Referimo-nos às aquelas metas."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + 'aquelas' → 'àquelas'."
+  },
+  {
+    "id": 1139,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Enviei o pedido a ela.",
+      "Enviei o pedido à ela.",
+      "Enviei o pedido às ela."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de pronomes pessoais (ela), não há artigo → sem crase."
+  },
+  {
+    "id": 1140,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto ao uso da crase, assinale a correta.",
+    "alternativas": [
+      "O documento está à disposição do público.",
+      "O documento está a disposição do público.",
+      "O documento está às disposição do público."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à disposição (de)'."
+  },
+  {
+    "id": 1141,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a alternativa adequada.",
+    "alternativas": [
+      "Estamos à espera de notícias.",
+      "Estamos a espera de notícias.",
+      "Estamos às espera de notícias."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à espera de'."
+  },
+  {
+    "id": 1142,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a forma correta.",
+    "alternativas": [
+      "O barco seguia à vela.",
+      "O barco seguia a vela.",
+      "O barco seguia às vela."
+    ],
+    "resposta": 1,
+    "explicacao": "Expressão instrumental com nome masculino/fixo: 'a vela' (sem crase)."
+  },
+  {
+    "id": 1143,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "Ficou a sós por alguns minutos.",
+      "Ficou à sós por alguns minutos.",
+      "Ficou às sós por alguns minutos."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão fixa: 'a sós' (sem crase)."
+  },
+  {
+    "id": 1144,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Estamos as ordens.",
+      "Estamos às ordens.",
+      "Estamos à ordens."
+    ],
+    "resposta": 1,
+    "explicacao": "Expressão: 'às ordens' (preposição + artigo plural feminino)."
+  },
+  {
+    "id": 1145,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma adequada.",
+    "alternativas": [
+      "Ela retornou à casa depois do trabalho.",
+      "Ela retornou a casa depois do trabalho.",
+      "Ela retornou às casa depois do trabalho."
+    ],
+    "resposta": 1,
+    "explicacao": "Sentido de lar, sem determinante: 'a casa' (sem crase)."
+  },
+  {
+    "id": 1146,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Quanto ao uso da crase, assinale a alternativa correta.",
+    "alternativas": [
+      "À medida que estudamos, avançamos.",
+      "A medida que estudamos, avançamos.",
+      "À medida de que estudamos, avançamos."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução conjuntiva consagrada: 'à medida que'."
+  },
+  {
+    "id": 1147,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Este acesso é relativo à internet.",
+      "Este acesso é relativo a internet.",
+      "Este acesso é relativo às internet."
+    ],
+    "resposta": 0,
+    "explicacao": "Adjetivo 'relativo a' + artigo feminino → 'à internet'."
+  },
+  {
+    "id": 1148,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "Fomos a pé ao estádio.",
+      "Fomos à pé ao estádio.",
+      "Fomos às pé ao estádio."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de palavra masculina ('pé'), não há crase."
+  },
+  {
+    "id": 1149,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "O prédio fica junto a praça.",
+      "O prédio fica junto à praça.",
+      "O prédio fica junto às praça."
+    ],
+    "resposta": 1,
+    "explicacao": "Locução 'junto a' + artigo feminino → 'junto à praça'."
+  },
+  {
+    "id": 1150,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "As entrevistas ocorrem às segundas-feiras.",
+      "As entrevistas ocorrem a segundas-feiras.",
+      "As entrevistas ocorrem à segundas-feiras."
+    ],
+    "resposta": 0,
+    "explicacao": "Frequência em dia da semana no plural: 'às segundas-feiras'."
+  },
+  {
+    "id": 1151,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O acesso fica ____ frente do prédio.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à frente (de)'."
+  },
+  {
+    "id": 1152,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Chegou ____ beira-mar ao entardecer.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à beira(-mar)'."
+  },
+  {
+    "id": 1153,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Seguiu ____ risca as orientações.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão fixa: 'à risca'."
+  },
+  {
+    "id": 1154,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O astronauta retornou ____ Terra.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Planeta com artigo: 'à Terra'."
+  },
+  {
+    "id": 1155,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Após semanas no mar, voltou ____ terra.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Sentido de solo/chão: 'a terra' (sem crase)."
+  },
+  {
+    "id": 1156,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Daqui ____ uma semana, conversaremos.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão temporal: 'daqui a' (sem crase)."
+  },
+  {
+    "id": 1157,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O expediente vai de 9 ____ 17 horas.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Intervalo: 'de... a...' (sem crase)."
+  },
+  {
+    "id": 1158,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A obra foi feita ____ semelhança do original.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à semelhança de'."
+  },
+  {
+    "id": 1159,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: ____ exceção do gerente, todos participaram.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução prepositiva: 'à exceção de'."
+  },
+  {
+    "id": 1160,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Encaminharam o pedido ____quela diretora.",
+    "resposta": [
+      "àquela"
+    ],
+    "explicacao": "Preposição 'a' + 'aquela' → 'àquela'."
+  },
+  {
+    "id": 1161,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O parecer é contrário ____ lei vigente.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Adjetivo 'contrário a' + artigo → 'à lei'."
+  },
+  {
+    "id": 1162,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O estudo se refere ____queles dados históricos.",
+    "resposta": [
+      "àqueles"
+    ],
+    "explicacao": "Preposição 'a' + 'aqueles' → 'àqueles'."
+  },
+  {
+    "id": 1163,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: O aviso é dirigido ____ quem faltou.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Antes de 'quem' não há artigo: preposição simples."
+  },
+  {
+    "id": 1164,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O texto alude ____quilo discutido.",
+    "resposta": [
+      "àquilo"
+    ],
+    "explicacao": "Preposição 'a' + 'aquilo' → 'àquilo'."
+  },
+  {
+    "id": 1165,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O voo chega ____ 6h30.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Indicação de hora marcada: 'às 6h30'."
+  },
+  {
+    "id": 1166,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: A casa fica ____ margem do rio.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Nome feminino com artigo: 'à margem'."
+  },
+  {
+    "id": 1167,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O edital é relativo ____ normas internas.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "'Relativo a' + plural feminino → 'às normas'."
+  },
+  {
+    "id": 1168,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Pagou tudo ____ vista.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Pagamento 'à vista' leva crase."
+  },
+  {
+    "id": 1169,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Saímos ____ francesa, sem alarde.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'sair à francesa'."
+  },
+  {
+    "id": 1170,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O rascunho foi feito ____ lápis.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão instrumental: 'a lápis' (sem crase)."
+  },
+  {
+    "id": 1171,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Complete: Conseguiu o resultado ____ custa de muito esforço.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Locução: 'à custa de'."
+  },
+  {
+    "id": 1172,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Mantiveram-se ____ parte, observando.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'à parte' (em separado)."
+  },
+  {
+    "id": 1173,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: Os produtos estão ____ venda.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'à venda'."
+  },
+  {
+    "id": 1174,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: As sobremesas ficam ____ escolha do cliente.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'à escolha (de)'."
+  },
+  {
+    "id": 1175,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: O projeto atende ____ demandas dos moradores.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Verbo 'atender a' (satisfazer) + plural feminino."
+  },
+  {
+    "id": 1176,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O documento foi entregue ____ senhora responsável.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Preposição 'a' + artigo feminino → crase."
+  },
+  {
+    "id": 1177,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Encaminhe a solicitação ____quele setor.",
+    "resposta": [
+      "àquele"
+    ],
+    "explicacao": "Preposição 'a' + 'aquele' → 'àquele'."
+  },
+  {
+    "id": 1178,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O evento ocorrerá ____ sextas-feiras.",
+    "resposta": [
+      "às"
+    ],
+    "explicacao": "Frequência no plural: 'às sextas-feiras'."
+  },
+  {
+    "id": 1179,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Complete: Voltou ____ tona um assunto antigo.",
+    "resposta": [
+      "à"
+    ],
+    "explicacao": "Expressão: 'vir/voltar à tona'."
+  },
+  {
+    "id": 1180,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Complete: O quadro foi pintado ____ óleo.",
+    "resposta": [
+      "a"
+    ],
+    "explicacao": "Expressão de modo/material: 'a óleo' (sem crase)."
+  },
+  {
+    "id": 1181,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "De segunda a sexta, trabalhamos normalmente.",
+      "De segunda à sexta, trabalhamos normalmente.",
+      "De segunda às sexta, trabalhamos normalmente."
+    ],
+    "resposta": 0,
+    "explicacao": "Intervalo 'de... a...' sem crase."
+  },
+  {
+    "id": 1182,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "O almoço será ao meio-dia.",
+      "O almoço será às meio-dia.",
+      "O almoço será à meio-dia."
+    ],
+    "resposta": 0,
+    "explicacao": "Masculino: 'ao meio-dia' (não há crase)."
+  },
+  {
+    "id": 1183,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Escreva a lápis.",
+      "Escreva à lápis.",
+      "Escreva às lápis."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão instrumental com masculino: 'a lápis'."
+  },
+  {
+    "id": 1184,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Fui à festa ontem.",
+      "Fui a festa ontem.",
+      "Fui às festa ontem."
+    ],
+    "resposta": 0,
+    "explicacao": "Verbo 'ir a' + artigo feminino → crase ('à festa')."
+  },
+  {
+    "id": 1185,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto ao uso da crase, marque a correta.",
+    "alternativas": [
+      "Voltamos a casa cedo.",
+      "Voltamos à casa cedo.",
+      "Voltamos às casa cedo."
+    ],
+    "resposta": 0,
+    "explicacao": "Casa (lar) sem determinante: 'a casa' (sem crase)."
+  },
+  {
+    "id": 1186,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "Chegamos à beira do lago.",
+      "Chegamos a beira do lago.",
+      "Chegamos às beira do lago."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à beira (de)'."
+  },
+  {
+    "id": 1187,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma adequada.",
+    "alternativas": [
+      "A encomenda será entregue a domicílio.",
+      "A encomenda será entregue à domicílio.",
+      "A encomenda será entregue às domicílio."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão: 'a domicílio' (sem crase)."
+  },
+  {
+    "id": 1188,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "A reunião será às 9h.",
+      "A reunião será à 9h.",
+      "A reunião será as 9h."
+    ],
+    "resposta": 0,
+    "explicacao": "Hora determinada: 'às 9h'."
+  },
+  {
+    "id": 1189,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "O documento ficou à disposição da comissão.",
+      "O documento ficou a disposição da comissão.",
+      "O documento ficou às disposição da comissão."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à disposição (de)'."
+  },
+  {
+    "id": 1190,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "Saímos à francesa.",
+      "Saímos a francesa.",
+      "Saímos às francesa."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão: 'à francesa'."
+  },
+  {
+    "id": 1191,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Ele estava à toa.",
+      "Ele estava a toa.",
+      "Ele estava às toa."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão: 'à toa'."
+  },
+  {
+    "id": 1192,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto à crase, assinale a correta.",
+    "alternativas": [
+      "Referi-me àqueles dados.",
+      "Referi-me a aqueles dados.",
+      "Referi-me às aqueles dados."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + 'aqueles' → 'àqueles'."
+  },
+  {
+    "id": 1193,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "O processo correu à revelia do réu.",
+      "O processo correu a revelia do réu.",
+      "O processo correu às revelia do réu."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à revelia (de)'."
+  },
+  {
+    "id": 1194,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Preferimos este plano àquele.",
+      "Preferimos este plano a aquele.",
+      "Preferimos este plano à aquele."
+    ],
+    "resposta": 0,
+    "explicacao": "Preposição 'a' + demonstrativo 'aquele' → 'àquele'."
+  },
+  {
+    "id": 1195,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Estamos à espera de novidades.",
+      "Estamos a espera de novidades.",
+      "Estamos às espera de novidades."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução: 'à espera de'."
+  },
+  {
+    "id": 1196,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a correta.",
+    "alternativas": [
+      "À medida que estudamos, avançamos.",
+      "A medida que estudamos, avançamos.",
+      "À medida de que estudamos, avançamos."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução conjuntiva: 'à medida que'."
+  },
+  {
+    "id": 1197,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a opção correta.",
+    "alternativas": [
+      "Pagaremos à vista.",
+      "Pagaremos a vista.",
+      "Pagaremos às vista."
+    ],
+    "resposta": 0,
+    "explicacao": "Expressão de pagamento: 'à vista'."
+  },
+  {
+    "id": 1198,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Ele foi a pé.",
+      "Ele foi à pé.",
+      "Ele foi às pé."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de palavra masculina ('pé'), não há crase."
+  },
+  {
+    "id": 1199,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Quanto ao uso da crase, marque a correta.",
+    "alternativas": [
+      "Em relação a prazos, seja rigoroso.",
+      "Em relação à prazos, seja rigoroso.",
+      "Em relação às prazos, seja rigoroso."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução 'em relação a' + masculino ('prazos') → sem crase."
+  },
+  {
+    "id": 1200,
+    "categoria": "Crase",
+    "tema": "Uso da crase",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "As aulas ocorrem às terças-feiras.",
+      "As aulas ocorrem a terças-feiras.",
+      "As aulas ocorrem à terças-feiras."
+    ],
+    "resposta": 0,
+    "explicacao": "Frequência em dia da semana (plural): 'às terças-feiras'."
   }
 ]

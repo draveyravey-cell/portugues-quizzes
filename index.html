@@ -1,185 +1,200 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Exercícios de Português</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta name="color-scheme" content="light dark" />
-    <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
+  <title>Exercícios de Português</title>
 
-    <!-- Evita flash de tema -->
-    <script>
-      (function () {
-        try {
-          const saved = localStorage.getItem("theme");
-          const prefersDark =
-            window.matchMedia &&
-            window.matchMedia("(prefers-color-scheme: dark)").matches;
-          const theme = saved || (prefersDark ? "dark" : "light");
-          document.documentElement.setAttribute("data-theme", theme);
-        } catch (e) {}
-      })();
-    </script>
+  <meta name="color-scheme" content="light dark" />
+  <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
 
-    <link rel="stylesheet" href="assets/css/styles.css" />
-  </head>
-  <body>
-    <!-- Skip link -->
-    <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+  <!-- Evita flash de tema -->
+  <script>
+    (function () {
+      try {
+        const saved = localStorage.getItem("theme");
+        const prefersDark =
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const theme = saved || (prefersDark ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", theme);
+      } catch (e) { }
+    })();
+  </script>
 
-    <header class="topbar">
-      <div class="container topbar__inner">
-        <div class="brand">Português Prático</div>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
 
-        <nav class="nav" aria-label="Navegação principal">
-          <a href="#inicio">Início</a>
-          <a href="#exercicios">Exercícios</a>
-          <a href="#historico">Histórico</a>
-          <a href="#editor">Editor</a>
-          <a href="#sobre">Sobre</a>
-        </nav>
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
 
-        <div class="actions">
-          <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
-            <span class="theme-icon" aria-hidden="true">🌙</span>
-          </button>
-        </div>
+  <header class="topbar">
+    <div class="container topbar__inner">
+      <div class="brand">Português Prático</div>
+
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#exercicios">Exercícios</a>
+        <a href="#historico">Histórico</a>
+        <a href="#editor">Editor</a>
+        <a href="#sobre">Sobre</a>
+      </nav>
+
+      <div class="actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
       </div>
-    </header>
-
-    <main class="container">
-      <section class="hero" id="inicio">
-        <h1>Exercícios de Português</h1>
-        <p>Pratique ortografia, acentuação, crase, concordância e muito mais. 🚀</p>
-      </section>
-
-      <section class="controls" id="exercicios">
-        <div class="controls__row">
-          <label for="busca" class="sr-only">Buscar exercícios</label>
-          <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..." />
-          <span class="hint">Dica: experimente “crase”, “acentuação”, “por que”...</span>
-        </div>
-
-        <div class="controls__row controls__row--filters">
-          <div class="filters">
-            <label for="f-categoria" class="sr-only">Filtrar por categoria</label>
-            <select id="f-categoria" aria-label="Filtrar por categoria">
-              <option value="all">Todas as categorias</option>
-            </select>
-
-            <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
-            <select id="f-dificuldade" aria-label="Filtrar por dificuldade">
-              <option value="all">Todas as dificuldades</option>
-            </select>
-
-            <button id="f-clear" class="button" type="button" title="Limpar filtros e busca">Limpar</button>
-          </div>
-        </div>
-      </section>
-
-      <section class="lista">
-        <h2>Lista de questões</h2>
-        <div id="msg" class="msg" aria-live="polite"></div>
-        <div id="lista-questoes" class="grid"></div>
-      </section>
-
-      <section id="historico" class="history">
-        <h2>Histórico de estudos</h2>
-        <p class="hint">Seus dados ficam salvos apenas no seu navegador (local).</p>
-
-        <div id="hist-stats" class="stats-grid"></div>
-
-        <div class="history__actions">
-          <input id="hist-file" type="file" accept="application/json" hidden />
-          <button id="hist-export" class="button">Exportar JSON</button>
-          <button id="hist-export-csv" class="button">Exportar CSV</button>
-          <button id="hist-import" class="button">Importar JSON</button>
-          <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
-        </div>
-
-        <div class="history__list">
-          <h3>Tentativas recentes</h3>
-          <div id="hist-attempts"></div>
-        </div>
-
-        <div class="history__sessions">
-          <h3>Sessões</h3>
-          <div id="hist-sessions"></div>
-        </div>
-
-        <div class="history__perq">
-          <h3>Estatísticas por questão</h3>
-          <div id="hist-perq"></div>
-        </div>
-      </section>
-
-      <section id="editor" class="editor">
-        <h2>Editor de exercícios (JSON)</h2>
-        <p class="hint">
-          Edite e valide o JSON dos exercícios. Você pode “Aplicar (override)” para pré-visualizar no site sem alterar o arquivo no servidor.
-        </p>
-
-        <div class="editor__actions">
-          <input id="editor-file" type="file" accept="application/json" hidden />
-          <button id="ed-load-server" class="button" type="button" title="Carregar data/exercicios.json do servidor">Carregar do servidor</button>
-          <button id="ed-load-file" class="button" type="button" title="Carregar de um arquivo local">Carregar arquivo…</button>
-          <button id="ed-validate" class="button" type="button" title="Validar e formatar JSON">Validar/Formatar</button>
-          <span class="editor__spacer"></span>
-          <button id="ed-apply" class="button primary" type="button" title="Aplicar override local (preview)">Aplicar (override)</button>
-          <button id="ed-disable" class="button" type="button" title="Desativar override">Desativar override</button>
-          <button id="ed-clear" class="button" type="button" title="Limpar override do navegador">Limpar override</button>
-          <button id="ed-download" class="button" type="button" title="Baixar JSON atual">Baixar JSON</button>
-        </div>
-
-        <div class="editor__status" id="ed-status" aria-live="polite"></div>
-
-        <div class="editor__wrap">
-          <label for="editor-json" class="sr-only">Conteúdo do JSON</label>
-          <textarea id="editor-json" spellcheck="false" aria-label="Conteúdo do JSON dos exercícios"></textarea>
-        </div>
-
-        <div id="editor-validation" class="validation"></div>
-      </section>
-    </main>
-
-    <footer class="footer" id="sobre">
-      <div class="container">
-        <p>Feito para estudar Português. Interface e código em evolução.</p>
-      </div>
-    </footer>
-
-    <!-- Player (modal) -->
-    <div id="player-overlay" class="overlay hidden" aria-hidden="true">
-      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="player-title" aria-describedby="player-desc">
-        <header class="modal__header">
-          <h2 id="player-title">Responder exercício</h2>
-          <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
-        </header>
-
-        <div class="modal__body" id="player-content">
-          <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
-        </div>
-
-        <footer class="modal__footer">
-          <div class="feedback" id="player-feedback" aria-live="polite"></div>
-          <div class="modal__actions">
-            <button id="player-prev" class="button" type="button">Anterior</button>
-            <button id="player-next" class="button" type="button">Próxima</button>
-            <button id="player-finish" class="button" type="button">Finalizar</button>
-            <button id="player-verify" class="button primary" type="button" disabled>Verificar</button>
-          </div>
-        </footer>
-      </section>
     </div>
+  </header>
 
-    <!-- Ordem dos scripts: Store -> A11y -> Player -> History -> Editor -> App -->
-    <script src="assets/js/storage.js" defer></script>
-    <script src="assets/js/a11y.js" defer></script>
-    <script src="assets/js/player.js" defer></script>
-    <script src="assets/js/history.js" defer></script>
-    <script src="assets/js/editor.js" defer></script>
-    <script src="assets/js/app.js" defer></script>
-  </body>
+  <main class="container">
+    <section class="hero" id="inicio">
+      <h1>Exercícios de Português</h1>
+      <p>Pratique ortografia, acentuação, crase, concordância e muito mais. 🚀</p>
+    </section>
+
+    <section class="controls" id="exercicios">
+      <div class="controls__row">
+        <label for="busca" class="sr-only">Buscar exercícios</label>
+        <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..." />
+        <span class="hint">Dica: experimente “crase”, “acentuação”, “por que”...</span>
+      </div>
+
+      <div class="controls__row controls__row--filters">
+        <div class="filters">
+          <label for="f-categoria" class="sr-only">Filtrar por categoria</label>
+          <select id="f-categoria" aria-label="Filtrar por categoria">
+            <option value="all">Todas as categorias</option>
+          </select>
+
+          <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
+          <select id="f-dificuldade" aria-label="Filtrar por dificuldade">
+            <option value="all">Todas as dificuldades</option>
+          </select>
+
+          <button id="f-clear" class="button" type="button" title="Limpar filtros e busca">Limpar</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="lista">
+      <h2>Lista de questões</h2>
+      <div id="msg" class="msg" aria-live="polite"></div>
+
+      <!-- Paginação (topo) -->
+      <div id="pager-top" class="pager" aria-label="Paginação de exercícios"></div>
+
+      <div id="lista-questoes" class="grid"></div>
+
+      <!-- Paginação (rodapé) -->
+      <div id="pager-bottom" class="pager" aria-label="Paginação de exercícios"></div>
+    </section>
+
+    <section id="historico" class="history">
+      <h2>Histórico de estudos</h2>
+      <p class="hint">Seus dados ficam salvos apenas no seu navegador (local).</p>
+
+      <div id="hist-stats" class="stats-grid"></div>
+
+      <div class="history__actions">
+        <input id="hist-file" type="file" accept="application/json" hidden />
+        <button id="hist-export" class="button">Exportar JSON</button>
+        <button id="hist-export-csv" class="button">Exportar CSV</button>
+        <button id="hist-import" class="button">Importar JSON</button>
+        <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
+      </div>
+
+      <div class="history__list">
+        <h3>Tentativas recentes</h3>
+        <div id="hist-attempts"></div>
+      </div>
+
+      <div class="history__sessions">
+        <h3>Sessões</h3>
+        <div id="hist-sessions"></div>
+      </div>
+
+      <div class="history__perq">
+        <h3>Estatísticas por questão</h3>
+        <div id="hist-perq"></div>
+      </div>
+    </section>
+
+    <section id="editor" class="editor">
+      <h2>Editor de exercícios (JSON)</h2>
+      <p class="hint">
+        Edite e valide o JSON dos exercícios. Você pode “Aplicar (override)” para pré-visualizar no site sem alterar o
+        arquivo no servidor.
+      </p>
+
+      <div class="editor__actions">
+        <input id="editor-file" type="file" accept="application/json" hidden />
+        <button id="ed-load-server" class="button" type="button"
+          title="Carregar data/exercicios.json do servidor">Carregar do servidor</button>
+        <button id="ed-load-file" class="button" type="button" title="Carregar de um arquivo local">Carregar
+          arquivo…</button>
+        <button id="ed-validate" class="button" type="button" title="Validar e formatar JSON">Validar/Formatar</button>
+        <span class="editor__spacer"></span>
+        <button id="ed-apply" class="button primary" type="button" title="Aplicar override local (preview)">Aplicar
+          (override)</button>
+        <button id="ed-disable" class="button" type="button" title="Desativar override">Desativar override</button>
+        <button id="ed-clear" class="button" type="button" title="Limpar override do navegador">Limpar override</button>
+        <button id="ed-download" class="button" type="button" title="Baixar JSON atual">Baixar JSON</button>
+      </div>
+
+      <div class="editor__status" id="ed-status" aria-live="polite"></div>
+
+      <div class="editor__wrap">
+        <label for="editor-json" class="sr-only">Conteúdo do JSON</label>
+        <textarea id="editor-json" spellcheck="false" aria-label="Conteúdo do JSON dos exercícios"></textarea>
+      </div>
+
+      <div id="editor-validation" class="validation"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="sobre">
+    <div class="container">
+      <p>Feito para estudar Português. Interface e código em evolução.</p>
+    </div>
+  </footer>
+
+  <!-- Player (modal) -->
+  <div id="player-overlay" class="overlay hidden" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="player-title"
+      aria-describedby="player-desc">
+      <header class="modal__header">
+        <h2 id="player-title">Responder exercício</h2>
+        <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+      </header>
+
+      <div class="modal__body" id="player-content">
+        <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
+      </div>
+
+      <footer class="modal__footer">
+        <div class="feedback" id="player-feedback" aria-live="polite"></div>
+        <div class="modal__actions">
+          <button id="player-prev" class="button" type="button">Anterior</button>
+          <button id="player-next" class="button" type="button">Próxima</button>
+          <button id="player-finish" class="button" type="button">Finalizar</button>
+          <button id="player-verify" class="button primary" type="button" disabled>Verificar</button>
+        </div>
+      </footer>
+    </section>
+  </div>
+
+  <!-- Ordem dos scripts: Store -> A11y -> Player -> History -> Editor -> App -->
+  <script src="assets/js/storage.js" defer></script>
+  <script src="assets/js/a11y.js" defer></script>
+  <script src="assets/js/player.js" defer></script>
+  <script src="assets/js/history.js" defer></script>
+  <script src="assets/js/editor.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+</body>
+
 </html>
