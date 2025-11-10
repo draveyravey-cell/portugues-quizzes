@@ -789,3 +789,41 @@ body.modal-open {
     justify-content: center;
   }
 }
+
+/* ===== Form (Auth) ===== */
+.form {
+  display: grid;
+  gap: .8rem;
+}
+
+.form-row {
+  display: grid;
+  gap: .35rem;
+}
+
+.form-label {
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+.form-input {
+  width: 100%;
+  min-height: 42px;
+  padding: .6rem .8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  outline: none;
+}
+
+.form-input:focus {
+  border-color: color-mix(in oklab, var(--primary) 60%, var(--border));
+}
+
+.form-actions {
+  display: flex;
+  gap: .6rem;
+  align-items: center;
+}

@@ -9,7 +9,16 @@
 
   <meta name="color-scheme" content="light dark" />
   <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
-
+  <!-- Config do app (preencha com as chaves do seu projeto) -->
+  <script>
+    window.APP_CONFIG = {
+      authProvider: "supabase",
+      supabaseUrl: "https://gyyoustzoasdytxflwoc.supabase.co",
+      supabaseAnonKey: "SeyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imd5eW91c3R6b2FzZHl0eGZsd29jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjI3OTkyNTQsImV4cCI6MjA3ODM3NTI1NH0.SvkebZ9pxqYhzzY9Zeu0EOGzA6-vFXb0uQ6DbpmRi4Y"
+    };
+  </script>
+  <!-- SDK Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <!-- Evita flash de tema -->
   <script>
     (function () {
@@ -47,6 +56,12 @@
         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
           <span class="theme-icon" aria-hidden="true">🌙</span>
         </button>
+      </div>
+      <div class="actions">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
+          <span class="theme-icon" aria-hidden="true">🌙</span>
+        </button>
+        <button id="account-btn" class="icon-btn" type="button" aria-label="Conta">👤</button>
       </div>
     </div>
   </header>
@@ -154,6 +169,45 @@
       </div>
 
       <div id="editor-validation" class="validation"></div>
+      <!-- Auth (modal) -->
+      <div id="auth-overlay" class="overlay hidden" aria-hidden="true">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"
+          aria-describedby="auth-desc">
+          <header class="modal__header">
+            <h2 id="auth-title">Entrar</h2>
+            <button id="auth-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+          </header>
+          <div class="modal__body">
+            <p id="auth-desc" class="sr-only">Entre com e-mail e senha ou crie uma conta.</p>
+            <div class="form">
+              <div class="form-row">
+                <label class="form-label" for="auth-email">E-mail</label>
+                <input id="auth-email" class="form-input" type="email" autocomplete="email"
+                  placeholder="voce@exemplo.com" />
+              </div>
+              <div class="form-row">
+                <label class="form-label" for="auth-pass">Senha</label>
+                <input id="auth-pass" class="form-input" type="password" autocomplete="current-password"
+                  placeholder="••••••••" />
+              </div>
+              <div class="form-row form-actions">
+                <button id="auth-login" class="button primary" type="button">Entrar</button>
+                <button id="auth-signup" class="button" type="button">Criar conta</button>
+              </div>
+              <div id="auth-msg" class="msg" aria-live="polite"></div>
+            </div>
+          </div>
+          <footer class="modal__footer">
+            <div class="pager__size">
+              <span class="hint">Se preferir, continue como visitante. Seus dados ficam no navegador.</span>
+            </div>
+            <div class="modal__actions">
+              <button id="auth-logout" class="button" type="button" hidden>Sair</button>
+              <button id="auth-sync" class="button" type="button" hidden>Sincronizar agora</button>
+            </div>
+          </footer>
+        </section>
+      </div>
     </section>
   </main>
 
@@ -194,6 +248,8 @@
   <script src="assets/js/player.js" defer></script>
   <script src="assets/js/history.js" defer></script>
   <script src="assets/js/editor.js" defer></script>
+  <script src="assets/js/auth.js" defer></script>
+  <script src="assets/js/sync.js" defer></script>
   <script src="assets/js/app.js" defer></script>
 </body>
 
