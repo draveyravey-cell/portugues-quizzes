@@ -220,7 +220,7 @@ function popularFiltros(questoes) {
 }
 function renderLista() {
   const items = applyFilters(state.questoes);
-  viewItems = items; // mantém a visão atual para sequência
+  viewItems = items;
 
   if (!items.length) {
     els.lista.innerHTML = "";
@@ -309,9 +309,7 @@ function applyFilters(lista) {
     return true;
   });
 }
-function setMensagem(txt) {
-  if (els.msg) els.msg.textContent = txt || "";
-}
+function setMensagem(txt) { if (els.msg) els.msg.textContent = txt || ""; }
 
 /* ================== Utils ================== */
 function tipoLabel(tipo) {

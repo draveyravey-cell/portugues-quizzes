@@ -88,7 +88,10 @@
         <div id="hist-stats" class="stats-grid"></div>
 
         <div class="history__actions">
+          <input id="hist-file" type="file" accept="application/json" hidden />
           <button id="hist-export" class="button">Exportar JSON</button>
+          <button id="hist-export-csv" class="button">Exportar CSV</button>
+          <button id="hist-import" class="button">Importar JSON</button>
           <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
         </div>
 
@@ -97,11 +100,11 @@
           <div id="hist-attempts"></div>
         </div>
 
-        <!-- Espaços reservados para a 7.2 -->
         <div class="history__sessions">
           <h3>Sessões</h3>
           <div id="hist-sessions"></div>
         </div>
+
         <div class="history__perq">
           <h3>Estatísticas por questão</h3>
           <div id="hist-perq"></div>
@@ -125,7 +128,6 @@
 
         <div class="modal__body" id="player-content">
           <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
-          <!-- conteúdo gerado via JS -->
         </div>
 
         <footer class="modal__footer">

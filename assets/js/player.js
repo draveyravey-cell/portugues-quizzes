@@ -66,19 +66,16 @@
 
   /* ========= APIs ========= */
 
-  // Abre exercício único (sem sequência)
   function open(q, lastTrigger = null) {
     st.seq = null;
     openInternal(q, lastTrigger);
-    updateNavUI(); // esconde botões de navegação
+    updateNavUI();
   }
 
-  // Inicia sequência (lista atual filtrada) no índice informado
   function startSequence(list, startIndex = 0, lastTrigger = null, context = null) {
     const arr = Array.isArray(list) ? list.filter(Boolean) : [];
     const idx = clamp(startIndex, 0, Math.max(arr.length - 1, 0));
 
-    // Cria sessão na Store
     const sessionId = window.Store?.newSession({
       filters: context?.filters || null,
       questionIds: (arr || []).map(q => q.id)
@@ -114,7 +111,6 @@
       els.verify.dataset.mode = "verify";
     }
 
-    // Devolve foco para o botão que abriu
     if (st.lastTrigger && typeof st.lastTrigger.focus === "function") {
       st.lastTrigger.focus();
       st.lastTrigger = null;
@@ -153,7 +149,6 @@
     const wrap = document.createElement("div");
     wrap.className = "player__inner";
 
-    // Progresso (se houver sequência)
     if (st.seq && st.seq.list && st.seq.list.length) {
       wrap.appendChild(renderProgressHeader());
     }
@@ -342,7 +337,6 @@
     st.corrigido = true;
     st.correta = ok;
 
-    // Salva resultado na sequência
     if (st.seq && st.q && st.q.id != null) {
       st.seq.results.set(String(st.q.id), {
         selected: st.selecionada,
@@ -351,7 +345,6 @@
       });
     }
 
-    // Store: registra tentativa
     window.Store?.recordAttempt({
       sessionId: st.seq?.sessionId || null,
       question: q,
@@ -359,7 +352,6 @@
       correct: ok
     });
 
-    // Feedback
     if (els.feedback) {
       els.feedback.className = "feedback " + (ok ? "ok" : "err");
       const expl = q.explicacao ? ` ${q.explicacao}` : "";
@@ -440,7 +432,6 @@
     st.corrigido = false;
     st.correta = false;
 
-    // Finaliza sessão na Store com snapshot dos resultados
     if (st.seq?.sessionId) {
       const resultsArray = Array.from(st.seq.results.entries()).map(([qid, r]) => ({
         id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo
@@ -460,7 +451,6 @@
     const wrap = document.createElement("div");
     wrap.className = "player__summary";
 
-    // Progresso total (barra cheia)
     const prog = renderProgressHeader(total, total);
     wrap.appendChild(prog);
 
@@ -550,12 +540,10 @@
     els.close?.focus();
   }
 
-  // Comparação para lacuna (case-insensitive, trim, colapsa espaços; mantém acentos)
   function normText(s) {
     return String(s || "").toLowerCase().trim().replace(/\s+/g, " ");
   }
   function eqText(a, b) { return normText(a) === normText(b); }
-
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
 
   window.Player = { init, open, close, startSequence };

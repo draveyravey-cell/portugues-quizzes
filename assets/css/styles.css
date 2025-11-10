@@ -1,4 +1,4 @@
-/* Tema + layout + filtros + player + progresso + histórico (7.1) */
+/* Tema + layout + filtros + player + progresso + histórico (7.2) */
 
 :root{
   scroll-behavior: smooth;
@@ -66,10 +66,7 @@ body{
   padding: .8rem 0;
   min-height: 56px;
 }
-.brand{
-  font-weight: 700;
-  letter-spacing: .4px;
-}
+.brand{ font-weight: 700; letter-spacing: .4px; }
 
 /* Navegação principal */
 .nav{
@@ -106,16 +103,11 @@ body{
 }
 
 .hero{ padding: 2.2rem 0 1rem; }
-.hero h1{
-  margin: 0 0 .2rem 0;
-  font-size: clamp(1.6rem, 2.2vw + 1rem, 2.2rem);
-}
+.hero h1{ margin: 0 0 .2rem 0; font-size: clamp(1.6rem, 2.2vw + 1rem, 2.2rem); }
 .hero p{ color: var(--muted); margin:0; }
 
 .controls{ padding: .8rem 0 0; }
-.controls__row{
-  display:flex; align-items:center; gap:.8rem; flex-wrap:wrap;
-}
+.controls__row{ display:flex; align-items:center; gap:.8rem; flex-wrap:wrap; }
 .controls input[type="search"]{
   flex: 1 1 360px;
   padding: .8rem 1rem;
@@ -173,10 +165,7 @@ body{
 .tag.primary{ border-color: color-mix(in oklab, var(--primary) 60%, var(--border)); color: var(--primary-2); }
 .tag.warn{ border-color: color-mix(in oklab, var(--warn) 60%, var(--border)); color: var(--warn); }
 .tag.ok{ border-color: color-mix(in oklab, var(--ok) 60%, var(--border)); color: var(--ok); }
-.card h3{
-  margin:.2rem 0 .2rem;
-  font-size: 1rem;
-}
+.card h3{ margin:.2rem 0 .2rem; font-size: 1rem; }
 .card p{ margin:0; color: var(--muted); }
 .card .actions{ margin-top:auto; display:flex; gap:.6rem; }
 
@@ -189,10 +178,7 @@ body{
   border-radius: 10px;
   padding: .6rem .8rem;
 }
-.button.primary{
-  border-color: var(--primary);
-  color: var(--primary-2);
-}
+.button.primary{ border-color: var(--primary); color: var(--primary-2); }
 .button[disabled]{ cursor: not-allowed; opacity: .7; }
 
 /* Footer */
@@ -205,9 +191,7 @@ body{
 }
 
 /* Alinhamento da rolagem */
-section[id], footer#sobre{
-  scroll-margin-top: calc(var(--header-h) + 12px);
-}
+section[id], footer#sobre{ scroll-margin-top: calc(var(--header-h) + 12px); }
 
 /* Acessibilidade */
 .sr-only{
@@ -217,7 +201,6 @@ section[id], footer#sobre{
 
 /* ===== Player (modal) ===== */
 body.modal-open { overflow: hidden; }
-
 .overlay{
   position: fixed; inset: 0;
   background: rgba(0,0,0,.45);
@@ -226,7 +209,6 @@ body.modal-open { overflow: hidden; }
   z-index: 1000;
 }
 .overlay.hidden{ display: none; }
-
 .modal{
   width: min(720px, 92vw);
   max-height: 86vh;
@@ -248,7 +230,6 @@ body.modal-open { overflow: hidden; }
   border-top: 1px solid var(--border);
   display:flex; align-items:center; justify-content:space-between; gap: .8rem; flex-wrap: wrap;
 }
-
 .texto-base{
   margin: .2rem 0 .4rem; padding: .8rem 1rem;
   background: color-mix(in oklab, var(--primary) 6%, transparent);
@@ -267,27 +248,16 @@ body.modal-open { overflow: hidden; }
   cursor: pointer;
 }
 .option:hover{ border-color: color-mix(in oklab, var(--primary) 40%, var(--border)); }
-.option.is-selected{
-  border-color: var(--primary);
-  background: color-mix(in oklab, var(--primary) 12%, transparent);
-}
-.option.is-correct{
-  border-color: var(--ok);
-  background: color-mix(in oklab, var(--ok) 14%, transparent);
-}
-.option.is-wrong{
-  border-color: var(--err);
-  background: color-mix(in oklab, var(--err) 12%, transparent);
-}
+.option.is-selected{ border-color: var(--primary); background: color-mix(in oklab, var(--primary) 12%, transparent); }
+.option.is-correct{ border-color: var(--ok); background: color-mix(in oklab, var(--ok) 14%, transparent); }
+.option.is-wrong{ border-color: var(--err); background: color-mix(in oklab, var(--err) 12%, transparent); }
 .option input{ margin-top:.2rem; }
 
 .feedback{ min-height: 1.4rem; }
 .feedback.ok{ color: var(--ok); }
 .feedback.err{ color: var(--err); }
 
-.modal__actions{
-  display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; justify-content:flex-end;
-}
+.modal__actions{ display:flex; flex-wrap:wrap; gap:.6rem; align-items:center; justify-content:flex-end; }
 .modal__actions .button[disabled]{ opacity:.6; cursor:not-allowed; }
 
 /* ===== Player: lacuna e V/F ===== */
@@ -304,65 +274,62 @@ body.modal-open { overflow: hidden; }
   box-shadow: var(--shadow);
   outline: none;
 }
-.lacuna-input:focus{
-  border-color: color-mix(in oklab, var(--primary) 60%, var(--border));
-}
-.lacuna-input.is-correct{
-  border-color: var(--ok);
-  background: color-mix(in oklab, var(--ok) 14%, transparent);
-}
-.lacuna-input.is-wrong{
-  border-color: var(--err);
-  background: color-mix(in oklab, var(--err) 12%, transparent);
-}
+.lacuna-input:focus{ border-color: color-mix(in oklab, var(--primary) 60%, var(--border)); }
+.lacuna-input.is-correct{ border-color: var(--ok); background: color-mix(in oklab, var(--ok) 14%, transparent); }
+.lacuna-input.is-wrong{ border-color: var(--err); background: color-mix(in oklab, var(--err) 12%, transparent); }
 
 /* ===== Progresso / Navegação ===== */
-.progress{
-  display: grid;
-  gap: .4rem;
-}
+.progress{ display: grid; gap: .4rem; }
 .progress__track{
-  width: 100%;
-  height: 6px;
-  border-radius: 999px;
+  width: 100%; height: 6px; border-radius: 999px;
   background: color-mix(in oklab, var(--border) 80%, transparent);
   overflow: hidden;
 }
 .progress__bar{
-  height: 100%;
-  width: 0%;
-  background: var(--primary);
-  border-radius: 999px;
-  transition: width .25s ease;
+  height: 100%; width: 0%; background: var(--primary);
+  border-radius: 999px; transition: width .25s ease;
 }
-.progress__label{
-  color: var(--muted);
-  font-size: .9rem;
-}
+.progress__label{ color: var(--muted); font-size: .9rem; }
 
 /* ===== Histórico (7.1) ===== */
 .history{ padding: 1rem 0 2rem; }
 .stats-grid{
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin: .8rem 0 1.2rem;
+  gap: 1rem; margin: .8rem 0 1.2rem;
 }
 .stat-card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 1rem;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: var(--radius); box-shadow: var(--shadow); padding: 1rem;
 }
 .stat-card .stat-label{ color: var(--muted); font-size:.9rem; }
 .stat-card .stat-value{ font-size: 1.4rem; font-weight: 700; margin-top:.3rem; }
-
 .history__actions{
   display:flex; gap:.6rem; flex-wrap:wrap; justify-content:flex-end; margin-bottom: .8rem;
 }
 #hist-attempts .empty{ color: var(--muted); }
 .history__list .options{ margin-top:.6rem; }
+
+/* ===== Histórico (7.2) ===== */
+.table{
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: .6rem;
+}
+.table th, .table td{
+  padding: .6rem .4rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+.table th{ color: var(--muted); font-weight: 600; }
+.badge{
+  display: inline-block;
+  padding: .15rem .5rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  font-size: .85rem;
+  color: var(--muted);
+}
 
 /* Responsivo */
 @media (max-width: 720px){
