@@ -220,3 +220,104 @@ section[id], footer#sobre{
   .nav{ flex: 1 1 auto; justify-content:center; }
   .brand{ display:none; }
 }
+
+/* ===== Player (modal) ===== */
+body.modal-open { overflow: hidden; }
+
+.overlay{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  backdrop-filter: blur(2px);
+  display: grid; place-items: center;
+  z-index: 1000;
+}
+.overlay.hidden{ display: none; }
+
+.modal{
+  width: min(720px, 92vw);
+  max-height: 86vh;
+  overflow: auto;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+}
+.modal__header{
+  display:flex; align-items:flex-start; justify-content:space-between; gap:.8rem;
+  padding: 1rem 1rem .6rem;
+  border-bottom: 1px solid var(--border);
+}
+.modal__body{ padding: 1rem; display:grid; gap: 1rem; }
+.modal__footer{
+  padding: .8rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between; gap: .8rem; flex-wrap: wrap;
+}
+
+.texto-base{
+  margin: .2rem 0 .4rem; padding: .8rem 1rem;
+  background: color-mix(in oklab, var(--primary) 6%, transparent);
+  border-left: 3px solid color-mix(in oklab, var(--primary) 50%, var(--border));
+  color: var(--text);
+}
+.enunciado{ font-weight: 600; }
+
+.options{ list-style: none; padding:0; margin:0; display:grid; gap:.6rem; }
+.option{
+  display:flex; align-items:flex-start; gap:.6rem;
+  padding:.7rem .8rem;
+  border:1px solid var(--border);
+  border-radius: 10px;
+  background: transparent;
+  cursor: pointer;
+}
+.option:hover{ border-color: color-mix(in oklab, var(--primary) 40%, var(--border)); }
+.option.is-selected{
+  border-color: var(--primary);
+  background: color-mix(in oklab, var(--primary) 12%, transparent);
+}
+.option.is-correct{
+  border-color: var(--ok);
+  background: color-mix(in oklab, var(--ok) 14%, transparent);
+}
+.option.is-wrong{
+  border-color: var(--err);
+  background: color-mix(in oklab, var(--err) 12%, transparent);
+}
+.option input{ margin-top:.2rem; }
+
+.feedback{ min-height: 1.4rem; }
+.feedback.ok{ color: var(--ok); }
+.feedback.err{ color: var(--err); }
+
+.modal__actions{ display:flex; align-items:center; gap:.6rem; }
+
+/* ===== Player: tipos lacuna e V/F ===== */
+.lacuna-wrap{ display:grid; gap:.6rem; }
+.lacuna-label{ color: var(--muted); font-size:.95rem; }
+.lacuna-input{
+  width: 100%;
+  min-height: 42px;
+  padding: .6rem .8rem;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  outline: none;
+}
+.lacuna-input:focus{
+  border-color: color-mix(in oklab, var(--primary) 60%, var(--border));
+}
+.lacuna-input.is-correct{
+  border-color: var(--ok);
+  background: color-mix(in oklab, var(--ok) 14%, transparent);
+}
+.lacuna-input.is-wrong{
+  border-color: var(--err);
+  background: color-mix(in oklab, var(--err) 12%, transparent);
+}
+
+/* Reuso de .options/.option para V/F (já definido)
+   — sem regras adicionais obrigatórias aqui */

@@ -89,7 +89,28 @@
         <p>Feito para estudar Português. Interface e código em evolução nas próximas partes.</p>
       </div>
     </footer>
+        <!-- Player (   modal) -->
+    <div id="player-overlay" class="overlay hidden" aria-hidden="true">
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="player-title" aria-describedby="player-desc">
+        <header class="modal__header">
+        <h2 id="player-title">Responder exercício</h2>
+        <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+        </header>
 
+        <div class="modal__body" id="player-content">
+        <p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>
+        <!-- conteúdo gerado via JS -->
+        </div>
+
+        <footer class="modal__footer">
+        <div class="feedback" id="player-feedback" aria-live="polite"></div>
+        <div class="modal__actions">
+            <button id="player-verify" class="button primary" type="button" disabled>Verificar</button>
+        </div>
+        </footer>
+    </section>
+    </div>
+    <script src="assets/js/player.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
 </html>

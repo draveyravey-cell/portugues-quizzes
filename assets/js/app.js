@@ -1,9 +1,11 @@
 "use strict";
 
-/* Estado simples para esta fase */
+/* ================== Estado ================== */
 const state = {
   questoes: [],
-  filtroTexto: ""
+  filtroTexto: "",
+  filtroCategoria: "all",
+  filtroDificuldade: "all"
 };
 
 const els = {
@@ -11,41 +13,94 @@ const els = {
   lista: null,
   msg: null,
   toggleTheme: null,
-  navLinks: []
+  navLinks: [],
+  fCategoria: null,
+  fDificuldade: null,
+  fClear: null
 };
 
+const STORAGE = {
+  q: "f.q",
+  cat: "f.cat",
+  dif: "f.dif"
+};
+
+/* ================== Init ================== */
 document.addEventListener("DOMContentLoaded", () => {
+  // Base
   els.busca = document.querySelector("#busca");
   els.lista = document.querySelector("#lista-questoes");
   els.msg = document.querySelector("#msg");
   els.toggleTheme = document.querySelector("#theme-toggle");
-  els.navLinks = Array.from(document.querySelectorAll('.nav a'));
+  els.navLinks = Array.from(document.querySelectorAll(".nav a"));
+  els.fCategoria = document.querySelector("#f-categoria");
+  els.fDificuldade = document.querySelector("#f-dificuldade");
+  els.fClear = document.querySelector("#f-clear");
 
+  /* Restaura filtros e busca */
+  restoreFilters();
+
+  // Busca
   if (els.busca) {
+    els.busca.value = state.filtroTexto;
     els.busca.addEventListener("input", (e) => {
       state.filtroTexto = e.target.value || "";
+      persist("q", state.filtroTexto);
+      renderLista();
+    });
+    els.busca.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        state.filtroTexto = "";
+        els.busca.value = "";
+        persist("q", "");
+        renderLista();
+      }
+    });
+  }
+
+  // Filtros
+  if (els.fCategoria) {
+    els.fCategoria.addEventListener("change", () => {
+      state.filtroCategoria = els.fCategoria.value || "all";
+      persist("cat", state.filtroCategoria);
+      renderLista();
+    });
+  }
+  if (els.fDificuldade) {
+    els.fDificuldade.addEventListener("change", () => {
+      state.filtroDificuldade = els.fDificuldade.value || "all";
+      persist("dif", state.filtroDificuldade);
+      renderLista();
+    });
+  }
+  if (els.fClear) {
+    els.fClear.addEventListener("click", () => {
+      clearFilters();
       renderLista();
     });
   }
 
-  // Tema: sincroniza UI e meta theme-color
+  // Tema
   initTheme();
 
-  // Navegação: ativa link conforme seção visível
+  // Navegação ativa
   initActiveNav();
 
-  // Ajusta variável CSS com a altura do header (para scroll-margin-top)
+  // Altura do header -> scroll-margin-top
   updateHeaderHeight();
   window.addEventListener("resize", debounce(updateHeaderHeight, 150));
 
+  // Player
+  window.Player?.init();
+
+  // Dados
   carregarQuestoes();
 });
 
-/* ---------------- Tema ---------------- */
-
+/* ================== Tema ================== */
 function initTheme() {
-  updateThemeUI(); // reflete o estado inicial salvo pelo inline script
-
+  updateThemeUI();
   if (els.toggleTheme) {
     els.toggleTheme.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme") || "light";
@@ -53,23 +108,13 @@ function initTheme() {
       setTheme(next);
     });
   }
-
-  // Se quiser reativar "auto" (sistema), basta salvar "auto" no localStorage
-  // e ouvir mudanças do sistema:
-  // const m = window.matchMedia("(prefers-color-scheme: dark)");
-  // m.addEventListener("change", () => { if (localStorage.getItem("theme")==="auto") syncAutoTheme(); });
 }
-
 function setTheme(theme) {
-  try {
-    localStorage.setItem("theme", theme);
-  } catch (e) {}
+  try { localStorage.setItem("theme", theme); } catch (e) {}
   document.documentElement.setAttribute("data-theme", theme);
   updateThemeUI();
 }
-
 function updateThemeUI() {
-  // Atualiza ícone/label do botão
   const theme = document.documentElement.getAttribute("data-theme") || "light";
   const isDark = theme === "dark";
   if (els.toggleTheme) {
@@ -80,25 +125,22 @@ function updateThemeUI() {
       isDark ? "Usando tema escuro. Alternar para claro." : "Usando tema claro. Alternar para escuro."
     );
   }
-  // Atualiza meta theme-color
-  const meta = document.querySelector('#meta-theme-color');
+  const meta = document.querySelector("#meta-theme-color");
   if (meta) {
-    const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg').trim() || "#000000";
+    const bg = getComputedStyle(document.documentElement).getPropertyValue("--bg").trim() || "#000000";
     meta.setAttribute("content", bg);
   }
 }
 
-/* --------------- Navegação ativa --------------- */
-
+/* =========== Navegação ativa / Header height =========== */
 function initActiveNav() {
-  if (!('IntersectionObserver' in window)) return; // fallback simples
-
+  if (!("IntersectionObserver" in window)) return;
   const header = document.querySelector(".topbar");
   const offsetTop = (header?.offsetHeight || 56) + 12;
 
   const map = new Map(); // id -> link
-  els.navLinks.forEach(a => {
-    const id = (a.getAttribute('href') || "").replace('#', '');
+  els.navLinks.forEach((a) => {
+    const id = (a.getAttribute("href") || "").replace("#", "");
     if (id) map.set(id, a);
   });
 
@@ -107,79 +149,71 @@ function initActiveNav() {
     document.querySelector("footer#sobre")
   ].filter(Boolean);
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      const link = map.get(id);
-      if (!link) return;
-
-      if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-        setActiveLink(link, els.navLinks);
-      }
-    });
-  }, {
-    root: null,
-    rootMargin: `-${offsetTop}px 0px -50% 0px`,
-    threshold: [0.5, 0.75]
-  });
-
-  targets.forEach(t => observer.observe(t));
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        const link = map.get(id);
+        if (!link) return;
+        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+          setActiveLink(link, els.navLinks);
+        }
+      });
+    },
+    { root: null, rootMargin: `-${offsetTop}px 0px -50% 0px`, threshold: [0.5, 0.75] }
+  );
+  targets.forEach((t) => observer.observe(t));
 }
-
 function setActiveLink(activeLink, allLinks) {
-  allLinks.forEach(a => {
+  allLinks.forEach((a) => {
     const isActive = a === activeLink;
-    a.classList.toggle('active', isActive);
-    if (isActive) {
-      a.setAttribute('aria-current', 'page');
-    } else {
-      a.removeAttribute('aria-current');
-    }
+    a.classList.toggle("active", isActive);
+    if (isActive) a.setAttribute("aria-current", "page");
+    else a.removeAttribute("aria-current");
   });
 }
-
-/* --------------- Header height -> scroll margin --------------- */
-
 function updateHeaderHeight() {
   const header = document.querySelector(".topbar");
-  const h = (header?.offsetHeight || 56);
+  const h = header?.offsetHeight || 56;
   document.documentElement.style.setProperty("--header-h", `${h}px`);
 }
 
-/* --------------- Carregar e renderizar exercícios --------------- */
-
+/* ================== Dados / Filtros ================== */
 async function carregarQuestoes() {
   setMensagem("Carregando exercícios...");
   try {
     const resp = await fetch("data/exercicios.json", { cache: "no-store" });
     if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
     const dados = await resp.json();
-    state.questoes = Array.isArray(dados) ? dados : (dados.questoes || []);
+    state.questoes = Array.isArray(dados) ? dados : dados.questoes || [];
     setMensagem(`Carregados ${state.questoes.length} exercícios.`);
+    popularFiltros(state.questoes);
     renderLista();
   } catch (err) {
     console.error(err);
-    setMensagem(
-      "Não foi possível carregar o arquivo JSON. Dica: abra com um servidor local (ex.: Live Server do VS Code) ou use seu deploy no Vercel."
-    );
+    setMensagem("Não foi possível carregar o arquivo JSON. Dica: abra localmente (Live Server) ou use seu deploy no Vercel.");
     els.lista.innerHTML = "";
   }
 }
+function popularFiltros(questoes) {
+  if (!Array.isArray(questoes) || !questoes.length) return;
 
-function setMensagem(txt) {
-  if (els.msg) els.msg.textContent = txt || "";
+  const categorias = unique(questoes.map((q) => q.categoria).filter(Boolean))
+    .sort((a, b) => a.localeCompare(b, "pt-BR"));
+  const dificuldades = unique(questoes.map((q) => q.dificuldade).filter(Boolean))
+    .sort((a, b) => a.localeCompare(b, "pt-BR"));
+
+  if (els.fCategoria) {
+    replaceOptions(els.fCategoria, ["all", ...categorias], (v) => v === "all" ? "Todas as categorias" : v);
+    safeSetSelectValue(els.fCategoria, state.filtroCategoria);
+  }
+  if (els.fDificuldade) {
+    replaceOptions(els.fDificuldade, ["all", ...dificuldades], (v) => v === "all" ? "Todas as dificuldades" : v);
+    safeSetSelectValue(els.fDificuldade, state.filtroDificuldade);
+  }
 }
-
-/* Renderiza a lista de cartões das questões */
 function renderLista() {
-  const q = normalizar(state.filtroTexto);
-  const items = state.questoes.filter((it) => {
-    if (!q) return true;
-    const alvo = normalizar(
-      [it.enunciado, it.tema, it.categoria].filter(Boolean).join(" ")
-    );
-    return alvo.includes(q);
-  });
+  const items = applyFilters(state.questoes);
 
   if (!items.length) {
     els.lista.innerHTML = "";
@@ -190,6 +224,7 @@ function renderLista() {
   }
 
   const frag = document.createDocumentFragment();
+  const tiposSuportados = new Set(["multipla_escolha", "lacuna", "verdadeiro_falso"]);
 
   items.forEach((it, idx) => {
     const card = document.createElement("article");
@@ -224,8 +259,15 @@ function renderLista() {
     const btn = document.createElement("button");
     btn.className = "button primary";
     btn.textContent = "Responder";
-    btn.title = "Será habilitado em partes futuras";
-    btn.disabled = true;
+
+    const isSupported = tiposSuportados.has((it.tipo || "").toLowerCase());
+    btn.disabled = !isSupported;
+    btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
+    if (isSupported) {
+      btn.addEventListener("click", (ev) => {
+        window.Player?.open(it, ev.currentTarget);
+      });
+    }
     actions.appendChild(btn);
 
     card.appendChild(tags);
@@ -239,7 +281,32 @@ function renderLista() {
   els.lista.innerHTML = "";
   els.lista.appendChild(frag);
 }
+function applyFilters(lista) {
+  const q = normalizar(state.filtroTexto);
+  const cat = state.filtroCategoria;
+  const dif = state.filtroDificuldade;
 
+  return lista.filter((it) => {
+    if (q) {
+      const alvo = normalizar(
+        [it.enunciado, it.tema, it.categoria, it.texto_base].filter(Boolean).join(" ")
+      );
+      if (!alvo.includes(q)) return false;
+    }
+    if (cat && cat !== "all") {
+      if (normalizar(it.categoria) !== normalizar(cat)) return false;
+    }
+    if (dif && dif !== "all") {
+      if (normalizar(it.dificuldade) !== normalizar(dif)) return false;
+    }
+    return true;
+  });
+}
+function setMensagem(txt) {
+  if (els.msg) els.msg.textContent = txt || "";
+}
+
+/* ================== Utils ================== */
 function tipoLabel(tipo) {
   switch ((tipo || "").toLowerCase()) {
     case "multipla_escolha": return "Múltipla escolha";
@@ -248,13 +315,11 @@ function tipoLabel(tipo) {
     default: return "Exercício";
   }
 }
-
 function resumo(txt, n = 140) {
   if (!txt) return "";
   const s = String(txt);
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
-
 function normalizar(s) {
   return (s || "")
     .toString()
@@ -263,8 +328,53 @@ function normalizar(s) {
     .toLowerCase()
     .trim();
 }
+function unique(arr) { return Array.from(new Set(arr)); }
+function replaceOptions(selectEl, values, labelFn = (v) => v) {
+  const frag = document.createDocumentFragment();
+  values.forEach((v) => {
+    const opt = document.createElement("option");
+    opt.value = v;
+    opt.textContent = labelFn(v);
+    frag.appendChild(opt);
+  });
+  selectEl.innerHTML = "";
+  selectEl.appendChild(frag);
+}
+function safeSetSelectValue(selectEl, value, fallback = "all") {
+  const exists = Array.from(selectEl.options).some((o) => o.value === value);
+  selectEl.value = exists ? value : fallback;
+  if (!exists && value !== fallback) {
+    if (selectEl === els.fCategoria) state.filtroCategoria = fallback;
+    if (selectEl === els.fDificuldade) state.filtroDificuldade = fallback;
+  }
+}
+function persist(key, value) {
+  try { localStorage.setItem(STORAGE[key], value); } catch (e) {}
+}
+function restoreFilters() {
+  try {
+    state.filtroTexto = localStorage.getItem(STORAGE.q) || "";
+    state.filtroCategoria = localStorage.getItem(STORAGE.cat) || "all";
+    state.filtroDificuldade = localStorage.getItem(STORAGE.dif) || "all";
+  } catch (e) {
+    state.filtroTexto = "";
+    state.filtroCategoria = "all";
+    state.filtroDificuldade = "all";
+  }
+}
+function clearFilters() {
+  state.filtroTexto = "";
+  state.filtroCategoria = "all";
+  state.filtroDificuldade = "all";
 
-/* Util: debounce */
+  if (els.busca) els.busca.value = "";
+  if (els.fCategoria) els.fCategoria.value = "all";
+  if (els.fDificuldade) els.fDificuldade.value = "all";
+
+  persist("q", "");
+  persist("cat", "all");
+  persist("dif", "all");
+}
 function debounce(fn, t = 200) {
   let id;
   return (...args) => {
