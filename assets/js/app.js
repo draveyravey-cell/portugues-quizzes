@@ -281,13 +281,10 @@ function renderLista() {
   const filtered = applyFilters(state.questoes);
 
   const total = filtered.length;
-  if (!items.length) {
-    els.lista.innerHTML = renderEmptyState(
-      "Nenhum exercício encontrado",
-      "Tente remover filtros, ajustar a busca ou revisar a categoria."
-    );
+  if (!total) {
+    els.lista.innerHTML = "";
     setMensagem("Nenhum exercício encontrado para o filtro aplicado.");
-    clearPagers?.(); // se você estiver com paginação
+    clearPagers();
     return;
   }
 
