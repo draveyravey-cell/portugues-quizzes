@@ -7,6 +7,80 @@ Este arquivo segue (na medida do possível) o padrão “Keep a Changelog” e S
 - Planejamento das próximas partes/iterações.
 - Sugestões: banco de questões maior por import, modos de estudo, timers, relatórios avançados.
 
+## [2.8.0] — Favoritos, Caderno de erros e Simulado
+### Added
+- Favoritos:
+  - Estrela (⭐) nos cards para marcar/desmarcar favoritos.
+  - Chip “Favoritos” na listagem para filtrar apenas os marcados.
+- Caderno de erros:
+  - Chip “Erros” lista as questões em que a última tentativa foi incorreta (perQ.lastCorrect = false).
+- Simulado (core + refinos):
+  - Iniciar simulado a partir da visão atual (respeita busca/filtros/chips).
+  - Selecionar quantidade de questões e duração.
+  - Timer flutuante com pausar/retomar; finalização automática ao esgotar tempo.
+  - Sem feedback durante o simulado; resumo ao final.
+  - Resumo detalhado: tempo total, acertos por categoria e por dificuldade; status por questão.
+  - Revisar erros (refazer apenas incorretas, com feedback).
+  - Exportar resultado (JSON) e Imprimir resumo.
+- UI/UX:
+  - Sprite de ícones SVG (botões com ícones).
+  - Blocos “Como usar?” em Exercícios, Histórico, Editor e Conta (details).
+  - Tooltips acessíveis (data-tip/title).
+  - Empty states ilustrados e fundo decorativo em SVG.
+
+### Changed
+- player.js:
+  - Suporte a exam mode (sem feedback imediato), eventos player:summary e player:closed.
+  - Botão “Revisar erros” no resumo; export/print no resumo.
+- app.js:
+  - Chips de visão (Todos/Favoritos/Erros).
+  - Exposição de App.getFilteredItems() para o simulado.
+  - Compatível com paginação/visões.
+- storage.js:
+  - v2.2 com favoritos (getFavorites/isFavorite/toggleFavorite), mantendo merge/sync e perQ.
+
+### Files
+- index.html (ícones SVG, painéis de ajuda, controles do simulado e timer)
+- assets/css/styles.css (chips/estrela, pager já existente, simulado/timer, resumo, tooltips, empty states)
+- assets/js/app.js (visões, favoritos e integração com o simulado)
+- assets/js/player.js (exam mode, resumo detalhado, revisar erros, export/print)
+- assets/js/storage.js (v2.2 com favoritos)
+- assets/js/exam.js (novo, timer + pausar/retomar e start do simulado)
+- assets/js/ui.js (novo, tooltips e abertura automática dos helps)
+
+### Notes
+- Favoritos são locais; no futuro podem ser sincronizados (via Supabase) como extensão.
+
+## [2.7.0] — Login, Conta e Sincronização (Supabase)
+### Added
+- Autenticação (e-mail/senha) via Supabase.
+- Sincronização bidirecional de tentativas (pull + merge + push) com RLS.
+- Auto-sync periódico e sync após mudanças locais (store:changed).
+- Aba “Conta”:
+  - Status (Conectado/Visitante), e-mail/UID e conectividade.
+  - Métricas de sync (último pull/push) + “Sincronizar agora”.
+  - Auto-sync (on/off/intervalo) e tempo online (sessão/total por usuário).
+- Eventos globais: auth:state e sync:status.
+
+### Changed
+- storage.js v2 (tentativas/perQ compatível; mergeAttempts; sync meta por usuário).
+- auth.js (emite auth:state e integra Sync; painel de conta).
+- sync.js (fetch paginado; upsert por id; idempotente).
+- account.js (aba Conta com UI de sync e métricas; tempo de sessão).
+
+### Notes
+- Requer Supabase configurado (URL + anon key em APP_CONFIG) e a tabela public.attempts com policies RLS.
+
+## [2.6.0] — Paginação e novo banco de exercícios
+### Added
+- Paginação: Primeira/Anterior/1…N/Próxima/Última, itens por página (persistente).
+- Dataset: 200 exercícios de Crase (IDs 1001–1200).
+
+### Changed
+- app.js: listagem com paginação e integração com filtros/busca.
+- styles.css: estilos do pager.
+- data/exercicios.json: substituído pelos 200 itens.
+
 ## [1.0.0] — MVP concluído (Parte 10)
 ### Added
 - Documentação completa: README.md.
@@ -136,7 +210,11 @@ Este arquivo segue (na medida do possível) o padrão “Keep a Changelog” e S
 - 8.0: assets/js/a11y.js.
 - 9.0: assets/js/editor.js.
 - 10.0: README.md, vercel.json, .github/workflows/deploy.yml, assets/schema/exercicios.schema.json, .vscode/settings.json, 404.html.
+- 2.6.0: paginação (app.js/styles.css).
+- 2.7.0: auth.js, sync.js, account.js (aba Conta).
+- 2.8.0: exam.js, ui.js, storage.js (v2.2), player.js e atualizações no index/styles/app.
 
 ## Padronização de versão
 - 0.x.y: fases de desenvolvimento por “Parte”.
 - 1.0.0: MVP completo (Partes 1–10).
+- 2.x.y: evoluções pós-MVP (auth/sync, paginação, favoritos, simulado, UI).
