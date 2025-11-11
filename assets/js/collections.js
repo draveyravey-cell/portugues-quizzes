@@ -19,7 +19,7 @@
         currentQuestion = q;
         if (!els.overlay) cacheEls();
         renderPickerList();
-        if (els.title) els.title.textContent = `Adicionar à coleção — Q${q?.id}`;
+        if (els.title) els.title.textContent = `Adicionar à coleção — Q${q?.id ?? "—"}`;
         if (els.msg) els.msg.textContent = "";
         els.overlay?.classList.remove("hidden");
         els.overlay?.setAttribute("aria-hidden", "false");
@@ -32,53 +32,109 @@
         els.overlay?.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-open");
     }
+
     function renderPickerList() {
         if (!els.list) return;
         const colls = window.Store?.getCollections?.() || [];
+        const canEdit = currentQuestion?.id != null;
+
         els.list.innerHTML = "";
         const frag = document.createDocumentFragment();
-        if (!colls.length) {
+
+        if (!canEdit) {
+            const li = document.createElement("li");
+            li.className = "option";
+            li.textContent = "Esta questão não possui ID válido no dataset. Não é possível adicioná-la às coleções.";
+            frag.appendChild(li);
+            setPickerMsg("ID de questão ausente ou inválido. Corrija no JSON para usar coleções.", "err");
+            els.createAdd && (els.createAdd.disabled = true);
+            els.new2 && (els.new2.disabled = true);
+        } else if (!colls.length) {
             const li = document.createElement("li");
             li.className = "option";
             li.textContent = "Nenhuma coleção criada ainda.";
             frag.appendChild(li);
+            setPickerMsg("", "");
+            els.createAdd && (els.createAdd.disabled = false);
+            els.new2 && (els.new2.disabled = false);
         } else {
+            setPickerMsg("", "");
+            els.createAdd && (els.createAdd.disabled = false);
+            els.new2 && (els.new2.disabled = false);
+
             colls.forEach(c => {
                 const li = document.createElement("li");
                 li.className = "option";
-                const label = document.createElement("label"); label.style.display = "flex"; label.style.gap = ".5rem"; label.style.alignItems = "center";
-                const ck = document.createElement("input"); ck.type = "checkbox"; ck.checked = window.Store?.isInCollection?.(c.id, currentQuestion?.id);
-                ck.addEventListener("change", () => {
-                    if (ck.checked) window.Store?.addToCollection?.(c.id, currentQuestion?.id);
-                    else window.Store?.removeFromCollection?.(c.id, currentQuestion?.id);
+
+                const label = document.createElement("label");
+                label.style.display = "flex";
+                label.style.gap = ".5rem";
+                label.style.alignItems = "center";
+
+                const ck = document.createElement("input");
+                ck.type = "checkbox";
+                ck.checked = !!window.Store?.isInCollection?.(c.id, currentQuestion?.id);
+                ck.disabled = !canEdit;
+                if (!canEdit) label.title = "Esta questão não tem ID válido.";
+
+                ck.addEventListener("change", async () => {
+                    // Otimista com rollback em falha
+                    ck.disabled = true;
+                    try {
+                        const ok = ck.checked
+                            ? await toPromise(window.Store?.addToCollection?.(c.id, currentQuestion.id))
+                            : await toPromise(window.Store?.removeFromCollection?.(c.id, currentQuestion.id));
+                        if (!ok) {
+                            ck.checked = !ck.checked;
+                            setPickerMsg("Não foi possível atualizar a coleção.", "err");
+                        } else {
+                            setPickerMsg(ck.checked
+                                ? `Adicionada à coleção “${c.name}”.`
+                                : `Removida da coleção “${c.name}”.`, "ok");
+                            // Atualiza contadores no grid
+                            renderCollectionsGrid();
+                        }
+                    } catch (e) {
+                        console.error(e);
+                        ck.checked = !ck.checked;
+                        setPickerMsg("Erro ao atualizar a coleção.", "err");
+                    } finally {
+                        ck.disabled = false;
+                    }
                 });
+
                 const span = document.createElement("span");
                 span.textContent = c.name;
-                label.appendChild(ck); label.appendChild(span);
+
+                label.appendChild(ck);
+                label.appendChild(span);
                 li.appendChild(label);
                 frag.appendChild(li);
             });
         }
+
         els.list.appendChild(frag);
     }
 
     async function createAndAdd() {
         const name = (els.new2?.value || "").trim();
         if (!name) { setPickerMsg("Informe um nome.", "err"); return; }
+        if (currentQuestion?.id == null) {
+            setPickerMsg("Esta questão não possui ID válido. Não é possível adicionar.", "err");
+            return;
+        }
 
         try {
             const created = await toPromise(window.Store?.createCollection?.(name));
             const id = getCreatedId(created, name) || findCollectionIdByName(name);
             if (!id) {
-                console.warn("Store.createCollection não retornou id; tentando re-render e localizar depois.");
+                console.warn("Store.createCollection não retornou id; tentando localizar por nome.");
                 setTimeout(() => { renderPickerList(); renderCollectionsGrid(); }, 0);
-                setPickerMsg("Coleção criada. Adicione novamente se necessário.", "ok");
+                setPickerMsg("Coleção criada. Se necessário, marque a coleção para adicionar a questão.", "ok");
                 return;
             }
 
-            if (currentQuestion?.id != null) {
-                window.Store?.addToCollection?.(id, currentQuestion.id);
-            }
+            await toPromise(window.Store?.addToCollection?.(id, currentQuestion.id));
             els.new2.value = "";
             renderPickerList();
             renderCollectionsGrid();
@@ -100,10 +156,8 @@
         if (!name) { els.newName?.focus?.(); return; }
         try {
             const created = await toPromise(window.Store?.createCollection?.(name));
-            // Tenta identificar o id criado; se não vier, localiza por nome após pequeno atraso
             const id = getCreatedId(created, name) || findCollectionIdByName(name);
             els.newName.value = "";
-            // Re-render imediato e no próximo tick para cobrir Store assíncrona
             renderCollectionsGrid();
             setTimeout(renderCollectionsGrid, 0);
             if (!id) console.warn("Coleção criada mas id não retornado pela Store.");
@@ -264,12 +318,10 @@
         if (ret == null) return null;
         if (typeof ret === "string" || typeof ret === "number") return String(ret);
         if (typeof ret === "object" && ret.id != null) return String(ret.id);
-        // Alguns stores podem retornar o objeto completo com name, qids, etc.
         if (typeof ret === "object" && ret.name && !ret.id) {
             const maybe = findCollectionIdByName(ret.name);
             if (maybe) return maybe;
         }
-        // Por nome, última tentativa
         return findCollectionIdByName(name);
     }
     function findCollectionIdByName(name) {
@@ -291,11 +343,8 @@
     // Normaliza diferentes formatos de import para um array de coleções
     function normalizeImportedCollections(data) {
         if (!data) return [];
-        // Se vier { collections: [...] }
         if (Array.isArray(data.collections)) return data.collections;
-        // Se vier um array direto
         if (Array.isArray(data)) return data;
-        // Se vier um único objeto de coleção { id?, name, qids }
         if (typeof data === "object" && (data.id != null || data.name || data.qids)) return [data];
         return [];
     }
@@ -362,7 +411,6 @@
         // Re-render on changes (store e dataset)
         window.addEventListener("store:changed", (ev) => {
             const t = ev?.detail?.type || "";
-            // Reage sempre que não houver type ou quando contiver "collection"
             if (!t || /collection/i.test(t)) {
                 renderCollectionsGrid();
                 if (currentQuestion) renderPickerList();
