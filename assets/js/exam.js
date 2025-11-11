@@ -1,23 +1,25 @@
 "use strict";
 
-/* Simulado (core) — iniciar a partir da visão atual, timer e finalização */
+/* Simulado (core + refinos): iniciar, timer, pausar/retomar */
 (function () {
     const els = {
         qtd: null, dur: null, start: null,
-        timerWrap: null, timerText: null
+        timerWrap: null, timerText: null, toggleBtn: null
     };
     let running = false;
+    let paused = false;
     let endAt = 0;
+    let remainingMs = 0;
     let tId = null;
+    let startAt = 0;
+    let durationMin = 0;
 
     function qs(sel) { return document.querySelector(sel); }
-
     function getFilteredItems() {
         if (window.App?.getFilteredItems) return window.App.getFilteredItems();
-        console.warn("App.getFilteredItems não disponível — verifique app.js (Parte 2/3).");
+        console.warn("App.getFilteredItems não disponível — verifique app.js.");
         return [];
     }
-
     function shuffle(arr) {
         const a = arr.slice();
         for (let i = a.length - 1; i > 0; i--) {
@@ -29,39 +31,57 @@
 
     function startTimer(ms) {
         stopTimer();
+        startAt = Date.now();
+        durationMin = Math.round(ms / 60000);
         endAt = Date.now() + ms;
+        remainingMs = ms;
         running = true;
+        paused = false;
         updateTimer();
         tId = setInterval(updateTimer, 1000);
         els.timerWrap?.classList.remove("hidden");
+        if (els.toggleBtn) els.toggleBtn.textContent = "Pausar";
     }
-
     function stopTimer() {
-        running = false;
+        running = false; paused = false;
         if (tId) clearInterval(tId);
-        tId = null;
-        endAt = 0;
+        tId = null; endAt = 0; remainingMs = 0;
         if (els.timerWrap) {
             els.timerWrap.classList.remove("exam-timer--warn", "exam-timer--danger");
             els.timerWrap.classList.add("hidden");
         }
     }
-
+    function pauseTimer() {
+        if (!running || paused) return;
+        paused = true;
+        remainingMs = Math.max(0, endAt - Date.now());
+        if (tId) clearInterval(tId);
+        tId = null;
+        if (els.toggleBtn) els.toggleBtn.textContent = "Retomar";
+    }
+    function resumeTimer() {
+        if (!running || !paused) return;
+        paused = false;
+        endAt = Date.now() + remainingMs;
+        updateTimer();
+        tId = setInterval(updateTimer, 1000);
+        if (els.toggleBtn) els.toggleBtn.textContent = "Pausar";
+    }
     function updateTimer() {
         if (!running) return;
+        if (paused) return;
         const ms = endAt - Date.now();
         if (ms <= 0) {
-            els.timerText && (els.timerText.textContent = "00:00");
-            // Tempo acabou: finaliza simulado
+            if (els.timerText) els.timerText.textContent = "00:00";
             try { window.Player?.finishSequence?.(); } catch (e) { console.warn(e); }
             stopTimer();
             return;
         }
+        remainingMs = ms;
         const s = Math.floor(ms / 1000);
         const mm = String(Math.floor(s / 60)).padStart(2, "0");
         const ss = String(s % 60).padStart(2, "0");
         if (els.timerText) els.timerText.textContent = `${mm}:${ss}`;
-        // classes de aviso
         if (ms <= 60000) {
             els.timerWrap?.classList.add("exam-timer--danger");
             els.timerWrap?.classList.remove("exam-timer--warn");
@@ -83,23 +103,23 @@
             return;
         }
         const list = shuffle(items).slice(0, Math.min(qtd, items.length));
-
-        // Timer
         startTimer(durMin * 60000);
 
-        // Inicia sequência no Player com exam mode
         const filters = {
             q: window.localStorage.getItem("f.q") || "",
             cat: window.localStorage.getItem("f.cat") || "all",
             dif: window.localStorage.getItem("f.dif") || "all"
         };
-        window.Player?.startSequence(list, 0, els.start, { filters, exam: { active: true } });
+        window.Player?.startSequence(list, 0, els.start, { filters, exam: { active: true, startAt, durationMin: durMin } });
     }
 
     function bind() {
         els.start?.addEventListener("click", startExam);
+        els.toggleBtn?.addEventListener("click", () => {
+            if (!running) return;
+            if (paused) resumeTimer(); else pauseTimer();
+        });
 
-        // Quando o player fecha ou mostra o resumo, paramos o timer
         window.addEventListener("player:summary", () => stopTimer());
         window.addEventListener("player:closed", () => stopTimer());
     }
@@ -110,7 +130,8 @@
         els.start = qs("#sim-start");
         els.timerWrap = qs("#exam-timer");
         els.timerText = qs("#exam-timer-text");
-        if (!els.start || !els.timerWrap || !els.timerText) return;
+        els.toggleBtn = qs("#exam-timer-toggle");
+        if (!els.start || !els.timerWrap || !els.timerText || !els.toggleBtn) return;
         bind();
     }
 

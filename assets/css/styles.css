@@ -1262,3 +1262,115 @@ body.modal-open {
   border-color: var(--err);
   color: var(--err);
 }
+
+/* ===== Timer do simulado (refinos) ===== */
+.exam-timer {
+  position: fixed;
+  top: calc(var(--header-h) + 8px);
+  right: 16px;
+  z-index: 20;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .35rem .6rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.exam-timer.hidden {
+  display: none;
+}
+
+.exam-timer--warn {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.exam-timer--danger {
+  border-color: var(--err);
+  color: var(--err);
+}
+
+.exam-timer__btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 999px;
+  padding: .2rem .5rem;
+  font-size: .85rem;
+}
+
+.exam-timer__btn:hover {
+  border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+  color: var(--primary-2);
+}
+
+/* ===== Resumo do simulado (tabela básica) ===== */
+.summary__section {
+  margin-top: .8rem;
+}
+
+.summary__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .8rem;
+}
+
+.summary__card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .8rem;
+  box-shadow: var(--shadow);
+}
+
+.summary__card h4 {
+  margin: 0 0 .4rem;
+}
+
+.summary__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.summary__table th,
+.summary__table td {
+  padding: .35rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.summary__actions {
+  margin-top: .8rem;
+  display: flex;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+/* ===== Print do resumo ===== */
+@media print {
+  body *:not(#player-overlay):not(#player-overlay *) {
+    display: none !important;
+  }
+
+  #player-overlay {
+    position: static !important;
+    display: block !important;
+  }
+
+  #player-overlay .modal {
+    width: 100% !important;
+    max-height: unset !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  #player-overlay .modal__header,
+  #player-overlay .modal__footer {
+    border: none !important;
+  }
+}
