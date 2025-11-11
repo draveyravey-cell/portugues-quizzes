@@ -281,10 +281,13 @@ function renderLista() {
   const filtered = applyFilters(state.questoes);
 
   const total = filtered.length;
-  if (!total) {
-    els.lista.innerHTML = "";
+  if (!items.length) {
+    els.lista.innerHTML = renderEmptyState(
+      "Nenhum exercício encontrado",
+      "Tente remover filtros, ajustar a busca ou revisar a categoria."
+    );
     setMensagem("Nenhum exercício encontrado para o filtro aplicado.");
-    clearPagers();
+    clearPagers?.(); // se você estiver com paginação
     return;
   }
 
@@ -619,4 +622,25 @@ function debounce(fn, t = 200) {
     clearTimeout(id);
     id = setTimeout(() => fn.apply(this, args), t);
   };
+}
+
+function renderEmptyState(title, text) {
+  return `
+    <div class="empty">
+      <svg class="empty__art" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="e1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="rgba(106,166,255,.5)"/>
+            <stop offset="100%" stop-color="rgba(255,224,138,.4)"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="100" cy="100" rx="70" ry="12" fill="rgba(0,0,0,.18)"/>
+        <path d="M40 90c30-40 90-40 120 0-40 20-80 20-120 0z" fill="url(#e1)"/>
+        <circle cx="80" cy="70" r="10" fill="url(#e1)"/>
+        <circle cx="120" cy="60" r="14" fill="url(#e1)"/>
+      </svg>
+      <div class="empty__title">${title}</div>
+      <div class="empty__text">${text}</div>
+    </div>
+  `;
 }

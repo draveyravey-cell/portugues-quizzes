@@ -1033,3 +1033,111 @@ body.modal-open {
     grid-template-columns: 1fr;
   }
 }
+
+/* Ícone inline */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  display: inline-block;
+}
+
+/* Fundo decorativo */
+.bg-decor {
+  position: relative;
+  z-index: 0;
+  height: 180px;
+  margin-top: -60px;
+  /* sobe atrás do header */
+}
+
+.bg-decor__svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Blocos de ajuda (details) */
+.help {
+  margin: .6rem 0 1rem;
+  background: color-mix(in oklab, var(--card) 92%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: .4rem .6rem;
+}
+
+.help>summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  color: var(--primary-2);
+}
+
+.help>summary::marker {
+  display: none;
+}
+
+.help[open] {
+  border-color: color-mix(in oklab, var(--primary) 40%, var(--border));
+}
+
+.help ul {
+  margin: .4rem 0 .2rem 1.2rem;
+  padding: 0;
+}
+
+/* Empty state */
+.empty {
+  display: grid;
+  place-items: center;
+  padding: 2rem 1rem;
+  text-align: center;
+  border: 1px dashed var(--border);
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--card) 90%, transparent);
+}
+
+.empty__art {
+  width: 220px;
+  max-width: 60vw;
+}
+
+.empty__title {
+  margin: .6rem 0 .2rem;
+  font-weight: 700;
+}
+
+.empty__text {
+  color: var(--muted);
+}
+
+/* Tooltips (data-tip/title) */
+.tooltip {
+  position: absolute;
+  z-index: 9999;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: .35rem .5rem;
+  font-size: .85rem;
+  box-shadow: var(--shadow);
+  transform: translate(-50%, -125%);
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+/* Animações sutis (respeita reduce motion) */
+@media (prefers-reduced-motion: no-preference) {
+  .card {
+    transition: transform .15s ease, border-color .15s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-2px);
+    border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
+  }
+}
