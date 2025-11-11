@@ -1,17 +1,18 @@
 "use strict";
 
-/* Player (sequência, navegação, resumo) + integração Store + A11y — global: window.Player */
+/* Player (sequência, navegação, resumo) + Store + A11y + exam mode — global: window.Player */
 (function () {
   const st = {
     aberto: false,
-    mode: "exercise",
+    mode: "exercise", // 'exercise' | 'summary'
     q: null,
-    selecionada: null,  // índice (MC), boolean (V/F) ou string (lacuna)
+    selecionada: null,
     corrigido: false,
     correta: false,
     lastTrigger: null,
-    seq: null,          // { list, idx, results Map, sessionId }
-    trap: null          // foco aprisionado
+    seq: null,          // { list, idx, results Map<qid,{selected,correct,tipo,at}>, sessionId }
+    trap: null,         // foco
+    exam: { active: false } // modo simulado (sem feedback)
   };
 
   const els = {
@@ -29,33 +30,39 @@
 
   function qs(sel, root = document) { return root.querySelector(sel); }
 
+  function emit(name, detail) { try { window.dispatchEvent(new CustomEvent(name, { detail })); } catch { } }
+
   function init() {
-    els.overlay  = qs("#player-overlay");
-    els.modal    = els.overlay ? qs(".modal", els.overlay) : null;
-    els.title    = qs("#player-title");
-    els.close    = qs("#player-close");
-    els.content  = qs("#player-content");
-    els.verify   = qs("#player-verify");
+    els.overlay = qs("#player-overlay");
+    els.modal = els.overlay ? qs(".modal", els.overlay) : null;
+    els.title = qs("#player-title");
+    els.close = qs("#player-close");
+    els.content = qs("#player-content");
+    els.verify = qs("#player-verify");
     els.feedback = qs("#player-feedback");
-    els.prev     = qs("#player-prev");
-    els.next     = qs("#player-next");
-    els.finish   = qs("#player-finish");
+    els.prev = qs("#player-prev");
+    els.next = qs("#player-next");
+    els.finish = qs("#player-finish");
 
     if (!els.overlay || !els.verify) return;
 
-    // Fechar
-    els.close?.addEventListener("click", close);
-    els.overlay.addEventListener("mousedown", (e) => { if (e.target === els.overlay) close(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && st.aberto) { e.preventDefault(); close(); } });
+    els.close?.addEventListener("click", closePlayer);
+    els.overlay.addEventListener("mousedown", (e) => { if (e.target === els.overlay) closePlayer(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && st.aberto) { e.preventDefault(); closePlayer(); } });
 
-    // Verificar / Fechar
     els.verify.addEventListener("click", () => {
       const mode = els.verify.dataset.mode || "verify";
-      if (mode === "close") close();
-      else verificar();
+      if (mode === "close") {
+        closePlayer();
+      } else if (mode === "next") {
+        goNext();
+      } else if (mode === "summary") {
+        openSummary();
+      } else {
+        verificar();
+      }
     });
 
-    // Navegação
     els.prev?.addEventListener("click", goPrev);
     els.next?.addEventListener("click", () => {
       if (!st.seq) return;
@@ -65,10 +72,9 @@
     els.finish?.addEventListener("click", openSummary);
   }
 
-  /* ========= APIs ========= */
-
   function open(q, lastTrigger = null) {
     st.seq = null;
+    st.exam.active = false;
     openInternal(q, lastTrigger);
     updateNavUI();
   }
@@ -83,23 +89,28 @@
     });
 
     st.seq = { list: arr, idx, results: new Map(), sessionId };
+    st.exam.active = !!(context && context.exam && context.exam.active);
     openInternal(st.seq.list[st.seq.idx], lastTrigger);
     updateNavUI();
   }
 
-  function close() {
+  function finishSequence() {
+    // expõe para o timer (exam.js)
+    openSummary();
+  }
+
+  function closePlayer() {
     st.aberto = false;
     st.mode = "exercise";
     st.q = null;
     st.selecionada = null;
     st.corrigido = false;
     st.correta = false;
+    st.exam.active = false;
 
     els.overlay?.classList.add("hidden");
     els.overlay?.setAttribute("aria-hidden", "true");
     document.body.classList.remove("modal-open");
-
-    if (st.trap) { st.trap.release(); st.trap = null; }
 
     if (els.content) {
       els.content.innerHTML = `<p id="player-desc" class="sr-only">Selecione ou digite sua resposta e clique em Verificar.</p>`;
@@ -114,13 +125,9 @@
       els.verify.dataset.mode = "verify";
     }
 
-    if (st.lastTrigger && typeof st.lastTrigger.focus === "function") {
-      st.lastTrigger.focus();
-      st.lastTrigger = null;
-    }
+    if (st.lastTrigger?.focus) st.lastTrigger.focus();
+    emit("player:closed", {});
   }
-
-  /* ========= Internals ========= */
 
   function openInternal(q, lastTrigger = null) {
     st.aberto = true;
@@ -134,7 +141,11 @@
     if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
 
     if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
-    if (els.verify) { els.verify.disabled = true; els.verify.textContent = "Verificar"; els.verify.dataset.mode = "verify"; }
+    if (els.verify) {
+      els.verify.disabled = true;
+      els.verify.textContent = "Verificar";
+      els.verify.dataset.mode = "verify";
+    }
 
     renderContent(q);
     updateNavUI();
@@ -143,27 +154,18 @@
     els.overlay?.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-open");
 
-    // Ativa foco aprisionado no modal
-    if (!st.trap && els.modal && window.A11y?.trapFocus) {
-      st.trap = window.A11y.trapFocus(els.modal);
-      st.trap.activate();
-    }
-
     focusFirstInteractive();
   }
 
   function renderContent(q) {
     if (!els.content) return;
-
     const wrap = document.createElement("div");
     wrap.className = "player__inner";
 
-    // Progresso (se houver sequência) com ARIA
     if (st.seq && st.seq.list && st.seq.list.length) {
       wrap.appendChild(renderProgressHeader());
     }
 
-    // Texto base (se houver)
     if (q.texto_base) {
       const block = document.createElement("blockquote");
       block.className = "texto-base";
@@ -171,7 +173,6 @@
       wrap.appendChild(block);
     }
 
-    // Enunciado
     const enun = document.createElement("div");
     enun.className = "enunciado";
     enun.id = `enun-${q.id}`;
@@ -191,46 +192,35 @@
       (q.alternativas || []).forEach((alt, i) => {
         const li = document.createElement("li");
         li.className = "option";
-
         const label = document.createElement("label");
         label.style.flex = "1";
-
         const input = document.createElement("input");
         input.type = "radio";
         input.name = name;
         input.value = String(i);
         input.setAttribute("aria-label", `Alternativa ${i + 1}`);
-
         input.addEventListener("change", () => {
           st.selecionada = i;
           els.verify.disabled = false;
           ul.querySelectorAll(".option").forEach((opt) => opt.classList.remove("is-selected"));
           li.classList.add("is-selected");
         });
-
         const span = document.createElement("span");
         span.textContent = alt;
-
-        label.appendChild(input);
-        label.appendChild(span);
+        label.appendChild(input); label.appendChild(span);
         li.appendChild(label);
         ul.appendChild(li);
       });
-
-      // Navegação por setas
       window.A11y?.enhanceRadioGroup?.(ul);
-
       wrap.appendChild(ul);
     }
     else if (tipo === "lacuna") {
       const div = document.createElement("div");
       div.className = "lacuna-wrap";
-
       const label = document.createElement("label");
       label.className = "lacuna-label";
       label.textContent = "Resposta:";
       label.setAttribute("for", `lacuna-${q.id}`);
-
       const input = document.createElement("input");
       input.type = "text";
       input.className = "lacuna-input";
@@ -240,10 +230,9 @@
       input.spellcheck = false;
       input.id = `lacuna-${q.id}`;
       input.setAttribute("aria-describedby", enun.id);
-
       input.addEventListener("input", () => {
         st.selecionada = input.value;
-        els.verify.disabled = !(st.selecionada && st.selecionada.trim().length);
+        els.verify.disabled = !(st.selecionada && String(st.selecionada).trim().length);
       });
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !els.verify.disabled && !st.corrigido) {
@@ -251,9 +240,7 @@
           verificar();
         }
       });
-
-      div.appendChild(label);
-      div.appendChild(input);
+      div.appendChild(label); div.appendChild(input);
       wrap.appendChild(div);
     }
     else if (tipo === "verdadeiro_falso") {
@@ -264,41 +251,26 @@
       ul.setAttribute("aria-describedby", enun.id);
 
       const name = `vf-${q.id}`;
-
-      [
-        { label: "Verdadeiro", val: "true" },
-        { label: "Falso", val: "false" }
-      ].forEach(({ label: text, val }) => {
+      [{ label: "Verdadeiro", val: "true" }, { label: "Falso", val: "false" }].forEach(({ label: text, val }) => {
         const li = document.createElement("li");
         li.className = "option";
-
         const l = document.createElement("label");
         l.style.flex = "1";
-
         const input = document.createElement("input");
-        input.type = "radio";
-        input.name = name;
-        input.value = val;
-        input.setAttribute("aria-label", text);
-
+        input.type = "radio"; input.name = name; input.value = val; input.setAttribute("aria-label", text);
         input.addEventListener("change", () => {
           st.selecionada = (val === "true");
           els.verify.disabled = false;
           ul.querySelectorAll(".option").forEach((opt) => opt.classList.remove("is-selected"));
           li.classList.add("is-selected");
         });
-
         const span = document.createElement("span");
         span.textContent = text;
-
-        l.appendChild(input);
-        l.appendChild(span);
+        l.appendChild(input); l.appendChild(span);
         li.appendChild(l);
         ul.appendChild(li);
       });
-
       window.A11y?.enhanceRadioGroup?.(ul);
-
       wrap.appendChild(ul);
     }
     else {
@@ -312,9 +284,7 @@
   }
 
   function verificar() {
-    const q = st.q;
-    if (!q) return;
-
+    const q = st.q; if (!q) return;
     const tipo = (q.tipo || "").toLowerCase();
     let ok = false;
 
@@ -323,12 +293,14 @@
       const corretaIndex = q.resposta;
       ok = Number(st.selecionada) === Number(corretaIndex);
 
-      const ul = els.content?.querySelector(".options");
-      if (ul) {
-        ul.querySelectorAll("input[type=radio]").forEach((inp) => (inp.disabled = true));
-        const items = Array.from(ul.querySelectorAll(".option"));
-        if (items[corretaIndex]) items[corretaIndex].classList.add("is-correct");
-        if (!ok && items[st.selecionada]) items[st.selecionada].classList.add("is-wrong");
+      if (!st.exam.active) {
+        const ul = els.content?.querySelector(".options");
+        if (ul) {
+          ul.querySelectorAll("input[type=radio]").forEach((inp) => (inp.disabled = true));
+          const items = Array.from(ul.querySelectorAll(".option"));
+          if (items[corretaIndex]) items[corretaIndex].classList.add("is-correct");
+          if (!ok && items[st.selecionada]) items[st.selecionada].classList.add("is-wrong");
+        }
       }
     }
     else if (tipo === "lacuna") {
@@ -336,34 +308,42 @@
       if (!input) return;
       const user = (st.selecionada || "").toString();
       const gabarito = Array.isArray(q.resposta) ? q.resposta : [q.resposta];
-
       ok = gabarito.some((ans) => eqText(user, ans));
-      input.disabled = true;
-      input.classList.toggle("is-correct", ok);
-      input.classList.toggle("is-wrong", !ok);
+
+      if (!st.exam.active) {
+        input.disabled = true;
+        input.classList.toggle("is-correct", ok);
+        input.classList.toggle("is-wrong", !ok);
+      }
     }
     else if (tipo === "verdadeiro_falso") {
       if (typeof st.selecionada !== "boolean") return;
       ok = st.selecionada === Boolean(q.resposta);
 
-      const ul = els.content?.querySelector(".options");
-      if (ul) {
-        ul.querySelectorAll("input[type=radio]").forEach((inp) => (inp.disabled = true));
-        const items = Array.from(ul.querySelectorAll(".option"));
-        const correctIdx = Boolean(q.resposta) ? 0 : 1;
-        const selectedIdx = st.selecionada ? 0 : 1;
-        if (items[correctIdx]) items[correctIdx].classList.add("is-correct");
-        if (!ok && items[selectedIdx]) items[selectedIdx].classList.add("is-wrong");
+      if (!st.exam.active) {
+        const ul = els.content?.querySelector(".options");
+        if (ul) {
+          ul.querySelectorAll("input[type=radio]").forEach((inp) => (inp.disabled = true));
+          const items = Array.from(ul.querySelectorAll(".option"));
+          const correctIdx = Boolean(q.resposta) ? 0 : 1;
+          const selectedIdx = st.selecionada ? 0 : 1;
+          if (items[correctIdx]) items[correctIdx].classList.add("is-correct");
+          if (!ok && items[selectedIdx]) items[selectedIdx].classList.add("is-wrong");
+        }
       }
     }
 
     st.corrigido = true;
     st.correta = ok;
 
+    // Salva no mapa da sequência
     if (st.seq && st.q && st.q.id != null) {
-      st.seq.results.set(String(st.q.id), { selected: st.selecionada, correct: ok, tipo: tipo });
+      st.seq.results.set(String(st.q.id), {
+        selected: st.selecionada, correct: ok, tipo: tipo, at: Date.now()
+      });
     }
 
+    // Grava tentativa na Store (mesmo em exam mode, só não mostra feedback)
     window.Store?.recordAttempt({
       sessionId: st.seq?.sessionId || null,
       question: q,
@@ -371,28 +351,40 @@
       correct: ok
     });
 
-    if (els.feedback) {
-      els.feedback.className = "feedback " + (ok ? "ok" : "err");
-      const expl = q.explicacao ? ` ${q.explicacao}` : "";
-      let complemento = "";
-      if (!ok && (Array.isArray(q.resposta) || typeof q.resposta === "string")) {
-        const exemplo = Array.isArray(q.resposta) ? q.resposta[0] : q.resposta;
-        if (exemplo != null && typeof exemplo !== "boolean") {
-          complemento = ` Ex.: “${exemplo}”.`;
+    if (!st.exam.active) {
+      if (els.feedback) {
+        els.feedback.className = "feedback " + (ok ? "ok" : "err");
+        const expl = q.explicacao ? ` ${q.explicacao}` : "";
+        let complemento = "";
+        if (!ok && (Array.isArray(q.resposta) || typeof q.resposta === "string")) {
+          const exemplo = Array.isArray(q.resposta) ? q.resposta[0] : q.resposta;
+          if (exemplo != null && typeof exemplo !== "boolean") complemento = ` Ex.: “${exemplo}”.`;
         }
+        els.feedback.textContent = ok ? `Correto!${expl ? " " + expl : ""}` : `Incorreto.${expl ? " " + expl : ""}${complemento}`;
+        els.feedback.focus?.();
       }
-      els.feedback.textContent = ok ? `Correto!${expl ? " " + expl : ""}` : `Incorreto.${expl ? " " + expl : ""}${complemento}`;
-      els.feedback.focus?.();
-    }
-
-    if (els.verify) {
-      els.verify.textContent = "Fechar";
-      els.verify.dataset.mode = "close";
-      els.verify.disabled = false;
+      if (els.verify) {
+        els.verify.textContent = "Fechar";
+        els.verify.dataset.mode = "close";
+        els.verify.disabled = false;
+      }
+    } else {
+      // Exam mode: sem feedback visual, muda botão para Próxima/Resumo
+      if (els.feedback) {
+        els.feedback.textContent = ""; els.feedback.className = "feedback";
+      }
+      if (els.verify) {
+        if (isLast()) {
+          els.verify.textContent = "Resumo";
+          els.verify.dataset.mode = "summary";
+        } else {
+          els.verify.textContent = "Próxima";
+          els.verify.dataset.mode = "next";
+        }
+        els.verify.disabled = false;
+      }
     }
   }
-
-  /* ========= Navegação / Resumo ========= */
 
   function goPrev() {
     if (!st.seq) return;
@@ -416,28 +408,18 @@
     const inSeq = !!(st.seq && st.seq.list && st.seq.list.length > 1);
     const inAnySeq = !!(st.seq && st.seq.list && st.seq.list.length >= 1);
 
-    if (els.prev)   els.prev.hidden   = !inSeq;
-    if (els.next)   els.next.hidden   = !inAnySeq;
+    if (els.prev) els.prev.hidden = !inSeq;
+    if (els.next) els.next.hidden = !inAnySeq;
     if (els.finish) els.finish.hidden = !inAnySeq;
 
     if (!inAnySeq) return;
 
     const atFirst = st.seq.idx <= 0;
-    const atLast  = st.seq.idx >= st.seq.list.length - 1;
+    const atLast = st.seq.idx >= st.seq.list.length - 1;
 
-    if (els.prev) {
-      els.prev.disabled = atFirst;
-      els.prev.title = atFirst ? "" : "Questão anterior";
-    }
-    if (els.next) {
-      els.next.textContent = atLast ? "Resumo" : "Próxima";
-      els.next.title = atLast ? "Ver resumo" : "Próxima questão";
-      els.next.disabled = false;
-    }
-    if (els.finish) {
-      els.finish.disabled = false;
-      els.finish.title = "Ver resumo";
-    }
+    if (els.prev) { els.prev.disabled = atFirst; els.prev.title = atFirst ? "" : "Questão anterior"; }
+    if (els.next) { els.next.textContent = atLast ? "Resumo" : "Próxima"; els.next.title = atLast ? "Ver resumo" : "Próxima questão"; els.next.disabled = false; }
+    if (els.finish) { els.finish.disabled = false; els.finish.title = "Ver resumo"; }
   }
 
   function openSummary() {
@@ -451,7 +433,7 @@
 
     if (st.seq?.sessionId) {
       const resultsArray = Array.from(st.seq.results.entries()).map(([qid, r]) => ({
-        id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo
+        id: qid, selected: r.selected, correct: r.correct, tipo: r.tipo, at: r.at
       }));
       window.Store?.finishSession(st.seq.sessionId, resultsArray);
     }
@@ -468,7 +450,6 @@
     const wrap = document.createElement("div");
     wrap.className = "player__summary";
 
-    // Progresso total (barra cheia + ARIA)
     const prog = renderProgressHeader(total, total);
     wrap.appendChild(prog);
 
@@ -482,53 +463,35 @@
       const li = document.createElement("li");
       li.className = "option";
       li.style.cursor = "default";
-
       const res = st.seq.results.get(String(it.id));
       const icon = document.createElement("span");
       icon.style.minWidth = "1.2rem";
       icon.style.display = "inline-block";
       icon.textContent = res ? (res.correct ? "✅" : "❌") : "•";
-
       const text = document.createElement("span");
       text.textContent = `Q${it.id ?? (i + 1)} — ${it.tema || it.categoria || "Português"}`;
-
       const row = document.createElement("div");
-      row.style.display = "flex";
-      row.style.gap = ".6rem";
-      row.style.alignItems = "center";
-
-      row.appendChild(icon);
-      row.appendChild(text);
+      row.style.display = "flex"; row.style.gap = ".6rem"; row.style.alignItems = "center";
+      row.appendChild(icon); row.appendChild(text);
       li.appendChild(row);
       ul.appendChild(li);
     });
     wrap.appendChild(ul);
 
-    if (els.content) {
-      els.content.innerHTML = "";
-      els.content.appendChild(wrap);
-    }
+    if (els.content) { els.content.innerHTML = ""; els.content.appendChild(wrap); }
+    if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
+    if (els.verify) { els.verify.textContent = "Fechar"; els.verify.dataset.mode = "close"; els.verify.disabled = false; }
 
-    if (els.feedback) {
-      els.feedback.textContent = "";
-      els.feedback.className = "feedback";
-    }
-    if (els.verify) {
-      els.verify.textContent = "Fechar";
-      els.verify.dataset.mode = "close";
-      els.verify.disabled = false;
-    }
-
-    if (els.prev)   els.prev.hidden = true;
-    if (els.next)   els.next.hidden = true;
+    if (els.prev) els.prev.hidden = true;
+    if (els.next) els.next.hidden = true;
     if (els.finish) els.finish.hidden = true;
-  }
 
-  /* ========= UI helpers ========= */
+    emit("player:summary", { total, answered, correct, perc });
+  }
 
   function renderProgressHeader(totalOverride, currentOverride) {
     const total = totalOverride ?? (st.seq?.list?.length || 1);
-    const step  = currentOverride ?? ((st.seq?.idx ?? 0) + 1);
+    const step = currentOverride ?? ((st.seq?.idx ?? 0) + 1);
 
     const box = document.createElement("div");
     box.className = "progress";
@@ -567,5 +530,5 @@
   function eqText(a, b) { return normText(a) === normText(b); }
   function clamp(n, a, b) { return Math.max(a, Math.min(b, n)); }
 
-  window.Player = { init, open, close, startSequence };
+  window.Player = { init, open, close: closePlayer, startSequence, finishSequence };
 })();

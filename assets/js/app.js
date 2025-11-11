@@ -660,3 +660,8 @@ function renderEmptyState(title, text) {
     </div>
   `;
 }
+
+// Expor itens filtrados para o simulado
+window.App = {
+  getFilteredItems: () => applyFilters(state.questoes)
+};

@@ -1210,3 +1210,55 @@ body.modal-open {
   width: 1rem;
   height: 1rem;
 }
+
+/* ===== Simulado (painel) ===== */
+.controls__row--sim {
+  margin-top: .6rem;
+}
+
+.sim {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+
+.sim select {
+  min-height: 36px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  border-radius: 8px;
+  padding: .3rem .5rem;
+}
+
+/* ===== Timer do simulado ===== */
+.exam-timer {
+  position: fixed;
+  top: calc(var(--header-h) + 8px);
+  right: 16px;
+  z-index: 20;
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .35rem .6rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: .35rem;
+}
+
+.exam-timer.hidden {
+  display: none;
+}
+
+.exam-timer--warn {
+  border-color: var(--warn);
+  color: var(--warn);
+}
+
+.exam-timer--danger {
+  border-color: var(--err);
+  color: var(--err);
+}

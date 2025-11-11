@@ -119,6 +119,14 @@
     </svg>
   </div>
 
+  <!-- Timer do simulado -->
+  <div id="exam-timer" class="exam-timer hidden" aria-live="polite">
+    <svg class="icon" aria-hidden="true">
+      <use href="#i-time" />
+    </svg>
+    <span id="exam-timer-text">00:00</span>
+  </div>
+
   <main class="container">
     <section class="hero" id="inicio">
       <h1>Exercícios de Português</h1>
@@ -160,6 +168,34 @@
             data-tip="Filtre por categoria (ex.: Crase, Ortografia...)">
             <option value="all">Todas as categorias</option>
           </select>
+          <!-- Simulado -->
+          <div class="controls__row controls__row--sim">
+            <div class="sim">
+              <label class="sr-only" for="sim-qtd">Quantidade de questões</label>
+              <select id="sim-qtd" aria-label="Quantidade de questões">
+                <option value="5">5 questões</option>
+                <option value="10" selected>10 questões</option>
+                <option value="20">20 questões</option>
+                <option value="30">30 questões</option>
+                <option value="50">50 questões</option>
+              </select>
+
+              <label class="sr-only" for="sim-dur">Duração</label>
+              <select id="sim-dur" aria-label="Duração do simulado">
+                <option value="5">5 min</option>
+                <option value="10" selected>10 min</option>
+                <option value="20">20 min</option>
+                <option value="30">30 min</option>
+              </select>
+
+              <button id="sim-start" class="button primary" type="button" title="Iniciar simulado">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-time" />
+                </svg> Iniciar simulado
+              </button>
+              <span class="hint">Sem feedback durante o simulado; resultado ao final.</span>
+            </div>
+          </div>
 
           <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
           <select id="f-dificuldade" aria-label="Filtrar por dificuldade"
