@@ -30,7 +30,8 @@
       attempts: [],
       perQ: {},
       favorites: [],
-      collections: [] // {id, name, qids:[]}
+      collections: [], // {id, name, qids:[]}
+      syncMeta: {}     // metadados de sincronização por usuário
     };
   }
 
@@ -50,6 +51,7 @@
       parsed.perQ = typeof parsed.perQ === "object" && parsed.perQ !== null ? parsed.perQ : {};
       parsed.favorites = Array.isArray(parsed.favorites) ? parsed.favorites : [];
       parsed.collections = Array.isArray(parsed.collections) ? parsed.collections : [];
+      parsed.syncMeta = typeof parsed.syncMeta === "object" && parsed.syncMeta !== null ? parsed.syncMeta : {};
       return parsed;
     } catch (e) {
       console.warn("Store: reset após erro de parse.", e);
@@ -69,7 +71,9 @@
   }
 
   function dispatchChanged(type) {
-    window.dispatchEvent(new CustomEvent("store:changed", { detail: { type } }));
+    try {
+      window.dispatchEvent(new CustomEvent("store:changed", { detail: { type } }));
+    } catch (e) { }
   }
 
   /* ========= Sessões ========= */
@@ -193,6 +197,7 @@
     incoming.perQ = typeof incoming.perQ === "object" && incoming.perQ != null ? incoming.perQ : {};
     incoming.favorites = Array.isArray(incoming.favorites) ? incoming.favorites : [];
     incoming.collections = Array.isArray(incoming.collections) ? incoming.collections : [];
+    incoming.syncMeta = typeof incoming.syncMeta === "object" && incoming.syncMeta != null ? incoming.syncMeta : {};
 
     if (replace) {
       db = incoming;
@@ -201,6 +206,7 @@
       db.attempts = dedupById(db.attempts.concat(incoming.attempts));
       db.favorites = Array.from(new Set([...(db.favorites || []), ...(incoming.favorites || [])]));
       db.collections = mergeCollections(db.collections || [], incoming.collections || []);
+      db.syncMeta = { ...(db.syncMeta || {}), ...(incoming.syncMeta || {}) };
       db.perQ = {};
       rebuildPerQ();
     }
@@ -350,6 +356,24 @@
       }
     });
     return Array.from(map.values());
+  }
+
+  /* ========= Sync Meta ========= */
+
+  function getSyncMeta(userId) {
+    const uid = userId ? String(userId) : "_";
+    if (!db || typeof db !== "object") db = loadOrCreate();
+    if (!db.syncMeta || typeof db.syncMeta !== "object") db.syncMeta = {};
+    return db.syncMeta[uid] || { lastPull: null, lastPush: null, remoteAttempts: 0 };
+  }
+
+  function setSyncMeta(userId, patch = {}) {
+    const uid = userId ? String(userId) : "_";
+    if (!db || typeof db !== "object") db = loadOrCreate();
+    if (!db.syncMeta || typeof db.syncMeta !== "object") db.syncMeta = {};
+    db.syncMeta[uid] = { ...(db.syncMeta[uid] || {}), ...(patch || {}) };
+    save(false, "syncmeta");
+    return db.syncMeta[uid];
   }
 
   /* ========= Utils ========= */
