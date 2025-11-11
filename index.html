@@ -4,11 +4,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Exercícios de Português</title>
 
   <meta name="color-scheme" content="light dark" />
   <meta id="meta-theme-color" name="theme-color" content="#0e0f11" />
+
   <!-- Config do app (preencha com as chaves do seu projeto) -->
   <script>
     window.APP_CONFIG = {
@@ -19,14 +19,13 @@
   </script>
   <!-- SDK Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
   <!-- Evita flash de tema -->
   <script>
     (function () {
       try {
         const saved = localStorage.getItem("theme");
-        const prefersDark =
-          window.matchMedia &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches;
+        const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
         const theme = saved || (prefersDark ? "dark" : "light");
         document.documentElement.setAttribute("data-theme", theme);
       } catch (e) { }
@@ -72,6 +71,7 @@
       <path fill="currentColor" d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1Zm1 12h5v-2h-4V6h-2v7Z" />
     </symbol>
   </svg>
+
   <!-- Skip link -->
   <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
 
@@ -89,13 +89,35 @@
       </nav>
 
       <div class="actions">
-        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema">
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema" title="Alternar tema">
           <span class="theme-icon" aria-hidden="true">🌙</span>
         </button>
-        <button id="account-btn" class="icon-btn" type="button" aria-label="Conta">👤</button>
+        <button id="account-btn" class="icon-btn" type="button" aria-label="Conta" title="Minha conta">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-user" />
+          </svg>
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- Fundo decorativo -->
+  <div class="bg-decor" aria-hidden="true">
+    <svg viewBox="0 0 1440 360" preserveAspectRatio="none" class="bg-decor__svg">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="rgba(106,166,255,.35)" />
+          <stop offset="100%" stop-color="rgba(255,224,138,.12)" />
+        </linearGradient>
+        <radialGradient id="g2" cx="75%" cy="20%" r="60%">
+          <stop offset="0%" stop-color="rgba(133,193,255,.5)" />
+          <stop offset="100%" stop-color="rgba(133,193,255,0)" />
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="360" fill="url(#g2)" />
+      <path d="M0,200 C240,280 480,120 720,200 C960,280 1200,160 1440,220 L1440,360 L0,360 Z" fill="url(#g1)" />
+    </svg>
+  </div>
 
   <main class="container">
     <section class="hero" id="inicio">
@@ -116,25 +138,36 @@
           <li>Paginação controla quantos itens por página e navega entre páginas.</li>
         </ul>
       </details>
+
       <div class="controls__row">
         <label for="busca" class="sr-only">Buscar exercícios</label>
-        <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..." />
-        <span class="hint">Dica: experimente “crase”, “acentuação”, “por que”...</span>
+        <input id="busca" type="search" placeholder="Buscar por enunciado, tema ou categoria..."
+          data-tip="Digite termos como 'crase', 'à tarde'..." />
+        <span class="hint"><svg class="icon" aria-hidden="true">
+            <use href="#i-search" />
+          </svg> Dica: experimente “crase”, “acentuação”, “por que”...</span>
       </div>
 
       <div class="controls__row controls__row--filters">
         <div class="filters">
           <label for="f-categoria" class="sr-only">Filtrar por categoria</label>
-          <select id="f-categoria" aria-label="Filtrar por categoria">
+          <select id="f-categoria" aria-label="Filtrar por categoria"
+            data-tip="Filtre por categoria (ex.: Crase, Ortografia...)">
             <option value="all">Todas as categorias</option>
           </select>
 
           <label for="f-dificuldade" class="sr-only">Filtrar por dificuldade</label>
-          <select id="f-dificuldade" aria-label="Filtrar por dificuldade">
+          <select id="f-dificuldade" aria-label="Filtrar por dificuldade"
+            data-tip="Filtre por dificuldade (fácil, médio, difícil)">
             <option value="all">Todas as dificuldades</option>
           </select>
 
-          <button id="f-clear" class="button" type="button" title="Limpar filtros e busca">Limpar</button>
+          <button id="f-clear" class="button" type="button" title="Limpar filtros e busca"
+            data-tip="Limpar busca e filtros">
+            <svg class="icon" aria-hidden="true">
+              <use href="#i-info" />
+            </svg> Limpar
+          </button>
         </div>
       </div>
     </section>
@@ -171,10 +204,26 @@
 
       <div class="history__actions">
         <input id="hist-file" type="file" accept="application/json" hidden />
-        <button id="hist-export" class="button">Exportar JSON</button>
-        <button id="hist-export-csv" class="button">Exportar CSV</button>
-        <button id="hist-import" class="button">Importar JSON</button>
-        <button id="hist-clear" class="button" title="Remove todas as sessões e tentativas">Limpar histórico</button>
+        <button id="hist-export" class="button" type="button" title="Exportar histórico em JSON">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-download" />
+          </svg> Exportar JSON
+        </button>
+        <button id="hist-export-csv" class="button" type="button" title="Exportar tentativas em CSV">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-download" />
+          </svg> Exportar CSV
+        </button>
+        <button id="hist-import" class="button" type="button" title="Importar histórico de um arquivo JSON">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-upload" />
+          </svg> Importar JSON
+        </button>
+        <button id="hist-clear" class="button" type="button" title="Remove todas as sessões e tentativas">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-info" />
+          </svg> Limpar histórico
+        </button>
       </div>
 
       <div class="history__list">
@@ -202,7 +251,7 @@
           </svg> Como usar o editor</summary>
         <ul>
           <li>Carregue do servidor ou de um arquivo local.</li>
-          <li>Valide/ formate e aplique override para pré-visualizar no site.</li>
+          <li>Valide/formate e aplique override para pré-visualizar no site.</li>
           <li>Desativar override volta ao JSON do servidor; Limpar apaga o override salvo.</li>
         </ul>
       </details>
@@ -213,17 +262,42 @@
 
       <div class="editor__actions">
         <input id="editor-file" type="file" accept="application/json" hidden />
-        <button id="ed-load-server" class="button" type="button"
-          title="Carregar data/exercicios.json do servidor">Carregar do servidor</button>
-        <button id="ed-load-file" class="button" type="button" title="Carregar de um arquivo local">Carregar
-          arquivo…</button>
-        <button id="ed-validate" class="button" type="button" title="Validar e formatar JSON">Validar/Formatar</button>
+        <button id="ed-load-server" class="button" type="button" title="Carregar data/exercicios.json do servidor">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-download" />
+          </svg> Carregar do servidor
+        </button>
+        <button id="ed-load-file" class="button" type="button" title="Carregar de um arquivo local">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-upload" />
+          </svg> Carregar arquivo…
+        </button>
+        <button id="ed-validate" class="button" type="button" title="Validar e formatar JSON">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-info" />
+          </svg> Validar/Formatar
+        </button>
         <span class="editor__spacer"></span>
-        <button id="ed-apply" class="button primary" type="button" title="Aplicar override local (preview)">Aplicar
-          (override)</button>
-        <button id="ed-disable" class="button" type="button" title="Desativar override">Desativar override</button>
-        <button id="ed-clear" class="button" type="button" title="Limpar override do navegador">Limpar override</button>
-        <button id="ed-download" class="button" type="button" title="Baixar JSON atual">Baixar JSON</button>
+        <button id="ed-apply" class="button primary" type="button" title="Aplicar override local (preview)">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-sync" />
+          </svg> Aplicar (override)
+        </button>
+        <button id="ed-disable" class="button" type="button" title="Desativar override">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-logout" />
+          </svg> Desativar override
+        </button>
+        <button id="ed-clear" class="button" type="button" title="Limpar override do navegador">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-info" />
+          </svg> Limpar override
+        </button>
+        <button id="ed-download" class="button" type="button" title="Baixar JSON atual">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-download" />
+          </svg> Baixar JSON
+        </button>
       </div>
 
       <div class="editor__status" id="ed-status" aria-live="polite"></div>
@@ -234,6 +308,7 @@
       </div>
 
       <div id="editor-validation" class="validation"></div>
+
       <!-- Auth (modal) -->
       <div id="auth-overlay" class="overlay hidden" aria-hidden="true">
         <section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"
@@ -267,13 +342,22 @@
               <span class="hint">Se preferir, continue como visitante. Seus dados ficam no navegador.</span>
             </div>
             <div class="modal__actions">
-              <button id="auth-logout" class="button" type="button" hidden>Sair</button>
-              <button id="auth-sync" class="button" type="button" hidden>Sincronizar agora</button>
+              <button id="auth-logout" class="button" type="button" hidden>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-logout" />
+                </svg> Sair
+              </button>
+              <button id="auth-sync" class="button" type="button" hidden>
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-sync" />
+                </svg> Sincronizar agora
+              </button>
             </div>
           </footer>
         </section>
       </div>
     </section>
+
     <section id="conta" class="account">
       <h2>Minha conta</h2>
       <!-- Ajuda: Conta -->
@@ -299,21 +383,29 @@
             <li><span class="label">Conectividade:</span> <span id="acc-online">—</span></li>
           </ul>
           <div class="account-actions">
-            <button id="acc-open-modal" class="button" type="button">Abrir painel de conta</button>
-            <button id="acc-logout" class="button" type="button">Sair</button>
+            <button id="acc-open-modal" class="button" type="button" title="Abrir painel de conta">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-user" />
+              </svg> Abrir painel de conta
+            </button>
+            <button id="acc-logout" class="button" type="button" title="Sair da conta">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-logout" />
+              </svg> Sair
+            </button>
           </div>
         </div>
 
         <div class="account-card">
           <h3>Sincronização</h3>
           <div class="switch-row">
-            <label class="switch">
+            <label class="switch" title="Ativar/desativar sincronização automática">
               <input id="acc-auto-sync" type="checkbox" />
               <span class="switch-slider" aria-hidden="true"></span>
             </label>
             <span>Sincronização automática</span>
             <label class="sr-only" for="acc-interval">Intervalo</label>
-            <select id="acc-interval">
+            <select id="acc-interval" title="Intervalo de auto sync">
               <option value="60000">1 min</option>
               <option value="300000">5 min</option>
               <option value="900000">15 min</option>
@@ -328,7 +420,11 @@
           </ul>
 
           <div class="account-actions">
-            <button id="acc-sync-now" class="button primary" type="button">Sincronizar agora</button>
+            <button id="acc-sync-now" class="button primary" type="button" title="Sincronizar agora">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-sync" />
+              </svg> Sincronizar agora
+            </button>
           </div>
           <div id="acc-sync-msg" class="msg" aria-live="polite"></div>
         </div>
@@ -340,7 +436,11 @@
             <li><span class="label">Total neste usuário:</span> <span id="acc-time-total">00:00:00</span></li>
           </ul>
           <div class="account-actions">
-            <button id="acc-time-reset" class="button" type="button">Zerar total</button>
+            <button id="acc-time-reset" class="button" type="button" title="Zerar total">
+              <svg class="icon" aria-hidden="true">
+                <use href="#i-time" />
+              </svg> Zerar total
+            </button>
           </div>
         </div>
       </div>
@@ -378,7 +478,7 @@
     </section>
   </div>
 
-  <!-- Ordem dos scripts: Store -> A11y -> Player -> History -> Editor -> App -->
+  <!-- Ordem dos scripts -->
   <script src="assets/js/storage.js" defer></script>
   <script src="assets/js/a11y.js" defer></script>
   <script src="assets/js/player.js" defer></script>
