@@ -1,11 +1,12 @@
 "use strict";
 
-/* Store v2 — Persistência em localStorage + APIs de merge/sync
+/* Store v2.2 — LocalStorage + merge/sync + favoritos
    window.Store:
    - init, newSession, finishSession, recordAttempt
    - getStats, exportJSON, importJSON, clear
    - mergeAttempts(remote[]), getAllAttempts(), rebuildPerQ()
    - getSyncMeta(userId), setSyncMeta(userId, patch)
+   - getFavorites(), isFavorite(qid), setFavorite(qid, on), toggleFavorite(qid)
 */
 (function () {
   const KEY = "pp.v1";
@@ -14,6 +15,10 @@
   function init() {
     db = loadOrCreate();
     return db;
+  }
+
+  function baseDb() {
+    return { version: 2, createdAt: Date.now(), sessions: [], attempts: [], perQ: {}, favorites: [] };
   }
 
   function loadOrCreate() {
@@ -25,12 +30,12 @@
         return fresh;
       }
       const parsed = JSON.parse(raw);
-      // sane defaults
       parsed.version = 2;
       parsed.createdAt = parsed.createdAt || Date.now();
       parsed.sessions = Array.isArray(parsed.sessions) ? parsed.sessions : [];
       parsed.attempts = Array.isArray(parsed.attempts) ? parsed.attempts : [];
       parsed.perQ = typeof parsed.perQ === "object" && parsed.perQ !== null ? parsed.perQ : {};
+      parsed.favorites = Array.isArray(parsed.favorites) ? parsed.favorites : [];
       return parsed;
     } catch (e) {
       console.warn("Store: reset após erro de parse.", e);
@@ -38,10 +43,6 @@
       localStorage.setItem(KEY, JSON.stringify(fresh));
       return fresh;
     }
-  }
-
-  function baseDb() {
-    return { version: 2, createdAt: Date.now(), sessions: [], attempts: [], perQ: {} };
   }
 
   function save(notify = true) {
@@ -57,14 +58,12 @@
     window.dispatchEvent(new CustomEvent("store:changed", { detail: { type } }));
   }
 
-  /* ========= API de Sessões ========= */
+  /* ========= Sessões ========= */
 
   function newSession(meta = {}) {
     const id = genId("s");
     const session = {
-      id,
-      startedAt: Date.now(),
-      finishedAt: null,
+      id, startedAt: Date.now(), finishedAt: null,
       filters: sanitizeFilters(meta.filters),
       questionIds: (meta.questionIds || []).map(String),
       results: [] // { qid, selected, correct, tipo, at? }
@@ -92,11 +91,10 @@
     return true;
   }
 
-  /* ========= API de Tentativas ========= */
+  /* ========= Tentativas ========= */
 
   function recordAttempt({ sessionId = null, question, selected, correct, at = Date.now() } = {}) {
     if (!question || question.id == null) return null;
-
     const a = {
       id: genId("a"),
       sessionId: sessionId || null,
@@ -109,11 +107,8 @@
       at
     };
     db.attempts.push(a);
-
-    // Atualiza perQ incrementalmente
     updatePerQWithAttempt(a);
 
-    // Espelha na sessão (se houver)
     if (sessionId) {
       const s = db.sessions.find((x) => x.id === sessionId);
       if (s) {
@@ -186,13 +181,14 @@
     incoming.sessions = Array.isArray(incoming.sessions) ? incoming.sessions : [];
     incoming.attempts = Array.isArray(incoming.attempts) ? incoming.attempts : [];
     incoming.perQ = typeof incoming.perQ === "object" && incoming.perQ != null ? incoming.perQ : {};
+    incoming.favorites = Array.isArray(incoming.favorites) ? incoming.favorites : [];
 
     if (replace) {
       db = incoming;
     } else {
       db.sessions = dedupById(db.sessions.concat(incoming.sessions));
       db.attempts = dedupById(db.attempts.concat(incoming.attempts));
-      // perQ será recalculado abaixo para refletir a fusão
+      db.favorites = Array.from(new Set([...(db.favorites || []), ...(incoming.favorites || [])]));
       db.perQ = {};
       rebuildPerQ();
     }
@@ -207,7 +203,6 @@
 
   /* ========= Merge remoto (sync) ========= */
 
-  // remoteAttempts: [{ id, qid, tipo, categoria, dificuldade, value, correct, at, sessionId? }]
   function mergeAttempts(remoteAttempts = []) {
     if (!Array.isArray(remoteAttempts) || !remoteAttempts.length) return { added: 0, updated: 0, kept: 0 };
     const byId = new Map(db.attempts.map(a => [a.id, a]));
@@ -217,7 +212,6 @@
       if (!r || !r.id) return;
       const local = byId.get(r.id);
       if (!local) {
-        // novo
         db.attempts.push({
           id: String(r.id),
           sessionId: r.sessionId || null,
@@ -231,7 +225,6 @@
         });
         added++;
       } else {
-        // se houver conflito (mesmo id), mantém o mais recente por 'at'
         const rAt = r.at ? new Date(r.at).getTime?.() || r.at : 0;
         const lAt = local.at || 0;
         if (rAt > lAt) {
@@ -250,10 +243,8 @@
       }
     });
 
-    // Recalcula perQ baseado na lista atualizada
     db.perQ = {};
     rebuildPerQ();
-
     save();
     return { added, updated, kept };
   }
@@ -268,7 +259,34 @@
       .slice()
       .sort((a, b) => (a.at || 0) - (b.at || 0))
       .forEach(updatePerQWithAttempt);
-    save(false); // já salvamos no caller
+    save(false);
+  }
+
+  /* ========= Favoritos ========= */
+
+  function getFavorites() {
+    return Array.from(new Set(db.favorites || [])).map(String);
+  }
+
+  function isFavorite(qid) {
+    if (qid == null) return false;
+    const id = String(qid);
+    return (db.favorites || []).some(f => String(f) === id);
+  }
+
+  function setFavorite(qid, on) {
+    if (qid == null) return;
+    const id = String(qid);
+    const set = new Set(db.favorites || []);
+    if (on) set.add(id);
+    else set.delete(id);
+    db.favorites = Array.from(set);
+    save();
+    dispatchChanged("favorites");
+  }
+
+  function toggleFavorite(qid) {
+    setFavorite(qid, !isFavorite(qid));
   }
 
   /* ========= Sync meta por usuário ========= */
@@ -325,9 +343,9 @@
     init, newSession, finishSession, recordAttempt,
     getStats, exportJSON, importJSON, clear,
     mergeAttempts, getAllAttempts, rebuildPerQ,
-    getSyncMeta, setSyncMeta
+    getSyncMeta, setSyncMeta,
+    getFavorites, isFavorite, setFavorite, toggleFavorite
   };
 
-  // Auto-init
   try { init(); } catch (e) { console.warn("Store: init falhou", e); }
 })();

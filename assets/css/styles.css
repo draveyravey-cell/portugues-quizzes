@@ -1141,3 +1141,72 @@ body.modal-open {
     border-color: color-mix(in oklab, var(--primary) 35%, var(--border));
   }
 }
+
+/* ===== Visões (chips) ===== */
+.controls__row--views {
+  margin-top: .6rem;
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  flex-wrap: wrap;
+}
+
+.chip {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-size: .95rem;
+}
+
+.chip:hover {
+  border-color: color-mix(in oklab, var(--primary) 50%, var(--border));
+  color: var(--primary-2);
+}
+
+.chip.is-active {
+  border-color: var(--primary);
+  color: var(--primary-2);
+  background: color-mix(in oklab, var(--primary) 18%, transparent);
+}
+
+/* ===== Favorito (estrela no card) ===== */
+.card {
+  position: relative;
+}
+
+.fav-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: .2rem .45rem;
+  display: flex;
+  align-items: center;
+  gap: .25rem;
+  cursor: pointer;
+}
+
+.fav-btn:hover {
+  border-color: color-mix(in oklab, var(--accent) 50%, var(--border));
+  color: var(--accent);
+}
+
+.fav-btn.is-on {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: color-mix(in oklab, var(--accent) 12%, transparent);
+}
+
+.fav-btn .icon {
+  width: 1rem;
+  height: 1rem;
+}

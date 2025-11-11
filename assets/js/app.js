@@ -1,11 +1,12 @@
 "use strict";
 
-/* ================== Estado ================== */
+/* App com paginação + favoritos + caderno de erros */
 const state = {
   questoes: [],
   filtroTexto: "",
   filtroCategoria: "all",
   filtroDificuldade: "all",
+  viewMode: "all", // all | fav | err
   page: 1,
   pageSize: 12
 };
@@ -20,32 +21,24 @@ const els = {
   fDificuldade: null,
   fClear: null,
   pagerTop: null,
-  pagerBottom: null
+  pagerBottom: null,
+  viewAll: null,
+  viewFav: null,
+  viewErr: null
 };
 
-const STORAGE = {
-  q: "f.q",
-  cat: "f.cat",
-  dif: "f.dif"
-};
+const STORAGE = { q: "f.q", cat: "f.cat", dif: "f.dif" };
+const PAGER = { page: "pg.page", size: "pg.size" };
+const VIEW = { mode: "view.mode" };
 
-const PAGER = {
-  page: "pg.page",
-  size: "pg.size"
-};
-
-// Override local (Parte 9)
 const OV_KEYS = {
   data: "pp.data.override",
   enabled: "pp.data.override.enabled"
 };
 
-// Lista da página atual (usada na sequência do Player)
 let viewItems = [];
 
-/* ================== Init ================== */
 document.addEventListener("DOMContentLoaded", () => {
-  // Base
   els.busca = document.querySelector("#busca");
   els.lista = document.querySelector("#lista-questoes");
   els.msg = document.querySelector("#msg");
@@ -56,15 +49,16 @@ document.addEventListener("DOMContentLoaded", () => {
   els.fClear = document.querySelector("#f-clear");
   els.pagerTop = document.querySelector("#pager-top");
   els.pagerBottom = document.querySelector("#pager-bottom");
+  els.viewAll = document.querySelector("#view-all");
+  els.viewFav = document.querySelector("#view-fav");
+  els.viewErr = document.querySelector("#view-err");
 
-  // Store
   window.Store?.init();
 
-  /* Restaura filtros, busca e paginação */
   restoreFilters();
   restorePager();
+  restoreViewMode();
 
-  // Busca
   if (els.busca) {
     els.busca.value = state.filtroTexto;
     els.busca.addEventListener("input", (e) => {
@@ -85,7 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Filtros
   if (els.fCategoria) {
     els.fCategoria.addEventListener("change", () => {
       state.filtroCategoria = els.fCategoria.value || "all";
@@ -107,28 +100,32 @@ document.addEventListener("DOMContentLoaded", () => {
       clearFilters();
       resetToFirstPage();
       renderLista();
+      activateViewChip("all");
     });
   }
 
-  // Tema
+  // Chips de visão
+  els.viewAll?.addEventListener("click", () => { setViewMode("all"); });
+  els.viewFav?.addEventListener("click", () => { setViewMode("fav"); });
+  els.viewErr?.addEventListener("click", () => { setViewMode("err"); });
+
+  // Tema + navegação + layout
   initTheme();
-
-  // Navegação ativa
   initActiveNav();
-
-  // Altura do header -> scroll-margin-top
   updateHeaderHeight();
   window.addEventListener("resize", debounce(updateHeaderHeight, 150));
 
-  // Player
   window.Player?.init();
 
-  // Dados
   carregarQuestoes();
 
-  // Reage ao editor (override alterado)
   window.addEventListener("dataset:override-changed", () => {
     carregarQuestoes();
+  });
+
+  // Re-render quando favoritos mudarem
+  window.addEventListener("store:changed", (ev) => {
+    if (ev?.detail?.type === "favorites") renderLista();
   });
 });
 
@@ -154,10 +151,7 @@ function updateThemeUI() {
   if (els.toggleTheme) {
     const icon = els.toggleTheme.querySelector(".theme-icon");
     if (icon) icon.textContent = isDark ? "🌙" : "☀️";
-    els.toggleTheme.setAttribute(
-      "aria-label",
-      isDark ? "Usando tema escuro. Alternar para claro." : "Usando tema claro. Alternar para escuro."
-    );
+    els.toggleTheme.setAttribute("aria-label", isDark ? "Usando tema escuro. Alternar para claro." : "Usando tema claro. Alternar para escuro.");
   }
   const meta = document.querySelector("#meta-theme-color");
   if (meta) {
@@ -172,7 +166,7 @@ function initActiveNav() {
   const header = document.querySelector(".topbar");
   const offsetTop = (header?.offsetHeight || 56) + 12;
 
-  const map = new Map(); // id -> link
+  const map = new Map();
   els.navLinks.forEach((a) => {
     const id = (a.getAttribute("href") || "").replace("#", "");
     if (id) map.set(id, a);
@@ -212,7 +206,7 @@ function updateHeaderHeight() {
   document.documentElement.style.setProperty("--header-h", `${h}px`);
 }
 
-/* ================== Override local (Parte 9) ================== */
+/* ================== Override local ================== */
 function readOverrideList() {
   try {
     const enabled = localStorage.getItem(OV_KEYS.enabled) === "1";
@@ -230,7 +224,6 @@ function readOverrideList() {
 
 /* ================== Dados / Filtros + Paginação ================== */
 async function carregarQuestoes() {
-  // Tenta override local primeiro
   const ov = readOverrideList();
   if (ov && Array.isArray(ov)) {
     state.questoes = ov;
@@ -253,8 +246,11 @@ async function carregarQuestoes() {
     renderLista();
   } catch (err) {
     console.error(err);
-    setMensagem("Não foi possível carregar o arquivo JSON. Você pode usar o Editor para aplicar um override local.");
-    els.lista.innerHTML = "";
+    els.lista.innerHTML = renderEmptyState(
+      "Não foi possível carregar os exercícios",
+      "Você pode usar o Editor para aplicar um override local e testar o site."
+    );
+    setMensagem("Falha ao carregar o arquivo JSON.");
     clearPagers();
   }
 }
@@ -279,16 +275,22 @@ function popularFiltros(questoes) {
 
 function renderLista() {
   const filtered = applyFilters(state.questoes);
-
   const total = filtered.length;
+
   if (!total) {
-    els.lista.innerHTML = "";
+    els.lista.innerHTML = renderEmptyState(
+      state.viewMode === "fav" ? "Nenhum favorito ainda" :
+        state.viewMode === "err" ? "Nenhum erro registrado" :
+          "Nenhum exercício encontrado",
+      state.viewMode === "fav" ? "Marque ⭐ nos cards para salvar seus favoritos." :
+        state.viewMode === "err" ? "Ao errar questões, elas aparecem aqui para revisão." :
+          "Tente remover filtros, ajustar a busca ou revisar a categoria."
+    );
     setMensagem("Nenhum exercício encontrado para o filtro aplicado.");
     clearPagers();
     return;
   }
 
-  // Corrige página de acordo com total
   const totalPages = Math.max(1, Math.ceil(total / state.pageSize));
   if (state.page > totalPages) state.page = totalPages;
   if (state.page < 1) state.page = 1;
@@ -306,6 +308,34 @@ function renderLista() {
   pageItems.forEach((it, idx) => {
     const card = document.createElement("article");
     card.className = "card";
+
+    // Botão favorito
+    const favBtn = document.createElement("button");
+    favBtn.type = "button";
+    favBtn.className = "fav-btn";
+    favBtn.title = "Favoritar questão";
+    favBtn.setAttribute("aria-label", "Favoritar questão");
+    const favIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    favIcon.setAttribute("class", "icon");
+    const favUse = document.createElementNS("http://www.w3.org/2000/svg", "use");
+    favUse.setAttributeNS("http://www.w3.org/1999/xlink", "href", "#i-info");
+    favIcon.appendChild(favUse);
+    favBtn.appendChild(favIcon);
+    const favTxt = document.createElement("span");
+    favTxt.textContent = "⭐";
+    favBtn.appendChild(favTxt);
+
+    const on = window.Store?.isFavorite?.(it.id);
+    if (on) favBtn.classList.add("is-on");
+    favBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      window.Store?.toggleFavorite?.(it.id);
+      const nowOn = window.Store?.isFavorite?.(it.id);
+      favBtn.classList.toggle("is-on", !!nowOn);
+      // Se estiver na visão "favoritos", atualiza a lista
+      if (state.viewMode === "fav") renderLista();
+    });
+    card.appendChild(favBtn);
 
     const tags = document.createElement("div");
     tags.className = "tags";
@@ -343,7 +373,6 @@ function renderLista() {
     btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
     if (isSupported) {
       btn.addEventListener("click", (ev) => {
-        // sequência apenas com os itens da página atual (UI coerente)
         window.Player?.startSequence(viewItems, idx, ev.currentTarget, {
           filters: { q: state.filtroTexto, cat: state.filtroCategoria, dif: state.filtroDificuldade }
         });
@@ -362,27 +391,16 @@ function renderLista() {
   els.lista.innerHTML = "";
   els.lista.appendChild(frag);
 
-  // Renderiza paginação
-  renderPager(els.pagerTop, {
-    totalItems: total,
-    page: state.page,
-    pageSize: state.pageSize,
-    includePageSize: true
-  });
-  renderPager(els.pagerBottom, {
-    totalItems: total,
-    page: state.page,
-    pageSize: state.pageSize,
-    includePageSize: false
-  });
+  renderPager(els.pagerTop, { totalItems: total, page: state.page, pageSize: state.pageSize, includePageSize: true });
+  renderPager(els.pagerBottom, { totalItems: total, page: state.page, pageSize: state.pageSize, includePageSize: false });
 }
 
+/* ================== Paginação ================== */
 function clearPagers() {
   if (els.pagerTop) els.pagerTop.innerHTML = "";
   if (els.pagerBottom) els.pagerBottom.innerHTML = "";
 }
 
-/* ================== Paginação (UI) ================== */
 function renderPager(root, { totalItems, page, pageSize, includePageSize }) {
   if (!root) return;
   const totalPages = Math.max(1, Math.ceil(totalItems / pageSize));
@@ -414,17 +432,14 @@ function renderPager(root, { totalItems, page, pageSize, includePageSize }) {
       state.page = targetPage;
       persistPager();
       renderLista();
-      // rolar para o topo da lista (compensa header)
       document.querySelector(".lista")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
     return b;
   };
 
-  // Primeira / Anterior
   nav.appendChild(makeBtn("«", 1, page <= 1, false, "Primeira página", "Primeira página"));
   nav.appendChild(makeBtn("‹", Math.max(1, page - 1), page <= 1, false, "Página anterior", "Página anterior"));
 
-  // Números com elipses
   pageList(page, totalPages).forEach((it) => {
     if (it === "...") {
       const span = document.createElement("span");
@@ -436,13 +451,8 @@ function renderPager(root, { totalItems, page, pageSize, includePageSize }) {
     }
   });
 
-  // Próxima / Última
   nav.appendChild(makeBtn("›", Math.min(totalPages, page + 1), page >= totalPages, false, "Próxima página", "Próxima página"));
   nav.appendChild(makeBtn("»", totalPages, page >= totalPages, false, "Última página", "Última página"));
-
-  // Itens por página (apenas no topo)
-  const wrap = document.createElement("div");
-  wrap.style.display = "contents";
 
   if (includePageSize) {
     const sizeWrap = document.createElement("div");
@@ -462,16 +472,15 @@ function renderPager(root, { totalItems, page, pageSize, includePageSize }) {
     sel.addEventListener("change", () => {
       const n = parseInt(sel.value, 10) || 12;
       state.pageSize = Math.max(1, n);
-      state.page = 1; // volta ao início
+      state.page = 1;
       persistPager();
       renderLista();
     });
-    sizeWrap.appendChild(lab);
-    sizeWrap.appendChild(sel);
-
     root.appendChild(summary);
     root.appendChild(nav);
     root.appendChild(sizeWrap);
+    sizeWrap.appendChild(lab);
+    sizeWrap.appendChild(sel);
   } else {
     root.appendChild(summary);
     root.appendChild(nav);
@@ -498,12 +507,7 @@ function pageList(current, total) {
   }
   return result;
 }
-
-function resetToFirstPage() {
-  state.page = 1;
-  persistPager();
-}
-
+function resetToFirstPage() { state.page = 1; persistPager(); }
 function persistPager() {
   try {
     localStorage.setItem(PAGER.page, String(state.page));
@@ -522,11 +526,32 @@ function restorePager() {
   }
 }
 
-/* ================== Filtros / Util ================== */
+/* ================== Visão (Todos/Favoritos/Erros) ================== */
+function setViewMode(mode) {
+  state.viewMode = mode;
+  try { localStorage.setItem(VIEW.mode, mode); } catch (e) { }
+  activateViewChip(mode);
+  resetToFirstPage();
+  renderLista();
+}
+function restoreViewMode() {
+  try { state.viewMode = localStorage.getItem(VIEW.mode) || "all"; } catch (e) { state.viewMode = "all"; }
+  activateViewChip(state.viewMode);
+}
+function activateViewChip(mode) {
+  els.viewAll?.classList.toggle("is-active", mode === "all");
+  els.viewFav?.classList.toggle("is-active", mode === "fav");
+  els.viewErr?.classList.toggle("is-active", mode === "err");
+}
+
+/* ================== Filtros / Utils ================== */
 function applyFilters(lista) {
   const q = normalizar(state.filtroTexto);
   const cat = state.filtroCategoria;
   const dif = state.filtroDificuldade;
+
+  const favSet = new Set((window.Store?.getFavorites?.() || []).map(String));
+  const perQ = (window.Store?.getStats?.() || {}).perQ || {};
 
   return lista.filter((it) => {
     if (q) {
@@ -539,12 +564,20 @@ function applyFilters(lista) {
     if (dif && dif !== "all") {
       if (normalizar(it.dificuldade) !== normalizar(dif)) return false;
     }
+
+    if (state.viewMode === "fav") {
+      if (!favSet.has(String(it.id))) return false;
+    } else if (state.viewMode === "err") {
+      const pq = perQ[String(it.id)];
+      // Critério: já foi tentada e a última foi incorreta
+      if (!pq || pq.lastCorrect !== false) return false;
+    }
+
     return true;
   });
 }
 function setMensagem(txt) { if (els.msg) els.msg.textContent = txt || ""; }
 
-/* ================== Utils ================== */
 function tipoLabel(tipo) {
   switch ((tipo || "").toLowerCase()) {
     case "multipla_escolha": return "Múltipla escolha";
@@ -559,12 +592,7 @@ function resumo(txt, n = 140) {
   return s.length > n ? s.slice(0, n - 1) + "…" : s;
 }
 function normalizar(s) {
-  return (s || "")
-    .toString()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .toLowerCase()
-    .trim();
+  return (s || "").toString().normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 }
 function unique(arr) { return Array.from(new Set(arr)); }
 function replaceOptions(selectEl, values, labelFn = (v) => v) {
@@ -604,23 +632,14 @@ function clearFilters() {
   state.filtroTexto = "";
   state.filtroCategoria = "all";
   state.filtroDificuldade = "all";
-
   if (els.busca) els.busca.value = "";
   if (els.fCategoria) els.fCategoria.value = "all";
   if (els.fDificuldade) els.fDificuldade.value = "all";
-
-  persist("q", "");
-  persist("cat", "all");
-  persist("dif", "all");
+  persist("q", ""); persist("cat", "all"); persist("dif", "all");
 }
-function debounce(fn, t = 200) {
-  let id;
-  return (...args) => {
-    clearTimeout(id);
-    id = setTimeout(() => fn.apply(this, args), t);
-  };
-}
+function debounce(fn, t = 200) { let id; return (...args) => { clearTimeout(id); id = setTimeout(() => fn.apply(this, args), t); }; }
 
+/* Empty state reutilizável (foi adicionado no ui) */
 function renderEmptyState(title, text) {
   return `
     <div class="empty">
