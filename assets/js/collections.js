@@ -96,28 +96,27 @@
         }
     }
 
-    function importCollectionsFile(ev) {
+    // Import robusto com normalização da entrada
+    async function importCollectionsFile(ev) {
         const file = ev.target.files?.[0];
         if (!file) return;
-        file.text().then((text) => {
-            try {
-                const obj = JSON.parse(text);
-                const wrap = { collections: obj.collections || obj || [] };
-                const dbCur = JSON.parse(window.Store?.exportJSON?.() || "{}");
-                dbCur.collections = mergeCollections(dbCur.collections || [], wrap.collections || []);
-                window.Store?.importJSON?.(JSON.stringify(dbCur), { replace: true });
-                renderCollectionsGrid();
-                alert("Coleções importadas.");
-            } catch (e) {
-                console.error(e);
-                alert("Arquivo inválido.");
-            } finally {
-                ev.target.value = "";
-            }
-        }).catch(() => {
-            alert("Não foi possível ler o arquivo.");
+        try {
+            const text = await file.text();
+            const obj = JSON.parse(text);
+            const incoming = normalizeImportedCollections(obj);
+
+            const dbCur = JSON.parse(window.Store?.exportJSON?.() || "{}");
+            dbCur.collections = mergeCollections(dbCur.collections || [], incoming);
+
+            window.Store?.importJSON?.(JSON.stringify(dbCur), { replace: true });
+            renderCollectionsGrid();
+            alert(`Coleções importadas (${incoming.length}).`);
+        } catch (e) {
+            console.error(e);
+            alert("Arquivo inválido.");
+        } finally {
             ev.target.value = "";
-        });
+        }
     }
 
     function renderCollectionsGrid() {
@@ -164,9 +163,17 @@
             bStart.className = "button primary";
             bStart.title = "Iniciar estudo desta coleção";
             bStart.innerHTML = `<svg class="icon"><use href="#i-play"/></svg> Iniciar`;
+            // Buscar dataset no momento do clique (não fechar sobre "all" do render)
             bStart.addEventListener("click", () => {
-                const list = (c.qids || []).map(id => all.find(q => String(q.id) === String(id))).filter(Boolean);
-                if (!list.length) { alert("Esta coleção não possui questões válidas no dataset atual."); return; }
+                const allNow = window.App?.getAllItems?.() || [];
+                const list = (c.qids || [])
+                    .map(id => allNow.find(q => String(q.id) === String(id)))
+                    .filter(Boolean);
+
+                if (!list.length) {
+                    alert("Esta coleção não possui questões válidas no dataset atual.");
+                    return;
+                }
                 window.Player?.startSequence(list, 0, bStart, { filters: { q: "", cat: "all", dif: "all" }, exam: { active: false } });
             });
 
@@ -226,6 +233,18 @@
         URL.revokeObjectURL(url);
     }
 
+    // Normaliza diferentes formatos de import para um array de coleções
+    function normalizeImportedCollections(data) {
+        if (!data) return [];
+        // Se vier { collections: [...] }
+        if (Array.isArray(data.collections)) return data.collections;
+        // Se vier um array direto
+        if (Array.isArray(data)) return data;
+        // Se vier um único objeto de coleção { id, name, qids }
+        if (typeof data === "object" && (data.id != null || data.name || data.qids)) return [data];
+        return [];
+    }
+
     function mergeCollections(a, b) {
         const map = new Map();
         [...a, ...b].forEach(c => {
@@ -247,7 +266,11 @@
         els.done?.addEventListener("click", closePicker);
         els.overlay?.addEventListener("mousedown", (e) => { if (e.target === els.overlay) closePicker(); });
         els.createAdd?.addEventListener("click", createAndAdd);
-        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePicker(); });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && !els.overlay?.classList.contains("hidden")) {
+                closePicker();
+            }
+        });
 
         // Seção
         els.newCreate?.addEventListener("click", createCollectionFromPanel);
@@ -255,13 +278,14 @@
         els.importBtn?.addEventListener("click", () => els.file?.click());
         els.file?.addEventListener("change", importCollectionsFile);
 
-        // Re-render on changes
+        // Re-render on changes (store e dataset)
         window.addEventListener("store:changed", (ev) => {
             if (ev?.detail?.type === "collections") {
                 renderCollectionsGrid();
                 if (currentQuestion) renderPickerList();
             }
         });
+        window.addEventListener("app:data-ready", renderCollectionsGrid);
     }
 
     function cacheEls() {

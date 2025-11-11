@@ -271,6 +271,7 @@ async function carregarQuestoes() {
     popularFiltros(state.questoes);
     resetToFirstPage();
     renderLista();
+    dispatchDatasetReady(); // evento para outros módulos (ex.: coleções)
     return;
   }
 
@@ -284,6 +285,7 @@ async function carregarQuestoes() {
     popularFiltros(state.questoes);
     resetToFirstPage();
     renderLista();
+    dispatchDatasetReady(); // evento para outros módulos (ex.: coleções)
   } catch (err) {
     console.error(err);
     els.lista.innerHTML = renderEmptyState(
@@ -292,6 +294,7 @@ async function carregarQuestoes() {
     );
     setMensagem("Falha ao carregar o arquivo JSON.");
     clearPagers();
+    dispatchDatasetReady(true); // sinaliza erro
   }
 }
 
@@ -836,6 +839,15 @@ function timeAgo(ts) {
   if (m < 60) return `${m}min`;
   const h = Math.floor(m / 60);
   return `${h}h`;
+}
+
+/* Dispara evento global quando o dataset estiver pronto */
+function dispatchDatasetReady(isError = false) {
+  try {
+    window.dispatchEvent(new CustomEvent("app:data-ready", {
+      detail: { total: state.questoes?.length || 0, error: !!isError }
+    }));
+  } catch { }
 }
 
 /* Expor itens filtrados e dataset completo (para Coleções/Simulado) */
