@@ -61,28 +61,56 @@
         }
         els.list.appendChild(frag);
     }
-    function createAndAdd() {
+
+    async function createAndAdd() {
         const name = (els.new2?.value || "").trim();
         if (!name) { setPickerMsg("Informe um nome.", "err"); return; }
-        const id = window.Store?.createCollection?.(name);
-        if (id && currentQuestion?.id != null) {
-            window.Store?.addToCollection?.(id, currentQuestion.id);
+
+        try {
+            const created = await toPromise(window.Store?.createCollection?.(name));
+            const id = getCreatedId(created, name) || findCollectionIdByName(name);
+            if (!id) {
+                console.warn("Store.createCollection não retornou id; tentando re-render e localizar depois.");
+                setTimeout(() => { renderPickerList(); renderCollectionsGrid(); }, 0);
+                setPickerMsg("Coleção criada. Adicione novamente se necessário.", "ok");
+                return;
+            }
+
+            if (currentQuestion?.id != null) {
+                window.Store?.addToCollection?.(id, currentQuestion.id);
+            }
             els.new2.value = "";
             renderPickerList();
-            setPickerMsg("Coleção criada e questão adicionada.", "ok");
             renderCollectionsGrid();
+            setPickerMsg("Coleção criada e questão adicionada.", "ok");
+        } catch (e) {
+            console.error(e);
+            setPickerMsg("Falha ao criar a coleção.", "err");
         }
     }
-    function setPickerMsg(t, type = "") { if (els.msg) { els.msg.textContent = t || ""; els.msg.className = "msg " + (type || ""); } }
+
+    function setPickerMsg(t, type = "") {
+        if (els.msg) { els.msg.textContent = t || ""; els.msg.className = "msg " + (type || ""); }
+    }
 
     /* ===== Seção Coleções ===== */
 
-    function createCollectionFromPanel() {
+    async function createCollectionFromPanel() {
         const name = (els.newName?.value || "").trim();
-        if (!name) return;
-        window.Store?.createCollection?.(name);
-        els.newName.value = "";
-        renderCollectionsGrid();
+        if (!name) { els.newName?.focus?.(); return; }
+        try {
+            const created = await toPromise(window.Store?.createCollection?.(name));
+            // Tenta identificar o id criado; se não vier, localiza por nome após pequeno atraso
+            const id = getCreatedId(created, name) || findCollectionIdByName(name);
+            els.newName.value = "";
+            // Re-render imediato e no próximo tick para cobrir Store assíncrona
+            renderCollectionsGrid();
+            setTimeout(renderCollectionsGrid, 0);
+            if (!id) console.warn("Coleção criada mas id não retornado pela Store.");
+        } catch (e) {
+            console.error(e);
+            alert("Falha ao criar coleção.");
+        }
     }
 
     function exportAllCollections() {
@@ -112,6 +140,7 @@
 
             window.Store?.importJSON?.(JSON.stringify(dbCur), { replace: true });
             renderCollectionsGrid();
+            setTimeout(renderCollectionsGrid, 0);
             alert(`Coleções importadas (${incoming.length}).`);
         } catch (e) {
             console.error(e);
@@ -197,6 +226,7 @@
                 if (nm == null) return;
                 window.Store?.renameCollection?.(c.id, nm);
                 renderCollectionsGrid();
+                setTimeout(renderCollectionsGrid, 0);
             });
 
             const bDel = document.createElement("button");
@@ -207,6 +237,7 @@
                 if (!confirm(`Excluir a coleção "${c.name}"?`)) return;
                 window.Store?.deleteCollection?.(c.id);
                 renderCollectionsGrid();
+                setTimeout(renderCollectionsGrid, 0);
             });
 
             actions.appendChild(bStart);
@@ -225,6 +256,28 @@
     }
 
     /* ===== Helpers ===== */
+
+    function toPromise(v) { return v && typeof v.then === "function" ? v : Promise.resolve(v); }
+
+    // Extrai um id de retorno da Store (pode vir como string, número ou objeto)
+    function getCreatedId(ret, name) {
+        if (ret == null) return null;
+        if (typeof ret === "string" || typeof ret === "number") return String(ret);
+        if (typeof ret === "object" && ret.id != null) return String(ret.id);
+        // Alguns stores podem retornar o objeto completo com name, qids, etc.
+        if (typeof ret === "object" && ret.name && !ret.id) {
+            const maybe = findCollectionIdByName(ret.name);
+            if (maybe) return maybe;
+        }
+        // Por nome, última tentativa
+        return findCollectionIdByName(name);
+    }
+    function findCollectionIdByName(name) {
+        const colls = window.Store?.getCollections?.() || [];
+        const target = String(name || "").toLowerCase().trim();
+        const found = colls.find(c => String(c.name || "").toLowerCase().trim() === target);
+        return found?.id ? String(found.id) : null;
+    }
 
     function downloadBlob(text, filename, mime = "application/octet-stream") {
         const blob = new Blob([text], { type: mime });
@@ -292,6 +345,7 @@
         els.done?.addEventListener("click", closePicker);
         els.overlay?.addEventListener("mousedown", (e) => { if (e.target === els.overlay) closePicker(); });
         els.createAdd?.addEventListener("click", createAndAdd);
+        els.new2?.addEventListener?.("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); createAndAdd(); } });
         document.addEventListener("keydown", (e) => {
             if (e.key === "Escape" && !els.overlay?.classList.contains("hidden")) {
                 closePicker();
@@ -300,6 +354,7 @@
 
         // Seção
         els.newCreate?.addEventListener("click", createCollectionFromPanel);
+        els.newName?.addEventListener?.("keydown", (e) => { if (e.key === "Enter") { e.preventDefault(); createCollectionFromPanel(); } });
         els.exportAll?.addEventListener("click", exportAllCollections);
         els.importBtn?.addEventListener("click", () => els.file?.click());
         els.file?.addEventListener("change", importCollectionsFile);
@@ -307,7 +362,8 @@
         // Re-render on changes (store e dataset)
         window.addEventListener("store:changed", (ev) => {
             const t = ev?.detail?.type || "";
-            if (!t || t.includes("collection")) {
+            // Reage sempre que não houver type ou quando contiver "collection"
+            if (!t || /collection/i.test(t)) {
                 renderCollectionsGrid();
                 if (currentQuestion) renderPickerList();
             }
@@ -338,7 +394,7 @@
         cacheEls();
         bind();
         renderCollectionsGrid();
-        // Garante um segundo render após Store.init() do app.js (mesmo DOMContentLoaded)
+        // Segundo render após o ciclo atual (cobre Store.init do app.js)
         requestAnimationFrame(renderCollectionsGrid);
     }
 
