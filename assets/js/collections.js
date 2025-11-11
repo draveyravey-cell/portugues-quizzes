@@ -33,6 +33,7 @@
         document.body.classList.remove("modal-open");
     }
     function renderPickerList() {
+        if (!els.list) return;
         const colls = window.Store?.getCollections?.() || [];
         els.list.innerHTML = "";
         const frag = document.createDocumentFragment();
@@ -96,14 +97,15 @@
         }
     }
 
-    // Import robusto com normalização da entrada
+    // Import robusto com normalização da entrada e garantia de IDs
     async function importCollectionsFile(ev) {
         const file = ev.target.files?.[0];
         if (!file) return;
         try {
             const text = await file.text();
             const obj = JSON.parse(text);
-            const incoming = normalizeImportedCollections(obj);
+            const incomingRaw = normalizeImportedCollections(obj);
+            const incoming = ensureCollectionIds(incomingRaw);
 
             const dbCur = JSON.parse(window.Store?.exportJSON?.() || "{}");
             dbCur.collections = mergeCollections(dbCur.collections || [], incoming);
@@ -240,9 +242,32 @@
         if (Array.isArray(data.collections)) return data.collections;
         // Se vier um array direto
         if (Array.isArray(data)) return data;
-        // Se vier um único objeto de coleção { id, name, qids }
+        // Se vier um único objeto de coleção { id?, name, qids }
         if (typeof data === "object" && (data.id != null || data.name || data.qids)) return [data];
         return [];
+    }
+
+    // Garante IDs para coleções importadas sem id (usa slug do nome com fallback único)
+    function ensureCollectionIds(list) {
+        const used = new Set();
+        return (list || []).map((c) => {
+            if (!c) return null;
+            let id = c.id != null && String(c.id).trim() !== "" ? String(c.id) : slugify(c.name || "");
+            if (!id) id = `col-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+            while (used.has(id)) {
+                id = `${id}-${Math.floor(Math.random() * 1000)}`;
+            }
+            used.add(id);
+            return { id, name: c.name || "Coleção", qids: Array.isArray(c.qids) ? c.qids : [] };
+        }).filter(Boolean);
+    }
+
+    function slugify(s) {
+        return String(s || "")
+            .toLowerCase()
+            .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-+|-+$/g, "");
     }
 
     function mergeCollections(a, b) {
@@ -250,8 +275,9 @@
         [...a, ...b].forEach(c => {
             if (!c || !c.id) return;
             const prev = map.get(c.id);
-            if (!prev) map.set(c.id, { id: c.id, name: c.name || "Coleção", qids: Array.from(new Set((c.qids || []).map(String))) });
-            else {
+            if (!prev) {
+                map.set(c.id, { id: c.id, name: c.name || "Coleção", qids: Array.from(new Set((c.qids || []).map(String))) });
+            } else {
                 prev.name = prev.name || c.name || "Coleção";
                 prev.qids = Array.from(new Set([...(prev.qids || []), ...((c.qids || []).map(String))]));
                 map.set(c.id, prev);
@@ -280,7 +306,8 @@
 
         // Re-render on changes (store e dataset)
         window.addEventListener("store:changed", (ev) => {
-            if (ev?.detail?.type === "collections") {
+            const t = ev?.detail?.type || "";
+            if (!t || t.includes("collection")) {
                 renderCollectionsGrid();
                 if (currentQuestion) renderPickerList();
             }
@@ -311,6 +338,8 @@
         cacheEls();
         bind();
         renderCollectionsGrid();
+        // Garante um segundo render após Store.init() do app.js (mesmo DOMContentLoaded)
+        requestAnimationFrame(renderCollectionsGrid);
     }
 
     // Expor API do picker para os cards
