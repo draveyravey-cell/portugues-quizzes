@@ -1,0 +1,296 @@
+"use strict";
+
+/* Coleções — picker + painel (seção #colecoes) */
+(function () {
+    const els = {
+        // Picker
+        overlay: null, close: null, title: null, list: null, msg: null, done: null, new2: null, createAdd: null,
+        // Seção
+        newName: null, newCreate: null, exportAll: null, importBtn: null, file: null, grid: null
+    };
+
+    let currentQuestion = null; // { id, tema, categoria }
+
+    function qs(sel) { return document.querySelector(sel); }
+
+    /* ===== Picker ===== */
+
+    function openPicker(q) {
+        currentQuestion = q;
+        if (!els.overlay) cacheEls();
+        renderPickerList();
+        if (els.title) els.title.textContent = `Adicionar à coleção — Q${q?.id}`;
+        if (els.msg) els.msg.textContent = "";
+        els.overlay?.classList.remove("hidden");
+        els.overlay?.setAttribute("aria-hidden", "false");
+        document.body.classList.add("modal-open");
+        els.new2?.focus?.();
+    }
+    function closePicker() {
+        currentQuestion = null;
+        els.overlay?.classList.add("hidden");
+        els.overlay?.setAttribute("aria-hidden", "true");
+        document.body.classList.remove("modal-open");
+    }
+    function renderPickerList() {
+        const colls = window.Store?.getCollections?.() || [];
+        els.list.innerHTML = "";
+        const frag = document.createDocumentFragment();
+        if (!colls.length) {
+            const li = document.createElement("li");
+            li.className = "option";
+            li.textContent = "Nenhuma coleção criada ainda.";
+            frag.appendChild(li);
+        } else {
+            colls.forEach(c => {
+                const li = document.createElement("li");
+                li.className = "option";
+                const label = document.createElement("label"); label.style.display = "flex"; label.style.gap = ".5rem"; label.style.alignItems = "center";
+                const ck = document.createElement("input"); ck.type = "checkbox"; ck.checked = window.Store?.isInCollection?.(c.id, currentQuestion?.id);
+                ck.addEventListener("change", () => {
+                    if (ck.checked) window.Store?.addToCollection?.(c.id, currentQuestion?.id);
+                    else window.Store?.removeFromCollection?.(c.id, currentQuestion?.id);
+                });
+                const span = document.createElement("span");
+                span.textContent = c.name;
+                label.appendChild(ck); label.appendChild(span);
+                li.appendChild(label);
+                frag.appendChild(li);
+            });
+        }
+        els.list.appendChild(frag);
+    }
+    function createAndAdd() {
+        const name = (els.new2?.value || "").trim();
+        if (!name) { setPickerMsg("Informe um nome.", "err"); return; }
+        const id = window.Store?.createCollection?.(name);
+        if (id && currentQuestion?.id != null) {
+            window.Store?.addToCollection?.(id, currentQuestion.id);
+            els.new2.value = "";
+            renderPickerList();
+            setPickerMsg("Coleção criada e questão adicionada.", "ok");
+            renderCollectionsGrid();
+        }
+    }
+    function setPickerMsg(t, type = "") { if (els.msg) { els.msg.textContent = t || ""; els.msg.className = "msg " + (type || ""); } }
+
+    /* ===== Seção Coleções ===== */
+
+    function createCollectionFromPanel() {
+        const name = (els.newName?.value || "").trim();
+        if (!name) return;
+        window.Store?.createCollection?.(name);
+        els.newName.value = "";
+        renderCollectionsGrid();
+    }
+
+    function exportAllCollections() {
+        try {
+            const db = JSON.parse(window.Store?.exportJSON?.() || "{}");
+            const cols = Array.isArray(db.collections) ? db.collections : [];
+            const data = JSON.stringify({ collections: cols }, null, 2);
+            downloadBlob(data, "colecoes.json", "application/json");
+        } catch (e) {
+            console.error(e);
+            alert("Falha ao exportar coleções.");
+        }
+    }
+
+    function importCollectionsFile(ev) {
+        const file = ev.target.files?.[0];
+        if (!file) return;
+        file.text().then((text) => {
+            try {
+                const obj = JSON.parse(text);
+                const wrap = { collections: obj.collections || obj || [] };
+                const dbCur = JSON.parse(window.Store?.exportJSON?.() || "{}");
+                dbCur.collections = mergeCollections(dbCur.collections || [], wrap.collections || []);
+                window.Store?.importJSON?.(JSON.stringify(dbCur), { replace: true });
+                renderCollectionsGrid();
+                alert("Coleções importadas.");
+            } catch (e) {
+                console.error(e);
+                alert("Arquivo inválido.");
+            } finally {
+                ev.target.value = "";
+            }
+        }).catch(() => {
+            alert("Não foi possível ler o arquivo.");
+            ev.target.value = "";
+        });
+    }
+
+    function renderCollectionsGrid() {
+        const grid = els.grid;
+        if (!grid) return;
+        const colls = window.Store?.getCollections?.() || [];
+        if (!colls.length) {
+            grid.innerHTML = `
+        <div class="empty">
+          <svg class="empty__art" viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="e1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="rgba(106,166,255,.5)"/><stop offset="100%" stop-color="rgba(255,224,138,.4)"/>
+            </linearGradient></defs>
+            <ellipse cx="100" cy="100" rx="70" ry="12" fill="rgba(0,0,0,.18)"/>
+            <path d="M40 90c30-40 90-40 120 0-40 20-80 20-120 0z" fill="url(#e1)"/>
+            <circle cx="80" cy="70" r="10" fill="url(#e1)"/><circle cx="120" cy="60" r="14" fill="url(#e1)"/>
+          </svg>
+          <div class="empty__title">Nenhuma coleção ainda</div>
+          <div class="empty__text">Crie uma nova coleção para começar.</div>
+        </div>
+      `;
+            return;
+        }
+
+        // Dataset corrente (para contadores)
+        const all = window.App?.getAllItems?.() || [];
+
+        const frag = document.createDocumentFragment();
+        colls.forEach(c => {
+            const card = document.createElement("article");
+            card.className = "col-card";
+            const h3 = document.createElement("h3");
+            h3.textContent = c.name || "Coleção";
+            const total = (c.qids || []).length;
+            const present = (c.qids || []).filter(id => all.some(q => String(q.id) === String(id))).length;
+            const meta = document.createElement("div");
+            meta.className = "col-meta";
+            meta.textContent = `Questões: ${present}/${total}`;
+
+            const actions = document.createElement("div");
+            actions.className = "col-actions";
+
+            const bStart = document.createElement("button");
+            bStart.className = "button primary";
+            bStart.title = "Iniciar estudo desta coleção";
+            bStart.innerHTML = `<svg class="icon"><use href="#i-play"/></svg> Iniciar`;
+            bStart.addEventListener("click", () => {
+                const list = (c.qids || []).map(id => all.find(q => String(q.id) === String(id))).filter(Boolean);
+                if (!list.length) { alert("Esta coleção não possui questões válidas no dataset atual."); return; }
+                window.Player?.startSequence(list, 0, bStart, { filters: { q: "", cat: "all", dif: "all" }, exam: { active: false } });
+            });
+
+            const bExport = document.createElement("button");
+            bExport.className = "button";
+            bExport.title = "Exportar esta coleção (JSON)";
+            bExport.innerHTML = `<svg class="icon"><use href="#i-download"/></svg> Exportar`;
+            bExport.addEventListener("click", () => {
+                const data = JSON.stringify({ id: c.id, name: c.name, qids: c.qids || [] }, null, 2);
+                downloadBlob(data, `colecao-${(c.name || "sem-nome")}.json`, "application/json");
+            });
+
+            const bRename = document.createElement("button");
+            bRename.className = "button";
+            bRename.title = "Renomear coleção";
+            bRename.innerHTML = `<svg class="icon"><use href="#i-edit"/></svg> Renomear`;
+            bRename.addEventListener("click", () => {
+                const nm = prompt("Novo nome da coleção:", c.name || "Coleção");
+                if (nm == null) return;
+                window.Store?.renameCollection?.(c.id, nm);
+                renderCollectionsGrid();
+            });
+
+            const bDel = document.createElement("button");
+            bDel.className = "button";
+            bDel.title = "Excluir coleção";
+            bDel.innerHTML = `<svg class="icon"><use href="#i-trash"/></svg> Excluir`;
+            bDel.addEventListener("click", () => {
+                if (!confirm(`Excluir a coleção "${c.name}"?`)) return;
+                window.Store?.deleteCollection?.(c.id);
+                renderCollectionsGrid();
+            });
+
+            actions.appendChild(bStart);
+            actions.appendChild(bExport);
+            actions.appendChild(bRename);
+            actions.appendChild(bDel);
+
+            card.appendChild(h3);
+            card.appendChild(meta);
+            card.appendChild(actions);
+            frag.appendChild(card);
+        });
+
+        grid.innerHTML = "";
+        grid.appendChild(frag);
+    }
+
+    /* ===== Helpers ===== */
+
+    function downloadBlob(text, filename, mime = "application/octet-stream") {
+        const blob = new Blob([text], { type: mime });
+        const a = document.createElement("a");
+        const url = URL.createObjectURL(blob);
+        a.href = url; a.download = filename || "file";
+        document.body.appendChild(a); a.click(); a.remove();
+        URL.revokeObjectURL(url);
+    }
+
+    function mergeCollections(a, b) {
+        const map = new Map();
+        [...a, ...b].forEach(c => {
+            if (!c || !c.id) return;
+            const prev = map.get(c.id);
+            if (!prev) map.set(c.id, { id: c.id, name: c.name || "Coleção", qids: Array.from(new Set((c.qids || []).map(String))) });
+            else {
+                prev.name = prev.name || c.name || "Coleção";
+                prev.qids = Array.from(new Set([...(prev.qids || []), ...((c.qids || []).map(String))]));
+                map.set(c.id, prev);
+            }
+        });
+        return Array.from(map.values());
+    }
+
+    function bind() {
+        // Picker
+        els.close?.addEventListener("click", closePicker);
+        els.done?.addEventListener("click", closePicker);
+        els.overlay?.addEventListener("mousedown", (e) => { if (e.target === els.overlay) closePicker(); });
+        els.createAdd?.addEventListener("click", createAndAdd);
+        document.addEventListener("keydown", (e) => { if (e.key === "Escape") closePicker(); });
+
+        // Seção
+        els.newCreate?.addEventListener("click", createCollectionFromPanel);
+        els.exportAll?.addEventListener("click", exportAllCollections);
+        els.importBtn?.addEventListener("click", () => els.file?.click());
+        els.file?.addEventListener("change", importCollectionsFile);
+
+        // Re-render on changes
+        window.addEventListener("store:changed", (ev) => {
+            if (ev?.detail?.type === "collections") {
+                renderCollectionsGrid();
+                if (currentQuestion) renderPickerList();
+            }
+        });
+    }
+
+    function cacheEls() {
+        // Picker
+        els.overlay = qs("#col-overlay");
+        els.close = qs("#col-close");
+        els.title = qs("#col-title");
+        els.list = qs("#col-list");
+        els.msg = qs("#col-msg");
+        els.done = qs("#col-done");
+        els.new2 = qs("#col-new2");
+        els.createAdd = qs("#col-create-add");
+        // Seção
+        els.newName = qs("#col-new-name");
+        els.newCreate = qs("#col-new-create");
+        els.exportAll = qs("#col-export-all");
+        els.importBtn = qs("#col-import");
+        els.file = qs("#col-file");
+        els.grid = qs("#collections-list");
+    }
+
+    function init() {
+        cacheEls();
+        bind();
+        renderCollectionsGrid();
+    }
+
+    // Expor API do picker para os cards
+    window.Collections = { openPicker };
+
+    document.addEventListener("DOMContentLoaded", init);
+})();

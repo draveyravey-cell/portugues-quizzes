@@ -70,6 +70,22 @@
     <symbol id="i-time" viewBox="0 0 24 24">
       <path fill="currentColor" d="M12 1a11 11 0 1 0 11 11A11.012 11.012 0 0 0 12 1Zm1 12h5v-2h-4V6h-2v7Z" />
     </symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" />
+    </symbol>
+    <symbol id="i-edit" viewBox="0 0 24 24">
+      <path fill="currentColor"
+        d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25Zm18-11.5a1 1 0 0 0 0-1.41L19.66 1a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75L21 5.75Z" />
+    </symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6 7h12v14H6zM9 4h6l1 2H8l1-2Z" />
+    </symbol>
+    <symbol id="i-play" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M8 5v14l11-7z" />
+    </symbol>
+    <symbol id="i-list" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z" />
+    </symbol>
   </svg>
 
   <!-- Skip link -->
@@ -85,6 +101,7 @@
         <a href="#historico">Histórico</a>
         <a href="#editor">Editor</a>
         <a href="#conta">Conta</a>
+        <a href="#colecoes">Coleções</a>
         <a href="#sobre">Sobre</a>
       </nav>
 
@@ -493,6 +510,76 @@
         </div>
       </div>
     </section>
+    <section id="colecoes" class="collections">
+      <h2>Coleções</h2>
+      <details class="help" id="help-colecoes">
+        <summary><svg class="icon">
+            <use href="#i-help" />
+          </svg> Como usar as coleções</summary>
+        <ul>
+          <li>Crie coleções nomeadas para agrupar questões específicas (ex.: “Crase — locuções”).</li>
+          <li>Adicione questões aos conjuntos pelo botão “Coleções” no card ou por este painel.</li>
+          <li>Inicie um estudo direto por uma coleção usando “Iniciar”.</li>
+          <li>Exportar/Importar permite compartilhar ou migrar coleções.</li>
+        </ul>
+      </details>
+
+      <div class="collections__actions">
+        <input id="col-new-name" class="form-input" placeholder="Nome da nova coleção" />
+        <button id="col-new-create" class="button primary" type="button" title="Criar coleção">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-plus" />
+          </svg> Criar coleção
+        </button>
+        <span class="editor__spacer"></span>
+        <input id="col-file" type="file" accept="application/json" hidden />
+        <button id="col-export-all" class="button" type="button" title="Exportar todas as coleções">
+          <svg class="icon">
+            <use href="#i-download" />
+          </svg> Exportar todas
+        </button>
+        <button id="col-import" class="button" type="button" title="Importar coleções (JSON)">
+          <svg class="icon">
+            <use href="#i-upload" />
+          </svg> Importar
+        </button>
+      </div>
+
+      <div id="collections-list" class="collections__grid"></div>
+    </section>
+    <!-- Picker de Coleções -->
+    <div id="col-overlay" class="overlay hidden" aria-hidden="true">
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="col-title" aria-describedby="col-desc">
+        <header class="modal__header">
+          <h2 id="col-title">Adicionar à coleção</h2>
+          <button id="col-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+        </header>
+        <div class="modal__body">
+          <p id="col-desc" class="hint">Selecione as coleções para incluir esta questão ou crie uma nova.</p>
+          <ul id="col-list" class="options"></ul>
+
+          <div class="form" style="margin-top:.6rem;">
+            <div class="form-row">
+              <label class="form-label" for="col-new2">Criar e adicionar</label>
+              <input id="col-new2" class="form-input" type="text" placeholder="Nome da coleção" />
+            </div>
+            <div class="form-row form-actions">
+              <button id="col-create-add" class="button primary" type="button">
+                <svg class="icon">
+                  <use href="#i-plus" />
+                </svg> Criar e adicionar
+              </button>
+            </div>
+          </div>
+          <div id="col-msg" class="msg" aria-live="polite"></div>
+        </div>
+        <footer class="modal__footer">
+          <div class="modal__actions">
+            <button id="col-done" class="button" type="button">Concluir</button>
+          </div>
+        </footer>
+      </section>
+    </div>
   </main>
 
   <footer class="footer" id="sobre">

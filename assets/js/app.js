@@ -1,6 +1,6 @@
 "use strict";
 
-/* App com paginação + favoritos + caderno de erros + deep link + highlight + status */
+/* App com paginação + favoritos + caderno de erros + deep link + highlight + status + coleções */
 const state = {
   questoes: [],
   filtroTexto: "",
@@ -142,9 +142,12 @@ document.addEventListener("DOMContentLoaded", () => {
     carregarQuestoes();
   });
 
-  // Favoritos mudaram => re-render (não altera URL)
+  // Mudanças no store (favoritos, coleções, etc) => re-render (não altera URL)
   window.addEventListener("store:changed", (ev) => {
     if (ev?.detail?.type === "favorites") renderLista();
+    if (ev?.detail?.type === "collections") {
+      // atualizações no grid são feitas pelo collections.js; aqui, só re-render da lista se necessário
+    }
     // alterações locais => pendente de sync (se logado)
     if (window.Auth?.getUser?.()) {
       pendingSync = true;
@@ -399,22 +402,33 @@ function renderLista() {
 
     const actions = document.createElement("div");
     actions.className = "actions";
-    const btn = document.createElement("button");
-    btn.className = "button primary";
-    btn.textContent = "Responder";
-    btn.setAttribute("aria-label", `Responder questão ${it.id} — ${it.tema || it.categoria || "Português"}`);
 
+    const btnStart = document.createElement("button");
+    btnStart.className = "button primary";
+    btnStart.textContent = "Responder";
+    btnStart.setAttribute("aria-label", `Responder questão ${it.id} — ${it.tema || it.categoria || "Português"}`);
     const isSupported = tiposSuportados.has((it.tipo || "").toLowerCase());
-    btn.disabled = !isSupported;
-    btn.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
+    btnStart.disabled = !isSupported;
+    btnStart.title = isSupported ? "Responder questão" : "Tipo ainda não suportado";
     if (isSupported) {
-      btn.addEventListener("click", (ev) => {
+      btnStart.addEventListener("click", (ev) => {
         window.Player?.startSequence(viewItems, idx, ev.currentTarget, {
           filters: { q: state.filtroTexto, cat: state.filtroCategoria, dif: state.filtroDificuldade }
         });
       });
     }
-    actions.appendChild(btn);
+
+    const btnCol = document.createElement("button");
+    btnCol.className = "button";
+    btnCol.title = "Adicionar à coleção";
+    btnCol.innerHTML = `<svg class="icon"><use href="#i-list"/></svg> Coleções`;
+    btnCol.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      window.Collections?.openPicker?.(it);
+    });
+
+    actions.appendChild(btnStart);
+    actions.appendChild(btnCol);
 
     card.appendChild(tags);
     card.appendChild(h3);
@@ -769,7 +783,7 @@ function clearFilters() {
 }
 function debounce(fn, t = 200) { let id; return (...args) => { clearTimeout(id); id = setTimeout(() => fn.apply(this, args), t); }; }
 
-/* Empty state (mesma função já adicionada antes) */
+/* Empty state */
 function renderEmptyState(title, text) {
   return `
     <div class="empty">
@@ -824,7 +838,8 @@ function timeAgo(ts) {
   return `${h}h`;
 }
 
-/* Expor itens filtrados para o simulado */
+/* Expor itens filtrados e dataset completo (para Coleções/Simulado) */
 window.App = {
-  getFilteredItems: () => applyFilters(state.questoes)
+  getFilteredItems: () => applyFilters(state.questoes),
+  getAllItems: () => state.questoes.slice()
 };
