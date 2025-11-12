@@ -24,6 +24,7 @@
   --topbar-bg: rgba(14, 15, 17, .6);
 }
 
+
 /* Tema claro */
 [data-theme="light"] {
   color-scheme: light;
@@ -41,7 +42,7 @@
   --topbar-bg: rgba(255, 255, 255, .75);
 }
 
-  {
+* {
   box-sizing: border-box;
 }
 
@@ -1043,13 +1044,13 @@ body.modal-open {
   display: inline-block;
 }
 
-/* Fundo decorativo /
+/* ===== Elementos adicionais ===== */
 .bg-decor {
-position: relative;
-z-index: 0;
-height: 180px;
-margin-top: -60px;
-/ sobe atrás do header */
+  position: relative;
+  z-index: 0;
+  height: 180px;
+  margin-top: -60px;
+
 }
 
 .bg-decor__svg {
@@ -1584,11 +1585,19 @@ mark {
   background: rgba(255, 255, 255, .08);
 }
 
-/* Badge de status mais compacto no mobile /
-#status-badge { display: inline-flex; align-items: center; gap: .35rem; }
+/* Badge de status mais compacto no mobile */
+#status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+}
+
 #status-badge .dot {
-width: 10px; height: 10px; border-radius: 50%;
-background: #4cd964; / online/local ok */
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #4cd964;
+  /* online/local ok */
 }
 
 @media (max-width: 768px) {
