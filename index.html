@@ -91,35 +91,47 @@
   <!-- Skip link -->
   <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
 
-  <header class="topbar">
+  <header class="topbar" role="banner">
     <div class="container topbar__inner">
-      <div class="brand">Português Prático</div>
+      <a class="brand" href="#inicio" aria-label="Página inicial">Português Prático</a>
 
-      <nav class="nav" aria-label="Navegação principal">
-        <a href="#inicio">Início</a>
-        <a href="#exercicios">Exercícios</a>
-        <a href="#historico">Histórico</a>
-        <a href="#editor">Editor</a>
-        <a href="#conta">Conta</a>
-        <a href="#colecoes">Coleções</a>
-        <a href="#sobre">Sobre</a>
+      <nav id="main-nav" class="nav topbar__nav" aria-label="Navegação principal">
+        <a href="#inicio" data-nav="inicio">Início</a>
+        <a href="#exercicios" data-nav="exercicios">Exercícios</a>
+        <a href="#historico" data-nav="historico">Histórico</a>
+        <a href="#editor" data-nav="editor">Editor</a>
+        <a href="#conta" data-nav="conta">Conta</a>
+        <a href="#colecoes" data-nav="colecoes">Coleções</a>
+        <a href="#sobre" data-nav="sobre">Sobre</a>
       </nav>
 
-      <div class="actions">
+      <div class="topbar__actions">
         <span id="status-badge" class="status-badge" title="Status">
           <span class="dot" aria-hidden="true"></span>
           <span id="status-badge-text">Local</span>
         </span>
+
         <button id="theme-toggle" class="icon-btn" type="button" aria-label="Alternar tema" title="Alternar tema">
           <span class="theme-icon" aria-hidden="true">🌙</span>
         </button>
+
         <button id="account-btn" class="icon-btn" type="button" aria-label="Conta" title="Minha conta">
           <svg class="icon" aria-hidden="true">
             <use href="#i-user" />
           </svg>
         </button>
+
+        <button id="menu-toggle" class="icon-btn topbar__menu" type="button" aria-label="Abrir menu"
+          aria-controls="main-nav" aria-expanded="false" title="Menu">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-list" />
+          </svg>
+        </button>
       </div>
     </div>
+
+    <!-- backdrop para o menu mobile -->
+    <div id="nav-backdrop" class="topbar__backdrop" hidden></div>
   </header>
 
   <!-- Fundo decorativo -->
