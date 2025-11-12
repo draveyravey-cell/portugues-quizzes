@@ -2,7 +2,7 @@
 
 /* Sync v2 — bidirecional (pull + push) com Supabase
    window.Sync:
-   - syncAll(): puxa da nuvem, mescla no local, empurra faltantes/alterados
+   - syncAll(): empurra deletes, puxa da nuvem, mescla no local, empurra faltantes/alterados
    - startAuto(), stopAuto()
 */
 (function () {
@@ -79,6 +79,20 @@
         return { count: rows.length };
     }
 
+    // Deleta coleções por IDs no Supabase
+    async function deleteCollectionsByIds(ids, userId) {
+        if (!ids || !ids.length) return { deleted: 0 };
+        const client = sb();
+        // .select() retorna as linhas deletadas; se não quiser dados, pode omitir
+        const { error } = await client
+            .from("collections")
+            .delete()
+            .eq("user_id", userId)
+            .in("id", ids);
+        if (error) throw error;
+        return { deleted: ids.length };
+    }
+
     function mapRemoteCollections(rows) {
         return (rows || []).map(r => ({
             id: String(r.id),
@@ -112,7 +126,24 @@
         const client = sb();
         if (!u || !client) return { ok: false, message: "Não autenticado." };
 
-        // Attempts
+        // 0) PUSH deletes de coleções (tombstones) antes de qualquer pull
+        let deletedCols = 0;
+        try {
+            const tombs = window.Store?.getDeletedCollections?.() || [];
+            const ids = tombs.map(t => String(t.id));
+            if (ids.length) {
+                const res = await deleteCollectionsByIds(ids, u.id);
+                deletedCols = res.deleted || ids.length;
+                // Se deletou (ou não existia mais), limpamos os tombstones
+                window.Store?.clearDeletedCollections?.(ids);
+                window.Store?.setSyncMeta?.(u.id, { lastCollectionsDeleteCount: deletedCols });
+            }
+        } catch (e) {
+            console.warn("collections delete push failed:", e);
+            // Mantém tombstones para tentar de novo no próximo sync
+        }
+
+        // 1) Attempts
         let remoteAttempts = [];
         let mergeRes = { added: 0, updated: 0, kept: 0 };
         let pushedAttempts = 0;
@@ -144,11 +175,9 @@
             window.Store?.setSyncMeta?.(u.id, { lastPushAt: Date.now(), lastPushCount: pushedAttempts });
         } catch (e) {
             console.warn("attempts sync failed:", e);
-            // Decide se interrompe aqui ou segue com collections.
-            // Vou seguir com collections para tentar sincronizar pelo menos coleções.
         }
 
-        // Collections
+        // 2) Collections (pull -> merge -> push upserts)
         let remoteCollections = [];
         let pushedCols = 0;
 
@@ -183,7 +212,6 @@
                 pushedCols = resCols.count || toPushCols.length;
             }
 
-            // Metadados (opcional: deixa registrado também os números de coleções)
             window.Store?.setSyncMeta?.(u.id, {
                 lastCollectionsPullCount: remoteCollections.length,
                 lastCollectionsPushCount: pushedCols
@@ -192,19 +220,19 @@
             console.warn("collections sync failed:", e);
         }
 
-        // Notifica UI (mantém compat com quem lê apenas pull/push de attempts)
+        // Notifica UI
         window.dispatchEvent(new CustomEvent("sync:status", {
             detail: {
                 ok: true,
                 pull: { remote: remoteAttempts.length, merged: mergeRes },
                 push: { pushed: pushedAttempts },
-                collections: { pulled: remoteCollections.length, pushed: pushedCols }
+                collections: { pulled: remoteCollections.length, pushed: pushedCols, deleted: deletedCols }
             }
         }));
 
         return {
             ok: true,
-            message: `Pull A:${remoteAttempts.length} (+${mergeRes.added}/${mergeRes.updated}) • Push A:${pushedAttempts} • Pull C:${remoteCollections.length} • Push C:${pushedCols}`
+            message: `Del C:${deletedCols} • Pull A:${remoteAttempts.length} (+${mergeRes.added}/${mergeRes.updated}) • Push A:${pushedAttempts} • Pull C:${remoteCollections.length} • Push C:${pushedCols}`
         };
     }
 

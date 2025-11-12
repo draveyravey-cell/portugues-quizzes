@@ -1,6 +1,6 @@
 "use strict";
 
-/* Store v2.3 — LocalStorage + merge/sync + favoritos + coleções
+/* Store v2.4 — LocalStorage + merge/sync + favoritos + coleções + tombstones (deleções)
    window.Store:
    - init, newSession, finishSession, recordAttempt
    - getStats, exportJSON, importJSON, clear
@@ -12,6 +12,8 @@
      createCollection(name), renameCollection(id, name), deleteCollection(id),
      addToCollection(id, qid), removeFromCollection(id, qid),
      isInCollection(id, qid), getCollectionsByQuestion(qid)
+   - tombstones:
+     getDeletedCollections(), clearDeletedCollections(ids)
 */
 (function () {
   const KEY = "pp.v1";
@@ -30,8 +32,9 @@
       attempts: [],
       perQ: {},
       favorites: [],
-      collections: [], // {id, name, qids:[]}
-      syncMeta: {}     // metadados de sincronização por usuário
+      collections: [],          // {id, name, qids:[]}
+      deletedCollections: [],   // [{id, at}]
+      syncMeta: {}              // metadados de sincronização por usuário
     };
   }
 
@@ -51,6 +54,7 @@
       parsed.perQ = typeof parsed.perQ === "object" && parsed.perQ !== null ? parsed.perQ : {};
       parsed.favorites = Array.isArray(parsed.favorites) ? parsed.favorites : [];
       parsed.collections = Array.isArray(parsed.collections) ? parsed.collections : [];
+      parsed.deletedCollections = Array.isArray(parsed.deletedCollections) ? parsed.deletedCollections : [];
       parsed.syncMeta = typeof parsed.syncMeta === "object" && parsed.syncMeta !== null ? parsed.syncMeta : {};
       return parsed;
     } catch (e) {
@@ -197,15 +201,26 @@
     incoming.perQ = typeof incoming.perQ === "object" && incoming.perQ != null ? incoming.perQ : {};
     incoming.favorites = Array.isArray(incoming.favorites) ? incoming.favorites : [];
     incoming.collections = Array.isArray(incoming.collections) ? incoming.collections : [];
+    incoming.deletedCollections = Array.isArray(incoming.deletedCollections) ? incoming.deletedCollections : [];
     incoming.syncMeta = typeof incoming.syncMeta === "object" && incoming.syncMeta != null ? incoming.syncMeta : {};
 
     if (replace) {
+      // Evita “ressuscitar” coleções deletadas se o JSON de entrada tiver elas
+      const tomb = new Set((incoming.deletedCollections || []).map(t => String(t.id)));
+      incoming.collections = (incoming.collections || []).filter(c => !tomb.has(String(c.id)));
       db = incoming;
     } else {
+      // Mescla tombstones (mantém o mais recente por id)
+      db.deletedCollections = mergeTombstones(db.deletedCollections || [], incoming.deletedCollections || []);
+
+      // Evita restaurar coleções que estão tombstoned
+      const tomb = new Set((db.deletedCollections || []).map(t => String(t.id)));
+      const incomingSafeCollections = (incoming.collections || []).filter(c => !tomb.has(String(c.id)));
+
       db.sessions = dedupById(db.sessions.concat(incoming.sessions));
       db.attempts = dedupById(db.attempts.concat(incoming.attempts));
       db.favorites = Array.from(new Set([...(db.favorites || []), ...(incoming.favorites || [])]));
-      db.collections = mergeCollections(db.collections || [], incoming.collections || []);
+      db.collections = mergeCollections(db.collections || [], incomingSafeCollections);
       db.syncMeta = { ...(db.syncMeta || {}), ...(incoming.syncMeta || {}) };
       db.perQ = {};
       rebuildPerQ();
@@ -316,8 +331,11 @@
     return true;
   }
   function deleteCollection(id) {
+    // Marca tombstone antes de remover localmente
+    markCollectionDeleted(id);
     db.collections = (db.collections || []).filter(c => c.id !== id);
     save(true, "collections");
+    return true;
   }
   function addToCollection(id, qid) {
     const c = getCollectionById(id); if (!c) return false;
@@ -354,6 +372,46 @@
         prev.qids = Array.from(new Set([...(prev.qids || []), ...((c.qids || []).map(String))]));
         map.set(c.id, prev);
       }
+    });
+    return Array.from(map.values());
+  }
+
+  /* ========= Tombstones ========= */
+
+  function markCollectionDeleted(id, at = Date.now()) {
+    if (!id) return;
+    const key = String(id);
+    const map = new Map((db.deletedCollections || []).map(t => [String(t.id), t]));
+    const prev = map.get(key);
+    if (!prev || (at && at > (prev.at || 0))) {
+      map.set(key, { id: key, at: at || Date.now() });
+    }
+    db.deletedCollections = Array.from(map.values());
+  }
+
+  function getDeletedCollections() {
+    return (db.deletedCollections || []).slice();
+  }
+
+  function clearDeletedCollections(ids) {
+    if (!ids || !ids.length) {
+      db.deletedCollections = [];
+    } else {
+      const set = new Set(ids.map(String));
+      db.deletedCollections = (db.deletedCollections || []).filter(t => !set.has(String(t.id)));
+    }
+    // Não precisa notificar UI; é meta de sync
+    save(false, "syncmeta");
+  }
+
+  function mergeTombstones(a = [], b = []) {
+    const map = new Map();
+    [...a, ...b].forEach(t => {
+      if (!t || !t.id) return;
+      const key = String(t.id);
+      const at = Number(t.at) || 0;
+      const prev = map.get(key);
+      if (!prev || at > (prev.at || 0)) map.set(key, { id: key, at });
     });
     return Array.from(map.values());
   }
@@ -401,7 +459,9 @@
     getSyncMeta, setSyncMeta,
     getFavorites, isFavorite, setFavorite, toggleFavorite,
     getCollections, getCollectionById, createCollection, renameCollection, deleteCollection,
-    addToCollection, removeFromCollection, isInCollection, getCollectionsByQuestion
+    addToCollection, removeFromCollection, isInCollection, getCollectionsByQuestion,
+    // Tombstones
+    getDeletedCollections, clearDeletedCollections
   };
 
   try { init(); } catch (e) { console.warn("Store: init falhou", e); }
