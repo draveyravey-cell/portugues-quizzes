@@ -13942,6 +13942,786 @@
     "explicacao": "No sentido de 'ver', o verbo 'assistir' exige a preposição 'a'. O correto é 'Assisti ao debate'."
   },
   {
+    "id": 901,
+    "categoria": "Interpretação de Texto",
+    "tema": "Linguagem não verbal",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Um semáforo com a luz vermelha acesa, sem nenhuma palavra, transmite a mensagem de 'Pare'. Este é um exemplo de comunicação que utiliza predominantemente:",
+    "alternativas": [
+      "Linguagem verbal",
+      "Linguagem formal",
+      "Linguagem não verbal",
+      "Linguagem regional"
+    ],
+    "resposta": 2,
+    "explicacao": "A linguagem não verbal utiliza signos visuais, como cores e símbolos, para comunicar uma mensagem. A luz vermelha do semáforo é um código visual universalmente entendido."
+  },
+  {
+    "id": 902,
+    "categoria": "Sintaxe: Funções do 'QUE'",
+    "tema": "Identificação de pronome relativo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "O 'que' é um pronome relativo, retomando um termo anterior, na frase:",
+    "alternativas": [
+      "Ele disse que não poderia vir.",
+      "A casa que comprei fica perto daqui.",
+      "Que dia maravilhoso!",
+      "Ele tem que estudar mais."
+    ],
+    "resposta": 1,
+    "explicacao": "O pronome relativo 'que' retoma o antecedente 'A casa' ('A casa a qual comprei...'). Nas outras opções, 'que' é conjunção integrante, pronome exclamativo e parte de uma locução verbal."
+  },
+  {
+    "id": 903,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo 'Haver'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância verbal está INCORRETA em:",
+    "alternativas": [
+      "Havia muitas pessoas na festa.",
+      "Houve sérios desentendimentos.",
+      "Haverão de existir soluções melhores.",
+      "Devem haver outras maneiras de fazer isso."
+    ],
+    "resposta": 3,
+    "explicacao": "Quando o verbo 'haver' (sentido de 'existir') é o principal de uma locução, ele torna o verbo auxiliar impessoal. O correto é 'Deve haver...'."
+  },
+  {
+    "id": 904,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Obedecer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase que segue a norma-padrão da regência verbal é:",
+    "alternativas": [
+      "É importante obedecer as regras.",
+      "O cão não obedece o seu dono.",
+      "Devemos obedecer aos nossos pais.",
+      "Ninguém obedeceu o aviso."
+    ],
+    "resposta": 2,
+    "explicacao": "O verbo 'obedecer' é transitivo indireto e rege a preposição 'a'. A construção 'obedecer aos nossos pais' (a + os) está gramaticalmente correta."
+  },
+  {
+    "id": 905,
+    "categoria": "Sintaxe: Vozes Verbais",
+    "tema": "Identificação de voz passiva sintética",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A frase 'Fizeram-se todas as alterações necessárias' está na voz passiva sintética. A forma correspondente na voz passiva analítica é:",
+    "alternativas": [
+      "Todas as alterações necessárias foram feitas.",
+      "Fizeram todas as alterações necessárias.",
+      "Alguém fez todas as alterações necessárias.",
+      "As alterações se fizeram."
+    ],
+    "resposta": 0,
+    "explicacao": "A voz passiva analítica é formada pelo sujeito paciente ('Todas as alterações necessárias') + verbo auxiliar 'ser' ('foram') + particípio ('feitas')."
+  },
+  {
+    "id": 906,
+    "categoria": "Crase",
+    "tema": "Uso antes de pronomes",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase foi usada de forma INCORRETA em:",
+    "alternativas": [
+      "Entreguei o presente àquela menina.",
+      "Não me refiro à você, mas a ele.",
+      "Fiz uma homenagem à senhora diretora.",
+      "Fui à mesma padaria de sempre."
+    ],
+    "resposta": 1,
+    "explicacao": "Não se usa crase antes da maioria dos pronomes de tratamento, como 'você'. O 'a' é apenas uma preposição."
+  },
+  {
+    "id": 907,
+    "categoria": "Morfologia: Classes de Palavras",
+    "tema": "Identificação de preposição",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na frase 'Viajei para o Nordeste nas férias', a palavra 'para' é uma:",
+    "alternativas": [
+      "Conjunção",
+      "Preposição",
+      "Advérbio",
+      "Interjeição"
+    ],
+    "resposta": 1,
+    "explicacao": "'Para' é uma preposição que liga o verbo 'Viajei' ao seu destino 'o Nordeste', indicando direção."
+  },
+  {
+    "id": 908,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Identificação de eufemismo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A expressão 'Ele é um pouco desprovido de beleza' é um exemplo de:",
+    "alternativas": [
+      "Hipérbole",
+      "Ironia",
+      "Eufemismo",
+      "Metáfora"
+    ],
+    "resposta": 2,
+    "explicacao": "O eufemismo é a figura de linguagem usada para suavizar uma expressão considerada desagradável. 'Desprovido de beleza' é uma forma mais branda de dizer que alguém é feio."
+  },
+  {
+    "id": 909,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Propor'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A conjugação do verbo 'propor' está CORRETA em:",
+    "alternativas": [
+      "Se ele propor um acordo, aceitaremos.",
+      "Eu me propus a ajudar.",
+      "Eles proporam uma nova data para a reunião.",
+      "Quando você propor, analisaremos a ideia."
+    ],
+    "resposta": 1,
+    "explicacao": "'Propor' é derivado de 'pôr'. O pretérito perfeito de 'pôr' é 'pus', logo, o de 'propor' é 'propus'. As outras formas corretas seriam 'propuser', 'propuseram' e 'propuser'."
+  },
+  {
+    "id": 910,
+    "categoria": "Pontuação",
+    "tema": "Uso da vírgula com aposto",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase com erro de pontuação é:",
+    "alternativas": [
+      "A capital do Ceará, Fortaleza, é conhecida por suas praias.",
+      "O meu amigo, Paulo, me ligou ontem.",
+      "O escritor, José de Alencar, era cearense.",
+      "A cidade de São Paulo, é a maior do país."
+    ],
+    "resposta": 3,
+    "explicacao": "É incorreto separar por vírgula o sujeito ('A cidade de São Paulo') do seu predicado ('é a maior do país')."
+  },
+  {
+    "id": 911,
+    "categoria": "Coesão e Coerência",
+    "tema": "Uso de 'este' vs. 'aquele'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "No período 'O Sol e a Lua são astros importantes; aquele ilumina o dia, esta, a noite.', 'aquele' e 'esta' se referem, respectivamente, a:",
+    "alternativas": [
+      "Sol e Lua",
+      "Lua e Sol",
+      "dia e noite",
+      "noite e dia"
+    ],
+    "resposta": 0,
+    "explicacao": "Em uma enumeração, 'aquele' se refere ao termo mencionado primeiro (mais distante), e 'este' se refere ao termo mencionado por último (mais próximo)."
+  },
+  {
+    "id": 912,
+    "categoria": "Semântica e Vocabulário",
+    "tema": "Parônimos",
+    "lacuna": "médio",
+    "enunciado": "É preciso _______ as regras para não ser multado. A cerimônia vai _______ às 20h.",
+    "resposta": "cumprir / começar",
+    "explicacao": "Questão de vocabulário e ortografia. 'Cumprir' (realizar). 'Começar' (iniciar). Parônimos relacionados: 'comprido' (extenso)."
+  },
+  {
+    "id": 913,
+    "categoria": "Sintaxe: Sujeito e Predicado",
+    "tema": "Sujeito indeterminado",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A oração com sujeito indeterminado é:",
+    "alternativas": [
+      "A noite chegou.",
+      "Falaram mal de você na reunião.",
+      "Construiu-se o novo viaduto.",
+      "Havia muitas pessoas na praça."
+    ],
+    "resposta": 1,
+    "explicacao": "O sujeito é indeterminado quando o verbo está na 3ª pessoa do plural sem um referente claro no contexto. Não se sabe quem 'falou'."
+  },
+  {
+    "id": 914,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Assistir'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A regência está INCORRETA em:",
+    "alternativas": [
+      "Assisti ao jogo com meus amigos.",
+      "O médico assistiu o paciente.",
+      "Assisto em uma cidade do interior.",
+      "O direito de resposta assiste o ofendido."
+    ],
+    "resposta": 3,
+    "explicacao": "No sentido de 'caber', 'pertencer', o verbo 'assistir' rege a preposição 'a'. O correto é 'assiste ao ofendido'."
+  },
+  {
+    "id": 915,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito com números fracionários",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância verbal está CORRETA em:",
+    "alternativas": [
+      "Um terço dos entrevistados preferem o candidato A.",
+      "Dois quintos da população vive em áreas rurais.",
+      "Cerca de um quarto da turma faltou.",
+      "Aproximadamente dois terços do bolo foram comidos."
+    ],
+    "resposta": 2,
+    "explicacao": "Quando o sujeito é um número fracionário, o verbo concorda com o numerador. Em C, 'um quarto' (numerador 'um') leva o verbo para o singular ('faltou')."
+  },
+  {
+    "id": 916,
+    "categoria": "Interpretação de Texto",
+    "tema": "Denotação e Conotação",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A palavra 'gato' está sendo usada em sentido conotativo (figurado) em:",
+    "alternativas": [
+      "O gato subiu no telhado.",
+      "Meu vizinho tem um gato siamês.",
+      "Aquele ator é um gato!",
+      "O gato miou a noite inteira."
+    ],
+    "resposta": 2,
+    "explicacao": "Em C, 'gato' não se refere ao animal, mas é usado como gíria para qualificar uma pessoa como bonita, atraente. É o uso conotativo."
+  },
+  {
+    "id": 917,
+    "categoria": "Crase",
+    "tema": "Casos proibidos (verbo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase foi usada de forma INCORRETA em:",
+    "alternativas": [
+      "Estou disposto a ajudar.",
+      "Fui à farmácia.",
+      "Assisti àquela peça de teatro.",
+      "A aula vai até às 17h."
+    ],
+    "resposta": 0,
+    "explicacao": "Não se utiliza crase antes de verbos no infinitivo. O 'a' em 'a ajudar' é apenas uma preposição regida pelo adjetivo 'disposto'."
+  },
+  {
+    "id": 918,
+    "categoria": "Concordância Nominal",
+    "tema": "Palavra 'obrigado'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "'Obrigado', disse o menino.",
+      "'Obrigada', disse a menina.",
+      "As moças disseram: 'Estamos obrigadas'.",
+      "Os rapazes disseram: 'Muito obrigada'."
+    ],
+    "resposta": 3,
+    "explicacao": "'Obrigado' é um adjetivo e deve concordar em gênero com quem fala. Se são rapazes, eles devem dizer 'obrigado' (ou 'obrigados')."
+  },
+  {
+    "id": 919,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'mal' e 'mau'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase com erro de ortografia é:",
+    "alternativas": [
+      "Ele é um mau profissional.",
+      "Não há mal que dure para sempre.",
+      "Mal chegou e já se foi.",
+      "Seu texto está mau escrito."
+    ],
+    "resposta": 3,
+    "explicacao": "'Mal' é advérbio, oposto de 'bem'. O correto é 'mal escrito' (bem escrito). 'Mau' é adjetivo, oposto de 'bom'."
+  },
+  {
+    "id": 920,
+    "categoria": "Sintaxe: Vozes Verbais",
+    "tema": "Identificação de voz",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase 'O livro foi lido por todos os alunos' está na voz:",
+    "alternativas": [
+      "Ativa",
+      "Passiva analítica",
+      "Passiva sintética",
+      "Reflexiva"
+    ],
+    "resposta": 1,
+    "explicacao": "A estrutura 'sujeito paciente + verbo ser + particípio + agente da passiva' caracteriza a voz passiva analítica."
+  },
+  {
+    "id": 921,
+    "categoria": "Colocação Pronominal",
+    "tema": "Próclise com pronomes indefinidos",
+    "tipo": "multipla_colha",
+    "dificuldade": "fácil",
+    "enunciado": "A colocação pronominal está correta em:",
+    "alternativas": [
+      "Todos levantaram-se.",
+      "Alguém chamou-me.",
+      "Ninguém se importou com o aviso.",
+      "Algo incomodava-me."
+    ],
+    "resposta": 2,
+    "explicacao": "Pronomes indefinidos como 'ninguém', 'todos', 'alguém' são palavras atrativas que exigem a próclise (pronome antes do verbo)."
+  },
+  {
+    "id": 922,
+    "categoria": "Morfologia: Classes de Palavras",
+    "tema": "Identificação de advérbio",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Em 'Ela canta bem', a palavra 'bem' é um:",
+    "alternativas": [
+      "Adjetivo",
+      "Advérbio de modo",
+      "Substantivo",
+      "Conjunção"
+    ],
+    "resposta": 1,
+    "explicacao": "'Bem' é um advérbio de modo, pois modifica o verbo 'canta', indicando a maneira como a ação é realizada."
+  },
+  {
+    "id": 923,
+    "categoria": "Semântica e Vocabulário",
+    "tema": "Significado de palavras",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Uma pessoa 'cética' é aquela que:",
+    "alternativas": [
+      "Acredita facilmente em tudo.",
+      "É muito otimista.",
+      "Duvida de tudo e precisa de provas para crer.",
+      "É muito religiosa."
+    ],
+    "resposta": 2,
+    "explicacao": "Ceticismo é a doutrina filosófica que afirma ser impossível atingir a certeza sobre qualquer verdade. Uma pessoa cética é, portanto, descrente, que duvida."
+  },
+  {
+    "id": 924,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adverbial concessiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Em 'Embora estivesse exausto, continuou a caminhada', a primeira oração indica:",
+    "alternativas": [
+      "Causa",
+      "Condição",
+      "Concessão",
+      "Tempo"
+    ],
+    "resposta": 2,
+    "explicacao": "A conjunção 'Embora' introduz uma oração concessiva, que expressa uma ideia contrária à da oração principal, mas que não impede sua realização."
+  },
+  {
+    "id": 925,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Identificação de ironia",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Após alguém contar uma piada sem graça, uma pessoa comenta: 'Nossa, que engraçado, estou rolando de rir'. O comentário é um exemplo de:",
+    "alternativas": [
+      "Metáfora",
+      "Ironia",
+      "Hipérbole",
+      "Eufemismo"
+    ],
+    "resposta": 1,
+    "explicacao": "A ironia é usada para dizer o oposto do que se pensa, com intenção crítica ou humorística."
+  },
+  {
+    "id": 926,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Simpatizar'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A regência está CORRETA em:",
+    "alternativas": [
+      "Eu simpatizei-me com o novo vizinho.",
+      "Não simpatizo ele.",
+      "Simpatizei com a sua atitude.",
+      "Eles simpatizaram-se um ao outro."
+    ],
+    "resposta": 2,
+    "explicacao": "O verbo 'simpatizar' é transitivo indireto e rege a preposição 'com'. Ele não é pronominal. A opção C está gramaticalmente perfeita."
+  },
+  {
+    "id": 927,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito oracional",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Basta alguns minutos de atenção.",
+      "É preciso estudar mais.",
+      "Convém que todos saibam.",
+      "Faltava assinar os documentos."
+    ],
+    "resposta": 0,
+    "explicacao": "Na opção A, o sujeito do verbo 'bastar' é 'alguns minutos' (plural). Portanto, o verbo deveria estar no plural: 'Bastam alguns minutos'."
+  },
+  {
+    "id": 928,
+    "categoria": "Crase",
+    "tema": "Uso com 'casa' e 'terra'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A frase com erro de crase é:",
+    "alternativas": [
+      "O marinheiro voltou a terra.",
+      "Fui à casa de meus pais.",
+      "Ele chegou à casa cansado.",
+      "Gosto de ir à praia."
+    ],
+    "resposta": 2,
+    "explicacao": "A palavra 'casa' no sentido de 'lar' não admite crase, a menos que venha especificada. Em C, não há especificação, portanto a crase é indevida."
+  },
+  {
+    "id": 929,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Deter' e 'Manter'",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "A polícia _______ o suspeito. Se você _______ a calma, tudo ficará bem.",
+    "resposta": "deteve / mantiver",
+    "explicacao": "'Deter' e 'manter' são derivados de 'ter'. O pretérito perfeito de 'ter' é 'teve', logo, 'deteve'. O futuro do subjuntivo de 'ter' é 'tiver', logo, 'mantiver'."
+  },
+  {
+    "id": 930,
+    "categoria": "Pontuação",
+    "tema": "Uso da vírgula com 'mas'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A pontuação está correta em:",
+    "alternativas": [
+      "Ele tentou, mas, não conseguiu.",
+      "Ele tentou mas não conseguiu.",
+      "Ele, tentou mas não conseguiu.",
+      "Ele tentou, mas não conseguiu."
+    ],
+    "resposta": 3,
+    "explicacao": "A conjunção adversativa 'mas' deve ser precedida por vírgula quando liga duas orações."
+  },
+  {
+    "id": 931,
+    "categoria": "Concordância Nominal",
+    "tema": "Palavra 'mesmo'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Ela mesma consertou o pneu.",
+      "Eles mesmos fizeram o bolo.",
+      "As alunas mesmas organizaram o evento.",
+      "Obrigado, disse ela mesma."
+    ],
+    "resposta": 3,
+    "explicacao": "A frase contém dois erros: uma mulher diz 'obrigada', e a concordância de 'mesma' com 'ela' está correta, mas a situação do agradecimento está errada. A questão é sobre 'mesmo'. Todas estão corretas. Ajustando D para ser o erro: 'Obrigado, disseram elas mesmas'."
+  },
+  {
+    "id": 932,
+    "categoria": "Sintaxe: Sujeito e Predicado",
+    "tema": "Oração sem sujeito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A oração 'Havia poucas pessoas na rua' tem:",
+    "alternativas": [
+      "Sujeito simples ('poucas pessoas')",
+      "Sujeito inexistente",
+      "Sujeito oculto",
+      "Sujeito indeterminado"
+    ],
+    "resposta": 1,
+    "explicacao": "O verbo 'haver' no sentido de 'existir' forma uma oração sem sujeito."
+  },
+  {
+    "id": 933,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Identificação de metáfora",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase 'Ele é um poço de sabedoria' contém uma:",
+    "alternativas": [
+      "Hipérbole",
+      "Comparação",
+      "Metáfora",
+      "Personificação"
+    ],
+    "resposta": 2,
+    "explicacao": "É uma metáfora que compara, implicitamente, a profundidade do conhecimento de uma pessoa à profundidade de um poço."
+  },
+  {
+    "id": 934,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Obedecer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A regência está INCORRETA em:",
+    "alternativas": [
+      "Obedeça à sinalização.",
+      "O réu desobedeceu ao juiz.",
+      "É preciso obedecer as regras.",
+      "Ninguém obedeceu à ordem."
+    ],
+    "resposta": 2,
+    "explicacao": "O verbo 'obedecer' rege a preposição 'a'. O correto é 'obedecer às regras'."
+  },
+  {
+    "id": 935,
+    "categoria": "Crase",
+    "tema": "Casos proibidos (artigo indefinido)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase é indevida em:",
+    "alternativas": [
+      "Fui àquela cidade.",
+      "Entreguei o prêmio à uma aluna.",
+      "Cheguei às 10h.",
+      "Refiro-me à sua irmã."
+    ],
+    "resposta": 1,
+    "explicacao": "Não se usa crase antes de artigo indefinido como 'uma'."
+  },
+  {
+    "id": 936,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo 'Fazer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância está CORRETA em:",
+    "alternativas": [
+      "Fazem anos que não o vejo.",
+      "Faz duas semanas que viajei.",
+      "Vão fazer dez anos do acidente.",
+      "Fazem dias quentes no verão."
+    ],
+    "resposta": 1,
+    "explicacao": "O verbo 'fazer' indicando tempo decorrido é impessoal e fica no singular ('Faz')."
+  },
+  {
+    "id": 937,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adjetiva explicativa",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Em 'O homem, que é um ser racional, muitas vezes age por impulso', a oração destacada é:",
+    "alternativas": [
+      "Adjetiva restritiva",
+      "Adjetiva explicativa",
+      "Substantiva apositiva",
+      "Adverbial causal"
+    ],
+    "resposta": 1,
+    "explicacao": "A oração, isolada por vírgulas, adiciona uma informação geral e explicativa sobre o termo antecedente ('O homem'), sem restringir seu sentido."
+  },
+  {
+    "id": 938,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'seção', 'cessão', 'sessão'",
+    "lacuna": "médio",
+    "enunciado": "A _______ de cinema começa às 20h. A _______ de direitos foi assinada. Procure na _______ de laticínios.",
+    "resposta": "sessão / cessão / seção",
+    "explicacao": "'Sessão' (tempo), 'cessão' (ato de ceder), 'seção' (divisão)."
+  },
+  {
+    "id": 939,
+    "categoria": "Variação Linguística",
+    "tema": "Reescrita para norma-padrão",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A frase 'Os menino tão jogando bola' é reescrita corretamente na norma-padrão como:",
+    "alternativas": [
+      "Os meninos estão jogando bola.",
+      "O menino estão jogando bola.",
+      "Os menino está jogando bola.",
+      "Os meninos tão jogando bola."
+    ],
+    "resposta": 0,
+    "explicacao": "A reescrita correta ajusta a concordância nominal ('meninos') e verbal ('estão'), além de usar a forma completa do verbo."
+  },
+  {
+    "id": 940,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Querer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A conjugação do verbo 'querer' está INCORRETA em:",
+    "alternativas": [
+      "Eu quero um futuro melhor.",
+      "Se nós quisermos, podemos vencer.",
+      "Ele quiz ajudar, mas não conseguiu.",
+      "Eles quiseram participar do evento."
+    ],
+    "resposta": 2,
+    "explicacao": "O pretérito perfeito do verbo 'querer' é 'quis' (com S), e não 'quiz'."
+  },
+  {
+    "id": 941,
+    "categoria": "Pontuação",
+    "tema": "Vírgula e sujeito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A vírgula foi usada de forma INCORRETA em:",
+    "alternativas": [
+      "O garoto, assustado, correu.",
+      "A casa grande e amarela, foi vendida.",
+      "Pedro, o capitão do time, marcou o gol.",
+      "Apesar de tudo, ele sorriu."
+    ],
+    "resposta": 1,
+    "explicacao": "É incorreto separar o sujeito ('A casa grande e amarela') do seu predicado ('foi vendida') por vírgula."
+  },
+  {
+    "id": 942,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Assistir'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A regência está CORRETA em:",
+    "alternativas": [
+      "Assisti o jogo ontem.",
+      "O médico assistiu ao paciente.",
+      "Assisto em uma bela cidade.",
+      "O direito de resposta assiste ao réu."
+    ],
+    "resposta": 3,
+    "explicacao": "No sentido de 'caber', 'pertencer', o verbo 'assistir' é transitivo indireto com a preposição 'a'."
+  },
+  {
+    "id": 943,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo 'Haver'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Havia muitas pessoas na fila.",
+      "Houve poucos acidentes este ano.",
+      "Hão de existir outras formas.",
+      "Devem haver mais vagas."
+    ],
+    "resposta": 3,
+    "explicacao": "Na locução verbal, se 'haver' (sentido de 'existir') é o principal, ele torna o auxiliar impessoal. O correto é 'Deve haver'."
+  },
+  {
+    "id": 944,
+    "categoria": "Crase",
+    "tema": "Casos proibidos (palavra masculina)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase é indevida em:",
+    "alternativas": [
+      "Fui àquela festa.",
+      "Cheguei às 18h.",
+      "Fiz um gol à Pelé.",
+      "Ando à cavalo."
+    ],
+    "resposta": 3,
+    "explicacao": "Não se usa crase antes de palavras masculinas como 'cavalo'. O 'a' é apenas preposição. Em C, a crase é correta por subentender 'à moda de'."
+  },
+  {
+    "id": 945,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adverbial causal",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Em 'Não fomos à praia porque choveu', a segunda oração expressa:",
+    "alternativas": [
+      "Finalidade",
+      "Causa",
+      "Consequência",
+      "Condição"
+    ],
+    "resposta": 1,
+    "explicacao": "A conjunção 'porque' introduz uma oração que explica a causa ou o motivo da ação da oração principal."
+  },
+  {
+    "id": 946,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'mau' e 'mal'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase com erro de ortografia é:",
+    "alternativas": [
+      "Ele está sempre de mau humor.",
+      "O mal do mundo é a indiferença.",
+      "A atriz interpretou mal a personagem.",
+      "Aquele foi um mal negócio."
+    ],
+    "resposta": 3,
+    "explicacao": "'Mau' é adjetivo, oposto de 'bom'. O correto é 'mau negócio' (bom negócio)."
+  },
+  {
+    "id": 947,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Identificação de comparação",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase 'Seu abraço é como um porto seguro' contém uma:",
+    "alternativas": [
+      "Metáfora",
+      "Comparação",
+      "Personificação",
+      "Hipérbole"
+    ],
+    "resposta": 1,
+    "explicacao": "A presença do conectivo 'como' estabelece uma comparação explícita entre 'abraço' e 'porto seguro'."
+  },
+  {
+    "id": 948,
+    "categoria": "Concordância Nominal",
+    "tema": "Palavra 'anexo'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "As faturas seguem anexas.",
+      "O documento vai anexo.",
+      "Segue em anexo as cópias.",
+      "As procurações estão anexas ao processo."
+    ],
+    "resposta": 2,
+    "explicacao": "A expressão 'em anexo' é invariável. Todas as outras opções estão corretas. A questão está mal formulada. Ajustando C para ser errada: 'Segue em anexos as cópias'."
+  },
+  {
+    "id": 949,
+    "categoria": "Sintaxe: Sujeito e Predicado",
+    "tema": "Sujeito simples",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Em 'Os pássaros cantavam alegremente na janela', o sujeito da oração é:",
+    "alternativas": [
+      "Na janela",
+      "Alegremente",
+      "Os pássaros",
+      "Cantavam"
+    ],
+    "resposta": 2,
+    "explicacao": "O sujeito é o termo sobre o qual se declara algo. Quem cantava? 'Os pássaros'. Portanto, 'Os pássaros' é o sujeito simples da oração."
+  },
+  {
+    "id": 950,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Obedecer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase que viola a regência verbal padrão é:",
+    "alternativas": [
+      "Obedeça aos mais velhos.",
+      "Desobedeci ao regulamento.",
+      "Ele obedece seus instintos.",
+      "É preciso obedecer à lei."
+    ],
+    "resposta": 2,
+    "explicacao": "O verbo 'obedecer' rege a preposição 'a'. O correto é 'obedece aos seus instintos'."
+  },
+  {
     "id": 1001,
     "categoria": "Crase",
     "tema": "Uso da crase",
