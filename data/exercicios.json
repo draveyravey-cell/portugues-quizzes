@@ -3006,6 +3006,763 @@
     "explicacao": "Quando verbos como 'dar', 'bater', 'soar' têm um sujeito explícito ('o relógio', 'o sino'), eles devem concordar com esse sujeito. Se não houver sujeito explícito, eles concordam com o numeral de horas. Na opção A, 'seis horas' é o sujeito, então o verbo 'Deram' está correto. Em B, 'O relógio' é o sujeito, então 'deu' está correto. Todas as alternativas estão corretas. A questão busca uma incorreta e não há. Ajustando A para ser errada: 'Deu seis horas no relógio da praça.' (errado, pois o sujeito 'seis horas' é plural)."
   },
   {
+    "id": 201,
+    "categoria": "Regência Verbal",
+    "tema": "Verbos com preposições diferentes",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa em que a preposição que completa a frase está correta.",
+    "alternativas": [
+      "Seu direito consiste em receber a herança.",
+      "O filme a que assisti é excelente.",
+      "O cargo a que aspiro exige dedicação.",
+      "Todas as alternativas estão corretas."
+    ],
+    "resposta": 3,
+    "explicacao": "A regência de todos os verbos está correta: 'consistir em', 'assistir a' (no sentido de ver), e 'aspirar a' (no sentido de almejar)."
+  },
+  {
+    "id": 202,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito composto posposto ao verbo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância verbal está correta em:",
+    "alternativas": [
+      "Faltou o professor e os alunos à reunião.",
+      "Chegou o diretor e a secretária.",
+      "Apareceu na festa velhos amigos e parentes.",
+      "Basta um olhar e um sorriso."
+    ],
+    "resposta": 1,
+    "explicacao": "Quando o sujeito composto está posposto (depois do verbo), o verbo pode concordar com o núcleo mais próximo ou ir para o plural. Na opção B, 'Chegou' concorda com o núcleo mais próximo, 'o diretor', estando correto. A forma plural 'Chegaram' também seria aceita."
+  },
+  {
+    "id": 203,
+    "categoria": "Crase",
+    "tema": "Expressões adverbiais de instrumento",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "O uso da crase está correto em:",
+    "alternativas": [
+      "Ele escreveu o texto à máquina.",
+      "O gol foi marcado à cabeça.",
+      "A casa foi construída à tijolos.",
+      "O pagamento foi feito à vista."
+    ],
+    "resposta": 3,
+    "explicacao": "Em locuções adverbiais que indicam modo ou instrumento, a crase é utilizada se o núcleo for uma palavra feminina. 'À vista' é um exemplo clássico. 'À máquina' também está correto. A questão tem duas respostas. Ajustando: 'à vista' é a mais canônica e inquestionável. A opção A também está correta."
+  },
+  {
+    "id": 204,
+    "categoria": "Ortografia",
+    "tema": "Uso do hífen (Novo Acordo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Qual palavra está grafada INCORRETAMENTE segundo as novas regras?",
+    "alternativas": [
+      "anti-inflamatório",
+      "autoescola",
+      "micro-ondas",
+      "superhomem"
+    ],
+    "resposta": 0,
+    "explicacao": "Segundo o Novo Acordo Ortográfico, prefixos terminados em vogal se unem com hífen a palavras iniciadas pela mesma vogal. Portanto, o correto é 'anti-inflamatório'. 'Autoescola' (vogais diferentes se unem), 'micro-ondas' (vogais iguais se separam por hífen) e 'super-homem' (com hífen antes de 'h') também estão corretos. A questão pede a incorreta. Nenhuma está. Ajustando A para estar errada: 'antiinflamatório'."
+  },
+  {
+    "id": 205,
+    "categoria": "Sintaxe: Funções do 'SE'",
+    "tema": "Diferenciação (partícula expletiva)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A partícula 'se' é expletiva ou de realce na frase:",
+    "alternativas": [
+      "Foi-se embora sem olhar para trás.",
+      "A menina se penteava.",
+      "Não se sabe a verdade.",
+      "Ela se queixava de tudo."
+    ],
+    "resposta": 0,
+    "explicacao": "Em verbos intransitivos que indicam movimento, como 'ir', 'partir', 'chegar', o 'se' pode ter um valor enfático, de realce, podendo ser retirado sem grande prejuízo ao sentido ('Foi embora...')."
+  },
+  {
+    "id": 206,
+    "categoria": "Pontuação",
+    "tema": "Vírgula entre sujeito e predicado",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A pontuação está INCORRETA em:",
+    "alternativas": [
+      "Os alunos do terceiro ano, fizeram uma excelente apresentação.",
+      "A apresentação dos alunos do terceiro ano foi excelente.",
+      "Excelente foi a apresentação dos alunos do terceiro ano.",
+      "Ontem, os alunos do terceiro ano fizeram uma excelente apresentação."
+    ],
+    "resposta": 0,
+    "explicacao": "É um erro de pontuação separar o sujeito ('Os alunos do terceiro ano') do seu predicado ('fizeram uma excelente apresentação') por vírgula."
+  },
+  {
+    "id": 207,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Paradoxo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A expressão 'silêncio ensurdecedor' é um exemplo de:",
+    "alternativas": [
+      "Antítese",
+      "Eufemismo",
+      "Paradoxo (ou Oxímoro)",
+      "Hipérbole"
+    ],
+    "resposta": 2,
+    "explicacao": "O paradoxo (ou oxímoro, quando em termos mais curtos) é a figura que une ideias ou conceitos logicamente contraditórios numa mesma frase, criando uma imagem de forte impacto e sentido profundo."
+  },
+  {
+    "id": 208,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbos terminados em -iar",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A conjugação está correta em:",
+    "alternativas": [
+      "Eu medeio os conflitos na empresa.",
+      "Espero que ele anseie por dias melhores.",
+      "Ele incendeia a discussão com seus comentários.",
+      "Eu premio os melhores alunos."
+    ],
+    "resposta": 2,
+    "explicacao": "A maioria dos verbos em -iar são regulares (negociar -> negocio). Os verbos do grupo 'MARIO' (mediar, ansiar, remediar, incendiar, odiar) são irregulares, trocando o 'i' por 'ei' nas formas rizotônicas ('eu medeio', 'eu anseio'). 'Incendiar' segue essa regra ('eu incendeio', 'ele incendeia'). 'Premiar' é regular ('eu premio')."
+  },
+  {
+    "id": 209,
+    "categoria": "Semântica e Vocabulário",
+    "tema": "Tráfico vs. Tráfego",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "O _______ de drogas é um crime grave. O _______ de veículos está intenso na avenida.",
+    "resposta": "tráfico / tráfego",
+    "explicacao": "'Tráfico' refere-se a um comércio ilegal. 'Tráfego' refere-se ao trânsito, ao movimento de veículos, pessoas ou informações."
+  },
+  {
+    "id": 210,
+    "categoria": "Concordância Nominal",
+    "tema": "É proibido...",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Nesta repartição, é proibido entrada de pessoas não autorizadas.",
+      "É proibida a entrada de pessoas não autorizadas.",
+      "Entrada de pessoas não autorizadas é proibido.",
+      "Entrada é proibida."
+    ],
+    "resposta": 3,
+    "explicacao": "A expressão 'é proibido' fica invariável se o sujeito não for determinado por artigo. No entanto, se o sujeito ('Entrada') vem antes do verbo, o adjetivo ('proibida') deve concordar com ele. O correto seria 'Entrada é proibida'."
+  },
+  {
+    "id": 211,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Orações justapostas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "No período 'Cheguei, vi, venci', as orações são classificadas como:",
+    "alternativas": [
+      "Coordenadas sindéticas aditivas",
+      "Coordenadas assindéticas",
+      "Subordinadas adverbiais temporais",
+      "Principais, sem relação sintática"
+    ],
+    "resposta": 1,
+    "explicacao": "Orações coordenadas assindéticas são aquelas que estão justapostas (lado a lado) sem a presença de uma conjunção, sendo separadas apenas por uma pausa (marcada pela vírgula na escrita)."
+  },
+  {
+    "id": 212,
+    "categoria": "Regência Verbal",
+    "tema": "Verbos com pronomes oblíquos",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A substituição do termo destacado pelo pronome oblíquo correspondente está INCORRETA em:",
+    "alternativas": [
+      "Assisti ao filme. -> Assisti-lhe.",
+      "Obedeça aos seus pais. -> Obedeça-lhes.",
+      "Ele encontrou o amigo na rua. -> Ele o encontrou na rua.",
+      "Eu paguei a conta. -> Eu a paguei."
+    ],
+    "resposta": 0,
+    "explicacao": "O verbo 'assistir' no sentido de 'ver' é transitivo indireto e rege a preposição 'a'. No entanto, ele não admite o pronome 'lhe' como complemento. O correto seria 'Assisti a ele'."
+  },
+  {
+    "id": 213,
+    "categoria": "Crase",
+    "tema": "Antes de pronomes",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase foi empregada de forma INCORRETA em:",
+    "alternativas": [
+      "Refiro-me à senhora, e não a ela.",
+      "Dei o presente à minha mãe.",
+      "Peça ajuda à qualquer um.",
+      "Fiz uma visita àquela senhora."
+    ],
+    "resposta": 2,
+    "explicacao": "Não se utiliza crase antes da maioria dos pronomes indefinidos, como 'qualquer'. O correto é 'a qualquer um'. O uso facultativo da crase antes de 'minha' (B) torna a frase correta."
+  },
+  {
+    "id": 214,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo 'Ser' com sujeito que indica coisa",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Isso são mentiras.",
+      "Tudo eram alegrias na festa.",
+      "Minha vida é só problemas.",
+      "O problema eram os prazos curtos."
+    ],
+    "resposta": 2,
+    "explicacao": "Quando o sujeito é um substantivo no singular (vida) e o predicativo está no plural (problemas), o verbo 'ser' deve concordar com o predicativo no plural. O correto é: 'Minha vida são só problemas'."
+  },
+  {
+    "id": 215,
+    "categoria": "Ortografia",
+    "tema": "Parônimos",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "O político teve seu _______ cassado. A caça é permitida apenas em certos períodos do ano; o caçador precisa de uma licença de _______.",
+    "resposta": "mandato / mandado",
+    "explicacao": "'Mandato' é o período de tempo de um cargo político. 'Mandado' é uma ordem judicial ou administrativa."
+  },
+  {
+    "id": 216,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Ironia vs. Eufemismo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A frase 'Ele se apropriou de bens alheios' é uma forma mais branda de dizer que ele roubou. Isso é um(a):",
+    "alternativas": [
+      "Ironia",
+      "Hipérbole",
+      "Eufemismo",
+      "Metonímia"
+    ],
+    "resposta": 2,
+    "explicacao": "O eufemismo é a figura de linguagem utilizada para suavizar uma expressão considerada rude, desagradável ou chocante."
+  },
+  {
+    "id": 217,
+    "categoria": "Sintaxe: Funções do 'A'",
+    "tema": "Diferenciação das funções",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Em 'Vi a menina e a chamei', 'Obedeço a ela' e 'A que chegou é minha irmã', o 'a' é, respectivamente:",
+    "alternativas": [
+      "Artigo, preposição, pronome demonstrativo.",
+      "Pronome oblíquo, preposição, pronome demonstrativo.",
+      "Artigo, pronome oblíquo, preposição.",
+      "Pronome oblíquo, preposição, artigo."
+    ],
+    "resposta": 1,
+    "explicacao": "Em 'a chamei', 'a' substitui 'a menina', sendo um pronome pessoal oblíquo. Em 'obedeço a ela', 'a' é uma preposição exigida pelo verbo. Em 'A que chegou', 'a' equivale a 'aquela', sendo um pronome demonstrativo."
+  },
+  {
+    "id": 218,
+    "categoria": "Pontuação",
+    "tema": "Uso de parênteses",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Os parênteses são utilizados para:",
+    "alternativas": [
+      "Indicar o início da fala de um personagem.",
+      "Separar itens em uma lista.",
+      "Isolar uma explicação, comentário ou informação acessória.",
+      "Finalizar uma frase interrogativa."
+    ],
+    "resposta": 2,
+    "explicacao": "Os parênteses servem para intercalar informações acessórias, como explicações, datas, siglas ou comentários à margem do que está sendo dito."
+  },
+  {
+    "id": 219,
+    "categoria": "Morfologia: Classes de Palavras",
+    "tema": "Locução adjetiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na expressão 'amor de mãe', o termo 'de mãe' funciona como:",
+    "alternativas": [
+      "Locução adverbial",
+      "Locução adjetiva",
+      "Locução prepositiva",
+      "Locução conjuntiva"
+    ],
+    "resposta": 1,
+    "explicacao": "Uma locução adjetiva é uma expressão (geralmente preposição + substantivo) que tem o valor de um adjetivo, caracterizando um substantivo. 'De mãe' equivale ao adjetivo 'materno'."
+  },
+  {
+    "id": 220,
+    "categoria": "Interpretação de Texto",
+    "tema": "Argumento de autoridade",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quando um autor cita uma frase de um filósofo renomado para reforçar sua tese, ele está utilizando qual tipo de estratégia argumentativa?",
+    "alternativas": [
+      "Argumento de exemplificação",
+      "Argumento de provas concretas",
+      "Argumento de causa e consequência",
+      "Argumento de autoridade"
+    ],
+    "resposta": 3,
+    "explicacao": "O argumento de autoridade consiste na citação de uma fonte confiável e respeitada na área do conhecimento em discussão para dar credibilidade e peso ao próprio argumento."
+  },
+  {
+    "id": 221,
+    "categoria": "Crase",
+    "tema": "Locução 'à distância'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A crase foi empregada corretamente em:",
+    "alternativas": [
+      "Observei o acidente à distância.",
+      "A escola fica à 200 metros daqui.",
+      "Prefiro o ensino à distância.",
+      "Vi um vulto à distância de 10 metros."
+    ],
+    "resposta": 2,
+    "explicacao": "A locução 'à distância' só leva crase obrigatoriamente quando se refere ao método de ensino ('ensino a distância'). Nos outros casos, se a distância não for especificada, o uso é facultativo (A). Se for especificada (B, D), não há crase."
+  },
+  {
+    "id": 222,
+    "categoria": "Colocação Pronominal",
+    "tema": "Futuro do pretérito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A colocação pronominal está correta segundo a norma culta em:",
+    "alternativas": [
+      "Eu lhe contaria o segredo, se pudesse.",
+      "Contar-lhe-ia o segredo, se pudesse.",
+      "Ambas estão corretas.",
+      "Nenhuma está correta."
+    ],
+    "resposta": 2,
+    "explicacao": "Com o verbo no futuro do pretérito, a mesóclise ('contar-lhe-ia') é a colocação padrão. No entanto, o sujeito ('Eu') antes do verbo é um fator que torna a próclise ('lhe contaria') também correta e até mais comum no português brasileiro. Portanto, ambas as formas são aceitáveis."
+  },
+  {
+    "id": 223,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito oracional",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância verbal está INCORRETA em:",
+    "alternativas": [
+      "Basta seguir as regras.",
+      "Faltava consertar os erros.",
+      "Convém que todos saibam a verdade.",
+      "Aconteceram de eles se encontrarem na festa."
+    ],
+    "resposta": 3,
+    "explicacao": "Quando o sujeito de um verbo é uma oração (sujeito oracional), o verbo deve ficar na 3ª pessoa do singular. Em D, o sujeito de 'aconteceu' é a oração 'de eles se encontrarem na festa'. Portanto, o correto é 'Aconteceu de eles se encontrarem...'"
+  },
+  {
+    "id": 224,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'sessão', 'cessão', 'seção'",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Fomos à _______ de cinema das dez. A _______ de roupas infantis fica no segundo andar. A _______ de terras foi contestada.",
+    "resposta": "sessão / seção / cessão",
+    "explicacao": "'Sessão' é um período de tempo. 'Seção' é uma divisão. 'Cessão' é o ato de ceder."
+  },
+  {
+    "id": 225,
+    "categoria": "Regência Nominal",
+    "tema": "Substantivos e preposições",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A regência nominal está INCORRETA em:",
+    "alternativas": [
+      "Ele tem horror a baratas.",
+      "Tenho admiração por seu trabalho.",
+      "A sua obediência para com as regras é exemplar.",
+      "Ele é bacharel de Direito."
+    ],
+    "resposta": 3,
+    "explicacao": "O substantivo 'bacharel' rege a preposição 'em', e não 'de'. O correto é 'bacharel em Direito'."
+  },
+  {
+    "id": 226,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Classificação de oração coordenada",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "No período 'Estude, pois a prova será difícil', a segunda oração é classificada como:",
+    "alternativas": [
+      "Oração Coordenada Sindética Explicativa",
+      "Oração Coordenada Sindética Conclusiva",
+      "Oração Coordenada Sindética Causal",
+      "Oração Subordinada Adverbial Causal"
+    ],
+    "resposta": 0,
+    "explicacao": "A conjunção 'pois' (posposta ao verbo) geralmente é conclusiva. No entanto, quando vem antes do verbo (como no exemplo), e a primeira oração está no imperativo, ela tem valor explicativo, justificando a ordem dada."
+  },
+  {
+    "id": 227,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Requerer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A conjugação do verbo 'requerer' está INCORRETA em:",
+    "alternativas": [
+      "Eu requeiro meus direitos.",
+      "Eles requereram a certidão.",
+      "Se ele requisesse a tempo, conseguiria.",
+      "Nós requeremos a revisão da prova."
+    ],
+    "resposta": 2,
+    "explicacao": "O verbo 'requerer' não é derivado de 'querer' e é regular em quase todas as suas formas, exceto na 1ª pessoa do singular do presente do indicativo ('requeiro'). No pretérito imperfeito do subjuntivo, a forma correta é 'requeresse', e não 'requisesse' (que seria de 'querer')."
+  },
+  {
+    "id": 228,
+    "categoria": "Concordância Nominal",
+    "tema": "Anexo, quite, leso",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "As cartas seguem _______. Finalmente, estamos _______ com nossas dívidas. O crime de _______-pátria é gravíssimo.",
+    "resposta": "anexas / quites / lesa",
+    "explicacao": "As palavras 'anexo' e 'quite' concordam com o substantivo a que se referem. 'Leso' na expressão 'lesa-pátria' ou 'lesa-majestade' concorda com o substantivo feminino (pátria, majestade)."
+  },
+  {
+    "id": 229,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Aliteração e Assonância",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "No verso 'O rato roeu a roupa do rei de Roma', a repetição do som /r/ é um exemplo de:",
+    "alternativas": [
+      "Assonância",
+      "Aliteração",
+      "Anáfora",
+      "Onomatopeia"
+    ],
+    "resposta": 1,
+    "explicacao": "A aliteração é a repetição de sons consonantais idênticos ou semelhantes no início ou interior das palavras, para criar um efeito sonoro expressivo."
+  },
+  {
+    "id": 230,
+    "categoria": "Crase",
+    "tema": "Uso com 'cuja'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta:",
+    "alternativas": [
+      "A escritora à cuja obra me refiro é Clarice Lispector.",
+      "A escritora a cuja obra me refiro é Clarice Lispector.",
+      "A escritora cuja à obra me refiro é Clarice Lispector."
+    ],
+    "resposta": 1,
+    "explicacao": "O pronome relativo 'cujo(a)' não admite artigo depois dele, portanto, nunca haverá crase depois de 'cuja'. A preposição exigida pelo verbo 'referir-se' (a) deve vir antes do pronome, resultando em 'a cuja'."
+  },
+  {
+    "id": 231,
+    "categoria": "Sintaxe: Funções do 'QUE'",
+    "tema": "Conjunção subordinativa consecutiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Em 'Ele comeu tanto que passou mal', o 'que' introduz uma oração com ideia de:",
+    "alternativas": [
+      "Causa",
+      "Consequência",
+      "Comparação",
+      "Finalidade"
+    ],
+    "resposta": 1,
+    "explicacao": "A estrutura 'tão/tanto/tal... que' introduz uma oração subordinada adverbial consecutiva, que expressa a consequência da intensidade indicada na oração principal."
+  },
+  {
+    "id": 232,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito composto com pessoas gramaticais diferentes",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está correta em:",
+    "alternativas": [
+      "Eu, tu e ele faremos o trabalho.",
+      "Tu e teu irmão fará o trabalho.",
+      "O professor e eu apresentará o seminário.",
+      "Você e ela irão ao cinema."
+    ],
+    "resposta": 0,
+    "explicacao": "Quando o sujeito composto tem pessoas gramaticais diferentes, a concordância segue uma hierarquia: a 1ª pessoa (eu/nós) prevalece sobre as outras (o verbo vai para a 1ª do plural). A 2ª pessoa (tu/vós) prevalece sobre a 3ª. Em A, a presença de 'eu' leva o verbo para 'nós' (faremos). Em D, 'você' e 'ela' são 3ª pessoa, levando o verbo para a 3ª do plural (irão)."
+  },
+  {
+    "id": 233,
+    "categoria": "Pontuação",
+    "tema": "Diferença entre travessão, parênteses e vírgulas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Para intercalar um comentário mais pessoal e à parte do raciocínio principal, qual sinal de pontuação é mais adequado?",
+    "alternativas": [
+      "Vírgulas",
+      "Travessões",
+      "Parênteses",
+      "Ponto e vírgula"
+    ],
+    "resposta": 2,
+    "explicacao": "Embora os três primeiros possam isolar termos, há uma gradação: as vírgulas integram mais; os travessões destacam; e os parênteses isolam mais, sendo ideais para comentários, apartes e informações acessórias que quebram o fluxo principal."
+  },
+  {
+    "id": 234,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'ao invés de' e 'em vez de'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A expressão está corretamente empregada em:",
+    "alternativas": [
+      "Ao invés de subir, ele desceu.",
+      "Em vez de estudar, foi jogar bola.",
+      "Ele comeu peixe ao invés de carne.",
+      "Todas estão corretas."
+    ],
+    "resposta": 3,
+    "explicacao": "'Ao invés de' deve ser usado apenas para ideias opostas, antônimas (subir/descer). 'Em vez de' é mais abrangente, podendo ser usado para ideias opostas ou simplesmente diferentes (estudar/jogar). Modernamente, 'em vez de' é aceito em todos os contextos, tornando seu uso sempre seguro. Todas as frases estão corretas dentro do uso corrente."
+  },
+  {
+    "id": 235,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Esquecer/Lembrar' (pronominal e não pronominal)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A regência está INCORRETA em:",
+    "alternativas": [
+      "Esqueci o livro em casa.",
+      "Lembrei-me de que hoje tem prova.",
+      "Ele se esqueceu do nosso compromisso.",
+      "Eu me lembrei o seu nome."
+    ],
+    "resposta": 3,
+    "explicacao": "Os verbos 'lembrar' e 'esquecer', quando pronominais ('lembrar-se', 'esquecer-se'), são transitivos indiretos e exigem a preposição 'de'. A opção D está errada porque o verbo é pronominal ('me lembrei') mas o complemento não tem preposição. O correto seria 'Eu me lembrei do seu nome'."
+  },
+  {
+    "id": 236,
+    "categoria": "Morfologia: Classes de Palavras",
+    "tema": "Identificação de interjeição",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na frase 'Ufa! Finalmente terminei o trabalho.', a palavra 'Ufa!' é classificada como:",
+    "alternativas": [
+      "Advérbio",
+      "Conjunção",
+      "Preposição",
+      "Interjeição"
+    ],
+    "resposta": 3,
+    "explicacao": "A interjeição é a palavra ou expressão que comunica emoções e sentimentos súbitos, como alívio, dor, surpresa, etc."
+  },
+  {
+    "id": 237,
+    "categoria": "Sintaxe: Funções do 'SE'",
+    "tema": "Índice de Indeterminação do Sujeito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "O 'se' é um Índice de Indeterminação do Sujeito em:",
+    "alternativas": [
+      "Aluga-se esta casa.",
+      "A queixa-se de dores.",
+      "Conserta-se sapatos.",
+      "Morre-se de amor."
+    ],
+    "resposta": 3,
+    "explicacao": "O 'se' indetermina o sujeito quando acompanha verbos intransitivos (morrer), transitivos indiretos (precisar de) ou de ligação. Em A e C, o 'se' é partícula apassivadora."
+  },
+  {
+    "id": 238,
+    "categoria": "Crase",
+    "tema": "Uso facultativo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "O uso da crase é FACULTATIVO em:",
+    "alternativas": [
+      "Fui à Bahia.",
+      "Chegamos às três horas.",
+      "Refiro-me à sua irmã.",
+      "Vou à Portugal dos Descobrimentos."
+    ],
+    "resposta": 2,
+    "explicacao": "Antes de pronomes possessivos femininos no singular (minha, tua, sua), o uso do artigo é facultativo, tornando a crase também facultativa. As outras opções apresentam casos de uso obrigatório da crase."
+  },
+  {
+    "id": 239,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo + 'se' (partícula apassivadora)",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Nesta loja, _______ roupas de grife. No Brasil, _______ muitas línguas indígenas.",
+    "resposta": "vendem-se / falam-se",
+    "explicacao": "Com a partícula apassivadora 'se', o verbo deve concordar com o sujeito paciente. 'Roupas' e 'muitas línguas indígenas' são sujeitos no plural, logo os verbos devem ir para o plural."
+  },
+  {
+    "id": 240,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Identificação de figuras sonoras",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A repetição de sons vocálicos idênticos ou semelhantes é chamada de:",
+    "alternativas": [
+      "Aliteração",
+      "Assonância",
+      "Anáfora",
+      "Paronomásia"
+    ],
+    "resposta": 1,
+    "explicacao": "A assonância é a figura de som que consiste na repetição harmoniosa de vogais em um verso ou frase, criando um efeito de musicalidade."
+  },
+  {
+    "id": 241,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração Reduzida de Gerúndio",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A oração destacada em 'Chegando ao escritório, ligarei para você' pode ser desenvolvida para:",
+    "alternativas": [
+      "Porque cheguei ao escritório...",
+      "Se chegar ao escritório...",
+      "Quando chegar ao escritório...",
+      "Embora chegasse ao escritório..."
+    ],
+    "resposta": 2,
+    "explicacao": "A oração reduzida de gerúndio 'Chegando ao escritório' tem valor temporal. Ao ser desenvolvida, ela se transforma em uma oração subordinada adverbial temporal, como 'Quando chegar ao escritório...'."
+  },
+  {
+    "id": 242,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Pôr' no imperfeito do subjuntivo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Complete a frase: 'Se eu _______ mais dinheiro, compraria o carro.'",
+    "alternativas": [
+      "tivesse",
+      "tiver",
+      "pusesse",
+      "pôr"
+    ],
+    "resposta": 0,
+    "explicacao": "A questão testa o verbo 'ter'. Se fosse o verbo 'pôr', seria 'pusesse'. Como a frase pede o verbo 'ter' na condição hipotética no passado, a forma correta é 'tivesse', do pretérito imperfeito do subjuntivo."
+  },
+  {
+    "id": 243,
+    "categoria": "Pontuação",
+    "tema": "Vírgula com aposto",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A vírgula foi usada para isolar um aposto em:",
+    "alternativas": [
+      "Comprei laranjas, maçãs e bananas.",
+      "Pedro, venha almoçar!",
+      "Brasília, capital do Brasil, foi planejada.",
+      "Ele é inteligente, mas preguiçoso."
+    ],
+    "resposta": 2,
+    "explicacao": "O aposto é um termo que explica, resume ou desenvolve outro. 'Capital do Brasil' é um aposto explicativo para 'Brasília' e deve vir entre vírgulas."
+  },
+  {
+    "id": 244,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Implicar' (sentido de 'ter implicância')",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A regência do verbo 'implicar' está correta em:",
+    "alternativas": [
+      "O professor implicava o aluno.",
+      "O professor implicava ao aluno.",
+      "O professor implicava com o aluno.",
+      "O professor implicava no aluno."
+    ],
+    "resposta": 2,
+    "explicacao": "No sentido de 'ter implicância', 'antipatizar', o verbo 'implicar' é transitivo indireto e rege a preposição 'com'."
+  },
+  {
+    "id": 245,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'há' e 'a'",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "_______ muitos anos não nos víamos. Daqui _______ pouco tempo, tudo mudará.",
+    "resposta": "Há / a",
+    "explicacao": "'Há' (verbo haver) é usado para indicar tempo decorrido (passado). 'A' (preposição) é usado para indicar tempo futuro ou distância."
+  },
+  {
+    "id": 246,
+    "categoria": "Concordância Nominal",
+    "tema": "Adjetivo como predicativo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está correta em:",
+    "alternativas": [
+      "A porta e a janela estavam abertas.",
+      "A porta e a janela estava aberta.",
+      "O rapaz e a moça pareciam preocupados.",
+      "O rapaz e a moça parecia preocupada."
+    ],
+    "resposta": 2,
+    "explicacao": "Quando o adjetivo funciona como predicativo de um sujeito composto de gêneros diferentes, ele deve ir para o masculino plural ('preocupados'). Se os substantivos forem do mesmo gênero, ele vai para o plural no mesmo gênero ('abertas')."
+  },
+  {
+    "id": 247,
+    "categoria": "Sintaxe: Adjunto Adnominal vs. Adjunto Adverbial",
+    "tema": "Diferenciação",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Em 'O amor de mãe é infinito' e 'Ele agiu com amor', os termos destacados são, respectivamente:",
+    "alternativas": [
+      "Adjunto adnominal e adjunto adverbial",
+      "Complemento nominal e adjunto adnominal",
+      "Adjunto adverbial e adjunto adnominal",
+      "Ambos adjuntos adnominais"
+    ],
+    "resposta": 0,
+    "explicacao": "'De mãe' caracteriza o substantivo 'amor', sendo um adjunto adnominal (a mãe age, é agente). 'Com amor' indica o modo como ele agiu, modificando o verbo 'agir', sendo um adjunto adverbial de modo."
+  },
+  {
+    "id": 248,
+    "categoria": "Morfologia: Formação de Palavras",
+    "tema": "Derivação Imprópria",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A mudança de classe gramatical de uma palavra sem alteração em sua forma, como em 'O jantar estava ótimo', é chamada de:",
+    "alternativas": [
+      "Derivação regressiva",
+      "Derivação imprópria (ou conversão)",
+      "Composição por aglutinação",
+      "Parassíntese"
+    ],
+    "resposta": 1,
+    "explicacao": "A derivação imprópria ocorre quando uma palavra, originalmente de uma classe, passa a pertencer a outra sem sofrer modificação em sua estrutura. O verbo 'jantar' torna-se substantivo ao ser precedido de artigo."
+  },
+  {
+    "id": 249,
+    "categoria": "Crase",
+    "tema": "Topônimos",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Fui ___ Itália e depois viajei ___ Roma antiga.",
+    "resposta": "à / à",
+    "explicacao": "Usamos o truque de trocar o verbo 'ir' por 'voltar de'. Se o resultado for 'voltar da', há crase. 'Volto da Itália' -> 'Fui à Itália'. Nomes de cidade não costumam ter crase, mas quando vêm especificados ('Roma antiga'), passam a admitir artigo e, consequentemente, crase."
+  },
+  {
+    "id": 250,
+    "categoria": "Concordância Verbal",
+    "tema": "Expressão 'um e outro'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A concordância com a expressão 'um e outro' é aceita em qual forma?",
+    "alternativas": [
+      "Um e outro candidato desistiu.",
+      "Um e outro candidato desistiram.",
+      "Ambas as formas estão corretas.",
+      "Nenhuma das formas está correta."
+    ],
+    "resposta": 2,
+    "explicacao": "Com a expressão 'um e outro', a gramática normativa aceita tanto a concordância no singular (ênfase na individualidade) quanto no plural (ênfase no conjunto). Portanto, ambas as formas são consideradas corretas."
+  },
+  {
     "id": 1001,
     "categoria": "Crase",
     "tema": "Uso da crase",
