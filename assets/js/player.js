@@ -183,11 +183,25 @@
       input.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && !els.verify.disabled && !st.corrigido) { e.preventDefault(); verificar(); }
       });
-      div.appendChild(label); div.appendChild(input); wrap.appendChild(div);
+      div.appendChild(label); div.appendChild(input);
+
+      // <<< INÍCIO DA MODIFICAÇÃO >>>
+      // Verifica se a resposta sugere múltiplas partes para instruir o usuário
+      const respostaExemplo = Array.isArray(q.resposta) ? q.resposta[0] : q.resposta;
+      if (typeof respostaExemplo === 'string' && respostaExemplo.includes(" / ")) {
+        const instrucao = document.createElement("p");
+        instrucao.className = "lacuna-instruction";
+        instrucao.textContent = "Dica: Para respostas múltiplas, separe-as com uma barra ( / ). Ex: o / à";
+        div.appendChild(instrucao);
+      }
+      // <<< FIM DA MODIFICAÇÃO >>>
+
+      wrap.appendChild(div);
     }
     else if (tipo === "verdadeiro_falso") {
       const ul = document.createElement("ul"); ul.className = "options";
-      ul.setAttribute("role", "radiogroup"); ul.setAttribute("aria-label", "Verdadeiro ou Falso");
+      ul.setAttribute("role", "radiogroup");
+      ul.setAttribute("aria-label", "Verdadeiro ou Falso");
       ul.setAttribute("aria-describedby", enun.id);
 
       const name = `vf-${q.id}`;
