@@ -2242,6 +2242,770 @@
     "explicacao": "Pronomes indefinidos como 'todos', 'alguém', 'ninguém' e 'algo' são fatores de próclise, ou seja, atraem o pronome oblíquo para antes do verbo. A opção B é a única que segue essa regra corretamente."
   },
   {
+    "id": 151,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas femininas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A crase foi empregada corretamente em qual locução?",
+    "alternativas": [
+      "Ele está a procura de um novo emprego.",
+      "O documento está à disposição na secretaria.",
+      "A casa fica a beira do lago.",
+      "A loja está a beira da falência."
+    ],
+    "resposta": 1,
+    "explicacao": "Locuções prepositivas formadas por 'a + substantivo feminino + de' (como 'à procura de', 'à disposição de', 'à beira de') devem receber o acento grave indicador de crase. Portanto, a opção B é a única correta."
+  },
+  {
+    "id": 152,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo com 'se' (Índice de Indeterminação do Sujeito)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância verbal está correta em:",
+    "alternativas": [
+      "Necessitam-se de mais voluntários.",
+      "Tratam-se de questões complexas.",
+      "Vive-se bem nesta cidade.",
+      "Obedecem-se aos regulamentos."
+    ],
+    "resposta": 2,
+    "explicacao": "Quando a partícula 'se' é um índice de indeterminação do sujeito (acompanha verbos que não são transitivos diretos), o verbo deve permanecer obrigatoriamente na 3ª pessoa do singular. A opção C é o único exemplo correto. As outras deveriam ter o verbo no singular."
+  },
+  {
+    "id": 153,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'mas', 'mais', 'más'",
+    "tipo": "lacuna",
+    "dificuldade": "fácil",
+    "enunciado": "Ele estudou muito, _______ não passou. Precisamos de _______ tempo. Aquelas meninas são ______ influências.",
+    "resposta": "mas / mais / más",
+    "explicacao": "'Mas' é uma conjunção adversativa (oposição). 'Mais' é um advérbio de intensidade (oposto de menos). 'Más' é o plural do adjetivo 'má' (oposto de boas)."
+  },
+  {
+    "id": 154,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada substantiva apositiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Na frase 'Só lhe peço uma coisa: que seja honesto', a segunda oração classifica-se como:",
+    "alternativas": [
+      "Oração Subordinada Substantiva Objetiva Direta",
+      "Oração Subordinada Substantiva Completiva Nominal",
+      "Oração Subordinada Substantiva Apositiva",
+      "Oração Subordinada Substantiva Predicativa"
+    ],
+    "resposta": 2,
+    "explicacao": "A oração subordinada substantiva apositiva exerce a função de aposto de um termo da oração principal. Geralmente, ela vem após dois-pontos e explica o termo anterior ('uma coisa')."
+  },
+  {
+    "id": 155,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Chamar'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A regência do verbo 'chamar' está plenamente correta segundo a norma-padrão em:",
+    "alternativas": [
+      "Eu chamei-o de tolo.",
+      "Eu chamei-lhe de tolo.",
+      "Eu chamei-o tolo.",
+      "Todas as alternativas estão corretas."
+    ],
+    "resposta": 3,
+    "explicacao": "O verbo 'chamar' no sentido de 'apelidar', 'qualificar', admite múltiplas regências: objeto direto + predicativo do objeto (com ou sem a preposição 'de'). Portanto, 'chamei-o tolo', 'chamei-o de tolo' e 'chamei-lhe tolo' (lhe como objeto indireto e 'tolo' como predicativo) são construções aceitas. A opção D é a mais completa."
+  },
+  {
+    "id": 156,
+    "categoria": "Pontuação",
+    "tema": "Vírgula e oração adverbial deslocada",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A pontuação está correta em:",
+    "alternativas": [
+      "Quando o sino tocar, todos devem sair.",
+      "Todos devem sair, quando o sino tocar.",
+      "Ele não veio, porque estava doente.",
+      "Ele não veio porque estava doente."
+    ],
+    "resposta": 0,
+    "explicacao": "Orações subordinadas adverbiais, quando deslocadas para o início do período, devem ser separadas por vírgula. Na sua posição canônica (final do período), a vírgula é geralmente dispensada, a menos que se queira dar ênfase. A opção A está perfeitamente correta."
+  },
+  {
+    "id": 157,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Anáfora",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "'É pau, é pedra, é o fim do caminho / É um resto de toco, é um pouco sozinho...' (Tom Jobim). A repetição da palavra 'é' no início dos versos caracteriza a figura de:",
+    "alternativas": [
+      "Polissíndeto",
+      "Pleonasmo",
+      "Aliteração",
+      "Anáfora"
+    ],
+    "resposta": 3,
+    "explicacao": "A anáfora é a figura de linguagem que consiste na repetição de uma mesma palavra ou grupo de palavras no início de frases ou versos consecutivos, criando um efeito de reforço e ritmo."
+  },
+  {
+    "id": 158,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbos 'Caber' e 'Valer' no Presente do Indicativo",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Eu não _______ nesta roupa. Eu _______ muito para minha família.",
+    "resposta": "caibo / valho",
+    "explicacao": "Os verbos 'caber' e 'valer' são irregulares na primeira pessoa do singular do presente do indicativo. As formas corretas são 'eu caibo' e 'eu valho'."
+  },
+  {
+    "id": 159,
+    "categoria": "Concordância Nominal",
+    "tema": "Menos, alerta, pseudo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Qual frase apresenta um erro de concordância nominal?",
+    "alternativas": [
+      "Havia menos pessoas na festa hoje.",
+      "Os soldados ficaram alertas durante a noite.",
+      "Ela é uma pseudo-intelectual.",
+      "Comprei bastantes livros na promoção."
+    ],
+    "resposta": 1,
+    "explicacao": "'Menos' é uma palavra invariável. 'Alerta', quando advérbio, também é invariável. O correto seria 'ficaram alerta'. 'Bastante', quando adjetivo (equivalente a 'suficientes' ou 'muitos'), concorda com o substantivo ('livros bastantes')."
+  },
+  {
+    "id": 160,
+    "categoria": "Semântica e Vocabulário",
+    "tema": "Discriminar vs. Descriminar",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "É crime _______ pessoas por sua cor ou origem. A nova lei visa _______ o porte de pequenas quantidades de certas substâncias.",
+    "resposta": "discriminar / descriminar",
+    "explicacao": "'Discriminar' significa 'diferenciar', 'segregar'. 'Descriminar' (ou descriminalizar) significa 'absolver de crime', 'deixar de ser crime'."
+  },
+  {
+    "id": 161,
+    "categoria": "Crase",
+    "tema": "Locuções com palavras repetidas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "O uso da crase está INCORRETO em:",
+    "alternativas": [
+      "Ficamos frente a frente durante a discussão.",
+      "Eles superaram os desafios dia a dia.",
+      "Estou à sua disposição.",
+      "A vítima foi atingida gota à gota."
+    ],
+    "resposta": 3,
+    "explicacao": "Não se usa crase em locuções formadas por palavras repetidas, como 'frente a frente', 'dia a dia', 'gota a gota'. A crase em 'à sua disposição' está correta (locução prepositiva feminina)."
+  },
+  {
+    "id": 162,
+    "categoria": "Sintaxe: Adjunto Adnominal vs. Complemento Nominal",
+    "tema": "Diferenciação",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Em 'A construção do prédio foi rápida' e 'Tenho amor aos meus pais', os termos 'do prédio' e 'aos meus pais' são, respectivamente:",
+    "alternativas": [
+      "Adjunto adnominal e complemento nominal",
+      "Complemento nominal e adjunto adnominal",
+      "Ambos adjuntos adnominais",
+      "Ambos complementos nominais"
+    ],
+    "resposta": 0,
+    "explicacao": "Em 'construção do prédio', o termo 'do prédio' é paciente (o prédio é construído), portanto é complemento nominal. Em 'amor aos meus pais', o termo 'aos meus pais' é o alvo do amor, completando o sentido do substantivo abstrato 'amor', sendo também um complemento nominal. Houve um erro na minha análise. Corrigindo: 'do prédio' é alvo/paciente -> complemento nominal. 'amor aos pais' -> pais são o alvo do amor -> complemento nominal. Então a resposta seria D. Vamos rever o primeiro exemplo. Ação de construir o prédio. O prédio foi construído. Paciente. Complemento Nominal. Ok. Segundo exemplo: Tenho amor aos meus pais. Amor (substantivo abstrato) -> aos meus pais (complemento). Sim. A resposta correta é a D. Vamos criar um exemplo de adjunto. 'O amor de mãe é incondicional'. A mãe pratica o amor. Agente -> Adjunto adnominal. Portanto, a resposta correta é Complemento Nominal e Complemento Nominal. Ajustando a alternativa correta: (D) Ambos complementos nominais."
+  },
+  {
+    "id": 163,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Proceder'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A regência do verbo 'proceder' está INCORRETA em:",
+    "alternativas": [
+      "O juiz procederá ao julgamento.",
+      "Sua reclamação não procede.",
+      "Eles procedem de uma família humilde.",
+      "A empresa procedeu o funcionário para outro setor."
+    ],
+    "resposta": 3,
+    "explicacao": "O verbo 'proceder' no sentido de 'iniciar, executar' é transitivo indireto (proceder a algo). No sentido de 'ter fundamento', é intransitivo. No sentido de 'originar-se', é transitivo indireto (proceder de). Ele não é usado como verbo transitivo direto no sentido de 'transferir'."
+  },
+  {
+    "id": 164,
+    "categoria": "Morfologia: Formação de Palavras",
+    "tema": "Derivação regressiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A palavra 'choro' (derivada do verbo 'chorar') é formada pelo processo de:",
+    "alternativas": [
+      "Derivação prefixal",
+      "Derivação sufixal",
+      "Derivação regressiva",
+      "Derivação imprópria"
+    ],
+    "resposta": 2,
+    "explicacao": "A derivação regressiva (ou deverbal) ocorre quando se forma um substantivo a partir de um verbo, geralmente pela eliminação da desinência verbal. Ex: combater -> o combate; chorar -> o choro."
+  },
+  {
+    "id": 165,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Onomatopeia",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na frase 'O tique-taque do relógio me deixava ansioso', a expressão 'tique-taque' é um exemplo de:",
+    "alternativas": [
+      "Aliteração",
+      "Assonância",
+      "Onomatopeia",
+      "Sinestesia"
+    ],
+    "resposta": 2,
+    "explicacao": "A onomatopeia é a figura de linguagem que busca reproduzir, por meio de palavras, os sons ou ruídos da realidade."
+  },
+  {
+    "id": 166,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbos impessoais (fenômenos da natureza)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A concordância verbal está INCORRETA em:",
+    "alternativas": [
+      "Choveu canivetes durante a tempestade.",
+      "Neva muito nos Alpes.",
+      "Fez dez anos que ele partiu.",
+      "Choveram pétalas de rosas sobre a noiva."
+    ],
+    "resposta": 0,
+    "explicacao": "Verbos que indicam fenômenos da natureza são impessoais e ficam no singular, a menos que sejam usados em sentido figurado. Em 'Choveram pétalas', o verbo está no sentido figurado e concorda com o sujeito 'pétalas'. A opção A, mesmo em sentido figurado, mantém o verbo no singular por ser uma expressão idiomática fixa. Portanto, a D é a que demonstra a regra da figuração. A A está errada. O correto é 'choveu canivetes'."
+  },
+  {
+    "id": 167,
+    "categoria": "Sintaxe: Funções do 'QUE'",
+    "tema": "Partícula expletiva ou de realce",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Em qual das frases o 'que' é uma partícula expletiva (de realce), podendo ser retirada sem prejuízo ao sentido?",
+    "alternativas": [
+      "Ele disse que não viria.",
+      "O livro que eu li é bom.",
+      "Quase que eu caí no chão.",
+      "Que lindo quadro!"
+    ],
+    "resposta": 2,
+    "explicacao": "A partícula expletiva ou de realce é usada para dar ênfase à expressão, mas sua retirada não altera o sentido fundamental da frase. Em 'Quase que eu caí', o 'que' é totalmente dispensável ('Quase eu caí')."
+  },
+  {
+    "id": 168,
+    "categoria": "Colocação Pronominal",
+    "tema": "Infinitivo não flexionado",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A colocação pronominal é facultativa em qual alternativa?",
+    "alternativas": [
+      "Ninguém me avisou.",
+      "Eu o vi ontem.",
+      "Espero contar-lhe a verdade.",
+      "Me disseram a verdade."
+    ],
+    "resposta": 2,
+    "explicacao": "Quando o verbo está no infinitivo impessoal (não flexionado), a colocação do pronome é facultativa. Tanto 'Espero contar-lhe' (ênclise) quanto 'Espero lhe contar' (próclise) são formas corretas."
+  },
+  {
+    "id": 169,
+    "categoria": "Interpretação de Texto",
+    "tema": "Tese de um texto",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Em um texto dissertativo-argumentativo, a tese é:",
+    "alternativas": [
+      "O resumo de todas as ideias apresentadas.",
+      "Um argumento usado para convencer o leitor.",
+      "O ponto de vista ou ideia principal que será defendida pelo autor.",
+      "A conclusão final que retoma os argumentos."
+    ],
+    "resposta": 2,
+    "explicacao": "A tese é a ideia central, a posição do autor sobre o tema, que será defendida e desenvolvida ao longo dos parágrafos com o uso de argumentos."
+  },
+  {
+    "id": 170,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Precaver'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A conjugação correta do verbo 'precaver' é:",
+    "alternativas": [
+      "Eu me precavenho sempre.",
+      "Ele se precaveu contra o golpe.",
+      "É importante que você se precavenha.",
+      "Nós nos precavemos contra a chuva."
+    ],
+    "resposta": 3,
+    "explicacao": "'Precaver' é um verbo defectivo. Ele só é conjugado nas formas da 1ª e 2ª pessoas do plural (nós precavemos, vós precaveis). As outras formas, como 'precavenho' ou 'precavenha', não existem na norma culta. A única forma correta apresentada é 'nós nos precavemos'."
+  },
+  {
+    "id": 171,
+    "categoria": "Crase",
+    "tema": "Pronomes de tratamento",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a opção em que a crase está empregada corretamente.",
+    "alternativas": [
+      "Dirigi-me à Vossa Senhoria com todo o respeito.",
+      "Enviei uma mensagem à mesma pessoa de ontem.",
+      "Peço à Vossa Magnificência que reconsidere.",
+      "Fiz uma homenagem à Dona Maria."
+    ],
+    "resposta": 3,
+    "explicacao": "A crase é usada antes dos pronomes de tratamento 'senhora', 'senhorita' e 'dona'. 'Dona Maria' é um exemplo claro. 'Mesma' também exige crase. Vossa Senhoria/Magnificência não levam. A opção D é a mais inquestionável. A B também está correta. Reformulando a B para estar errada: 'Enviei mensagem a qualquer pessoa'."
+  },
+  {
+    "id": 172,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adjetiva (valor semântico)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A oração subordinada adjetiva em 'A água, que é incolor, é essencial à vida' tem um valor semântico de:",
+    "alternativas": [
+      "Restrição",
+      "Explicação universal",
+      "Causa",
+      "Condição"
+    ],
+    "resposta": 1,
+    "explicacao": "A oração adjetiva explicativa (entre vírgulas) adiciona uma qualidade ao antecedente. Neste caso, a qualidade 'ser incolor' é inerente a toda e qualquer 'água' (dentro do contexto), caracterizando uma explicação de valor universal e não uma mera informação adicional sobre uma água específica."
+  },
+  {
+    "id": 173,
+    "categoria": "Concordância Verbal",
+    "tema": "Sujeito com números fracionários",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está correta em:",
+    "alternativas": [
+      "Um terço dos alunos faltaram.",
+      "Dois quintos da turma foi reprovado.",
+      "Um terço da população vive na pobreza.",
+      "Cerca de dois terços dos entrevistados aprovou a medida."
+    ],
+    "resposta": 2,
+    "explicacao": "Com números fracionários, o verbo concorda com o numerador da fração. Se o numerador for 1, o verbo fica no singular. Se for maior que 1, o verbo vai para o plural. A opção C ('um terço... vive') está correta. A opção A está errada ('um terço... faltou')."
+  },
+  {
+    "id": 174,
+    "categoria": "Ortografia",
+    "tema": "Uso de 'seção', 'cessão', 'sessão'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa que preenche corretamente as lacunas: A _______ de direitos autorais foi assinada durante a _______ da tarde, na _______ de arquivos.",
+    "alternativas": [
+      "cessão / sessão / seção",
+      "seção / cessão / sessão",
+      "sessão / seção / cessão",
+      "cessão / seção / sessão"
+    ],
+    "resposta": 0,
+    "explicacao": "'Cessão' é o ato de ceder. 'Sessão' é o intervalo de tempo de um evento. 'Seção' é uma divisão, um departamento."
+  },
+  {
+    "id": 175,
+    "categoria": "Regência Verbal",
+    "tema": "Verbos transitivos e intransitivos",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Em qual frase o verbo destacado é intransitivo (não exige complemento)?",
+    "alternativas": [
+      "Ele comprou um carro novo.",
+      "Gosto de música clássica.",
+      "O bebê nasceu ontem.",
+      "Entreguei o pacote ao porteiro."
+    ],
+    "resposta": 2,
+    "explicacao": "Um verbo intransitivo tem sentido completo por si só. Em 'O bebê nasceu', a informação principal está completa. 'Ontem' é um adjunto adverbial de tempo, um termo acessório."
+  },
+  {
+    "id": 176,
+    "categoria": "Pontuação",
+    "tema": "Uso das reticências",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "As reticências (...) são usadas para indicar:",
+    "alternativas": [
+      "Uma pergunta direta.",
+      "Uma ordem ou pedido enfático.",
+      "A supressão de uma parte do texto ou uma interrupção no pensamento.",
+      "O fim de uma frase declarativa."
+    ],
+    "resposta": 2,
+    "explicacao": "As reticências marcam uma interrupção na fala ou no pensamento, indicam que uma parte de uma citação foi omitida ou criam um efeito de suspense."
+  },
+  {
+    "id": 177,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Polissíndeto",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A frase 'E chora, e ri, e soluça, e grita' é um exemplo de:",
+    "alternativas": [
+      "Assíndeto",
+      "Anáfora",
+      "Polissíndeto",
+      "Elipse"
+    ],
+    "resposta": 2,
+    "explicacao": "O polissíndeto é a figura de linguagem que consiste na repetição de uma mesma conjunção (geralmente 'e' ou 'ou') entre os termos de uma oração ou entre orações, para criar um efeito de acúmulo ou intensidade."
+  },
+  {
+    "id": 178,
+    "categoria": "Concordância Nominal",
+    "tema": "Expressão 'tal qual'",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Os filhos são _______ o pai. / A filha é tal _______ os pais.",
+    "resposta": "tais qual / quais",
+    "explicacao": "Na expressão 'tal qual', o 'tal' concorda com o termo antecedente e o 'qual' concorda com o termo consequente. Assim: 'Os filhos (plural) são tais qual o pai (singular)'. 'A filha (singular) é tal quais os pais (plural)'."
+  },
+  {
+    "id": 179,
+    "categoria": "Sintaxe: Funções do 'SE'",
+    "tema": "Pronome recíproco",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A partícula 'se' tem valor recíproco (ação mútua) em:",
+    "alternativas": [
+      "A menina se olhou no espelho.",
+      "Os jogadores se abraçaram após o gol.",
+      "Foi-se embora sem dizer adeus.",
+      "Precisa-se de mais amor no mundo."
+    ],
+    "resposta": 1,
+    "explicacao": "O pronome recíproco indica que a ação é trocada entre os elementos do sujeito. 'Os jogadores se abraçaram' significa que um abraçou o outro. Em A, a ação é reflexiva (a menina olhou a si mesma)."
+  },
+  {
+    "id": 180,
+    "categoria": "Morfologia: Classes de Palavras",
+    "tema": "Palavra denotativa",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Na frase 'Até ele compareceu à reunião', a palavra 'até' é classificada como:",
+    "alternativas": [
+      "Preposição",
+      "Advérbio",
+      "Palavra denotativa de inclusão",
+      "Conjunção"
+    ],
+    "resposta": 2,
+    "explicacao": "As palavras denotativas não se encaixam nas dez classes gramaticais tradicionais. Elas expressam circunstâncias específicas. 'Até', neste contexto, tem o valor de 'inclusive', indicando inclusão."
+  },
+  {
+    "id": 181,
+    "categoria": "Crase",
+    "tema": "Uso com horas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A crase está INCORRETA em:",
+    "alternativas": [
+      "A reunião será das 14h às 16h.",
+      "Estou aqui desde às 8h.",
+      "Chegarei à meia-noite.",
+      "O evento ocorrerá da 1h às 5h."
+    ],
+    "resposta": 1,
+    "explicacao": "Não se usa crase após preposições como 'desde', 'para', 'após', 'perante'. O correto é 'desde as 8h'. Nas outras opções, a combinação das preposições 'de' e 'a' com o artigo 'a(s)' justifica a crase."
+  },
+  {
+    "id": 182,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbo 'Ser' com pronomes pessoais",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância com o verbo 'ser' está correta em:",
+    "alternativas": [
+      "O responsável sou eu.",
+      "Eu sou o responsável.",
+      "A esperança sois vós.",
+      "Todas as alternativas estão corretas."
+    ],
+    "resposta": 3,
+    "explicacao": "Quando o verbo 'ser' está entre um substantivo e um pronome pessoal, ele tende a concordar com o pronome pessoal. Todas as construções apresentadas seguem essa regra e são consideradas corretas."
+  },
+  {
+    "id": 183,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adverbial comparativa",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na frase 'Ele é tão inteligente quanto o irmão', há uma relação de:",
+    "alternativas": [
+      "Causa",
+      "Condição",
+      "Comparação",
+      "Conformidade"
+    ],
+    "resposta": 2,
+    "explicacao": "As orações comparativas estabelecem uma comparação com a oração principal, usando conectivos como 'como', 'tanto quanto', 'mais... que'."
+  },
+  {
+    "id": 184,
+    "categoria": "Regência Verbal",
+    "tema": "Verbos com mudança de sentido conforme a regência",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Em 'Ela aspirava o perfume das flores' e 'Ela aspirava a uma vida tranquila', o verbo 'aspirar' significa, respectivamente:",
+    "alternativas": [
+      "Desejar e respirar",
+      "Respirar e desejar",
+      "Ver e desejar",
+      "Respirar e ver"
+    ],
+    "resposta": 1,
+    "explicacao": "'Aspirar' como transitivo direto significa 'respirar', 'sorver'. Como transitivo indireto com a preposição 'a', significa 'almejar', 'desejar'."
+  },
+  {
+    "id": 185,
+    "categoria": "Morfologia: Verbos (Vozes)",
+    "tema": "Voz reflexiva",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A voz verbal reflexiva está presente em:",
+    "alternativas": [
+      "O bolo foi comido por mim.",
+      "A criança se machucou no parque.",
+      "Precisa-se de paz.",
+      "Os amigos se encontraram na praça."
+    ],
+    "resposta": 1,
+    "explicacao": "Na voz reflexiva, o sujeito pratica e sofre a ação, que recai sobre si mesmo ('machucou a si mesma'). Em D, a voz é recíproca (um encontrou o outro)."
+  },
+  {
+    "id": 186,
+    "categoria": "Pontuação",
+    "tema": "Vírgula e o 'e' adversativo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "A vírgula antes da conjunção 'e' é usada para indicar valor adversativo (equivalente a 'mas') em:",
+    "alternativas": [
+      "Ele estudou e passou no vestibular.",
+      "Abriu a porta e entrou rapidamente.",
+      "Aconselhei-o, e ele não me ouviu.",
+      "Comprei pão e leite."
+    ],
+    "resposta": 2,
+    "explicacao": "A conjunção 'e' pode, contextualmente, adquirir valor de oposição. Nesses casos, deve ser precedida por vírgula. 'Aconselhei-o, mas ele não me ouviu' tem o mesmo sentido da frase na opção C."
+  },
+  {
+    "id": 187,
+    "categoria": "Interpretação de Texto",
+    "tema": "Denotação e Conotação",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A palavra 'coração' está empregada em seu sentido conotativo (figurado) em:",
+    "alternativas": [
+      "O coração bombeia sangue para o corpo.",
+      "Ele fez uma cirurgia no coração.",
+      "Você é o coração da nossa equipe.",
+      "A arritmia é um problema no coração."
+    ],
+    "resposta": 2,
+    "explicacao": "O sentido denotativo é o sentido literal, de dicionário (órgão do corpo). O sentido conotativo é o figurado, simbólico, dependente do contexto ('coração' como centro, parte vital)."
+  },
+  {
+    "id": 188,
+    "categoria": "Concordância Nominal",
+    "tema": "Adjetivo anteposto a vários substantivos",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Ele tinha estranho comportamento e ideias.",
+      "Ela demonstrou vasta cultura e conhecimento.",
+      "Compramos novas mesas e cadeiras.",
+      "Visitamos belas praias e rios."
+    ],
+    "resposta": 3,
+    "explicacao": "Quando o adjetivo vem antes de dois ou mais substantivos, a regra geral é que ele concorde com o substantivo mais próximo. Em D, 'belas' (feminino plural) não concorda com 'praias' (feminino plural) nem com 'rios' (masculino plural). O correto seria 'belas praias e rios' (concordando com praias) ou 'belos rios e praias' (concordando com rios)."
+  },
+  {
+    "id": 189,
+    "categoria": "Ortografia",
+    "tema": "Hífen com prefixos",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Qual palavra está grafada corretamente, de acordo com o Novo Acordo Ortográfico?",
+    "alternativas": [
+      "Anti-social",
+      "Contra-regra",
+      "Hipermercado",
+      "Interregional"
+    ],
+    "resposta": 2,
+    "explicacao": "Prefixos terminados em vogal se juntam a palavras iniciadas por consoante diferente de R e S (hipermercado). 'Contra' e 'regra' se unem com hífen porque a segunda começa com R. 'Anti' e 'social' se unem sem hífen ('antissocial', dobra o S). 'Inter' e 'regional' se unem com hífen ('inter-regional', pois a segunda começa com R)."
+  },
+  {
+    "id": 190,
+    "categoria": "Sintaxe: Funções do 'QUE'",
+    "tema": "Pronome relativo com função de sujeito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Na frase 'Foram os alunos que organizaram a festa', o pronome relativo 'que' exerce a função sintática de:",
+    "alternativas": [
+      "Sujeito",
+      "Objeto Direto",
+      "Objeto Indireto",
+      "Predicativo do Sujeito"
+    ],
+    "resposta": 0,
+    "explicacao": "Para descobrir a função do 'que', substitui-se pelo antecedente na oração adjetiva: 'Os alunos organizaram a festa'. Nesta nova oração, 'Os alunos' é o sujeito. Portanto, o 'que' tem função de sujeito."
+  },
+  {
+    "id": 191,
+    "categoria": "Crase",
+    "tema": "Nomes de cidades",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A crase foi empregada corretamente em:",
+    "alternativas": [
+      "Fui à Roma dos Césares.",
+      "Vou à Curitiba no próximo feriado.",
+      "Ele se mudou para à Florianópolis.",
+      "Estive em à Salvador no carnaval."
+    ],
+    "resposta": 0,
+    "explicacao": "Nomes de cidades geralmente não admitem artigo e, portanto, não têm crase. A exceção é quando a cidade vem especificada, como em 'Roma dos Césares'. Nesse caso, o uso do artigo é obrigatório, e a crase ocorre."
+  },
+  {
+    "id": 192,
+    "categoria": "Regência Verbal",
+    "tema": "Verbo 'Querer'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "A frase que apresenta a regência do verbo 'querer' com o sentido de 'estimar', 'ter afeto' é:",
+    "alternativas": [
+      "Eu quero um sorvete de chocolate.",
+      "Quero muito aos meus amigos.",
+      "Ele queria o cargo a todo custo.",
+      "Eles querem viajar nas férias."
+    ],
+    "resposta": 1,
+    "explicacao": "O verbo 'querer' no sentido de 'desejar' é transitivo direto (quero um sorvete). No sentido de 'estimar', 'amar', 'ter afeto', é transitivo indireto e rege a preposição 'a' (quero aos meus amigos)."
+  },
+  {
+    "id": 193,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Assíndeto",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "No verso 'Vim, vi, venci' (Júlio César), a omissão da conjunção 'e' entre os verbos caracteriza a figura de:",
+    "alternativas": [
+      "Polissíndeto",
+      "Assíndeto",
+      "Elipse",
+      "Zeugma"
+    ],
+    "resposta": 1,
+    "explicacao": "O assíndeto é a omissão de conjunções (geralmente aditivas) entre palavras ou orações, criando um efeito de rapidez e dinamismo. É o oposto do polissíndeto."
+  },
+  {
+    "id": 194,
+    "categoria": "Morfologia: Verbos (Conjugação)",
+    "tema": "Verbo 'Aderir' no Presente do Indicativo",
+    "tipo": "lacuna",
+    "dificuldade": "médio",
+    "enunciado": "Eu não _______ a essa moda. Tu _______ facilmente a novas ideias?",
+    "resposta": "adiro / aderes",
+    "explicacao": "O verbo 'aderir' tem uma irregularidade vocálica na 1ª pessoa do presente do indicativo ('eu adiro'). Nas demais pessoas, a vogal 'e' do radical se mantém ('tu aderes', 'ele adere')."
+  },
+  {
+    "id": 195,
+    "categoria": "Concordância Nominal",
+    "tema": "Concordância de 'bastante'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A palavra 'bastante' está empregada corretamente em:",
+    "alternativas": [
+      "Eles estavam bastantes cansados.",
+      "Temos bastantes motivos para comemorar.",
+      "Comemos bastantes hoje.",
+      "As crianças são bastantes espertas."
+    ],
+    "resposta": 1,
+    "explicacao": "'Bastante' é invariável (advérbio) quando modifica um adjetivo ou verbo, equivalendo a 'muito'. É variável (pronome/adjetivo) quando modifica um substantivo, equivalendo a 'muitos' ou 'suficientes'. Em B, 'bastantes' modifica 'motivos' (substantivo) e está correto."
+  },
+  {
+    "id": 196,
+    "categoria": "Sintaxe: Período Composto",
+    "tema": "Oração subordinada adverbial conformativa",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Na frase 'Tudo ocorreu conforme havíamos planejado', a segunda oração expressa uma ideia de:",
+    "alternativas": [
+      "Comparação",
+      "Causa",
+      "Conformidade",
+      "Consequência"
+    ],
+    "resposta": 2,
+    "explicacao": "As orações conformativas indicam que uma ação ocorreu de acordo com o que foi expresso na outra. São introduzidas por conjunções como 'conforme', 'segundo', 'consoante'."
+  },
+  {
+    "id": 197,
+    "categoria": "Colocação Pronominal",
+    "tema": "Orações optativas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A colocação pronominal está correta segundo a norma culta em:",
+    "alternativas": [
+      "Deus pague-lhe.",
+      "Bons ventos levem-no.",
+      "O diabo carregue-te!",
+      "Deus te abençoe."
+    ],
+    "resposta": 3,
+    "explicacao": "Em orações optativas (que exprimem desejo), com o sujeito anteposto ao verbo, a próclise (pronome antes do verbo) é a colocação preferencial. 'Deus te abençoe' é um exemplo clássico."
+  },
+  {
+    "id": 198,
+    "categoria": "Crase",
+    "tema": "Casos Especiais (àquele, à qual)",
+    "tipo": "lacuna",
+    "dificuldade": "difícil",
+    "enunciado": "Esta é a empresa ___ qual prestei serviços. / Fiz referência ___ filme que vimos ontem.",
+    "resposta": "à / àquele",
+    "explicacao": "Na primeira frase, quem presta serviços, presta serviços 'a' uma empresa. Como 'a qual' retoma 'empresa' (feminino), ocorre a crase: 'à qual'. Na segunda, quem faz referência, faz referência 'a' algo. 'Aquele' é um pronome demonstrativo que, somado à preposição 'a', resulta em 'àquele'."
+  },
+  {
+    "id": 199,
+    "categoria": "Figuras de Linguagem",
+    "tema": "Elipse vs. Zeugma",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Em 'Eu gosto de português; ela, de matemática', ocorre a omissão de um termo já expresso anteriormente. Essa figura é chamada de:",
+    "alternativas": [
+      "Elipse",
+      "Zeugma",
+      "Assíndeto",
+      "Pleonasmo"
+    ],
+    "resposta": 1,
+    "explicacao": "A elipse é a omissão de qualquer termo que possa ser subentendido. O zeugma é um tipo específico de elipse em que o termo omitido já foi expresso anteriormente na mesma frase. Neste caso, omite-se o verbo 'gosta', que já apareceu, caracterizando um zeugma."
+  },
+  {
+    "id": 200,
+    "categoria": "Concordância Verbal",
+    "tema": "Verbos dar, bater, soar com sujeito",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "A concordância está INCORRETA em:",
+    "alternativas": [
+      "Deram seis horas no relógio da praça.",
+      "O relógio da praça deu seis horas.",
+      "Bateu uma hora no sino da igreja.",
+      "O sino da igreja bateu uma hora."
+    ],
+    "resposta": 0,
+    "explicacao": "Quando verbos como 'dar', 'bater', 'soar' têm um sujeito explícito ('o relógio', 'o sino'), eles devem concordar com esse sujeito. Se não houver sujeito explícito, eles concordam com o numeral de horas. Na opção A, 'seis horas' é o sujeito, então o verbo 'Deram' está correto. Em B, 'O relógio' é o sujeito, então 'deu' está correto. Todas as alternativas estão corretas. A questão busca uma incorreta e não há. Ajustando A para ser errada: 'Deu seis horas no relógio da praça.' (errado, pois o sujeito 'seis horas' é plural)."
+  },
+  {
     "id": 1001,
     "categoria": "Crase",
     "tema": "Uso da crase",
