@@ -1,5 +1,755 @@
 [
   {
+    "id": 1,
+    "categoria": "Crase",
+    "tema": "Uso da crase com horas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Quanto ao uso da crase, assinale a alternativa correta.",
+    "alternativas": [
+      "A reunião começará às 14h.",
+      "A reunião começará as 14h.",
+      "A reunião começará à 14h."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de horas, usa-se crase: preposição 'a' + artigo definido feminino plural 'as' (de 'as 14 horas') = 'às 14h'. Sem artigo ('as 14h') está errado; 'à 14h' erra ao empregar o singular, pois o substantivo subentendido é 'horas' (plural)."
+  },
+  {
+    "id": 2,
+    "categoria": "Crase",
+    "tema": "Regência + crase (assistir a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa em conformidade com a norma-padrão.",
+    "alternativas": [
+      "Assistiu às palestras.",
+      "Assistiu as palestras.",
+      "Assistiu à palestras."
+    ],
+    "resposta": 0,
+    "explicacao": "No sentido de 'ver', o verbo 'assistir' rege a preposição 'a'. Com núcleo feminino plural ('as palestras'), ocorre a fusão: 'a' + 'as' = 'às'. 'Assistiu as palestras' omite a preposição; 'à palestras' erra o número (singular com plural)."
+  },
+  {
+    "id": 3,
+    "categoria": "Crase",
+    "tema": "Regência + crase (obedecer a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a frase correta quanto ao uso da crase.",
+    "alternativas": [
+      "Obedeça à professora.",
+      "Obedeça a professora.",
+      "Obedeça às professora."
+    ],
+    "resposta": 0,
+    "explicacao": "O verbo 'obedecer' exige a preposição 'a'. Diante de substantivo feminino singular com artigo ('a professora'), contrai-se: 'a' + 'a' = 'à'. Sem crase, omite-se o artigo; com 'às', o número fica errado."
+  },
+  {
+    "id": 4,
+    "categoria": "Crase",
+    "tema": "Contração com demonstrativos (àquela)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Quanto à crase com demonstrativos, escolha a opção correta.",
+    "alternativas": [
+      "Prefiro esta caneta àquela.",
+      "Prefiro esta caneta a aquela.",
+      "Prefiro esta caneta aquela."
+    ],
+    "resposta": 0,
+    "explicacao": "Com 'preferir', usa-se a preposição 'a' para o segundo termo da comparação. Diante de 'aquela', há contração obrigatória: 'a' + 'aquela' = 'àquela'. 'Aquela' isolado não recebe a preposição; 'a aquela' não realizou a contração."
+  },
+  {
+    "id": 5,
+    "categoria": "Crase",
+    "tema": "Locais femininos com artigo (ir a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Vou à igreja.",
+      "Vou a igreja.",
+      "Vou á igreja."
+    ],
+    "resposta": 0,
+    "explicacao": "Com verbos de movimento (ir/voltar), se o lugar feminino admite artigo ('a igreja' → 'da igreja'), então: 'a' + 'a' = 'à'. A forma 'a igreja' omite a contração; 'á' (acento agudo) é grafia incorreta para crase."
+  },
+  {
+    "id": 6,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (tempo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Chegaremos à tarde.",
+      "Chegaremos a tarde.",
+      "Chegaremos às tarde."
+    ],
+    "resposta": 0,
+    "explicacao": "Locuções adverbiais femininas de tempo, modo e lugar pedem crase: 'à tarde', 'à noite', 'à distância'. No plural, seria 'às tardes' (não é o caso)."
+  },
+  {
+    "id": 7,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (tempo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a correta.",
+    "alternativas": [
+      "Falamos à noite.",
+      "Falamos a noite.",
+      "Falamos às noite."
+    ],
+    "resposta": 0,
+    "explicacao": "'À noite' é locução adverbial feminina de tempo. Sem crase, omite-se a contração ('a' + 'a' = 'à'); 'às noite' erra o número (plural)."
+  },
+  {
+    "id": 8,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (modo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a alternativa correta.",
+    "alternativas": [
+      "Ela chegou às pressas.",
+      "Ela chegou a pressas.",
+      "Ela chegou à pressa."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução 'às pressas' é feminina plural e pede crase. 'A pressas' não contrai; 'à pressa' (singular) é forma lusitana, não a preferida no português do Brasil."
+  },
+  {
+    "id": 9,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (modo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Fale às claras.",
+      "Fale as claras.",
+      "Fale a claras."
+    ],
+    "resposta": 0,
+    "explicacao": "'Às claras' é locução adverbial feminina no plural; usa-se crase: 'a' + 'as' = 'às'. As outras opções omitem a contração."
+  },
+  {
+    "id": 10,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (modo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Entrou às escondidas.",
+      "Entrou as escondidas.",
+      "Entrou à escondidas."
+    ],
+    "resposta": 0,
+    "explicacao": "Locução adverbial feminina plural: 'às escondidas'. 'As escondidas' não contrai; 'à escondidas' mistura singular com plural."
+  },
+  {
+    "id": 11,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais femininas (modo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Sinta-se à vontade.",
+      "Sinta-se a vontade.",
+      "Sinta-se às vontade."
+    ],
+    "resposta": 0,
+    "explicacao": "'À vontade' é locução adverbial de modo; pede crase. 'Às vontade' está no plural indevidamente."
+  },
+  {
+    "id": 12,
+    "categoria": "Crase",
+    "tema": "Locuções com palavras masculinas",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a construção correta.",
+    "alternativas": [
+      "Vendemos a prazo.",
+      "Vendemos à prazo.",
+      "Vendemos às prazo."
+    ],
+    "resposta": 0,
+    "explicacao": "Crase não ocorre antes de palavras masculinas: 'a prazo', 'a pé', 'a cavalo'. 'À prazo' e 'às prazo' são incorretas."
+  },
+  {
+    "id": 13,
+    "categoria": "Crase",
+    "tema": "Expressões cristalizadas (pagamento)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Compra à vista.",
+      "Compra a vista.",
+      "Compra às vista."
+    ],
+    "resposta": 0,
+    "explicacao": "Na expressão de pagamento, há contração: 'a' + 'a vista' (locução feminina) = 'à vista'."
+  },
+  {
+    "id": 14,
+    "categoria": "Crase",
+    "tema": "Locuções instrumentais (à mão)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a opção correta quanto à crase.",
+    "alternativas": [
+      "Escreveu a carta à mão.",
+      "Escreveu a carta a mão.",
+      "Escreveu a carta às mãos."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução instrumental 'à mão' exige crase. 'A mão' (sem crase) omite o artigo; 'às mãos' muda o número e o sentido."
+  },
+  {
+    "id": 15,
+    "categoria": "Crase",
+    "tema": "Locuções de modo (à mão livre)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a alternativa correta.",
+    "alternativas": [
+      "Desenhou à mão livre.",
+      "Desenhou a mão livre.",
+      "Desenhou às mão livre."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução 'à mão livre' pede crase por ser feminina. As demais opções omitem a contração ou erram no número."
+  },
+  {
+    "id": 16,
+    "categoria": "Crase",
+    "tema": "Locuções cristalizadas (à mão armada)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a frase correta.",
+    "alternativas": [
+      "Assalto à mão armada.",
+      "Assalto a mão armada.",
+      "Assalto às mãos armadas."
+    ],
+    "resposta": 0,
+    "explicacao": "A expressão fixa é 'à mão armada' (locução feminina). As outras opções não fazem a contração ou alteram indevidamente para o plural."
+  },
+  {
+    "id": 17,
+    "categoria": "Crase",
+    "tema": "Locuções consagradas (à prova de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Quanto ao uso da crase, marque a correta.",
+    "alternativas": [
+      "Produto à prova d'água.",
+      "Produto a prova d'água.",
+      "Produto às provas d'água."
+    ],
+    "resposta": 0,
+    "explicacao": "Na expressão 'à prova de/ d’', usa-se crase: 'a' + 'a prova' = 'à prova'. As demais opções estão incorretas."
+  },
+  {
+    "id": 18,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas (à exceção de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "À exceção de João, todos vieram.",
+      "A exceção de João, todos vieram.",
+      "À exceção à João, todos vieram."
+    ],
+    "resposta": 0,
+    "explicacao": "'À exceção de' é locução prepositiva feminina e requer crase. Não se usa crase antes de nome próprio regido por 'de' na sequência."
+  },
+  {
+    "id": 19,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas (à procura de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a forma correta.",
+    "alternativas": [
+      "Foi à procura de emprego.",
+      "Foi a procura de emprego.",
+      "Foi às procura de emprego."
+    ],
+    "resposta": 0,
+    "explicacao": "'À procura de' é locução prepositiva feminina. Sem crase, falta a contração; no plural, altera-se indevidamente o número."
+  },
+  {
+    "id": 20,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas (à espera de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a opção correta.",
+    "alternativas": [
+      "Ficou à espera do médico.",
+      "Ficou a espera do médico.",
+      "Ficou às espera do médico."
+    ],
+    "resposta": 0,
+    "explicacao": "'À espera de' é locução prepositiva feminina que pede crase. As demais opções omitem a contração ou erram o número."
+  },
+  {
+    "id": 21,
+    "categoria": "Crase",
+    "tema": "Locuções conjuntivas (à medida que)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "À medida que o tempo passa, aprendemos.",
+      "A medida que o tempo passa, aprendemos.",
+      "Á medida que o tempo passa, aprendemos."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução conjuntiva correta é 'à medida que' (proporção). A forma sem crase ('a medida que') está errada; 'Á medida...' com acento agudo é erro gráfico."
+  },
+  {
+    "id": 22,
+    "categoria": "Crase",
+    "tema": "Locuções conjuntivas (à proporção que)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Marque a alternativa adequada.",
+    "alternativas": [
+      "À proporção que aumentam os casos, cresce a cautela.",
+      "A proporção que aumentam os casos, cresce a cautela.",
+      "À proporção de aumentarem os casos, cresce a cautela."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução conjuntiva é 'à proporção que'. Sem crase (primeiro 'a') está incorreta; 'à proporção de' muda a estrutura e o sentido, deixando de ser conjunção proporcional."
+  },
+  {
+    "id": 23,
+    "categoria": "Crase",
+    "tema": "À moda de / culinária",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a forma correta.",
+    "alternativas": [
+      "Bife à milanesa.",
+      "Bife a milanesa.",
+      "Bife à milanês."
+    ],
+    "resposta": 0,
+    "explicacao": "Quando se subentende 'à moda de', usa-se crase: 'bife à milanesa' ('à moda de Milão'). 'A milanesa' omite a contração; 'à milanês' altera a forma adjetiva consagrada."
+  },
+  {
+    "id": 24,
+    "categoria": "Crase",
+    "tema": "Estrangeirismos consagrados (francês)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Pedidos feitos à la carte.",
+      "Pedidos feitos a la carte.",
+      "Pedidos feitos á la carte."
+    ],
+    "resposta": 0,
+    "explicacao": "A expressão consagrada é grafada com crase: 'à la carte'. Sem crase ou com acento agudo no 'a', está errado."
+  },
+  {
+    "id": 25,
+    "categoria": "Crase",
+    "tema": "Preposição + artigo (à janela)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a alternativa correta.",
+    "alternativas": [
+      "Sentou-se à janela.",
+      "Sentou-se a janela.",
+      "Sentou-se às janela."
+    ],
+    "resposta": 0,
+    "explicacao": "Há regência com preposição 'a' e o substantivo feminino com artigo ('a janela'). Contrasão: 'a' + 'a' = 'à'. O plural ('às') é inadequado aqui."
+  },
+  {
+    "id": 26,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais de direção",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a forma correta.",
+    "alternativas": [
+      "Vire à direita.",
+      "Vire a direita.",
+      "Vire às direita."
+    ],
+    "resposta": 0,
+    "explicacao": "Em indicações de direção, usa-se crase: 'à direita', 'à esquerda'. Sem crase, omite-se a contração; no plural, fica errado."
+  },
+  {
+    "id": 27,
+    "categoria": "Crase",
+    "tema": "Locuções adverbiais de direção",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Mantenha-se à esquerda.",
+      "Mantenha-se a esquerda.",
+      "Mantenha-se às esquerda."
+    ],
+    "resposta": 0,
+    "explicacao": "A forma consagrada é 'à esquerda' (crase obrigatória). As demais alternativas estão incorretas por ausência de contração ou por número."
+  },
+  {
+    "id": 28,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas (à beira de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Caminhamos à beira do rio.",
+      "Caminhamos a beira do rio.",
+      "Caminhamos às beira do rio."
+    ],
+    "resposta": 0,
+    "explicacao": "'À beira de' pede crase por se tratar de locução prepositiva feminina. Sem crase, falta a contração; no plural, erra-se o número."
+  },
+  {
+    "id": 29,
+    "categoria": "Crase",
+    "tema": "Locuções prepositivas (à frente de)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a frase correta.",
+    "alternativas": [
+      "O diretor falou à frente de todos.",
+      "O diretor falou a frente de todos.",
+      "O diretor falou às frente de todos."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução prepositiva é 'à frente de'. Sem crase, omite-se a contração; 'às frente' erra o número."
+  },
+  {
+    "id": 30,
+    "categoria": "Crase",
+    "tema": "Contração com demonstrativos (àquilo)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Referiu-se àquilo que dissemos.",
+      "Referiu-se a aquilo que dissemos.",
+      "Referiu-se à aquilo que dissemos."
+    ],
+    "resposta": 0,
+    "explicacao": "Com 'aquilo', a preposição 'a' se contrai obrigatoriamente: 'a' + 'aquilo' = 'àquilo'. 'A aquilo' não contrai; 'à aquilo' é grafia equivocada (não se usa artigo separado antes de demonstrativo)."
+  },
+  {
+    "id": 31,
+    "categoria": "Crase",
+    "tema": "Contração com demonstrativos (àquela)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Escolha a forma correta.",
+    "alternativas": [
+      "Dirigiu-se àquela funcionária.",
+      "Dirigiu-se a aquela funcionária.",
+      "Dirigiu-se à aquela funcionária."
+    ],
+    "resposta": 0,
+    "explicacao": "Diante de 'aquela', faz-se a contração: 'a' + 'aquela' = 'àquela'. As outras formas estão incorretas por falta de contração ou por emprego indevido de artigo junto do demonstrativo."
+  },
+  {
+    "id": 32,
+    "categoria": "Crase",
+    "tema": "Contração com demonstrativos (àquele)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Não dei atenção àquele aviso.",
+      "Não dei atenção a aquele aviso.",
+      "Não dei atenção à aquele aviso."
+    ],
+    "resposta": 0,
+    "explicacao": "A forma correta é 'àquele' ('a' + 'aquele'). 'A aquele' não contrai; 'à aquele' é grafia inadequada, pois não se intercala artigo antes de demonstrativo."
+  },
+  {
+    "id": 33,
+    "categoria": "Crase",
+    "tema": "Regência + crase (entregar a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa certa.",
+    "alternativas": [
+      "Entreguei o documento à senhora.",
+      "Entreguei o documento a senhora.",
+      "Entreguei o documento às senhora."
+    ],
+    "resposta": 0,
+    "explicacao": "O verbo 'entregar' admite objeto indireto com preposição 'a'. Sendo 'senhora' feminino com artigo, contrai: 'à senhora'. As demais omitem a contração ou erram o número."
+  },
+  {
+    "id": 34,
+    "categoria": "Crase",
+    "tema": "Regência + crase (responder a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a frase correta.",
+    "alternativas": [
+      "Respondeu à pergunta com clareza.",
+      "Respondeu a pergunta com clareza.",
+      "Respondeu às pergunta com clareza."
+    ],
+    "resposta": 0,
+    "explicacao": "'Responder' rege a preposição 'a'. Com substantivo feminino com artigo ('a pergunta'), contrai-se: 'à pergunta'. Sem crase, falta a contração; 'às pergunta' erra o número."
+  },
+  {
+    "id": 35,
+    "categoria": "Crase",
+    "tema": "Proibição de crase (pronomes pessoais)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta quanto ao uso da crase.",
+    "alternativas": [
+      "Assistiu a ela durante todo o show.",
+      "Assistiu à ela durante todo o show.",
+      "Assistiu às ela durante todo o show."
+    ],
+    "resposta": 0,
+    "explicacao": "Não se usa crase antes de pronomes pessoais ('ela'). A preposição 'a' permanece simples: 'a ela'. 'À ela/às ela' são incorretas."
+  },
+  {
+    "id": 36,
+    "categoria": "Crase",
+    "tema": "Regência + crase (assistir a)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Assisti à peça ontem.",
+      "Assisti a peça ontem.",
+      "Assisti às peça ontem."
+    ],
+    "resposta": 0,
+    "explicacao": "Com 'assistir (a)' no sentido de ver, a preposição 'a' se contrai com o artigo feminino: 'à peça'. 'A peça' omite a contração; 'às peça' mistura plural de artigo com substantivo no singular."
+  },
+  {
+    "id": 37,
+    "categoria": "Crase",
+    "tema": "Expressões com 'chegar a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a frase correta.",
+    "alternativas": [
+      "Chegou à conclusão rapidamente.",
+      "Chegou a conclusão rapidamente.",
+      "Chegou às conclusão rapidamente."
+    ],
+    "resposta": 0,
+    "explicacao": "'Chegar a' + substantivo feminino com artigo ('a conclusão') contrai-se: 'à conclusão'. Sem crase, falta a contração; com 'às', o número está incorreto."
+  },
+  {
+    "id": 38,
+    "categoria": "Crase",
+    "tema": "Proibição de crase (antes de 'uma')",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Chegaremos a uma decisão em breve.",
+      "Chegaremos à uma decisão em breve.",
+      "Chegaremos às uma decisão em breve."
+    ],
+    "resposta": 0,
+    "explicacao": "Não há crase antes de 'uma' (artigo indefinido). A preposição 'a' não se contrai com 'uma'."
+  },
+  {
+    "id": 39,
+    "categoria": "Crase",
+    "tema": "Proibição de crase (palavra masculina / nome divino)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Quanto ao uso da crase, indique a correta.",
+    "alternativas": [
+      "Agradeço a Deus pela vida.",
+      "Agradeço à Deus pela vida.",
+      "Agradeço às Deus pela vida."
+    ],
+    "resposta": 0,
+    "explicacao": "Não se usa crase antes de palavra masculina nem antes do nome 'Deus'. A forma correta é 'a Deus' (preposição simples)."
+  },
+  {
+    "id": 40,
+    "categoria": "Crase",
+    "tema": "Locuções com 'graças a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "Graças à dedicação da equipe, vencemos.",
+      "Graças a dedicação da equipe, vencemos.",
+      "Graças às dedicação da equipe, vencemos."
+    ],
+    "resposta": 0,
+    "explicacao": "Em 'graças a' + termo feminino com artigo, ocorre crase: 'à dedicação' ('a' + 'a dedicação'). 'Graças a dedicação' omite a contração; 'às dedicação' erra o número."
+  },
+  {
+    "id": 41,
+    "categoria": "Crase",
+    "tema": "Locuções com 'devido a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Assinale a alternativa adequada.",
+    "alternativas": [
+      "Devido à falta de dados, adiaremos o projeto.",
+      "Devido a falta de dados, adiaremos o projeto.",
+      "Devido às falta de dados, adiaremos o projeto."
+    ],
+    "resposta": 0,
+    "explicacao": "Com 'devido a' + nome feminino acompanhado de artigo, ocorre a contração: 'à falta'. Sem crase, a contração fica ausente; 'às falta' está no plural indevido."
+  },
+  {
+    "id": 42,
+    "categoria": "Crase",
+    "tema": "Locuções com 'quanto a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Quanto à segurança, adotaremos novas medidas.",
+      "Quanto a segurança, adotaremos novas medidas.",
+      "Quanto às segurança, adotaremos novas medidas."
+    ],
+    "resposta": 0,
+    "explicacao": "A locução 'quanto a' exige a preposição 'a'. Diante de substantivo feminino com artigo, contrai-se: 'à segurança'. Sem crase, omite-se a contração; no plural, o número fica inadequado."
+  },
+  {
+    "id": 43,
+    "categoria": "Crase",
+    "tema": "Locuções com 'no que tange a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a forma correta quanto à crase.",
+    "alternativas": [
+      "No que tange à qualidade, melhoramos os processos.",
+      "No que tange a qualidade, melhoramos os processos.",
+      "No que tange às qualidade, melhoramos os processos."
+    ],
+    "resposta": 0,
+    "explicacao": "A expressão 'no que tange a' pede a preposição 'a'. Com nome feminino determinado, contrai: 'à qualidade'. Sem crase, falta a contração; no plural, erra-se o número."
+  },
+  {
+    "id": 44,
+    "categoria": "Crase",
+    "tema": "Locuções com 'em relação a'",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Escolha a alternativa correta.",
+    "alternativas": [
+      "Em relação à segurança, falta treinamento.",
+      "Em relação a segurança, falta treinamento.",
+      "Em relação às segurança, falta treinamento."
+    ],
+    "resposta": 0,
+    "explicacao": "Em 'em relação a' + substantivo feminino com artigo, há crase: 'à segurança'. Sem crase, omite-se a contração; 'às segurança' erra o número."
+  },
+  {
+    "id": 45,
+    "categoria": "Crase",
+    "tema": "Horas (artigo plural)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "fácil",
+    "enunciado": "Quanto ao uso da crase com horas, assinale a correta.",
+    "alternativas": [
+      "Às 18h, partiremos.",
+      "As 18h, partiremos.",
+      "À 18h, partiremos."
+    ],
+    "resposta": 0,
+    "explicacao": "Antes de horas, usa-se 'às' (a + as). 'As 18h' não contrai; 'à 18h' está no singular, mas o núcleo subentendido é 'horas' (plural)."
+  },
+  {
+    "id": 46,
+    "categoria": "Crase",
+    "tema": "Intervalos de horas (de... a/às...)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a alternativa correta.",
+    "alternativas": [
+      "O atendimento vai das 9h às 17h.",
+      "O atendimento vai das 9h a 17h.",
+      "O atendimento vai da 9h às 17h."
+    ],
+    "resposta": 0,
+    "explicacao": "Com horas, usa-se 'das' (de + as) no início e 'às' (a + as) no fim do intervalo. 'Da 9h' erra a contração; 'a 17h' omite a crase."
+  },
+  {
+    "id": 47,
+    "categoria": "Crase",
+    "tema": "Exceções (casa = lar, sem determinante)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Assinale a alternativa correta.",
+    "alternativas": [
+      "Voltamos a casa mais cedo.",
+      "Voltamos à casa mais cedo.",
+      "Voltamos às casa mais cedo."
+    ],
+    "resposta": 0,
+    "explicacao": "Quando 'casa' significa 'lar' e não vem determinada (sem complemento), não se usa artigo: 'a casa'. Logo, não há crase. Com determinante (ex.: 'à casa dos pais'), a crase torna-se obrigatória."
+  },
+  {
+    "id": 48,
+    "categoria": "Crase",
+    "tema": "Exceções (casa determinada por complemento)",
+    "tipo": "multipla_escolha",
+    "dificuldade": "difícil",
+    "enunciado": "Escolha a alternativa correta.",
+    "alternativas": [
+      "Voltamos à casa dos meus pais.",
+      "Voltamos a casa dos meus pais.",
+      "Voltamos às casa dos meus pais."
+    ],
+    "resposta": 0,
+    "explicacao": "Com 'casa' determinada por complemento ('dos meus pais'), há artigo: 'a casa...'. Assim, 'a' + 'a' = 'à'. Sem crase, omite-se a contração; 'às casa' erra o número."
+  },
+  {
+    "id": 49,
+    "categoria": "Crase",
+    "tema": "Topônimos que admitem artigo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Indique a alternativa correta.",
+    "alternativas": [
+      "Fui à Bahia no verão passado.",
+      "Fui a Bahia no verão passado.",
+      "Fui à Portugal no verão passado."
+    ],
+    "resposta": 0,
+    "explicacao": "Estados/países que admitem artigo feminino pedem crase com verbos de movimento: 'à Bahia' ('a' + 'a Bahia'). 'Portugal' não admite artigo (logo, 'à Portugal' está incorreto)."
+  },
+  {
+    "id": 50,
+    "categoria": "Crase",
+    "tema": "Topônimos que não admitem artigo",
+    "tipo": "multipla_escolha",
+    "dificuldade": "médio",
+    "enunciado": "Marque a opção correta.",
+    "alternativas": [
+      "Fui a Portugal em maio.",
+      "Fui à Portugal em maio.",
+      "Fui à Roma em maio."
+    ],
+    "resposta": 0,
+    "explicacao": "Topônimos sem artigo (Portugal, Roma) não recebem crase após verbos de movimento: 'fui a Portugal', 'fui a Roma'. Logo, 'à Portugal' e 'à Roma' estão incorretos."
+  },
+  {
     "id": 1001,
     "categoria": "Crase",
     "tema": "Uso da crase",
