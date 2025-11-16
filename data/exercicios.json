@@ -14527,5 +14527,1487 @@
         ],
         "resposta": 1,
         "explicacao": "Impessoal: permanece no singular ('havia', 'houve')."
+    },
+    {
+        "id": 1001,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Seu sorriso é sol de primavera', há:",
+        "alternativas": [
+            "Metáfora",
+            "Comparação",
+            "Eufemismo",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança sem conectivo explícito."
+    },
+    {
+        "id": 1002,
+        "categoria": "Português",
+        "tema": "Figuras: comparação (símile)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Valente como um leão', há:",
+        "alternativas": [
+            "Comparação",
+            "Metonímia",
+            "Sinestesia",
+            "Hipérbato"
+        ],
+        "resposta": 0,
+        "explicacao": "Uso de 'como' relacionando termos por semelhança."
+    },
+    {
+        "id": 1003,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Bebeu um copo', observa-se:",
+        "alternativas": [
+            "Metonímia",
+            "Eufemismo",
+            "Antonomásia",
+            "Paradoxo"
+        ],
+        "resposta": 0,
+        "explicacao": "Continente pelo conteúdo: 'copo' por bebida."
+    },
+    {
+        "id": 1004,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Doce silêncio na sala', há:",
+        "alternativas": [
+            "Sinestesia",
+            "Hipérbole",
+            "Litotes",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Mistura de sensações: paladar + audição."
+    },
+    {
+        "id": 1005,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Chorei rios', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Eufemismo",
+            "Ironia",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero expressivo de quantidade."
+    },
+    {
+        "id": 1006,
+        "categoria": "Português",
+        "tema": "Figuras: eufemismo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Ele nos deixou', há:",
+        "alternativas": [
+            "Eufemismo",
+            "Metáfora",
+            "Prosopopeia",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Atenuação para 'morrer'."
+    },
+    {
+        "id": 1007,
+        "categoria": "Português",
+        "tema": "Figuras: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Que pontualidade! (após chegar muito atrasado)', há:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbole",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação contrária ao fato sugere crítica."
+    },
+    {
+        "id": 1008,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Luz e sombra', há:",
+        "alternativas": [
+            "Antítese",
+            "Paradoxo",
+            "Gradação",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Ideias opostas lado a lado."
+    },
+    {
+        "id": 1009,
+        "categoria": "Português",
+        "tema": "Figuras: paradoxo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É proibido proibir', há:",
+        "alternativas": [
+            "Paradoxo",
+            "Antítese",
+            "Pleonasmo",
+            "Zeugma"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação autocontraditória que provoca reflexão."
+    },
+    {
+        "id": 1010,
+        "categoria": "Português",
+        "tema": "Figuras: gradação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Aumentou, cresceu, multiplicou', há:",
+        "alternativas": [
+            "Gradação",
+            "Anáfora",
+            "Sinédoque",
+            "Hipérbato"
+        ],
+        "resposta": 0,
+        "explicacao": "Sequência progressiva de ideias."
+    },
+    {
+        "id": 1011,
+        "categoria": "Português",
+        "tema": "Figuras: onomatopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Ouvi o tic-tac do relógio', há:",
+        "alternativas": [
+            "Onomatopeia",
+            "Assonância",
+            "Aliteração",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Imitação sonora de ruído."
+    },
+    {
+        "id": 1012,
+        "categoria": "Português",
+        "tema": "Figuras: aliteração",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O mar manso murmura', há:",
+        "alternativas": [
+            "Aliteração",
+            "Assonância",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de consoantes ('m')."
+    },
+    {
+        "id": 1013,
+        "categoria": "Português",
+        "tema": "Figuras: assonância",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O ouro do outono', há:",
+        "alternativas": [
+            "Assonância",
+            "Aliteração",
+            "Hipérbole",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de vogais ('o')."
+    },
+    {
+        "id": 1014,
+        "categoria": "Português",
+        "tema": "Figuras: pleonasmo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Vi com meus próprios olhos', há:",
+        "alternativas": [
+            "Pleonasmo",
+            "Litotes",
+            "Elipse",
+            "Zeugma"
+        ],
+        "resposta": 0,
+        "explicacao": "Reforço redundante da ideia."
+    },
+    {
+        "id": 1015,
+        "categoria": "Português",
+        "tema": "Figuras: elipse",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Na sala, silêncio', há:",
+        "alternativas": [
+            "Elipse",
+            "Zeugma",
+            "Hipérbato",
+            "Anacoluto"
+        ],
+        "resposta": 0,
+        "explicacao": "Supressão de termo: 'há' subentendido."
+    },
+    {
+        "id": 1016,
+        "categoria": "Português",
+        "tema": "Figuras: zeugma",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'João gosta de cinema; Maria, de teatro', há:",
+        "alternativas": [
+            "Zeugma",
+            "Elipse",
+            "Hipérbato",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Omissão de termo já expresso (verbo)."
+    },
+    {
+        "id": 1017,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'De verdes mares é a esperança feita', há:",
+        "alternativas": [
+            "Hipérbato",
+            "Anáfora",
+            "Sinestesia",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Inversão da ordem direta dos termos."
+    },
+    {
+        "id": 1018,
+        "categoria": "Português",
+        "tema": "Figuras: perífrase/antonomásia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O Rei do Futebol' (para Pelé), há:",
+        "alternativas": [
+            "Perífrase/Antonomásia",
+            "Metonímia",
+            "Eufemismo",
+            "Litotes"
+        ],
+        "resposta": 0,
+        "explicacao": "Designação por expressão característica."
+    },
+    {
+        "id": 1019,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia (personificação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'A cidade acorda', há:",
+        "alternativas": [
+            "Prosopopeia",
+            "Eufemismo",
+            "Antítese",
+            "Paradoxo"
+        ],
+        "resposta": 0,
+        "explicacao": "Atribuição de ação humana a ser inanimado."
+    },
+    {
+        "id": 1020,
+        "categoria": "Português",
+        "tema": "Figuras: anáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Tudo te digo, tudo te peço, tudo te entrego', há:",
+        "alternativas": [
+            "Anáfora",
+            "Assíndeto",
+            "Gradação",
+            "Aliteração"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de termo no início de segmentos."
+    },
+    {
+        "id": 1021,
+        "categoria": "Português",
+        "tema": "Figuras: catacrese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'braço da cadeira', há:",
+        "alternativas": [
+            "Catacrese",
+            "Metáfora",
+            "Perífrase",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Uso de termo por falta de outro específico."
+    },
+    {
+        "id": 1022,
+        "categoria": "Português",
+        "tema": "Figuras: litotes",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Não é pouco talentoso', há:",
+        "alternativas": [
+            "Litotes",
+            "Eufemismo",
+            "Hipérbole",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação por negação do contrário."
+    },
+    {
+        "id": 1023,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Rico e pobre lado a lado', há:",
+        "alternativas": [
+            "Antítese",
+            "Paradoxo",
+            "Metáfora",
+            "Gradação"
+        ],
+        "resposta": 0,
+        "explicacao": "Ideias opostas justapostas."
+    },
+    {
+        "id": 1024,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'A esperança é uma luz', há:",
+        "alternativas": [
+            "Metáfora",
+            "Comparação",
+            "Metonímia",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança sem conectivo."
+    },
+    {
+        "id": 1025,
+        "categoria": "Português",
+        "tema": "Figuras: comparação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Branco como a neve', há:",
+        "alternativas": [
+            "Comparação",
+            "Metáfora",
+            "Perífrase",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Conjunção comparativa explícita."
+    },
+    {
+        "id": 1026,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Leu Machado de Assis', há:",
+        "alternativas": [
+            "Metonímia",
+            "Antonomásia",
+            "Metáfora",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Autor pela obra."
+    },
+    {
+        "id": 1027,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Cheiro doce de azul', há:",
+        "alternativas": [
+            "Sinestesia",
+            "Hipérbole",
+            "Metonímia",
+            "Catacrese"
+        ],
+        "resposta": 0,
+        "explicacao": "Mistura de olfato e visão/cor."
+    },
+    {
+        "id": 1028,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'As árvores dançam ao vento', há:",
+        "alternativas": [
+            "Prosopopeia",
+            "Hipérbole",
+            "Litotes",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Ação humana atribuída a seres inanimados."
+    },
+    {
+        "id": 1029,
+        "categoria": "Português",
+        "tema": "Figuras: onomatopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'O gato fez miau', há:",
+        "alternativas": [
+            "Onomatopeia",
+            "Metáfora",
+            "Assonância",
+            "Aliteração"
+        ],
+        "resposta": 0,
+        "explicacao": "Imitação de som natural."
+    },
+    {
+        "id": 1030,
+        "categoria": "Português",
+        "tema": "Figuras: anáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Eu canto, eu falo, eu grito', há:",
+        "alternativas": [
+            "Anáfora",
+            "Assíndeto",
+            "Gradação",
+            "Aliteração"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de 'eu' no início das frases."
+    },
+    {
+        "id": 1031,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Esperei um século', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Litotes",
+            "Eufemismo",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero temporal."
+    },
+    {
+        "id": 1032,
+        "categoria": "Português",
+        "tema": "Figuras: litotes",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Não é nada bobo', há:",
+        "alternativas": [
+            "Litotes",
+            "Eufemismo",
+            "Antítese",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação por negação do oposto."
+    },
+    {
+        "id": 1033,
+        "categoria": "Português",
+        "tema": "Figuras: catacrese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'perna da mesa', há:",
+        "alternativas": [
+            "Catacrese",
+            "Perífrase",
+            "Metonímia",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Designação convencional de parte sem termo próprio."
+    },
+    {
+        "id": 1034,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O tempo corre', há:",
+        "alternativas": [
+            "Prosopopeia",
+            "Metonímia",
+            "Metáfora",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Ação humana atribuída a entidade abstrata."
+    },
+    {
+        "id": 1035,
+        "categoria": "Português",
+        "tema": "Figuras: comparação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Lento como uma tartaruga', há:",
+        "alternativas": [
+            "Comparação",
+            "Metáfora",
+            "Pleonasmo",
+            "Zeugma"
+        ],
+        "resposta": 0,
+        "explicacao": "Comparação explícita com 'como'."
+    },
+    {
+        "id": 1036,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'A escola aplaudiu o vencedor', há:",
+        "alternativas": [
+            "Metonímia",
+            "Eufemismo",
+            "Antonomásia",
+            "Paradoxo"
+        ],
+        "resposta": 0,
+        "explicacao": "Instituição pelo conjunto de pessoas."
+    },
+    {
+        "id": 1037,
+        "categoria": "Português",
+        "tema": "Figuras: anáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Aqui se estuda, aqui se cresce, aqui se sonha', há:",
+        "alternativas": [
+            "Anáfora",
+            "Assonância",
+            "Gradação",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de 'aqui' no início."
+    },
+    {
+        "id": 1038,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Do amigo o conselho ouvi', há:",
+        "alternativas": [
+            "Hipérbato",
+            "Zeugma",
+            "Pleonasmo",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Inversão da ordem sujeito-verbo-complemento."
+    },
+    {
+        "id": 1039,
+        "categoria": "Português",
+        "tema": "Figuras: onomatopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'O motor fez vrum vrum', há:",
+        "alternativas": [
+            "Onomatopeia",
+            "Aliteração",
+            "Assonância",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Imitação de som de motor."
+    },
+    {
+        "id": 1040,
+        "categoria": "Português",
+        "tema": "Figuras: pleonasmo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Subir para cima', há:",
+        "alternativas": [
+            "Pleonasmo",
+            "Litotes",
+            "Antítese",
+            "Prosopopeia"
+        ],
+        "resposta": 0,
+        "explicacao": "Reforço redundante de direção."
+    },
+    {
+        "id": 1041,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique a figura: 'O coração é um labirinto'.",
+        "resposta": "metáfora",
+        "explicacao": "Semelhança implícita sem conectivo comparativo."
+    },
+    {
+        "id": 1042,
+        "categoria": "Português",
+        "tema": "Figuras: comparação",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique a figura: 'Rápido como um raio'.",
+        "resposta": "comparação",
+        "explicacao": "Uso de 'como' explicitando semelhança."
+    },
+    {
+        "id": 1043,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique a figura: 'Adoro Beethoven'.",
+        "resposta": "metonímia",
+        "explicacao": "Autor pela obra musical."
+    },
+    {
+        "id": 1044,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique a figura: 'Tenho mil coisas para fazer'.",
+        "resposta": "hipérbole",
+        "explicacao": "Exagero numérico para intensificar."
+    },
+    {
+        "id": 1045,
+        "categoria": "Português",
+        "tema": "Figuras: eufemismo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique a figura: 'Ele partiu desta para melhor'.",
+        "resposta": "eufemismo",
+        "explicacao": "Atenuação do ato de morrer."
+    },
+    {
+        "id": 1046,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Classifique a figura: 'Som quente de verão'.",
+        "resposta": "sinestesia",
+        "explicacao": "Cruzamento de audição e tato/temperatura."
+    },
+    {
+        "id": 1047,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique a figura: 'A lua sorri'.",
+        "resposta": "prosopopeia",
+        "explicacao": "Atribuição de ação humana a astro."
+    },
+    {
+        "id": 1048,
+        "categoria": "Português",
+        "tema": "Figuras: pleonasmo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique a figura: 'Entrar para dentro'.",
+        "resposta": "pleonasmo",
+        "explicacao": "Reforço redundante de direção."
+    },
+    {
+        "id": 1049,
+        "categoria": "Português",
+        "tema": "Figuras: litotes",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Classifique a figura: 'Não é nada feio'.",
+        "resposta": "litotes",
+        "explicacao": "Afirmação por negação do oposto."
+    },
+    {
+        "id": 1050,
+        "categoria": "Português",
+        "tema": "Figuras: definição",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "Onomatopeia é a imitação de sons por palavras.",
+        "alternativas": [
+            "Verdadeiro",
+            "Falso"
+        ],
+        "resposta": 0,
+        "explicacao": "Definição clássica de onomatopeia."
+    },
+    {
+        "id": 1051,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'A vida é um sopro', há:",
+        "alternativas": [
+            "Metáfora",
+            "Comparação",
+            "Eufemismo",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança sem conectivo explícito."
+    },
+    {
+        "id": 1052,
+        "categoria": "Português",
+        "tema": "Figuras: comparação (símile)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Firme como rocha', há:",
+        "alternativas": [
+            "Comparação",
+            "Metáfora",
+            "Sinestesia",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Uso de 'como' explicitando semelhança."
+    },
+    {
+        "id": 1053,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Li Camões', observa-se:",
+        "alternativas": [
+            "Metonímia",
+            "Eufemismo",
+            "Antonomásia",
+            "Paradoxo"
+        ],
+        "resposta": 0,
+        "explicacao": "Autor pela obra."
+    },
+    {
+        "id": 1054,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Doce voz ao telefone', há:",
+        "alternativas": [
+            "Sinestesia",
+            "Hipérbole",
+            "Litotes",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Mistura de sensações: paladar + audição."
+    },
+    {
+        "id": 1055,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Morro de saudades', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Eufemismo",
+            "Ironia",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero expressivo."
+    },
+    {
+        "id": 1056,
+        "categoria": "Português",
+        "tema": "Figuras: eufemismo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Ele partiu', há:",
+        "alternativas": [
+            "Eufemismo",
+            "Metáfora",
+            "Prosopopeia",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Atenuação para 'morrer'."
+    },
+    {
+        "id": 1057,
+        "categoria": "Português",
+        "tema": "Figuras: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Que motorista exemplar!' (após colisão), há:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbole",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação contrária ao fato."
+    },
+    {
+        "id": 1058,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Luz e trevas', há:",
+        "alternativas": [
+            "Antítese",
+            "Paradoxo",
+            "Gradação",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Ideias opostas lado a lado."
+    },
+    {
+        "id": 1059,
+        "categoria": "Português",
+        "tema": "Figuras: paradoxo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Só sei que nada sei', há:",
+        "alternativas": [
+            "Paradoxo",
+            "Antítese",
+            "Pleonasmo",
+            "Zeugma"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação autocontraditória."
+    },
+    {
+        "id": 1060,
+        "categoria": "Português",
+        "tema": "Figuras: gradação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Aumentou, cresceu, multiplicou', há:",
+        "alternativas": [
+            "Gradação",
+            "Anáfora",
+            "Sinédoque",
+            "Hipérbato"
+        ],
+        "resposta": 0,
+        "explicacao": "Sequência progressiva de ideias."
+    },
+    {
+        "id": 1061,
+        "categoria": "Português",
+        "tema": "Figuras: onomatopeia",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique: 'Ouvi o tic-tac do relógio'.",
+        "resposta": "onomatopeia",
+        "explicacao": "Imitação sonora de ruído."
+    },
+    {
+        "id": 1062,
+        "categoria": "Português",
+        "tema": "Figuras: aliteração",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Vento varre vales', há:",
+        "alternativas": [
+            "Aliteração",
+            "Assonância",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de consoantes iniciais."
+    },
+    {
+        "id": 1063,
+        "categoria": "Português",
+        "tema": "Figuras: assonância",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O ouro do outono', há:",
+        "alternativas": [
+            "Assonância",
+            "Aliteração",
+            "Hipérbole",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de vogais ('o')."
+    },
+    {
+        "id": 1064,
+        "categoria": "Português",
+        "tema": "Figuras: pleonasmo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique: 'Descer para baixo'.",
+        "resposta": "pleonasmo",
+        "explicacao": "Reforço redundante de direção."
+    },
+    {
+        "id": 1065,
+        "categoria": "Português",
+        "tema": "Figuras: elipse",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Na sala, silêncio', há:",
+        "alternativas": [
+            "Elipse",
+            "Zeugma",
+            "Hipérbato",
+            "Anacoluto"
+        ],
+        "resposta": 0,
+        "explicacao": "Supressão de termo: 'há' subentendido."
+    },
+    {
+        "id": 1066,
+        "categoria": "Português",
+        "tema": "Figuras: zeugma",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'João gosta de música; Maria, de cinema', há:",
+        "alternativas": [
+            "Zeugma",
+            "Elipse",
+            "Hipérbato",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Omissão de termo já expresso (verbo)."
+    },
+    {
+        "id": 1067,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbato",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique: 'Bela é a noite'.",
+        "resposta": "hipérbato",
+        "explicacao": "Inversão da ordem direta."
+    },
+    {
+        "id": 1068,
+        "categoria": "Português",
+        "tema": "Figuras: perífrase/antonomásia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Rei do Futebol' (para Pelé), há:",
+        "alternativas": [
+            "Perífrase/Antonomásia",
+            "Metonímia",
+            "Eufemismo",
+            "Litotes"
+        ],
+        "resposta": 0,
+        "explicacao": "Designação por expressão característica."
+    },
+    {
+        "id": 1069,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique: 'As paredes falaram'.",
+        "resposta": "prosopopeia",
+        "explicacao": "Atribuição de ação humana a ser inanimado."
+    },
+    {
+        "id": 1070,
+        "categoria": "Português",
+        "tema": "Figuras: anáfora",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Classifique: 'Ninguém viu, ninguém ouviu, ninguém falou'.",
+        "resposta": "anáfora",
+        "explicacao": "Repetição de termo no início."
+    },
+    {
+        "id": 1071,
+        "categoria": "Português",
+        "tema": "Figuras: catacrese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Pé da mesa', há:",
+        "alternativas": [
+            "Catacrese",
+            "Metáfora",
+            "Perífrase",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo por falta de outro específico."
+    },
+    {
+        "id": 1072,
+        "categoria": "Português",
+        "tema": "Figuras: litotes",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Não é nada ruim', há:",
+        "alternativas": [
+            "Litotes",
+            "Eufemismo",
+            "Antítese",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação por negação do oposto."
+    },
+    {
+        "id": 1073,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique: 'Dia e noite'.",
+        "resposta": "antítese",
+        "explicacao": "Ideias opostas justapostas."
+    },
+    {
+        "id": 1074,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Chuva de ideias', há:",
+        "alternativas": [
+            "Metáfora",
+            "Comparação",
+            "Metonímia",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança."
+    },
+    {
+        "id": 1075,
+        "categoria": "Português",
+        "tema": "Figuras: comparação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Claro como água', há:",
+        "alternativas": [
+            "Comparação",
+            "Metáfora",
+            "Perífrase",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Conjunção comparativa explícita."
+    },
+    {
+        "id": 1076,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Hoje li o Machado', há:",
+        "alternativas": [
+            "Metonímia",
+            "Antonomásia",
+            "Metáfora",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Autor pela obra."
+    },
+    {
+        "id": 1077,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Cheiro frio da manhã', há:",
+        "alternativas": [
+            "Sinestesia",
+            "Hipérbole",
+            "Metonímia",
+            "Catacrese"
+        ],
+        "resposta": 0,
+        "explicacao": "Olfato + sensação térmica."
+    },
+    {
+        "id": 1078,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'O sol abraçou a cidade', há:",
+        "alternativas": [
+            "Prosopopeia",
+            "Hipérbole",
+            "Litotes",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Ação humana atribuída a astro."
+    },
+    {
+        "id": 1079,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Esperei eternidades', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Litotes",
+            "Eufemismo",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero temporal."
+    },
+    {
+        "id": 1080,
+        "categoria": "Português",
+        "tema": "Figuras: onomatopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'O celular fez plim', há:",
+        "alternativas": [
+            "Onomatopeia",
+            "Assonância",
+            "Aliteração",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Imitação de som."
+    },
+    {
+        "id": 1081,
+        "categoria": "Português",
+        "tema": "Figuras: aliteração",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Brisa breve beija a borda', há:",
+        "alternativas": [
+            "Aliteração",
+            "Assonância",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de 'b'."
+    },
+    {
+        "id": 1082,
+        "categoria": "Português",
+        "tema": "Figuras: assonância",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique: 'A casa amarela na praia'.",
+        "resposta": "assonância",
+        "explicacao": "Repetição da vogal 'a'."
+    },
+    {
+        "id": 1083,
+        "categoria": "Português",
+        "tema": "Figuras: pleonasmo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Sair para fora', há:",
+        "alternativas": [
+            "Pleonasmo",
+            "Litotes",
+            "Antítese",
+            "Prosopopeia"
+        ],
+        "resposta": 0,
+        "explicacao": "Reforço redundante de direção."
+    },
+    {
+        "id": 1084,
+        "categoria": "Português",
+        "tema": "Figuras: elipse",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'No pátio, silêncio', há:",
+        "alternativas": [
+            "Elipse",
+            "Zeugma",
+            "Hipérbato",
+            "Anacoluto"
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo subentendido."
+    },
+    {
+        "id": 1085,
+        "categoria": "Português",
+        "tema": "Figuras: zeugma",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique: 'Eu canto; ela, dança'.",
+        "resposta": "zeugma",
+        "explicacao": "Omissão de termo já expresso."
+    },
+    {
+        "id": 1086,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'De ti saudades tenho', há:",
+        "alternativas": [
+            "Hipérbato",
+            "Zeugma",
+            "Pleonasmo",
+            "Metáfora"
+        ],
+        "resposta": 0,
+        "explicacao": "Inversão da ordem direta."
+    },
+    {
+        "id": 1087,
+        "categoria": "Português",
+        "tema": "Figuras: perífrase/antonomásia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Pai da Aviação' (para Santos Dumont), há:",
+        "alternativas": [
+            "Perífrase/Antonomásia",
+            "Metonímia",
+            "Eufemismo",
+            "Litotes"
+        ],
+        "resposta": 0,
+        "explicacao": "Designação por expressão característica."
+    },
+    {
+        "id": 1088,
+        "categoria": "Português",
+        "tema": "Figuras: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Excelente trabalho!' (após resultado ruim), há:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbole",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Contradição entre enunciado e contexto."
+    },
+    {
+        "id": 1089,
+        "categoria": "Português",
+        "tema": "Figuras: anáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É preciso estudar, é preciso praticar, é preciso persistir', há:",
+        "alternativas": [
+            "Anáfora",
+            "Assíndeto",
+            "Gradação",
+            "Aliteração"
+        ],
+        "resposta": 0,
+        "explicacao": "Repetição de expressão inicial."
+    },
+    {
+        "id": 1090,
+        "categoria": "Português",
+        "tema": "Figuras: litotes",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Classifique: 'Não é pouco inteligente'.",
+        "resposta": "litotes",
+        "explicacao": "Afirmação por negação do contrário."
+    },
+    {
+        "id": 1091,
+        "categoria": "Português",
+        "tema": "Figuras: catacrese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Boca do lixo', há:",
+        "alternativas": [
+            "Catacrese",
+            "Metáfora",
+            "Perífrase",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Uso convencional por falta de termo próprio."
+    },
+    {
+        "id": 1092,
+        "categoria": "Português",
+        "tema": "Figuras: paradoxo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'O silêncio fala alto', há:",
+        "alternativas": [
+            "Paradoxo",
+            "Antítese",
+            "Pleonasmo",
+            "Zeugma"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação autocontraditória."
+    },
+    {
+        "id": 1093,
+        "categoria": "Português",
+        "tema": "Figuras: gradação",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Classifique: 'Pequeno, médio, grande'.",
+        "resposta": "gradação",
+        "explicacao": "Sequência ordenada de intensidade."
+    },
+    {
+        "id": 1094,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Amor e ódio', há:",
+        "alternativas": [
+            "Antítese",
+            "Hipérbole",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Ideias opostas justapostas."
+    },
+    {
+        "id": 1095,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O tempo é um rio', há:",
+        "alternativas": [
+            "Metáfora",
+            "Comparação",
+            "Metonímia",
+            "Sinestesia"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança."
+    },
+    {
+        "id": 1096,
+        "categoria": "Português",
+        "tema": "Figuras: comparação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Ágil como um felino', há:",
+        "alternativas": [
+            "Comparação",
+            "Metáfora",
+            "Perífrase",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Conjunção comparativa explícita."
+    },
+    {
+        "id": 1097,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'O pincel venceu o prêmio', há:",
+        "alternativas": [
+            "Metonímia",
+            "Catacrese",
+            "Metáfora",
+            "Pleonasmo"
+        ],
+        "resposta": 0,
+        "explicacao": "Instrumento pelo agente (pintor)."
+    },
+    {
+        "id": 1098,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'A voz doce do cantor', há:",
+        "alternativas": [
+            "Sinestesia",
+            "Aliteração",
+            "Assonância",
+            "Metonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Audição + paladar."
+    },
+    {
+        "id": 1099,
+        "categoria": "Português",
+        "tema": "Figuras: prosopopeia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'A chuva sussurra', há:",
+        "alternativas": [
+            "Prosopopeia",
+            "Onomatopeia",
+            "Eufemismo",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Atribuição de ação humana a fenômeno natural."
+    },
+    {
+        "id": 1100,
+        "categoria": "Português",
+        "tema": "Figuras: definição de metonímia",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "Metonímia é a substituição de um termo por outro com relação de contiguidade.",
+        "alternativas": [
+            "Verdadeiro",
+            "Falso"
+        ],
+        "resposta": 0,
+        "explicacao": "Definição clássica de metonímia."
     }
 ]
