@@ -9404,5 +9404,5128 @@
         ],
         "resposta": 0,
         "explicacao": "Pronome aponta para conteúdo posterior."
+    },
+    {
+        "id": 651,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Cartaz: Economize energia para proteger o planeta.",
+        "enunciado": "A ideia central é:",
+        "alternativas": [
+            "Proteger o planeta economizando energia.",
+            "Aumentar o consumo de energia.",
+            "Punir quem usa eletrônicos."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade e meio explicitados."
+    },
+    {
+        "id": 652,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ele levou casaco porque o vento aumentou.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "Está frio.",
+            "Vai chover granizo.",
+            "É verão."
+        ],
+        "resposta": 0,
+        "explicacao": "Vento forte sugere baixa temperatura."
+    },
+    {
+        "id": 653,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Placa: Mantenha a porta fechada para evitar ruído.",
+        "enunciado": "A finalidade é:",
+        "alternativas": [
+            "Evitar ruído.",
+            "Impedir a entrada.",
+            "Aquecer o ambiente."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade explícita."
+    },
+    {
+        "id": 654,
+        "categoria": "Português",
+        "tema": "Interpretação: opinião x fato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "O filme foi excelente e começou às 21h.",
+        "enunciado": "O elemento opinativo é:",
+        "alternativas": [
+            "'Excelente'.",
+            "'Começou às 21h'.",
+            "'Filme'."
+        ],
+        "resposta": 0,
+        "explicacao": "Avaliação subjetiva."
+    },
+    {
+        "id": 655,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão (anáfora)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Carla comprou os ingressos; ela os guardou.",
+        "enunciado": "'os' retoma:",
+        "alternativas": [
+            "os ingressos",
+            "Carla",
+            "guardou"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome retoma o objeto citado."
+    },
+    {
+        "id": 656,
+        "categoria": "Português",
+        "tema": "Interpretação: leitura de gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Gráfico: Participações — Jan: 10, Fev: 12, Mar: 9.",
+        "enunciado": "O maior valor ocorre em:",
+        "alternativas": [
+            "Fevereiro",
+            "Janeiro",
+            "Março"
+        ],
+        "resposta": 0,
+        "explicacao": "Fev = 12."
+    },
+    {
+        "id": 657,
+        "categoria": "Português",
+        "tema": "Interpretação: propósito comunicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Aviso: Não ultrapasse a faixa amarela.",
+        "enunciado": "O propósito é:",
+        "alternativas": [
+            "Orientar segurança.",
+            "Promover vendas.",
+            "Divulgar evento."
+        ],
+        "resposta": 0,
+        "explicacao": "Norma de segurança."
+    },
+    {
+        "id": 658,
+        "categoria": "Português",
+        "tema": "Interpretação: resumo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Projeto substituiu lâmpadas e instalou sensores; consumo caiu.",
+        "enunciado": "Melhor resumo:",
+        "alternativas": [
+            "A escola adotou medidas para reduzir consumo de energia.",
+            "Instalaram lâmpadas.",
+            "Sensores existem nas salas."
+        ],
+        "resposta": 0,
+        "explicacao": "Síntese de ação e efeito."
+    },
+    {
+        "id": 659,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos (título/subtítulo)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Título: 'Alimentação saudável'; Subtítulo: 'Cantina oferece frutas diárias'.",
+        "enunciado": "O subtítulo:",
+        "alternativas": [
+            "Detalha ação do título.",
+            "Contradiz o título.",
+            "Repete literalmente."
+        ],
+        "resposta": 0,
+        "explicacao": "Especifica a medida."
+    },
+    {
+        "id": 660,
+        "categoria": "Português",
+        "tema": "Interpretação: modalização (obrigação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Os alunos devem entregar o trabalho até sexta.",
+        "enunciado": "'Devem' indica:",
+        "alternativas": [
+            "Obrigação.",
+            "Permissão.",
+            "Proibição."
+        ],
+        "resposta": 0,
+        "explicacao": "Valor modal de obrigatoriedade."
+    },
+    {
+        "id": 661,
+        "categoria": "Português",
+        "tema": "Crase: indicação de horas",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta.",
+        "alternativas": [
+            "Chega às 8h.",
+            "Chega a 8h.",
+            "Chega à 8h."
+        ],
+        "resposta": 0,
+        "explicacao": "Horas com artigo feminino pedem crase."
+    },
+    {
+        "id": 662,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Fez às pressas.",
+            "Fez a pressas.",
+            "Fez à pressas."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução feminina exige crase."
+    },
+    {
+        "id": 663,
+        "categoria": "Português",
+        "tema": "Crase: à moda de",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Prato ___ parmegiana.",
+        "resposta": "à",
+        "explicacao": "Equivale a 'à moda de'."
+    },
+    {
+        "id": 664,
+        "categoria": "Português",
+        "tema": "Crase: antes de masculino (incorreto)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso INCORRETO da crase:",
+        "alternativas": [
+            "À aluno.",
+            "Ao aluno.",
+            "À aluna."
+        ],
+        "resposta": 0,
+        "explicacao": "Não se usa crase antes de masculino."
+    },
+    {
+        "id": 665,
+        "categoria": "Português",
+        "tema": "Crase: facultativa com possessivo feminino",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Caso de crase facultativa:",
+        "alternativas": [
+            "Entreguei o recado à minha colega.",
+            "Entreguei o recado à colega.",
+            "Entreguei o recado àquela colega."
+        ],
+        "resposta": 0,
+        "explicacao": "Antes de possessivo feminino singular."
+    },
+    {
+        "id": 666,
+        "categoria": "Português",
+        "tema": "Concordância: porcentagem",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "50% dos participantes ___ presentes.",
+        "alternativas": [
+            "estavam",
+            "estava",
+            "estará"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo plural expresso → verbo no plural."
+    },
+    {
+        "id": 667,
+        "categoria": "Português",
+        "tema": "Concordância: sujeito composto posposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma preferível:",
+        "alternativas": [
+            "Chegaram o gerente e os estagiários.",
+            "Chegou o gerente e os estagiários.",
+            "Chegou os estagiários e o gerente."
+        ],
+        "resposta": 0,
+        "explicacao": "Preferência normativa pelo plural."
+    },
+    {
+        "id": 668,
+        "categoria": "Português",
+        "tema": "Concordância: coletivo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A equipe ___ vitoriosa.",
+        "resposta": "estava",
+        "explicacao": "Coletivo singular → verbo no singular."
+    },
+    {
+        "id": 669,
+        "categoria": "Português",
+        "tema": "Concordância: partitiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uma das hipóteses ___ confirmada.",
+        "alternativas": [
+            "foi",
+            "foram",
+            "seriam"
+        ],
+        "resposta": 0,
+        "explicacao": "Núcleo singular determina o verbo."
+    },
+    {
+        "id": 670,
+        "categoria": "Português",
+        "tema": "Concordância: 'mais de um'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso preferencial:",
+        "alternativas": [
+            "Mais de um aluno trouxe o livro.",
+            "Mais de um aluno trouxeram o livro.",
+            "Mais de um alunos trouxe o livro."
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão pede singular."
+    },
+    {
+        "id": 671,
+        "categoria": "Português",
+        "tema": "Pronomes: próclise (negação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Não me disseram nada.",
+            "Não disseram-me nada.",
+            "Disseram não-me nada."
+        ],
+        "resposta": 0,
+        "explicacao": "Negação atrai próclise."
+    },
+    {
+        "id": 672,
+        "categoria": "Português",
+        "tema": "Pronomes: mesóclise (futuro)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma adequada:",
+        "alternativas": [
+            "Enviar-se-á o relatório.",
+            "Se enviará o relatório.",
+            "Enviará-se o relatório."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, admite-se mesóclise."
+    },
+    {
+        "id": 673,
+        "categoria": "Português",
+        "tema": "Pronomes: uso de 'lhe'",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Respondi-___ ontem.",
+        "resposta": "lhe",
+        "explicacao": "Objeto indireto pede 'lhe'."
+    },
+    {
+        "id": 674,
+        "categoria": "Português",
+        "tema": "Pronomes: ênclise (sem atratores)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Informem-se já.",
+            "Se informem já.",
+            "Informem se já."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, usa-se ênclise."
+    },
+    {
+        "id": 675,
+        "categoria": "Português",
+        "tema": "Pronomes: 'o' e 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Emprego correto:",
+        "alternativas": [
+            "Entreguei-lhe o livro e o li depois.",
+            "Entreguei-o o livro e li-lhe depois.",
+            "Entreguei-lhe o livro e li-lhe depois."
+        ],
+        "resposta": 0,
+        "explicacao": "Indireto com 'lhe'; direto com 'o'."
+    },
+    {
+        "id": 676,
+        "categoria": "Português",
+        "tema": "Sintaxe: objeto indireto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Doaram brinquedos às crianças', 'às crianças' é:",
+        "alternativas": [
+            "Objeto indireto.",
+            "Objeto direto.",
+            "Aposto."
+        ],
+        "resposta": 0,
+        "explicacao": "Termo preposicionado → indireto."
+    },
+    {
+        "id": 677,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Os resultados parecem sólidos', 'sólidos' é:",
+        "alternativas": [
+            "Predicativo do sujeito.",
+            "Adjunto adnominal.",
+            "Objeto indireto."
+        ],
+        "resposta": 0,
+        "explicacao": "Atributo com verbo de ligação."
+    },
+    {
+        "id": 678,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do objeto",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Consideraram o plano ___.",
+        "resposta": "viável",
+        "explicacao": "Qualidade atribuída ao objeto."
+    },
+    {
+        "id": 679,
+        "categoria": "Português",
+        "tema": "Sintaxe: oração subordinada substantiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É essencial que estudem', a oração destacada é:",
+        "alternativas": [
+            "Subordinada substantiva subjetiva.",
+            "Subordinada adjetiva.",
+            "Coordenada adversativa."
+        ],
+        "resposta": 0,
+        "explicacao": "Funciona como sujeito oracional."
+    },
+    {
+        "id": 680,
+        "categoria": "Português",
+        "tema": "Semântica: denotação/conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'olho da agulha' (argola), o sentido é:",
+        "alternativas": [
+            "Conotativo.",
+            "Denotativo.",
+            "Hipérbole."
+        ],
+        "resposta": 0,
+        "explicacao": "Sentido figurado por analogia de forma."
+    },
+    {
+        "id": 681,
+        "categoria": "Português",
+        "tema": "Semântica: hipônimo/hiperônimo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "'Ave' é ___ de 'pardal'.",
+        "alternativas": [
+            "hiperônimo",
+            "hipônimo",
+            "sinônimo"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo mais abrangente."
+    },
+    {
+        "id": 682,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "'Cabeça' em 'cabeça da fila' indica:",
+        "alternativas": [
+            "Extensão de sentido (polissemia).",
+            "Homônimo absoluto.",
+            "Metáfora obrigatória."
+        ],
+        "resposta": 0,
+        "explicacao": "Mesmo lexema com sentidos relacionados."
+    },
+    {
+        "id": 683,
+        "categoria": "Português",
+        "tema": "Ortografia: sessão/seção/cessão",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Houve ___ de fotos na ___ cultural.",
+        "resposta": "sessão / seção",
+        "explicacao": "Sessão=exibição; seção=departamento."
+    },
+    {
+        "id": 684,
+        "categoria": "Português",
+        "tema": "Ortografia: a/há",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Tempo decorrido correto:",
+        "alternativas": [
+            "Há dois dias terminou.",
+            "A dois dias terminou.",
+            "À dois dias terminou."
+        ],
+        "resposta": 0,
+        "explicacao": "Tempo passado usa 'há'."
+    },
+    {
+        "id": 685,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Ele é mau líder.",
+            "Ele é mal líder.",
+            "Ele lidera mau."
+        ],
+        "resposta": 0,
+        "explicacao": "'Mau' adjetivo; 'mal' advérbio."
+    },
+    {
+        "id": 686,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Colegas, vamos começar.",
+            "Colegas vamos, começar.",
+            "Colegas vamos começar,"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 687,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial anteposta",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Pontuação adequada:",
+        "alternativas": [
+            "Se possível, participe.",
+            "Se possível participe.",
+            "Se, possível participe."
+        ],
+        "resposta": 0,
+        "explicacao": "Vírgula separa oração adverbial."
+    },
+    {
+        "id": 688,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto explicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale o uso correto:",
+        "alternativas": [
+            "O projeto, iniciativa dos alunos, foi aprovado.",
+            "O projeto iniciativa dos alunos, foi aprovado.",
+            "O projeto, iniciativa dos alunos foi aprovado."
+        ],
+        "resposta": 0,
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 689,
+        "categoria": "Português",
+        "tema": "Pontuação: travessões (incisos)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "O diretor — muito dedicado — participou.",
+            "O diretor — muito dedicado participou.",
+            "O diretor muito dedicado — participou —."
+        ],
+        "resposta": 0,
+        "explicacao": "Inciso isolado por travessões."
+    },
+    {
+        "id": 690,
+        "categoria": "Português",
+        "tema": "Pontuação: aspas (citação)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete com aspas: A professora disse ___ Estudem com constância ___.",
+        "resposta": "\"Estudem com constância\"",
+        "explicacao": "Aspas marcam citação literal."
+    },
+    {
+        "id": 691,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "'Coração de pedra' é:",
+        "alternativas": [
+            "Metáfora.",
+            "Ironia.",
+            "Eufemismo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transferência de sentido por analogia."
+    },
+    {
+        "id": 692,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "'Bebeu uma garrafa' (conteúdo) é:",
+        "alternativas": [
+            "Metonímia.",
+            "Sinédoque.",
+            "Hipérbole."
+        ],
+        "resposta": 0,
+        "explicacao": "Recipiente pelo conteúdo."
+    },
+    {
+        "id": 693,
+        "categoria": "Português",
+        "tema": "Figuras: sinestesia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "'Cheiro doce de música' é:",
+        "alternativas": [
+            "Sinestesia.",
+            "Metáfora.",
+            "Pleonasmo."
+        ],
+        "resposta": 0,
+        "explicacao": "Mistura de sensações."
+    },
+    {
+        "id": 694,
+        "categoria": "Português",
+        "tema": "Interpretação: pressuposição",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ainda não concluímos o relatório.",
+        "enunciado": "Presupõe-se que:",
+        "alternativas": [
+            "Existe relatório em andamento.",
+            "Não há relatório.",
+            "O relatório foi concluído."
+        ],
+        "resposta": 0,
+        "explicacao": "'Ainda' pressupõe estado anterior."
+    },
+    {
+        "id": 695,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão referencial",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Paula encontrou Rita; aquela telefonou depois.",
+        "enunciado": "'Aquela' retoma:",
+        "alternativas": [
+            "Rita",
+            "Paula",
+            "telefonou"
+        ],
+        "resposta": 1,
+        "explicacao": "Pronome demonstrativo retoma termo anterior mais distante."
+    },
+    {
+        "id": 696,
+        "categoria": "Português",
+        "tema": "Ortografia: porque/por que (explicação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto na explicação:",
+        "alternativas": [
+            "Não veio porque estava doente.",
+            "Não veio por que estava doente.",
+            "Não veio por quê estava doente."
+        ],
+        "resposta": 0,
+        "explicacao": "Explicativa usa 'porque'."
+    },
+    {
+        "id": 697,
+        "categoria": "Português",
+        "tema": "Ortografia: porquês (pergunta direta)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a forma correta na pergunta final:",
+        "alternativas": [
+            "Você faltou por quê?",
+            "Você faltou por que?",
+            "Você faltou porque?"
+        ],
+        "resposta": 0,
+        "explicacao": "Interrogativa no fim usa 'por quê'."
+    },
+    {
+        "id": 698,
+        "categoria": "Português",
+        "tema": "Pontuação: reticências (suspensão)",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "Reticências podem indicar hesitação do falante.",
+        "resposta": true,
+        "explicacao": "Marcam suspensão/hésitação."
+    },
+    {
+        "id": 699,
+        "categoria": "Português",
+        "tema": "Regência: obedecer",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Obedeça às normas.",
+            "Obedeça as normas.",
+            "Obedeça as às normas."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto: 'obedecer a'."
+    },
+    {
+        "id": 700,
+        "categoria": "Português",
+        "tema": "Regência: simpatizar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale o uso adequado:",
+        "alternativas": [
+            "Simpatizo com a ideia.",
+            "Simpatizo a ideia.",
+            "Simpatizo pela ideia."
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo intransitivo com 'com'."
+    },
+    {
+        "id": 701,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Campanha: Recicle papel para preservar as florestas.",
+        "enunciado": "A ideia central é:",
+        "alternativas": [
+            "Preservar florestas reciclando papel.",
+            "Proibir uso de livros.",
+            "Aumentar consumo de papel."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade e meio indicados."
+    },
+    {
+        "id": 702,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência de consequência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Se não fecharmos as janelas, o ruído aumentará.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "O ruído aumentará.",
+            "Haverá silêncio absoluto.",
+            "A temperatura cairá muito."
+        ],
+        "resposta": 0,
+        "explicacao": "Condição indica efeito claro."
+    },
+    {
+        "id": 703,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Placa: Mantenha a saída livre para facilitar evacuação.",
+        "enunciado": "A finalidade é:",
+        "alternativas": [
+            "Facilitar evacuação.",
+            "Impedir entrada.",
+            "Aumentar a fila."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade explícita."
+    },
+    {
+        "id": 704,
+        "categoria": "Português",
+        "tema": "Interpretação: opinião x fato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "O relatório foi exemplar e chegou às 11h.",
+        "enunciado": "O elemento opinativo é:",
+        "alternativas": [
+            "'exemplar'.",
+            "'às 11h'.",
+            "'relatório'."
+        ],
+        "resposta": 0,
+        "explicacao": "Avaliação subjetiva por adjetivo."
+    },
+    {
+        "id": 705,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão (anáfora)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Sofia lavou os uniformes; ela os dobrou depois.",
+        "enunciado": "'os' retoma:",
+        "alternativas": [
+            "os uniformes",
+            "Sofia",
+            "depois"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome retoma objeto citado."
+    },
+    {
+        "id": 706,
+        "categoria": "Português",
+        "tema": "Interpretação: leitura de tabela",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Tabela: Doações — Abr: 30, Mai: 28, Jun: 35.",
+        "enunciado": "O maior valor é em:",
+        "alternativas": [
+            "Junho",
+            "Abril",
+            "Maio"
+        ],
+        "resposta": 0,
+        "explicacao": "Junho = 35."
+    },
+    {
+        "id": 707,
+        "categoria": "Português",
+        "tema": "Interpretação: propósito comunicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Aviso: Use capacete no laboratório.",
+        "enunciado": "O propósito é:",
+        "alternativas": [
+            "Orientar segurança.",
+            "Promover venda de capacetes.",
+            "Relatar acidente."
+        ],
+        "resposta": 0,
+        "explicacao": "Instrução de segurança."
+    },
+    {
+        "id": 708,
+        "categoria": "Português",
+        "tema": "Interpretação: resumo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Projeto instalou torneiras econômicas e sensores; consumo caiu.",
+        "enunciado": "Melhor resumo:",
+        "alternativas": [
+            "Medidas reduziram consumo de água.",
+            "Compraram sensores.",
+            "Há torneiras novas."
+        ],
+        "resposta": 0,
+        "explicacao": "Síntese ação+efeito."
+    },
+    {
+        "id": 709,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos (título/subtítulo)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Título: 'Mais leitura'; Subtítulo: 'Biblioteca amplia horários'.",
+        "enunciado": "O subtítulo:",
+        "alternativas": [
+            "Detalha ação do título.",
+            "Contradiz o título.",
+            "Repete literalmente."
+        ],
+        "resposta": 0,
+        "explicacao": "Especifica medida."
+    },
+    {
+        "id": 710,
+        "categoria": "Português",
+        "tema": "Interpretação: modalização (permissão)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Os alunos podem sair após as 17h.",
+        "enunciado": "'Podem' indica:",
+        "alternativas": [
+            "Permissão.",
+            "Obrigação.",
+            "Proibição."
+        ],
+        "resposta": 0,
+        "explicacao": "Valor modal permissivo."
+    },
+    {
+        "id": 711,
+        "categoria": "Português",
+        "tema": "Crase: horas",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A reunião começa ___ 10h.",
+        "resposta": "às",
+        "explicacao": "Horas com artigo feminino pedem crase."
+    },
+    {
+        "id": 712,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Às escondidas.",
+            "As escondidas.",
+            "A escondidas."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução feminina exige crase."
+    },
+    {
+        "id": 713,
+        "categoria": "Português",
+        "tema": "Crase: à moda de",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a expressão correta.",
+        "alternativas": [
+            "Peixe à romana.",
+            "Peixe a romana.",
+            "Peixe à ao romana."
+        ],
+        "resposta": 0,
+        "explicacao": "Equivale a 'à moda de'."
+    },
+    {
+        "id": 714,
+        "categoria": "Português",
+        "tema": "Crase: antes de masculino (incorreto)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso INCORRETO da crase:",
+        "alternativas": [
+            "À técnico.",
+            "Ao técnico.",
+            "À técnica."
+        ],
+        "resposta": 0,
+        "explicacao": "Não se usa crase antes de masculino."
+    },
+    {
+        "id": 715,
+        "categoria": "Português",
+        "tema": "Crase: facultativa com possessivo feminino",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Complete: Entreguei o bilhete ___ minha colega.",
+        "resposta": "à / a",
+        "explicacao": "Antes de possessivo feminino singular: facultativa."
+    },
+    {
+        "id": 716,
+        "categoria": "Português",
+        "tema": "Regência: assistir (ver)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Assistimos ao jogo.",
+            "Assistimos o jogo.",
+            "Assistimos no jogo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto com 'a'."
+    },
+    {
+        "id": 717,
+        "categoria": "Português",
+        "tema": "Regência: preferir",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Prefiro livros ___ filmes.",
+        "resposta": "a",
+        "explicacao": "Estrutura: preferir X a Y."
+    },
+    {
+        "id": 718,
+        "categoria": "Português",
+        "tema": "Regência: aspirar (desejar)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Construção correta:",
+        "alternativas": [
+            "Aspira a uma vaga.",
+            "Aspira uma vaga.",
+            "Aspira pela vaga."
+        ],
+        "resposta": 0,
+        "explicacao": "No sentido de desejar: 'a'."
+    },
+    {
+        "id": 719,
+        "categoria": "Português",
+        "tema": "Regência: visar (pretender)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma correta:",
+        "alternativas": [
+            "Visa a melhorias (pretender).",
+            "Visa melhorias (pretender).",
+            "Visa pelas melhorias."
+        ],
+        "resposta": 1,
+        "explicacao": "Pretender: transitivo direto sem preposição."
+    },
+    {
+        "id": 720,
+        "categoria": "Português",
+        "tema": "Regência: informar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Informei os alunos do resultado.",
+            "Informei aos alunos o resultado.",
+            "Informei de os alunos o resultado."
+        ],
+        "resposta": 0,
+        "explicacao": "'Informar alguém de algo'."
+    },
+    {
+        "id": 721,
+        "categoria": "Português",
+        "tema": "Concordância: porcentagem",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "25% dos textos ___ prontos.",
+        "alternativas": [
+            "estavam",
+            "estava",
+            "estará"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo plural expresso → plural."
+    },
+    {
+        "id": 722,
+        "categoria": "Português",
+        "tema": "Concordância: sujeito composto posposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma preferível:",
+        "alternativas": [
+            "Chegaram a professora e os alunos.",
+            "Chegou a professora e os alunos.",
+            "Chegou os alunos e a professora."
+        ],
+        "resposta": 0,
+        "explicacao": "Preferência normativa pelo plural."
+    },
+    {
+        "id": 723,
+        "categoria": "Português",
+        "tema": "Concordância: coletivo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: O público ___ satisfeito.",
+        "resposta": "estava",
+        "explicacao": "Coletivo singular → verbo no singular."
+    },
+    {
+        "id": 724,
+        "categoria": "Português",
+        "tema": "Concordância: partitiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uma das metas ___ atingida.",
+        "alternativas": [
+            "foi",
+            "foram",
+            "seriam"
+        ],
+        "resposta": 0,
+        "explicacao": "Núcleo singular determina o verbo."
+    },
+    {
+        "id": 725,
+        "categoria": "Português",
+        "tema": "Concordância: 'mais de um'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso preferencial:",
+        "alternativas": [
+            "Mais de um autor citou a obra.",
+            "Mais de um autor citaram a obra.",
+            "Mais de um autores citou a obra."
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão pede singular."
+    },
+    {
+        "id": 726,
+        "categoria": "Português",
+        "tema": "Pronomes: próclise (negação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Não se atrasem.",
+            "Não atrasem-se.",
+            "Atrasem não-se."
+        ],
+        "resposta": 0,
+        "explicacao": "Negação atrai próclise."
+    },
+    {
+        "id": 727,
+        "categoria": "Português",
+        "tema": "Pronomes: mesóclise (futuro)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma adequada:",
+        "alternativas": [
+            "Cumprir-se-á o acordo.",
+            "Se cumprirá o acordo.",
+            "Cumprirá-se o acordo."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, admite-se mesóclise."
+    },
+    {
+        "id": 728,
+        "categoria": "Português",
+        "tema": "Pronomes: uso de 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Emprego adequado:",
+        "alternativas": [
+            "Respondi-lhe ao pedido.",
+            "Vi-lhe na sala.",
+            "Convidei-lhe ontem."
+        ],
+        "resposta": 0,
+        "explicacao": "'Lhe' para objeto indireto; 'ver/convidei' são diretos."
+    },
+    {
+        "id": 729,
+        "categoria": "Português",
+        "tema": "Pronomes: ênclise (sem atratores)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Organizem-se já.",
+            "Se organizem já.",
+            "Organizem se já."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, usa-se ênclise."
+    },
+    {
+        "id": 730,
+        "categoria": "Português",
+        "tema": "Sintaxe: objeto indireto",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Entregaram o prêmio ___ equipe.",
+        "resposta": "à",
+        "explicacao": "Termo preposicionado → indireto."
+    },
+    {
+        "id": 731,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Os dados são consistentes', 'consistentes' é:",
+        "alternativas": [
+            "Predicativo do sujeito.",
+            "Adjunto adnominal.",
+            "Objeto indireto."
+        ],
+        "resposta": 0,
+        "explicacao": "Atributo por verbo de ligação."
+    },
+    {
+        "id": 732,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do objeto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Chamaram a proposta adequada', 'adequada' é:",
+        "alternativas": [
+            "Predicativo do objeto.",
+            "Adjunto adnominal.",
+            "Objeto indireto."
+        ],
+        "resposta": 0,
+        "explicacao": "Qualidade atribuída ao objeto."
+    },
+    {
+        "id": 733,
+        "categoria": "Português",
+        "tema": "Sintaxe: oração subordinada substantiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É urgente que revisem', a oração destacada é:",
+        "alternativas": [
+            "Subordinada substantiva subjetiva.",
+            "Subordinada adjetiva.",
+            "Coordenada adversativa."
+        ],
+        "resposta": 0,
+        "explicacao": "Funciona como sujeito oracional."
+    },
+    {
+        "id": 734,
+        "categoria": "Português",
+        "tema": "Semântica: denotação/conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'perna da mesa' (apoio), o sentido é:",
+        "alternativas": [
+            "Conotativo.",
+            "Denotativo.",
+            "Hipérbole."
+        ],
+        "resposta": 0,
+        "explicacao": "Analogia de forma (sentido figurado)."
+    },
+    {
+        "id": 735,
+        "categoria": "Português",
+        "tema": "Semântica: homônimos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Par homônimo:",
+        "alternativas": [
+            "Manga (fruta) / manga (roupa).",
+            "Cesto / sexto.",
+            "Acento / assento."
+        ],
+        "resposta": 0,
+        "explicacao": "Mesma forma, sentidos diferentes."
+    },
+    {
+        "id": 736,
+        "categoria": "Português",
+        "tema": "Ortografia: porquês (pergunta final)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Forma correta:",
+        "alternativas": [
+            "Saiu por quê?",
+            "Saiu por que?",
+            "Saiu porque?"
+        ],
+        "resposta": 0,
+        "explicacao": "Interrogativa no fim: 'por quê'."
+    },
+    {
+        "id": 737,
+        "categoria": "Português",
+        "tema": "Ortografia: sessão/seção/cessão",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: A ___ de leitura promoveu uma ___ de fotos.",
+        "resposta": "seção / sessão",
+        "explicacao": "Seção=departamento; sessão=exibição."
+    },
+    {
+        "id": 738,
+        "categoria": "Português",
+        "tema": "Ortografia: a/há",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Tempo decorrido correto:",
+        "alternativas": [
+            "Há três semanas mudou.",
+            "A três semanas mudou.",
+            "À três semanas mudou."
+        ],
+        "resposta": 0,
+        "explicacao": "Tempo passado usa 'há'."
+    },
+    {
+        "id": 739,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "A equipe foi mal no início.",
+            "A equipe foi mau no início.",
+            "A equipe é mal líder."
+        ],
+        "resposta": 0,
+        "explicacao": "'Mal' advérbio; 'mau' adjetivo."
+    },
+    {
+        "id": 740,
+        "categoria": "Português",
+        "tema": "Ortografia: trás/traz",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Ele traz o relatório; o arquivo está atrás.",
+            "Ele trás o relatório; o arquivo está atrás.",
+            "Ele traz o relatório; o arquivo está traz."
+        ],
+        "resposta": 0,
+        "explicacao": "'Traz' verbo; 'atrás' advérbio."
+    },
+    {
+        "id": 741,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Amigos, estudemos.",
+            "Amigos estudemos,",
+            "Amigos estudemos"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 742,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial anteposta",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Pontuação adequada:",
+        "alternativas": [
+            "Quando necessário, informe.",
+            "Quando necessário informe.",
+            "Quando, necessário informe."
+        ],
+        "resposta": 0,
+        "explicacao": "Vírgula separa oração adverbial."
+    },
+    {
+        "id": 743,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto explicativo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: O plano ___ alternativa viável ___ foi aprovado.",
+        "resposta": ", alternativa viável,",
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 744,
+        "categoria": "Português",
+        "tema": "Pontuação: travessões",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "A diretora — muito experiente — orientou todos.",
+            "A diretora — muito experiente orientou todos.",
+            "A diretora muito experiente — orientou todos —."
+        ],
+        "resposta": 0,
+        "explicacao": "Inciso isolado por travessões."
+    },
+    {
+        "id": 745,
+        "categoria": "Português",
+        "tema": "Pontuação: aspas (citação)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete com aspas: O diretor afirmou ___ Cumpram os prazos ___.",
+        "resposta": "\"Cumpram os prazos\"",
+        "explicacao": "Aspas marcam citação literal."
+    },
+    {
+        "id": 746,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "'Mente brilhante' é:",
+        "alternativas": [
+            "Metáfora.",
+            "Ironia.",
+            "Eufemismo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transferência de sentido por analogia."
+    },
+    {
+        "id": 747,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "'Trabalhei mil horas' é hipérbole.",
+        "resposta": true,
+        "explicacao": "Exagero expressivo."
+    },
+    {
+        "id": 748,
+        "categoria": "Português",
+        "tema": "Interpretação: pressuposição",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Já corrigimos a primeira versão.",
+        "enunciado": "Presupõe-se que:",
+        "alternativas": [
+            "Havia uma versão anterior.",
+            "Nunca houve versão.",
+            "A versão nova não existe."
+        ],
+        "resposta": 0,
+        "explicacao": "'Já' pressupõe etapa anterior."
+    },
+    {
+        "id": 749,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão referencial",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Marcos encontrou Joana; esta agradeceu.",
+        "enunciado": "'Esta' retoma:",
+        "alternativas": [
+            "Joana",
+            "Marcos",
+            "agradeceu"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome demonstrativo retoma termo anterior."
+    },
+    {
+        "id": 750,
+        "categoria": "Português",
+        "tema": "Regência: obedecer",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Obedeça às regras.",
+            "Obedeça as regras.",
+            "Obedeça as às regras."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto: 'obedecer a'."
+    },
+    {
+        "id": 751,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Cartaz: Doe alimentos para ajudar famílias locais.",
+        "enunciado": "A ideia central é:",
+        "alternativas": [
+            "Ajudar famílias locais com doações de alimentos.",
+            "Vender alimentos com desconto.",
+            "Denunciar desperdício em mercados."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade e meio explícitos."
+    },
+    {
+        "id": 752,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência de causa",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ele levou guarda-chuva porque o céu escureceu.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "Pode chover em breve.",
+            "Vai nevar.",
+            "Fará calor intenso."
+        ],
+        "resposta": 0,
+        "explicacao": "Céu escuro sugere chuva iminente."
+    },
+    {
+        "id": 753,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Placa: Mantenha o corredor livre para circulação.",
+        "enunciado": "A finalidade é:",
+        "alternativas": [
+            "Garantir a circulação.",
+            "Evitar multas.",
+            "Impedir acesso."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade explicitada."
+    },
+    {
+        "id": 754,
+        "categoria": "Português",
+        "tema": "Interpretação: opinião x fato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A peça foi maravilhosa e começou às 20h.",
+        "enunciado": "O elemento opinativo é:",
+        "alternativas": [
+            "'maravilhosa'.",
+            "'começou às 20h'.",
+            "'peça'."
+        ],
+        "resposta": 0,
+        "explicacao": "Avaliação subjetiva."
+    },
+    {
+        "id": 755,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão (anáfora)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Patrícia organizou os arquivos; ela os enviou hoje.",
+        "enunciado": "'os' retoma:",
+        "alternativas": [
+            "os arquivos",
+            "Patrícia",
+            "hoje"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome retoma objeto citado."
+    },
+    {
+        "id": 756,
+        "categoria": "Português",
+        "tema": "Interpretação: leitura de gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Gráfico: Inscrições — Jan: 18, Fev: 25, Mar: 22.",
+        "enunciado": "O maior valor é em:",
+        "alternativas": [
+            "Fevereiro",
+            "Março",
+            "Janeiro"
+        ],
+        "resposta": 0,
+        "explicacao": "Fev = 25."
+    },
+    {
+        "id": 757,
+        "categoria": "Português",
+        "tema": "Interpretação: propósito comunicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Aviso: Use protetor auricular na oficina.",
+        "enunciado": "O propósito é:",
+        "alternativas": [
+            "Orientar segurança.",
+            "Vender equipamentos.",
+            "Relatar acidente."
+        ],
+        "resposta": 0,
+        "explicacao": "Norma de segurança."
+    },
+    {
+        "id": 758,
+        "categoria": "Português",
+        "tema": "Interpretação: resumo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Projeto trocou torneiras e sensores; consumo caiu 15%.",
+        "enunciado": "Melhor resumo:",
+        "alternativas": [
+            "Medidas reduziram o consumo de água.",
+            "Instalaram sensores.",
+            "Compraram torneiras."
+        ],
+        "resposta": 0,
+        "explicacao": "Síntese ação+efeito."
+    },
+    {
+        "id": 759,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos (título/subtítulo)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Título: 'Mais esporte'; Subtítulo: 'Quadra recebe novos horários'.",
+        "enunciado": "O subtítulo:",
+        "alternativas": [
+            "Especifica a ação do título.",
+            "Contradiz o título.",
+            "Repete literalmente."
+        ],
+        "resposta": 0,
+        "explicacao": "Detalhamento informativo."
+    },
+    {
+        "id": 760,
+        "categoria": "Português",
+        "tema": "Interpretação: modalização (proibição)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "É proibido comer na biblioteca.",
+        "enunciado": "O valor modal é:",
+        "alternativas": [
+            "Proibição.",
+            "Permissão.",
+            "Dúvida."
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão de proibição."
+    },
+    {
+        "id": 761,
+        "categoria": "Português",
+        "tema": "Crase: horas",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A aula termina ___ 13h.",
+        "resposta": "às",
+        "explicacao": "Horas com artigo feminino pedem crase."
+    },
+    {
+        "id": 762,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Às pressas.",
+            "As pressas.",
+            "A pressas."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução feminina exige crase."
+    },
+    {
+        "id": 763,
+        "categoria": "Português",
+        "tema": "Crase: à moda de",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a expressão correta.",
+        "alternativas": [
+            "Macarrão à bolonhesa.",
+            "Macarrão a bolonhesa.",
+            "Macarrão à ao bolonhesa."
+        ],
+        "resposta": 0,
+        "explicacao": "Equivale a 'à moda de'."
+    },
+    {
+        "id": 764,
+        "categoria": "Português",
+        "tema": "Crase: antes de masculino (incorreto)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso INCORRETO da crase:",
+        "alternativas": [
+            "À coordenador.",
+            "Ao coordenador.",
+            "À coordenadora."
+        ],
+        "resposta": 0,
+        "explicacao": "Não se usa crase antes de masculino."
+    },
+    {
+        "id": 765,
+        "categoria": "Português",
+        "tema": "Crase: facultativa com possessivo feminino",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Complete: Enviei o convite ___ minha amiga.",
+        "resposta": "à / a",
+        "explicacao": "Antes de possessivo feminino singular: facultativa."
+    },
+    {
+        "id": 766,
+        "categoria": "Português",
+        "tema": "Regência: assistir (ver)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Assistimos ao espetáculo.",
+            "Assistimos o espetáculo.",
+            "Assistimos no espetáculo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto com 'a'."
+    },
+    {
+        "id": 767,
+        "categoria": "Português",
+        "tema": "Regência: preferir",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Preferimos estudo ___ lazer.",
+        "resposta": "a",
+        "explicacao": "Estrutura: preferir X a Y."
+    },
+    {
+        "id": 768,
+        "categoria": "Português",
+        "tema": "Regência: aspirar (desejar)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Construção correta:",
+        "alternativas": [
+            "Aspiram a vagas.",
+            "Aspiram vagas.",
+            "Aspiram pelas vagas."
+        ],
+        "resposta": 0,
+        "explicacao": "No sentido de desejar: 'a'."
+    },
+    {
+        "id": 769,
+        "categoria": "Português",
+        "tema": "Regência: visar (pretender)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma correta:",
+        "alternativas": [
+            "Visa melhorias.",
+            "Visa às melhorias (pretender).",
+            "Visa com melhorias."
+        ],
+        "resposta": 0,
+        "explicacao": "Pretender: transitivo direto sem preposição."
+    },
+    {
+        "id": 770,
+        "categoria": "Português",
+        "tema": "Regência: informar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Informei os pais do resultado.",
+            "Informei aos pais o resultado.",
+            "Informei de os pais o resultado."
+        ],
+        "resposta": 0,
+        "explicacao": "'Informar alguém de algo'."
+    },
+    {
+        "id": 771,
+        "categoria": "Português",
+        "tema": "Concordância: porcentagem",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "60% dos convites ___ enviados.",
+        "alternativas": [
+            "foram",
+            "foi",
+            "será"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo plural expresso → plural."
+    },
+    {
+        "id": 772,
+        "categoria": "Português",
+        "tema": "Concordância: sujeito composto posposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma preferível:",
+        "alternativas": [
+            "Chegaram o professor e os monitores.",
+            "Chegou o professor e os monitores.",
+            "Chegou os monitores e o professor."
+        ],
+        "resposta": 0,
+        "explicacao": "Preferência normativa pelo plural."
+    },
+    {
+        "id": 773,
+        "categoria": "Português",
+        "tema": "Concordância: coletivo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A multidão ___ inquieta.",
+        "resposta": "estava",
+        "explicacao": "Coletivo singular → verbo no singular."
+    },
+    {
+        "id": 774,
+        "categoria": "Português",
+        "tema": "Concordância: partitiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Parte dos documentos ___ revisada.",
+        "alternativas": [
+            "foi",
+            "foram",
+            "seriam"
+        ],
+        "resposta": 0,
+        "explicacao": "Núcleo singular determina o verbo."
+    },
+    {
+        "id": 775,
+        "categoria": "Português",
+        "tema": "Concordância: 'mais de um'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso preferencial:",
+        "alternativas": [
+            "Mais de um candidato apresentou a proposta.",
+            "Mais de um candidato apresentaram a proposta.",
+            "Mais de um candidatos apresentou a proposta."
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão pede singular."
+    },
+    {
+        "id": 776,
+        "categoria": "Português",
+        "tema": "Pronomes: próclise (negação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Não me avisaram.",
+            "Não avisaram-me.",
+            "Avisaram não-me."
+        ],
+        "resposta": 0,
+        "explicacao": "Negação atrai próclise."
+    },
+    {
+        "id": 777,
+        "categoria": "Português",
+        "tema": "Pronomes: mesóclise (futuro)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma adequada:",
+        "alternativas": [
+            "Divulgar-se-á a lista.",
+            "Se divulgará a lista.",
+            "Divulgará-se a lista."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, admite-se mesóclise."
+    },
+    {
+        "id": 778,
+        "categoria": "Português",
+        "tema": "Pronomes: uso de 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Emprego adequado:",
+        "alternativas": [
+            "Expliquei-lhe a situação.",
+            "Vi-lhe na rua.",
+            "Cumprimentei-lhe."
+        ],
+        "resposta": 0,
+        "explicacao": "'Lhe' para objeto indireto; ver/cumprimentar são diretos."
+    },
+    {
+        "id": 779,
+        "categoria": "Português",
+        "tema": "Pronomes: ênclise (sem atratores)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Para concluí-___, precisamos tempo.",
+        "resposta": "lo",
+        "explicacao": "Infinitivo com ênclise: hífen e ajuste."
+    },
+    {
+        "id": 780,
+        "categoria": "Português",
+        "tema": "Pronomes: 'o' e 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Emprego correto:",
+        "alternativas": [
+            "Entreguei-lhe o relatório e o li depois.",
+            "Entreguei-o o relatório e li-lhe depois.",
+            "Entreguei-lhe o relatório e li-lhe depois."
+        ],
+        "resposta": 0,
+        "explicacao": "Indireto com 'lhe'; direto com 'o'."
+    },
+    {
+        "id": 781,
+        "categoria": "Português",
+        "tema": "Sintaxe: objeto indireto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Responderam ao grupo', 'ao grupo' é:",
+        "alternativas": [
+            "Objeto indireto.",
+            "Objeto direto.",
+            "Adjunto adnominal."
+        ],
+        "resposta": 0,
+        "explicacao": "Termo preposicionado."
+    },
+    {
+        "id": 782,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Os índices são estáveis', 'estáveis' é:",
+        "alternativas": [
+            "Predicativo do sujeito.",
+            "Adjunto adnominal.",
+            "Objeto indireto."
+        ],
+        "resposta": 0,
+        "explicacao": "Atributo por verbo de ligação."
+    },
+    {
+        "id": 783,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do objeto",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Julgaram a proposta ___.",
+        "resposta": "adequada",
+        "explicacao": "Qualidade atribuída ao objeto."
+    },
+    {
+        "id": 784,
+        "categoria": "Português",
+        "tema": "Sintaxe: oração subordinada substantiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É recomendável que pesquisem', a oração destacada é:",
+        "alternativas": [
+            "Subordinada substantiva subjetiva.",
+            "Subordinada adjetiva.",
+            "Coordenada adversativa."
+        ],
+        "resposta": 0,
+        "explicacao": "Funciona como sujeito oracional."
+    },
+    {
+        "id": 785,
+        "categoria": "Português",
+        "tema": "Semântica: denotação/conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'braço da cadeira' (apoio), o sentido é:",
+        "alternativas": [
+            "Conotativo.",
+            "Denotativo.",
+            "Hipérbole."
+        ],
+        "resposta": 0,
+        "explicacao": "Analogia de forma (sentido figurado)."
+    },
+    {
+        "id": 786,
+        "categoria": "Português",
+        "tema": "Semântica: hipônimo/hiperônimo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: 'Ferramenta' é ___ de 'martelo'.",
+        "resposta": "hiperônimo",
+        "explicacao": "Termo mais abrangente."
+    },
+    {
+        "id": 787,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "'Cabeça' em 'cabeça do projeto' indica:",
+        "alternativas": [
+            "Extensão de sentido (liderança).",
+            "Homônimo absoluto.",
+            "Metáfora obrigatória."
+        ],
+        "resposta": 0,
+        "explicacao": "Mesmo lexema com sentidos relacionados."
+    },
+    {
+        "id": 788,
+        "categoria": "Português",
+        "tema": "Ortografia: sessão/seção/cessão",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: A ___ de cinema promoveu uma ___ de fotos.",
+        "resposta": "seção / sessão",
+        "explicacao": "Seção=departamento; sessão=exibição."
+    },
+    {
+        "id": 789,
+        "categoria": "Português",
+        "tema": "Ortografia: a/há",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Tempo futuro correto:",
+        "alternativas": [
+            "Daqui a cinco dias viajaremos.",
+            "Daqui há cinco dias viajaremos.",
+            "Daqui à cinco dias viajaremos."
+        ],
+        "resposta": 0,
+        "explicacao": "Futuro usa 'a' (preposição)."
+    },
+    {
+        "id": 790,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Ela agiu mal ontem.",
+            "Ela agiu mau ontem.",
+            "Ela é mal estudante."
+        ],
+        "resposta": 0,
+        "explicacao": "'Mal' advérbio; 'mau' adjetivo."
+    },
+    {
+        "id": 791,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Senhores, assinem aqui.",
+            "Senhores assinem, aqui.",
+            "Senhores assinem aqui,"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 792,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial anteposta",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Pontuação adequada:",
+        "alternativas": [
+            "Quando necessário, participe.",
+            "Quando necessário participe.",
+            "Quando, necessário participe."
+        ],
+        "resposta": 0,
+        "explicacao": "Vírgula separa oração adverbial."
+    },
+    {
+        "id": 793,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto explicativo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: O evento ___ iniciativa social ___ teve apoio.",
+        "resposta": ", iniciativa social,",
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 794,
+        "categoria": "Português",
+        "tema": "Pontuação: travessões",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "O autor — muito lido — palestrou.",
+            "O autor — muito lido palestrou.",
+            "O autor muito lido — palestrou —."
+        ],
+        "resposta": 0,
+        "explicacao": "Inciso isolado por travessões."
+    },
+    {
+        "id": 795,
+        "categoria": "Português",
+        "tema": "Pontuação: aspas (citação)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete com aspas: A diretora disse ___ Foquem nos estudos ___.",
+        "resposta": "\"Foquem nos estudos\"",
+        "explicacao": "Aspas marcam citação literal."
+    },
+    {
+        "id": 796,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "'Idéias claras' é:",
+        "alternativas": [
+            "Metáfora.",
+            "Ironia.",
+            "Eufemismo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transferência de sentido."
+    },
+    {
+        "id": 797,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "'Esperei séculos' é hipérbole.",
+        "resposta": true,
+        "explicacao": "Exagero expressivo."
+    },
+    {
+        "id": 798,
+        "categoria": "Português",
+        "tema": "Interpretação: pressuposição",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ainda não enviamos a versão final.",
+        "enunciado": "Presupõe-se que:",
+        "alternativas": [
+            "Há versões anteriores.",
+            "Não existe versão alguma.",
+            "A versão final foi enviada."
+        ],
+        "resposta": 0,
+        "explicacao": "'Ainda' pressupõe etapa anterior."
+    },
+    {
+        "id": 799,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão referencial",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "texto_base": "Rafa encontrou Lia; esta agradeceu.",
+        "enunciado": "'Esta' retoma ___ .",
+        "resposta": "Lia",
+        "explicacao": "Pronome demonstrativo retoma termo anterior."
+    },
+    {
+        "id": 800,
+        "categoria": "Português",
+        "tema": "Regência: obedecer",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Obedeça às orientações.",
+            "Obedeça as orientações.",
+            "Obedeça as às orientações."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto: 'obedecer a'."
+    },
+    {
+        "id": 801,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Cartaz: Recicle vidro para reduzir o lixo urbano.",
+        "enunciado": "A ideia central é:",
+        "alternativas": [
+            "Reduzir lixo urbano reciclando vidro.",
+            "Aumentar coleta de lixo sem reciclar.",
+            "Proibir uso de garrafas."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade e meio indicados."
+    },
+    {
+        "id": 802,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência de consequência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Se não apagarmos as luzes, a conta de energia subirá.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "A conta subirá.",
+            "A conta cairá.",
+            "Nada mudará."
+        ],
+        "resposta": 0,
+        "explicacao": "Condição explícita causa efeito."
+    },
+    {
+        "id": 803,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Placa: Mantenha portas fechadas para manter temperatura.",
+        "enunciado": "A finalidade é:",
+        "alternativas": [
+            "Manter a temperatura.",
+            "Impedir acesso.",
+            "Aumentar barulho."
+        ],
+        "resposta": 0,
+        "explicacao": "Finalidade explícita."
+    },
+    {
+        "id": 804,
+        "categoria": "Português",
+        "tema": "Interpretação: opinião x fato",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "O evento foi incrível e começou às 9h.",
+        "enunciado": "O elemento opinativo é:",
+        "alternativas": [
+            "'incrível'.",
+            "'começou às 9h'.",
+            "'evento'."
+        ],
+        "resposta": 0,
+        "explicacao": "Avaliação subjetiva por adjetivo."
+    },
+    {
+        "id": 805,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão (anáfora)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Renata separou os materiais; ela os entregou depois.",
+        "enunciado": "'os' retoma:",
+        "alternativas": [
+            "os materiais",
+            "Renata",
+            "depois"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome retoma objeto citado."
+    },
+    {
+        "id": 806,
+        "categoria": "Português",
+        "tema": "Interpretação: leitura de gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Gráfico: Frequência — Seg: 12, Ter: 15, Qua: 11.",
+        "enunciado": "Dia com maior frequência:",
+        "alternativas": [
+            "Terça",
+            "Segunda",
+            "Quarta"
+        ],
+        "resposta": 0,
+        "explicacao": "Maior valor 15."
+    },
+    {
+        "id": 807,
+        "categoria": "Português",
+        "tema": "Interpretação: propósito comunicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Aviso: Use avental no laboratório.",
+        "enunciado": "O propósito é:",
+        "alternativas": [
+            "Orientar segurança.",
+            "Divulgar moda.",
+            "Anunciar promoção."
+        ],
+        "resposta": 0,
+        "explicacao": "Instrução normativa."
+    },
+    {
+        "id": 808,
+        "categoria": "Português",
+        "tema": "Interpretação: resumo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Projeto trocou torneiras e educou usuários; consumo caiu.",
+        "enunciado": "Melhor resumo:",
+        "alternativas": [
+            "Ações reduziram consumo de água.",
+            "Instalaram torneiras.",
+            "Usuários foram informados."
+        ],
+        "resposta": 0,
+        "explicacao": "Síntese ação+efeito."
+    },
+    {
+        "id": 809,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos (título/subtítulo)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Título: 'Mais leitura'; Subtítulo: 'Sala de estudos ampliada'.",
+        "enunciado": "O subtítulo:",
+        "alternativas": [
+            "Especifica a ação do título.",
+            "Contradiz o título.",
+            "Repete literalmente."
+        ],
+        "resposta": 0,
+        "explicacao": "Detalhamento informativo."
+    },
+    {
+        "id": 810,
+        "categoria": "Português",
+        "tema": "Interpretação: modalização (obrigação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Os alunos devem devolver livros até sexta.",
+        "enunciado": "'Devem' indica:",
+        "alternativas": [
+            "Obrigação.",
+            "Permissão.",
+            "Proibição."
+        ],
+        "resposta": 0,
+        "explicacao": "Valor modal de obrigatoriedade."
+    },
+    {
+        "id": 811,
+        "categoria": "Português",
+        "tema": "Crase: horas",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A reunião é ___ 14h.",
+        "resposta": "às",
+        "explicacao": "Horas com artigo feminino pedem crase."
+    },
+    {
+        "id": 812,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Às claras.",
+            "As claras.",
+            "A claras."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução feminina exige crase."
+    },
+    {
+        "id": 813,
+        "categoria": "Português",
+        "tema": "Crase: à moda de",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a expressão correta.",
+        "alternativas": [
+            "Carne à parmegiana.",
+            "Carne a parmegiana.",
+            "Carne à ao parmegiana."
+        ],
+        "resposta": 0,
+        "explicacao": "Equivale a 'à moda de'."
+    },
+    {
+        "id": 814,
+        "categoria": "Português",
+        "tema": "Crase: antes de masculino (incorreto)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso INCORRETO da crase:",
+        "alternativas": [
+            "À aluno.",
+            "Ao aluno.",
+            "À aluna."
+        ],
+        "resposta": 0,
+        "explicacao": "Não se usa crase antes de masculino."
+    },
+    {
+        "id": 815,
+        "categoria": "Português",
+        "tema": "Crase: facultativa com possessivo feminino",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Complete: Entreguei o aviso ___ minha irmã.",
+        "resposta": "à / a",
+        "explicacao": "Antes de possessivo feminino singular: facultativa."
+    },
+    {
+        "id": 816,
+        "categoria": "Português",
+        "tema": "Regência: assistir (ver)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Assistimos ao debate.",
+            "Assistimos o debate.",
+            "Assistimos no debate."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto com 'a'."
+    },
+    {
+        "id": 817,
+        "categoria": "Português",
+        "tema": "Regência: preferir",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Prefiro estudo ___ jogos.",
+        "resposta": "a",
+        "explicacao": "Estrutura: preferir X a Y."
+    },
+    {
+        "id": 818,
+        "categoria": "Português",
+        "tema": "Regência: aspirar (desejar)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Construção correta:",
+        "alternativas": [
+            "Aspira a uma bolsa.",
+            "Aspira uma bolsa.",
+            "Aspira pela bolsa."
+        ],
+        "resposta": 0,
+        "explicacao": "No sentido de desejar: 'a'."
+    },
+    {
+        "id": 819,
+        "categoria": "Português",
+        "tema": "Regência: visar (pretender)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma correta:",
+        "alternativas": [
+            "Visa melhorias.",
+            "Visa às melhorias (pretender).",
+            "Visa com melhorias."
+        ],
+        "resposta": 0,
+        "explicacao": "Pretender: transitivo direto."
+    },
+    {
+        "id": 820,
+        "categoria": "Português",
+        "tema": "Regência: lembrar / lembrar-se",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Lembrei o recado e me lembrei de avisar.",
+            "Lembrei de o recado.",
+            "Me lembrei o recado."
+        ],
+        "resposta": 0,
+        "explicacao": "Direto sem 'de'; pronominal exige 'de'."
+    },
+    {
+        "id": 821,
+        "categoria": "Português",
+        "tema": "Concordância: porcentagem",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "35% dos alunos ___ presentes.",
+        "alternativas": [
+            "estavam",
+            "estava",
+            "estará"
+        ],
+        "resposta": 0,
+        "explicacao": "Termo plural expresso → plural."
+    },
+    {
+        "id": 822,
+        "categoria": "Português",
+        "tema": "Concordância: sujeito composto posposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma preferível:",
+        "alternativas": [
+            "Chegaram o diretor e os alunos.",
+            "Chegou o diretor e os alunos.",
+            "Chegou os alunos e o diretor."
+        ],
+        "resposta": 0,
+        "explicacao": "Preferência normativa pelo plural."
+    },
+    {
+        "id": 823,
+        "categoria": "Português",
+        "tema": "Concordância: coletivo",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: A turma ___ animada.",
+        "resposta": "estava",
+        "explicacao": "Coletivo singular → verbo no singular."
+    },
+    {
+        "id": 824,
+        "categoria": "Português",
+        "tema": "Concordância: partitiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uma das respostas ___ correta.",
+        "alternativas": [
+            "foi",
+            "foram",
+            "seriam"
+        ],
+        "resposta": 0,
+        "explicacao": "Núcleo singular determina o verbo."
+    },
+    {
+        "id": 825,
+        "categoria": "Português",
+        "tema": "Concordância: 'mais de um'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso preferencial:",
+        "alternativas": [
+            "Mais de um aluno apresentou trabalho.",
+            "Mais de um aluno apresentaram trabalho.",
+            "Mais de um alunos apresentou trabalho."
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão pede singular."
+    },
+    {
+        "id": 826,
+        "categoria": "Português",
+        "tema": "Pronomes: próclise (negação)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a forma correta.",
+        "alternativas": [
+            "Não se esqueçam.",
+            "Não esqueçam-se.",
+            "Esqueçam não-se."
+        ],
+        "resposta": 0,
+        "explicacao": "Negação atrai próclise."
+    },
+    {
+        "id": 827,
+        "categoria": "Português",
+        "tema": "Pronomes: mesóclise (futuro)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Forma adequada:",
+        "alternativas": [
+            "Publicar-se-á o edital.",
+            "Se publicará o edital.",
+            "Publicará-se o edital."
+        ],
+        "resposta": 0,
+        "explicacao": "Sem atratores, admite-se mesóclise."
+    },
+    {
+        "id": 828,
+        "categoria": "Português",
+        "tema": "Pronomes: uso de 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Emprego adequado:",
+        "alternativas": [
+            "Informei-lhe da mudança.",
+            "Vi-lhe na sala.",
+            "Amei-lhe muito."
+        ],
+        "resposta": 0,
+        "explicacao": "'Lhe' para objeto indireto; 'ver/amar' são diretos."
+    },
+    {
+        "id": 829,
+        "categoria": "Português",
+        "tema": "Pronomes: ênclise (sem atratores)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Para organizar-___, precisamos coordenação.",
+        "resposta": "nos",
+        "explicacao": "Infinitivo com ênclise."
+    },
+    {
+        "id": 830,
+        "categoria": "Português",
+        "tema": "Pronomes: 'o' e 'lhe'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Entreguei-lhe o aviso e o reli depois.",
+            "Entreguei-o o aviso e reli-lhe depois.",
+            "Entreguei-lhe o aviso e reli-lhe depois."
+        ],
+        "resposta": 0,
+        "explicacao": "Indireto com 'lhe'; direto com 'o'."
+    },
+    {
+        "id": 831,
+        "categoria": "Português",
+        "tema": "Sintaxe: objeto indireto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Entregaram livros aos alunos', 'aos alunos' é:",
+        "alternativas": [
+            "Objeto indireto.",
+            "Objeto direto.",
+            "Adjunto adnominal."
+        ],
+        "resposta": 0,
+        "explicacao": "Termo preposicionado."
+    },
+    {
+        "id": 832,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'Os resultados são confiáveis', 'confiáveis' é:",
+        "alternativas": [
+            "Predicativo do sujeito.",
+            "Adjunto adnominal.",
+            "Objeto indireto."
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo de ligação + atributo."
+    },
+    {
+        "id": 833,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do objeto",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Consideraram a solução ___.",
+        "resposta": "viável",
+        "explicacao": "Qualidade atribuída ao objeto."
+    },
+    {
+        "id": 834,
+        "categoria": "Português",
+        "tema": "Sintaxe: oração subordinada substantiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Em 'É útil que revisem', a oração destacada é:",
+        "alternativas": [
+            "Subordinada substantiva subjetiva.",
+            "Subordinada adjetiva.",
+            "Coordenada adversativa."
+        ],
+        "resposta": 0,
+        "explicacao": "Funciona como sujeito oracional."
+    },
+    {
+        "id": 835,
+        "categoria": "Português",
+        "tema": "Semântica: denotação/conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'boca do túnel' (entrada), o sentido é:",
+        "alternativas": [
+            "Conotativo.",
+            "Denotativo.",
+            "Hiperbólico."
+        ],
+        "resposta": 0,
+        "explicacao": "Analogia espacial (figurado)."
+    },
+    {
+        "id": 836,
+        "categoria": "Português",
+        "tema": "Semântica: hipônimo/hiperônimo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: 'Veículo' é ___ de 'bicicleta'.",
+        "resposta": "hiperônimo",
+        "explicacao": "Termo mais abrangente."
+    },
+    {
+        "id": 837,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "'Cabeça' em 'cabeça de turma' indica:",
+        "alternativas": [
+            "Extensão de sentido (liderança).",
+            "Homônimo absoluto.",
+            "Metáfora obrigatória."
+        ],
+        "resposta": 0,
+        "explicacao": "Mesmo lexema com sentidos relacionados."
+    },
+    {
+        "id": 838,
+        "categoria": "Português",
+        "tema": "Ortografia: sessão/seção/cessão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase correta.",
+        "alternativas": [
+            "A seção de arte promoveu uma sessão de fotos.",
+            "A sessão de arte promoveu uma seção de fotos.",
+            "A cessão de arte promoveu uma seção de fotos."
+        ],
+        "resposta": 0,
+        "explicacao": "Seção=departamento; sessão=exibição."
+    },
+    {
+        "id": 839,
+        "categoria": "Português",
+        "tema": "Ortografia: a/há",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Tempo decorrido correto:",
+        "alternativas": [
+            "Há quatro meses mudou.",
+            "A quatro meses mudou.",
+            "À quatro meses mudou."
+        ],
+        "resposta": 0,
+        "explicacao": "Tempo passado usa 'há'."
+    },
+    {
+        "id": 840,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Ele é mau colega.",
+            "Ele é mal colega.",
+            "Ele age mau."
+        ],
+        "resposta": 0,
+        "explicacao": "'Mau' adjetivo; 'mal' advérbio."
+    },
+    {
+        "id": 841,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Pessoal, vamos começar.",
+            "Pessoal vamos, começar.",
+            "Pessoal vamos começar,"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 842,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial anteposta",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Pontuação adequada:",
+        "alternativas": [
+            "Quando possível, avise.",
+            "Quando possível avise.",
+            "Quando, possível avise."
+        ],
+        "resposta": 0,
+        "explicacao": "Vírgula separa oração adverbial."
+    },
+    {
+        "id": 843,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto explicativo",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: O relatório ___ síntese geral ___ foi lido.",
+        "resposta": ", síntese geral,",
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 844,
+        "categoria": "Português",
+        "tema": "Pontuação: travessões",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "A diretora — muito dedicada — falou.",
+            "A diretora — muito dedicada falou.",
+            "A diretora muito dedicada — falou —."
+        ],
+        "resposta": 0,
+        "explicacao": "Inciso isolado por travessões."
+    },
+    {
+        "id": 845,
+        "categoria": "Português",
+        "tema": "Pontuação: aspas (citação)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete com aspas: O coordenador disse ___ Organizem-se bem ___.",
+        "resposta": "\"Organizem-se bem\"",
+        "explicacao": "Aspas marcam citação literal."
+    },
+    {
+        "id": 846,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "'Caminho de pedra' (dificuldade) é:",
+        "alternativas": [
+            "Metáfora.",
+            "Ironia.",
+            "Eufemismo."
+        ],
+        "resposta": 0,
+        "explicacao": "Transferência de sentido."
+    },
+    {
+        "id": 847,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "'Tenho um milhão de tarefas' é hipérbole.",
+        "resposta": true,
+        "explicacao": "Exagero expressivo."
+    },
+    {
+        "id": 848,
+        "categoria": "Português",
+        "tema": "Interpretação: pressuposição",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ainda não revisamos o capítulo.",
+        "enunciado": "Presupõe-se que:",
+        "alternativas": [
+            "Há revisão pendente.",
+            "Nada existia antes.",
+            "O capítulo está concluído."
+        ],
+        "resposta": 0,
+        "explicacao": "'Ainda' pressupõe etapa anterior."
+    },
+    {
+        "id": 849,
+        "categoria": "Português",
+        "tema": "Interpretação: coesão referencial",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Lucas viu Carla; aquela sorriu.",
+        "enunciado": "'Aquela' retoma:",
+        "alternativas": [
+            "Carla",
+            "Lucas",
+            "sorriu"
+        ],
+        "resposta": 0,
+        "explicacao": "Pronome demonstrativo retoma termo anterior."
+    },
+    {
+        "id": 850,
+        "categoria": "Português",
+        "tema": "Regência: obedecer",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Obedeça às instruções.",
+            "Obedeça as instruções.",
+            "Obedeça as às instruções."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto: 'obedecer a'."
+    },
+    {
+        "id": 851,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A escola implementou um projeto de leitura semanal para estimular o hábito nos alunos, envolvendo pais e comunidade.",
+        "enunciado": "Qual é a ideia central do texto-base?",
+        "alternativas": [
+            "Promover o hábito de leitura nos alunos",
+            "Avaliar o desempenho dos professores",
+            "Aumentar as notas em matemática",
+            "Reduzir custos da escola"
+        ],
+        "resposta": 0,
+        "explicacao": "O foco é o projeto de leitura para incentivar o hábito entre alunos."
+    },
+    {
+        "id": 852,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Marina entregou o trabalho cedo; o professor sorriu ao ver o capricho.",
+        "enunciado": "Pode-se inferir que o professor:",
+        "alternativas": [
+            "Aprovou a qualidade do trabalho",
+            "Não recebeu o trabalho",
+            "Criticou a demora",
+            "Reprovou a aluna"
+        ],
+        "resposta": 0,
+        "explicacao": "O sorriso ao ver o capricho sugere aprovação."
+    },
+    {
+        "id": 853,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "A campanha de vacinação infantil será realizada no sábado para facilitar o acesso das famílias.",
+        "enunciado": "Qual é a finalidade mencionada?",
+        "alternativas": [
+            "Facilitar o acesso das famílias",
+            "Aumentar o número de médicos",
+            "Promover um evento esportivo",
+            "Cobrar taxas adicionais"
+        ],
+        "resposta": 0,
+        "explicacao": "O texto explicita a realização no sábado para facilitar o acesso."
+    },
+    {
+        "id": 854,
+        "categoria": "Português",
+        "tema": "Coesão: conectivos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Os alunos estudaram muito; contudo, a prova exigiu interpretação fina.",
+        "enunciado": "O conectivo 'contudo' estabelece relação de:",
+        "alternativas": [
+            "Oposição",
+            "Causa",
+            "Conclusão",
+            "Adição"
+        ],
+        "resposta": 0,
+        "explicacao": "'Contudo' marca contraste entre estudo e dificuldade."
+    },
+    {
+        "id": 855,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "O banco da praça estava quebrado; o banco aumentou as taxas.",
+        "enunciado": "O termo 'banco' exemplifica:",
+        "alternativas": [
+            "Polissemia",
+            "Paronímia",
+            "Antonímia",
+            "Homonímia perfeita"
+        ],
+        "resposta": 0,
+        "explicacao": "Palavra com sentidos diferentes no mesmo enunciado."
+    },
+    {
+        "id": 856,
+        "categoria": "Português",
+        "tema": "Ortografia: por que/porque/porquê/por que",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Não fui à festa porque estava cansado.",
+            "Não fui à festa por que estava cansado.",
+            "Não fui à festa porquê estava cansado.",
+            "Não fui à festa por que? estava cansado."
+        ],
+        "resposta": 0,
+        "explicacao": "'Porque' conjunção causal; as demais formas não cabem nesse contexto."
+    },
+    {
+        "id": 857,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto de crase:",
+        "alternativas": [
+            "À medida que estudou, melhorou.",
+            "A medida que estudou, melhorou.",
+            "À medida em que estudou, melhorou.",
+            "A medida em que estudou, melhorou."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução conjuntiva feminina: 'à medida que'."
+    },
+    {
+        "id": 858,
+        "categoria": "Português",
+        "tema": "Concordância verbal: sujeito simples",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Os alunos ___ prontos.",
+        "resposta": "estão",
+        "explicacao": "Sujeito plural exige forma plural do verbo 'estar'."
+    },
+    {
+        "id": 859,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a opção com vocativo corretamente pontuado:",
+        "alternativas": [
+            "João, venha aqui.",
+            "João venha, aqui.",
+            "João venha aqui",
+            "João venha, aqui!"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula: 'João, ...'."
+    },
+    {
+        "id": 860,
+        "categoria": "Português",
+        "tema": "Figuras de linguagem: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Seu sorriso é sol de inverno', há:",
+        "alternativas": [
+            "Metáfora",
+            "Metonímia",
+            "Hipérbole",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Identificação por semelhança: 'sorriso' comparado a 'sol'."
+    },
+    {
+        "id": 861,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Os alunos ficaram felizes', 'felizes' é:",
+        "alternativas": [
+            "Predicativo do sujeito",
+            "Objeto direto",
+            "Adjunto adverbial",
+            "Aposto"
+        ],
+        "resposta": 0,
+        "explicacao": "Atribui característica ao sujeito após verbo de ligação."
+    },
+    {
+        "id": 862,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Ele acordou de ___ humor.",
+        "resposta": "mau",
+        "explicacao": "'Mau' é adjetivo; 'mal' é advérbio/substantivo."
+    },
+    {
+        "id": 863,
+        "categoria": "Português",
+        "tema": "Regência nominal: preferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Tenho preferência por livros.",
+            "Tenho preferência a livros.",
+            "Tenho preferência de livros.",
+            "Tenho preferência sobre livros."
+        ],
+        "resposta": 0,
+        "explicacao": "Regência: 'preferência por'."
+    },
+    {
+        "id": 864,
+        "categoria": "Português",
+        "tema": "Crase: antes de nome masculino",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Fui a o mercado cedo.",
+            "Fui ao mercado cedo.",
+            "Fui à mercado cedo.",
+            "Fui a mercado cedo."
+        ],
+        "resposta": 1,
+        "explicacao": "Contração 'a + o' = 'ao' antes de nome masculino."
+    },
+    {
+        "id": 865,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia 'banca'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'A banca corrigiu a prova na banca da praça', há:",
+        "alternativas": [
+            "Polissemia",
+            "Paronímia",
+            "Homonímia",
+            "Sinonímia"
+        ],
+        "resposta": 0,
+        "explicacao": "Mesma forma lexical com significados distintos."
+    },
+    {
+        "id": 866,
+        "categoria": "Português",
+        "tema": "Concordância nominal",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Os meninos ficaram ___ após o anúncio.",
+        "resposta": "felizes",
+        "explicacao": "Concordância do adjetivo com o núcleo plural."
+    },
+    {
+        "id": 867,
+        "categoria": "Português",
+        "tema": "Interpretação: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Ele chegou duas horas atrasado e, com grande seriedade, disse: 'Pontualidade é meu forte'.",
+        "enunciado": "O trecho revela:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbato",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação contrária aos fatos indica ironia."
+    },
+    {
+        "id": 868,
+        "categoria": "Português",
+        "tema": "Interpretação: título",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Título: 'Pequenas ações, grandes mudanças' em campanha ambiental escolar.",
+        "enunciado": "O título sugere:",
+        "alternativas": [
+            "Impacto de atitudes simples",
+            "Necessidade de obras caras",
+            "Desinteresse dos alunos",
+            "Suspensão de aulas"
+        ],
+        "resposta": 0,
+        "explicacao": "Indica que pequenas atitudes geram grandes resultados."
+    },
+    {
+        "id": 869,
+        "categoria": "Português",
+        "tema": "Pontuação: travessão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado do travessão em diálogo:",
+        "alternativas": [
+            "— Cheguei cedo — disse Ana.",
+            "- Cheguei cedo — disse Ana.",
+            "— Cheguei cedo - disse Ana.",
+            "- Cheguei cedo - disse Ana."
+        ],
+        "resposta": 0,
+        "explicacao": "Travessão é o traço longo no diálogo nas duas ocorrências."
+    },
+    {
+        "id": 870,
+        "categoria": "Português",
+        "tema": "Pronomes: clítico 'lhe'",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Entreguei ___ o documento ontem.",
+        "resposta": "lhe",
+        "explicacao": "Regência de 'entregar': a alguém → 'lhe'."
+    },
+    {
+        "id": 871,
+        "categoria": "Português",
+        "tema": "Regência verbal: preferir",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale o uso correto de 'preferir':",
+        "alternativas": [
+            "Prefiro café a chá.",
+            "Prefiro café do que chá.",
+            "Prefiro mais café que chá.",
+            "Prefiro café do chá."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo direto + 'a' para o termo comparado."
+    },
+    {
+        "id": 872,
+        "categoria": "Português",
+        "tema": "Crase: a + a",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Vou à avenida principal.",
+            "Vou a avenida principal.",
+            "Vou à o avenida principal.",
+            "Vou a à avenida principal."
+        ],
+        "resposta": 0,
+        "explicacao": "Artigo feminino + preposição 'a' formam 'à'."
+    },
+    {
+        "id": 873,
+        "categoria": "Português",
+        "tema": "Sintaxe: sujeito indeterminado",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Indique a frase com sujeito indeterminado:",
+        "alternativas": [
+            "Precisa-se de voluntários.",
+            "Nós precisamos de voluntários.",
+            "Os alunos precisam de voluntários.",
+            "A diretora precisa de voluntários."
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo na 3ª pessoa + 'se' com verbo transitivo: indeterminação."
+    },
+    {
+        "id": 874,
+        "categoria": "Português",
+        "tema": "Ortografia: há/a",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: ___ dois anos não nos vemos.",
+        "resposta": "Há",
+        "explicacao": "Indica tempo decorrido: 'há'."
+    },
+    {
+        "id": 875,
+        "categoria": "Português",
+        "tema": "Semântica: antônimos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Antônimo de 'superficial' é:",
+        "alternativas": [
+            "Profundo",
+            "Raso",
+            "Breve",
+            "Claro"
+        ],
+        "resposta": 0,
+        "explicacao": "'Profundo' contrapõe 'superficial'."
+    },
+    {
+        "id": 876,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale o uso correto de aposto:",
+        "alternativas": [
+            "Carlos, o monitor da turma, ajudou a todos.",
+            "Carlos o monitor da turma ajudou a todos.",
+            "Carlos o monitor, da turma ajudou a todos.",
+            "Carlos o monitor da turma, ajudou a todos"
+        ],
+        "resposta": 0,
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 877,
+        "categoria": "Português",
+        "tema": "Pronomes relativos: cujo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado de 'cujo':",
+        "alternativas": [
+            "O livro cujo autor conheço é raro.",
+            "O livro, cujo autor conheço, é raro.",
+            "O livro de cujo autor conheço é raro.",
+            "O livro cujo o autor conheço é raro."
+        ],
+        "resposta": 0,
+        "explicacao": "'Cujo' liga dois substantivos sem artigo e indica posse."
+    },
+    {
+        "id": 878,
+        "categoria": "Português",
+        "tema": "Colocação pronominal",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Disseram-___ que a reunião foi adiada.",
+        "resposta": "me",
+        "explicacao": "Próclise proibida após 'disseram'; usa-se ênclise: 'Disseram-me'."
+    },
+    {
+        "id": 879,
+        "categoria": "Português",
+        "tema": "Coesão: elipse",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Comprei dois livros; (eu) li um', há:",
+        "alternativas": [
+            "Elipse do sujeito",
+            "Anáfora",
+            "Catáfora",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito subentendido no segundo segmento."
+    },
+    {
+        "id": 880,
+        "categoria": "Português",
+        "tema": "Interpretação: gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Gráfico de barras mostra aumento contínuo da coleta seletiva de 2019 a 2024 na escola.",
+        "enunciado": "A tendência apresentada é de:",
+        "alternativas": [
+            "Crescimento",
+            "Queda",
+            "Estagnação",
+            "Oscilação aleatória"
+        ],
+        "resposta": 0,
+        "explicacao": "Barras aumentam ano a ano: indica crescimento."
+    },
+    {
+        "id": 881,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Legenda: 'Figura 1 – Plantio de mudas pelos alunos do 9º ano'.",
+        "enunciado": "A legenda indica:",
+        "alternativas": [
+            "Conteúdo e autoria da imagem",
+            "Opinião do autor",
+            "Conclusão do texto",
+            "Resumo da pesquisa"
+        ],
+        "resposta": 0,
+        "explicacao": "Identifica o que a imagem mostra e quem participa."
+    },
+    {
+        "id": 882,
+        "categoria": "Português",
+        "tema": "Ortografia: tem/têm",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Os alunos ___ dúvidas sobre o projeto.",
+        "resposta": "têm",
+        "explicacao": "Plural da 3ª pessoa: 'têm'."
+    },
+    {
+        "id": 883,
+        "categoria": "Português",
+        "tema": "Regência verbal: lembrar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Lembro-me de você.",
+            "Lembro você de mim.",
+            "Me lembro você.",
+            "Lembro de você para mim."
+        ],
+        "resposta": 0,
+        "explicacao": "Pronominal: 'lembrar-se de'."
+    },
+    {
+        "id": 884,
+        "categoria": "Português",
+        "tema": "Sintaxe: coordenação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Estudou e passou', há:",
+        "alternativas": [
+            "Orações coordenadas assindéticas",
+            "Orações subordinadas",
+            "Período simples",
+            "Aposição"
+        ],
+        "resposta": 0,
+        "explicacao": "Duas orações coordenadas unidas por conjunção."
+    },
+    {
+        "id": 885,
+        "categoria": "Português",
+        "tema": "Figuras de linguagem: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Esperei um século', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Antítese",
+            "Gradação",
+            "Prosopopeia"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero expressivo caracteriza hipérbole."
+    },
+    {
+        "id": 886,
+        "categoria": "Português",
+        "tema": "Crase: locução 'à escola'",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Vou ___ escola amanhã.",
+        "resposta": "à",
+        "explicacao": "Preposição + artigo feminino: 'à'."
+    },
+    {
+        "id": 887,
+        "categoria": "Português",
+        "tema": "Ortografia: sessão/seção/cessão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Haverá sessão de cinema hoje.",
+            "Haverá seção de direitos hoje.",
+            "Haverá cessão de filmes hoje (exibição).",
+            "Haverá seção de cinema de doação."
+        ],
+        "resposta": 0,
+        "explicacao": "'Sessão' é exibição; 'cessão' é transferência; 'seção' é divisão."
+    },
+    {
+        "id": 888,
+        "categoria": "Português",
+        "tema": "Pontuação: ponto e vírgula",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Chegamos cedo; porém, esperamos muito.",
+            "Chegamos cedo porém esperamos muito.",
+            "Chegamos cedo, porém esperamos muito;",
+            "Chegamos cedo: porém, esperamos muito."
+        ],
+        "resposta": 0,
+        "explicacao": "Separa orações coordenadas com conectivo adversativo."
+    },
+    {
+        "id": 889,
+        "categoria": "Português",
+        "tema": "Semântica: denotação e conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'coração de pedra', o sentido é:",
+        "alternativas": [
+            "Conotativo",
+            "Denotativo",
+            "Técnico",
+            "Metalinguístico"
+        ],
+        "resposta": 0,
+        "explicacao": "Figura que expressa frieza por metáfora."
+    },
+    {
+        "id": 890,
+        "categoria": "Português",
+        "tema": "Regência verbal: assistir (ver filme)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Assisti ___ filme ontem.",
+        "resposta": "ao",
+        "explicacao": "Verbo 'assistir' no sentido de ver é transitivo indireto: 'a'."
+    },
+    {
+        "id": 891,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia implícita",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "O aviso dizia: 'Favor manter o silêncio para não interromper a pesquisa em andamento'.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "Há pessoas trabalhando no local",
+            "O local está abandonado",
+            "Não há pesquisas no momento",
+            "O aviso é apenas decorativo"
+        ],
+        "resposta": 0,
+        "explicacao": "A exigência de silêncio indica atividade de pesquisa."
+    },
+    {
+        "id": 892,
+        "categoria": "Português",
+        "tema": "Sintaxe: voz passiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Transforme 'A equipe publicou o artigo' em passiva analítica:",
+        "alternativas": [
+            "O artigo foi publicado pela equipe.",
+            "A equipe foi publicada pelo artigo.",
+            "O artigo é publicado pela equipe (sempre).",
+            "Publicou-se o artigo pela equipe."
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito paciente + locução verbal + agente da passiva."
+    },
+    {
+        "id": 893,
+        "categoria": "Português",
+        "tema": "Crase: antes de 'a qual'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "A regra à qual me refiro é clara.",
+            "A regra a qual me refiro é clara.",
+            "A regra à qual que me refiro é clara.",
+            "A regra a qual me refiro clara é."
+        ],
+        "resposta": 0,
+        "explicacao": "Preposição 'a' + artigo da relativa: 'à qual'."
+    },
+    {
+        "id": 894,
+        "categoria": "Português",
+        "tema": "Pronomes demonstrativos: este/esse/aquele",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em discurso, 'este' refere-se a:",
+        "alternativas": [
+            "Aquilo que será mencionado",
+            "Aquilo já mencionado",
+            "Objeto distante no espaço",
+            "Pessoa alheia ao diálogo"
+        ],
+        "resposta": 0,
+        "explicacao": "'Este' aponta para o que será apresentado."
+    },
+    {
+        "id": 895,
+        "categoria": "Português",
+        "tema": "Ortografia: empecilho",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Grafia correta:",
+        "alternativas": [
+            "Empecilho",
+            "Impecilho",
+            "Enpecilho",
+            "Empecilhoh"
+        ],
+        "resposta": 0,
+        "explicacao": "Forma correta: 'empecilho'."
+    },
+    {
+        "id": 896,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial deslocada",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a frase corretamente pontuada:",
+        "alternativas": [
+            "Quando chove, a rua alaga.",
+            "Quando chove a rua alaga.",
+            "Quando chove; a rua alaga.",
+            "Quando chove a rua, alaga."
+        ],
+        "resposta": 0,
+        "explicacao": "Orações adverbiais antepostas pedem vírgula."
+    },
+    {
+        "id": 897,
+        "categoria": "Português",
+        "tema": "Parônimos: ratificar/retificar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "O conselho ratificou a decisão.",
+            "O conselho retificou a aprovação (confirmou).",
+            "O conselho ratificou o erro (corrigiu).",
+            "O conselho retificou a decisão (confirmou)."
+        ],
+        "resposta": 0,
+        "explicacao": "Ratificar = confirmar; retificar = corrigir."
+    },
+    {
+        "id": 898,
+        "categoria": "Português",
+        "tema": "Regência verbal: namorar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Ela namora Pedro.",
+            "Ela namora com Pedro.",
+            "Ela namora de Pedro.",
+            "Ela namora a Pedro."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo direto: 'namorar alguém'."
+    },
+    {
+        "id": 899,
+        "categoria": "Português",
+        "tema": "Coesão: correferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ana contou a história para Beatriz. Ela ficou emocionada.",
+        "enunciado": "'Ela' retoma corretamente:",
+        "alternativas": [
+            "Beatriz",
+            "Ana",
+            "A história",
+            "Ninguém"
+        ],
+        "resposta": 0,
+        "explicacao": "Contexto favorece correferência com 'Beatriz'."
+    },
+    {
+        "id": 900,
+        "categoria": "Português",
+        "tema": "Crase: antes de verbo",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "Usa-se crase antes de verbo.",
+        "alternativas": [
+            "Verdadeiro",
+            "Falso"
+        ],
+        "resposta": 1,
+        "explicacao": "Não se usa crase antes de verbo."
+    },
+    {
+        "id": 901,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A biblioteca escolar ampliou o acervo e criou clubes de leitura para aproximar os alunos dos livros.",
+        "enunciado": "Qual é a ideia central do texto-base?",
+        "alternativas": [
+            "Aproximar alunos dos livros",
+            "Reduzir gastos com livros",
+            "Treinar professores para concursos",
+            "Suspender empréstimos de obras"
+        ],
+        "resposta": 0,
+        "explicacao": "O foco é incentivar leitura com acervo ampliado e clubes."
+    },
+    {
+        "id": 902,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Clara revisou o texto diversas vezes; ainda assim, encontrou um erro na última leitura.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "A revisão melhora a qualidade, mas não garante perfeição",
+            "Clara não leu o texto",
+            "O texto estava impecável desde o início",
+            "Erros não podem ser corrigidos"
+        ],
+        "resposta": 0,
+        "explicacao": "A persistência reduz erros, embora possam restar alguns."
+    },
+    {
+        "id": 903,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "A escola instalou placas informativas para orientar visitantes sobre os locais de atendimento.",
+        "enunciado": "A finalidade das placas é:",
+        "alternativas": [
+            "Orientar visitantes",
+            "Promover vendas",
+            "Proibir entrada de alunos",
+            "Anunciar eventos esportivos"
+        ],
+        "resposta": 0,
+        "explicacao": "O objetivo explícito é orientar."
+    },
+    {
+        "id": 904,
+        "categoria": "Português",
+        "tema": "Coesão: conectivo adversativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Estudamos bastante; porém, a prova exigiu interpretação além da memorização.",
+        "enunciado": "O conectivo 'porém' indica:",
+        "alternativas": [
+            "Oposição",
+            "Causa",
+            "Conclusão",
+            "Temporariedade"
+        ],
+        "resposta": 0,
+        "explicacao": "Marca contraste entre esforço e exigência da prova."
+    },
+    {
+        "id": 905,
+        "categoria": "Português",
+        "tema": "Semântica: sinonímia contextual",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "O aluno foi diligente no projeto, sempre atento aos detalhes.",
+        "enunciado": "'Diligente' pode ser substituído por:",
+        "alternativas": [
+            "Aplicado",
+            "Distraído",
+            "Indiferente",
+            "Desleixado"
+        ],
+        "resposta": 0,
+        "explicacao": "'Diligente' aproxima-se de 'aplicado' no contexto."
+    },
+    {
+        "id": 906,
+        "categoria": "Português",
+        "tema": "Ortografia: por que/porque/porquê/por que",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Por que você não veio?",
+            "Porque você não veio?",
+            "Porquê você não veio?",
+            "Por que você não veio."
+        ],
+        "resposta": 0,
+        "explicacao": "Interrogativa direta: 'por que' separado e sem acento."
+    },
+    {
+        "id": 907,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto de crase:",
+        "alternativas": [
+            "À medida que estudamos, aprendemos mais.",
+            "A medida que estudamos, aprendemos mais.",
+            "À medida em que estudamos, aprendemos mais.",
+            "A medida em que estudamos, aprendemos mais."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução conjuntiva feminina 'à medida que'."
+    },
+    {
+        "id": 908,
+        "categoria": "Português",
+        "tema": "Concordância verbal: sujeito composto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase com concordância correta:",
+        "alternativas": [
+            "A dedicação e o esforço garantem bons resultados.",
+            "A dedicação e o esforço garante bons resultados.",
+            "A dedicação e o esforço garantiu bons resultados.",
+            "A dedicação e o esforço garante bons resultado."
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito composto no plural pede verbo no plural."
+    },
+    {
+        "id": 909,
+        "categoria": "Português",
+        "tema": "Pontuação: vírgula com vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a opção correta:",
+        "alternativas": [
+            "Professora, podemos começar?",
+            "Professora podemos, começar?",
+            "Professora podemos começar",
+            "Professora podemos, começar."
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 910,
+        "categoria": "Português",
+        "tema": "Figuras: metonímia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Leu Machado de Assis', há:",
+        "alternativas": [
+            "Metonímia (autor pela obra)",
+            "Metáfora",
+            "Hipérbole",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Autor usado para referir-se às obras."
+    },
+    {
+        "id": 911,
+        "categoria": "Português",
+        "tema": "Sintaxe: objeto direto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Ela leu o livro', 'o livro' é:",
+        "alternativas": [
+            "Objeto direto",
+            "Objeto indireto",
+            "Adjunto adverbial",
+            "Predicativo"
+        ],
+        "resposta": 0,
+        "explicacao": "Complemento sem preposição do verbo 'ler'."
+    },
+    {
+        "id": 912,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Ele acordou de mau humor.",
+            "Ele acordou de mal humor.",
+            "Ele acordou com mau humorh.",
+            "Ele acordou de maus humor."
+        ],
+        "resposta": 0,
+        "explicacao": "'Mau' é adjetivo; 'mal' é advérbio/substantivo."
+    },
+    {
+        "id": 913,
+        "categoria": "Português",
+        "tema": "Regência nominal: afinidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Tenho afinidade com textos poéticos.",
+            "Tenho afinidade a textos poéticos.",
+            "Tenho afinidade por textos poéticos com.",
+            "Tenho afinidade de textos poéticos."
+        ],
+        "resposta": 0,
+        "explicacao": "Regência: 'afinidade com'."
+    },
+    {
+        "id": 914,
+        "categoria": "Português",
+        "tema": "Crase: masculino",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Fui ao médico ontem.",
+            "Fui à médico ontem.",
+            "Fui a o médico ontem.",
+            "Fui a médico ontem."
+        ],
+        "resposta": 0,
+        "explicacao": "Contração 'a + o' = 'ao' antes de nome masculino."
+    },
+    {
+        "id": 915,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A manga da camisa rasgou; a manga estava doce.",
+        "enunciado": "O termo 'manga' exemplifica:",
+        "alternativas": [
+            "Polissemia",
+            "Paronímia",
+            "Antonímia",
+            "Homonímia perfeita"
+        ],
+        "resposta": 0,
+        "explicacao": "Mesma forma com sentidos distintos."
+    },
+    {
+        "id": 916,
+        "categoria": "Português",
+        "tema": "Concordância nominal",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "As alunas ficaram satisfeitas.",
+            "As alunas ficou satisfeitas.",
+            "As alunas ficaram satisfeito.",
+            "As alunas ficou satisfeita."
+        ],
+        "resposta": 0,
+        "explicacao": "Adjetivo concorda com núcleo feminino plural."
+    },
+    {
+        "id": 917,
+        "categoria": "Português",
+        "tema": "Interpretação: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Chegou atrasado e disse: 'Sou exemplo de pontualidade'.",
+        "enunciado": "O trecho revela:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbole",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação contrária ao fato."
+    },
+    {
+        "id": 918,
+        "categoria": "Português",
+        "tema": "Interpretação: título",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Título: 'Leitura diária, mente afiada' em campanha escolar.",
+        "enunciado": "O título sugere:",
+        "alternativas": [
+            "Benefício de hábito de leitura",
+            "Proibição de leitura",
+            "Exclusão de alunos",
+            "Corte de investimentos"
+        ],
+        "resposta": 0,
+        "explicacao": "Relaciona leitura diária ao intelecto."
+    },
+    {
+        "id": 919,
+        "categoria": "Português",
+        "tema": "Pontuação: aspas",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto das aspas:",
+        "alternativas": [
+            "O diretor disse: \"Parabéns a todos!\"",
+            "O diretor disse: \"Parabéns a todos!\".",
+            "O diretor disse: \"Parabéns a todos!\"!",
+            "O diretor disse: \"Parabéns a todos!\"?"
+        ],
+        "resposta": 1,
+        "explicacao": "Pontuação fora das aspas na prosa formal brasileira."
+    },
+    {
+        "id": 920,
+        "categoria": "Português",
+        "tema": "Colocação pronominal: próclise",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Não me disseram a verdade.",
+            "Não disseram-me a verdade.",
+            "Me não disseram a verdade.",
+            "Disseram-me não a verdade."
+        ],
+        "resposta": 0,
+        "explicacao": "Atrator 'não' exige próclise."
+    },
+    {
+        "id": 921,
+        "categoria": "Português",
+        "tema": "Regência verbal: preferir",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto de 'preferir':",
+        "alternativas": [
+            "Prefiro leitura a televisão.",
+            "Prefiro leitura do que televisão.",
+            "Prefiro mais leitura que televisão.",
+            "Prefiro leitura do televisão."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo direto + 'a' para termo comparado."
+    },
+    {
+        "id": 922,
+        "categoria": "Português",
+        "tema": "Crase: antes de pronome demonstrativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Referi-me àquela aluna.",
+            "Referi-me a aquela aluna.",
+            "Referi-me à aquela aluna.",
+            "Referi-me a àquela aluna."
+        ],
+        "resposta": 0,
+        "explicacao": "Preposição 'a' + 'aquela' com artigo: crase."
+    },
+    {
+        "id": 923,
+        "categoria": "Português",
+        "tema": "Sintaxe: sujeito indeterminado",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Indique a frase com sujeito indeterminado:",
+        "alternativas": [
+            "Precisa-se de doações.",
+            "Nós precisamos de doações.",
+            "Os alunos precisam de doações.",
+            "A escola precisa de doações."
+        ],
+        "resposta": 0,
+        "explicacao": "Índice de indeterminação com verbo transitivo."
+    },
+    {
+        "id": 924,
+        "categoria": "Português",
+        "tema": "Ortografia: há/a",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Há três anos estudamos juntos.",
+            "A três anos estudamos juntos.",
+            "Há três anos que estudamos juntos?",
+            "A três anos que estudamos juntos."
+        ],
+        "resposta": 0,
+        "explicacao": "Tempo decorrido: 'há'."
+    },
+    {
+        "id": 925,
+        "categoria": "Português",
+        "tema": "Semântica: antônimos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Antônimo de 'hostil':",
+        "alternativas": [
+            "Amigável",
+            "Áspero",
+            "Severo",
+            "Rude"
+        ],
+        "resposta": 0,
+        "explicacao": "'Amigável' se opõe a 'hostil'."
+    },
+    {
+        "id": 926,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto explicativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto do aposto:",
+        "alternativas": [
+            "Marcos, o líder do grupo, apresentou o relatório.",
+            "Marcos o líder do grupo apresentou o relatório.",
+            "Marcos, o líder do grupo apresentou o relatório.",
+            "Marcos o líder, do grupo apresentou o relatório."
+        ],
+        "resposta": 0,
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 927,
+        "categoria": "Português",
+        "tema": "Pronomes relativos: onde/em que",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "A cidade onde nasci é pequena.",
+            "A regra onde me refiro é clara.",
+            "O artigo onde li é interessante.",
+            "O livro onde gostei fala de ciência."
+        ],
+        "resposta": 0,
+        "explicacao": "'Onde' para lugar; para regra/artigo, usa-se 'em que'."
+    },
+    {
+        "id": 928,
+        "categoria": "Português",
+        "tema": "Colocação pronominal: ênclise",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Far-se-á o evento amanhã.",
+            "Se fará o evento amanhã.",
+            "Fará-se o evento amanhã.",
+            "Se, fará o evento amanhã."
+        ],
+        "resposta": 0,
+        "explicacao": "Ênclise com verbo no futuro do presente."
+    },
+    {
+        "id": 929,
+        "categoria": "Português",
+        "tema": "Coesão: elipse do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Comprei os livros; (eu) li dois', há:",
+        "alternativas": [
+            "Elipse do sujeito",
+            "Catáfora",
+            "Anáfora",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito subentendido na segunda oração."
+    },
+    {
+        "id": 930,
+        "categoria": "Português",
+        "tema": "Interpretação: gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Linha de tendência mostra queda no consumo de plástico na escola entre 2020 e 2024.",
+        "enunciado": "A tendência é de:",
+        "alternativas": [
+            "Queda",
+            "Crescimento",
+            "Estabilidade",
+            "Oscilação aleatória"
+        ],
+        "resposta": 0,
+        "explicacao": "A linha desce ao longo dos anos."
+    },
+    {
+        "id": 931,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Subtítulo: 'Resultados preliminares' em relatório científico escolar.",
+        "enunciado": "O subtítulo indica:",
+        "alternativas": [
+            "Seção do texto e estágio da pesquisa",
+            "Opinião do autor",
+            "Conclusão definitiva",
+            "Resumo do artigo"
+        ],
+        "resposta": 0,
+        "explicacao": "Localiza a parte e informa caráter provisório."
+    },
+    {
+        "id": 932,
+        "categoria": "Português",
+        "tema": "Ortografia: tem/têm",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Os grupos têm reuniões semanais.",
+            "Os grupos tem reuniões semanais.",
+            "Os grupos têm reunião semanal (singular).",
+            "Os grupos tem reunião semanal."
+        ],
+        "resposta": 0,
+        "explicacao": "3ª pessoa do plural: 'têm'."
+    },
+    {
+        "id": 933,
+        "categoria": "Português",
+        "tema": "Regência verbal: lembrar-se",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Lembro-me de você.",
+            "Lembro você de mim.",
+            "Me lembro você.",
+            "Lembro de você para mim."
+        ],
+        "resposta": 0,
+        "explicacao": "Pronominal: 'lembrar-se de'."
+    },
+    {
+        "id": 934,
+        "categoria": "Português",
+        "tema": "Sintaxe: conclusão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Estudou; portanto, passou', 'portanto' indica:",
+        "alternativas": [
+            "Conclusão",
+            "Causa",
+            "Oposição",
+            "Tempo"
+        ],
+        "resposta": 0,
+        "explicacao": "Conjunção conclusiva."
+    },
+    {
+        "id": 935,
+        "categoria": "Português",
+        "tema": "Figuras: antítese",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'amor e ódio', há:",
+        "alternativas": [
+            "Antítese",
+            "Hipérbole",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Ideias opostas lado a lado."
+    },
+    {
+        "id": 936,
+        "categoria": "Português",
+        "tema": "Crase: locução adverbial",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Saio à noite.",
+            "Saio a noite.",
+            "Saio à a noite.",
+            "Saio a à noite."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução adverbial feminina admite crase."
+    },
+    {
+        "id": 937,
+        "categoria": "Português",
+        "tema": "Parônimos: sessão/seção/cessão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Haverá sessão de teatro hoje.",
+            "Haverá seção de direitos hoje (exibição).",
+            "Haverá cessão de salas para o evento.",
+            "Haverá seção de doar livros (transferência)."
+        ],
+        "resposta": 0,
+        "explicacao": "Sessão=exibição; cessão=transferência; seção=divisão."
+    },
+    {
+        "id": 938,
+        "categoria": "Português",
+        "tema": "Pontuação: ponto e vírgula",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Chegamos cedo; entretanto, esperamos muito.",
+            "Chegamos cedo entretanto esperamos muito.",
+            "Chegamos cedo, entretanto esperamos muito;",
+            "Chegamos cedo: entretanto, esperamos muito."
+        ],
+        "resposta": 0,
+        "explicacao": "Separa orações coordenadas com conectivo adversativo."
+    },
+    {
+        "id": 939,
+        "categoria": "Português",
+        "tema": "Semântica: conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'olhar de águia' o sentido é:",
+        "alternativas": [
+            "Conotativo",
+            "Denotativo",
+            "Técnico",
+            "Metalinguístico"
+        ],
+        "resposta": 0,
+        "explicacao": "Expressão figurada indicando atenção/acuidade."
+    },
+    {
+        "id": 940,
+        "categoria": "Português",
+        "tema": "Regência verbal: assistir (ver)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale o uso correto:",
+        "alternativas": [
+            "Assisti ao jogo ontem.",
+            "Assisti o jogo ontem.",
+            "Assisti no jogo ontem.",
+            "Assisti dum jogo ontem."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo indireto: 'assistir a'."
+    },
+    {
+        "id": 941,
+        "categoria": "Português",
+        "tema": "Concordância verbal: sujeito plural",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Os participantes ___ prontos.",
+        "resposta": "estão",
+        "explicacao": "Verbo concorda com sujeito plural."
+    },
+    {
+        "id": 942,
+        "categoria": "Português",
+        "tema": "Ortografia: há/a",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: ___ muito tempo, estudamos juntos.",
+        "resposta": "Há",
+        "explicacao": "Tempo decorrido: 'há'."
+    },
+    {
+        "id": 943,
+        "categoria": "Português",
+        "tema": "Ortografia: tem/têm",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Os grupos ___ dúvidas.",
+        "resposta": "têm",
+        "explicacao": "3ª pessoa do plural: 'têm'."
+    },
+    {
+        "id": 944,
+        "categoria": "Português",
+        "tema": "Crase: a + a",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Vou ___ biblioteca hoje.",
+        "resposta": "à",
+        "explicacao": "Preposição + artigo feminino formam 'à'."
+    },
+    {
+        "id": 945,
+        "categoria": "Português",
+        "tema": "Colocação pronominal",
+        "tipo": "lacuna",
+        "dificuldade": "difícil",
+        "enunciado": "Complete: Disseram-___ que o resultado saiu.",
+        "resposta": "me",
+        "explicacao": "Após verbo no pretérito perfeito: ênclise ('Disseram-me')."
+    },
+    {
+        "id": 946,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Ele é de ___ humor.",
+        "resposta": "mau",
+        "explicacao": "'Mau' é adjetivo (qualidade)."
+    },
+    {
+        "id": 947,
+        "categoria": "Português",
+        "tema": "Concordância nominal",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: As provas estavam ___.",
+        "resposta": "difíceis",
+        "explicacao": "Adjetivo concorda com núcleo plural feminino."
+    },
+    {
+        "id": 948,
+        "categoria": "Português",
+        "tema": "Pronomes demonstrativos",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: ___ é o ponto principal.",
+        "resposta": "Este",
+        "explicacao": "'Este' aponta para o que será apresentado."
+    },
+    {
+        "id": 949,
+        "categoria": "Português",
+        "tema": "Regência verbal: assistir (ver)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Assisti ___ espetáculo ontem.",
+        "resposta": "ao",
+        "explicacao": "Transitivo indireto: preposição 'a' + artigo 'o'."
+    },
+    {
+        "id": 950,
+        "categoria": "Português",
+        "tema": "Pontuação: vírgula entre sujeito e verbo",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "Usa-se vírgula para separar sujeito do predicado.",
+        "alternativas": [
+            "Verdadeiro",
+            "Falso"
+        ],
+        "resposta": 1,
+        "explicacao": "Regra geral: não se separa sujeito e verbo por vírgula."
+    },
+    {
+        "id": 951,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia central",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A biblioteca ampliou o acervo e iniciou clubes de leitura para aproximar os alunos dos livros.",
+        "enunciado": "Qual é a ideia central do texto-base?",
+        "alternativas": [
+            "Aproximar alunos dos livros",
+            "Reduzir gastos com livros",
+            "Treinar professores para concursos",
+            "Suspender empréstimos de obras"
+        ],
+        "resposta": 0,
+        "explicacao": "O objetivo é incentivar a leitura com acervo e clubes."
+    },
+    {
+        "id": 952,
+        "categoria": "Português",
+        "tema": "Interpretação: inferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Lucas entregou a atividade antes do prazo; a professora elogiou a organização.",
+        "enunciado": "Infere-se que a professora:",
+        "alternativas": [
+            "Gostou da qualidade do trabalho",
+            "Não recebeu a atividade",
+            "Reprovou o aluno",
+            "Criticou o atraso"
+        ],
+        "resposta": 0,
+        "explicacao": "O elogio à organização sugere aprovação."
+    },
+    {
+        "id": 953,
+        "categoria": "Português",
+        "tema": "Interpretação: finalidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "A escola instalou sinalização para orientar visitantes sobre os locais de atendimento.",
+        "enunciado": "A finalidade da sinalização é:",
+        "alternativas": [
+            "Orientar visitantes",
+            "Proibir entrada de alunos",
+            "Promover vendas",
+            "Anunciar eventos esportivos"
+        ],
+        "resposta": 0,
+        "explicacao": "O objetivo explícito é orientar."
+    },
+    {
+        "id": 954,
+        "categoria": "Português",
+        "tema": "Coesão: adversidade",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Estudou muito; contudo, a prova exigiu interpretação fina.",
+        "enunciado": "O conectivo 'contudo' indica:",
+        "alternativas": [
+            "Oposição",
+            "Causa",
+            "Conclusão",
+            "Adição"
+        ],
+        "resposta": 0,
+        "explicacao": "Marca contraste entre esforço e exigência."
+    },
+    {
+        "id": 955,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Apagou a vela do bolo; a vela do barco rasgou.",
+        "enunciado": "O termo 'vela' exemplifica:",
+        "alternativas": [
+            "Polissemia",
+            "Paronímia",
+            "Antonímia",
+            "Homonímia perfeita"
+        ],
+        "resposta": 0,
+        "explicacao": "Mesma forma lexical com sentidos distintos."
+    },
+    {
+        "id": 956,
+        "categoria": "Português",
+        "tema": "Ortografia: por que/porque/porquê/por que",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Não fui à reunião porque estava doente.",
+            "Não fui à reunião por que estava doente.",
+            "Não fui à reunião porquê estava doente.",
+            "Não fui à reunião por que? estava doente."
+        ],
+        "resposta": 0,
+        "explicacao": "'Porque' conjunção causal."
+    },
+    {
+        "id": 957,
+        "categoria": "Português",
+        "tema": "Crase: locução feminina",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto de crase:",
+        "alternativas": [
+            "À medida que estudou, aprendeu.",
+            "A medida que estudou, aprendeu.",
+            "À medida em que estudou, aprendeu.",
+            "A medida em que estudou, aprendeu."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução conjuntiva feminina: 'à medida que'."
+    },
+    {
+        "id": 958,
+        "categoria": "Português",
+        "tema": "Concordância verbal: sujeito plural",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Os alunos ___ presentes.",
+        "resposta": "estão",
+        "explicacao": "Verbo concorda com sujeito plural."
+    },
+    {
+        "id": 959,
+        "categoria": "Português",
+        "tema": "Pontuação: vocativo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a opção correta:",
+        "alternativas": [
+            "Alunos, entreguem as tarefas.",
+            "Alunos entreguem, as tarefas.",
+            "Alunos entreguem as tarefas",
+            "Alunos, entreguem as tarefas!"
+        ],
+        "resposta": 0,
+        "explicacao": "Vocativo isolado por vírgula."
+    },
+    {
+        "id": 960,
+        "categoria": "Português",
+        "tema": "Figuras: metáfora",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Seu olhar é lâmina', há:",
+        "alternativas": [
+            "Metáfora",
+            "Metonímia",
+            "Hipérbole",
+            "Antítese"
+        ],
+        "resposta": 0,
+        "explicacao": "Comparação implícita por semelhança."
+    },
+    {
+        "id": 961,
+        "categoria": "Português",
+        "tema": "Sintaxe: predicativo do sujeito",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Os estudantes estão motivados', 'motivados' é:",
+        "alternativas": [
+            "Predicativo do sujeito",
+            "Objeto direto",
+            "Adjunto adverbial",
+            "Aposto"
+        ],
+        "resposta": 0,
+        "explicacao": "Qualidade atribuída ao sujeito após verbo de ligação."
+    },
+    {
+        "id": 962,
+        "categoria": "Português",
+        "tema": "Ortografia: mal/mau",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Ele é de ___ humor.",
+        "resposta": "mau",
+        "explicacao": "'Mau' é adjetivo; 'mal' é advérbio/substantivo."
+    },
+    {
+        "id": 963,
+        "categoria": "Português",
+        "tema": "Regência nominal: preferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Tenho preferência por poesia.",
+            "Tenho preferência a poesia.",
+            "Tenho preferência de poesia.",
+            "Tenho preferência sobre poesia."
+        ],
+        "resposta": 0,
+        "explicacao": "Regência: 'preferência por'."
+    },
+    {
+        "id": 964,
+        "categoria": "Português",
+        "tema": "Crase: antes de nome masculino",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Fui ao mercado.",
+            "Fui à mercado.",
+            "Fui a o mercado.",
+            "Fui a mercado."
+        ],
+        "resposta": 0,
+        "explicacao": "'A + o' = 'ao' antes de masculino."
+    },
+    {
+        "id": 965,
+        "categoria": "Português",
+        "tema": "Semântica: polissemia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "A bateria do celular acabou; a bateria tocou por horas.",
+        "enunciado": "O termo 'bateria' exemplifica:",
+        "alternativas": [
+            "Polissemia",
+            "Paronímia",
+            "Antonímia",
+            "Homonímia perfeita"
+        ],
+        "resposta": 0,
+        "explicacao": "Mesma forma com sentidos diferentes (pilha/instrumento)."
+    },
+    {
+        "id": 966,
+        "categoria": "Português",
+        "tema": "Crase: a + a",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Vou ___ universidade amanhã.",
+        "resposta": "à",
+        "explicacao": "Preposição 'a' + artigo feminino 'a' formam 'à'."
+    },
+    {
+        "id": 967,
+        "categoria": "Português",
+        "tema": "Interpretação: ironia",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Chegou atrasado e afirmou: 'Sou exemplo de pontualidade'.",
+        "enunciado": "O trecho revela:",
+        "alternativas": [
+            "Ironia",
+            "Eufemismo",
+            "Hipérbole",
+            "Elipse"
+        ],
+        "resposta": 0,
+        "explicacao": "Afirmação contrária aos fatos indica ironia."
+    },
+    {
+        "id": 968,
+        "categoria": "Português",
+        "tema": "Interpretação: título",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "texto_base": "Título: 'Pequenos hábitos, grandes resultados' em campanha de leitura.",
+        "enunciado": "O título sugere:",
+        "alternativas": [
+            "Impacto de atitudes simples",
+            "Necessidade de obras caras",
+            "Desinteresse dos alunos",
+            "Suspensão de aulas"
+        ],
+        "resposta": 0,
+        "explicacao": "Indica que hábitos simples geram grandes ganhos."
+    },
+    {
+        "id": 969,
+        "categoria": "Português",
+        "tema": "Pontuação: travessão",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso adequado do travessão em diálogo:",
+        "alternativas": [
+            "— Cheguei cedo — disse Maria.",
+            "- Cheguei cedo — disse Maria.",
+            "— Cheguei cedo - disse Maria.",
+            "- Cheguei cedo - disse Maria."
+        ],
+        "resposta": 0,
+        "explicacao": "Travessão é o traço longo nas duas ocorrências."
+    },
+    {
+        "id": 970,
+        "categoria": "Português",
+        "tema": "Pronomes: clítico 'lhe'",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Entreguei ___ o relatório ontem.",
+        "resposta": "lhe",
+        "explicacao": "Regência de 'entregar': a alguém → 'lhe'."
+    },
+    {
+        "id": 971,
+        "categoria": "Português",
+        "tema": "Regência verbal: preferir",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale o uso correto:",
+        "alternativas": [
+            "Prefiro leitura a televisão.",
+            "Prefiro leitura do que televisão.",
+            "Prefiro mais leitura que televisão.",
+            "Prefiro leitura do televisão."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo direto + 'a' para o termo comparado."
+    },
+    {
+        "id": 972,
+        "categoria": "Português",
+        "tema": "Crase: a + a",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Vou à avenida principal.",
+            "Vou a avenida principal.",
+            "Vou à o avenida principal.",
+            "Vou a à avenida principal."
+        ],
+        "resposta": 0,
+        "explicacao": "Artigo feminino + preposição 'a' formam 'à'."
+    },
+    {
+        "id": 973,
+        "categoria": "Português",
+        "tema": "Sintaxe: sujeito indeterminado",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Indique a frase com sujeito indeterminado:",
+        "alternativas": [
+            "Precisa-se de voluntários.",
+            "Nós precisamos de voluntários.",
+            "Os alunos precisam de voluntários.",
+            "A diretora precisa de voluntários."
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo na 3ª pessoa + 'se' com verbo transitivo: indeterminação."
+    },
+    {
+        "id": 974,
+        "categoria": "Português",
+        "tema": "Ortografia: há/a",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: ___ dois meses treinamos.",
+        "resposta": "Há",
+        "explicacao": "Indica tempo decorrido: 'há'."
+    },
+    {
+        "id": 975,
+        "categoria": "Português",
+        "tema": "Semântica: antônimos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Antônimo de 'mesquinho' é:",
+        "alternativas": [
+            "Generoso",
+            "Avarento",
+            "Egoísta",
+            "Rude"
+        ],
+        "resposta": 0,
+        "explicacao": "'Generoso' contrapõe 'mesquinho'."
+    },
+    {
+        "id": 976,
+        "categoria": "Português",
+        "tema": "Pontuação: aposto",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale o uso correto de aposto:",
+        "alternativas": [
+            "Carla, a monitora da turma, ajudou todos.",
+            "Carla a monitora da turma ajudou todos.",
+            "Carla, a monitora da turma ajudou todos.",
+            "Carla a monitora, da turma ajudou todos."
+        ],
+        "resposta": 0,
+        "explicacao": "Aposto explicativo entre vírgulas."
+    },
+    {
+        "id": 977,
+        "categoria": "Português",
+        "tema": "Pronomes relativos: cujo",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado de 'cujo':",
+        "alternativas": [
+            "O livro cujo autor admiro é raro.",
+            "O livro, cujo autor admiro, é raro.",
+            "O livro de cujo autor admiro é raro.",
+            "O livro cujo o autor admiro é raro."
+        ],
+        "resposta": 0,
+        "explicacao": "'Cujo' liga dois substantivos sem artigo e indica posse."
+    },
+    {
+        "id": 978,
+        "categoria": "Português",
+        "tema": "Colocação pronominal: ênclise",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Disseram-___ que a reunião foi adiada.",
+        "resposta": "me",
+        "explicacao": "Após verbo no pretérito perfeito: ênclise ('Disseram-me')."
+    },
+    {
+        "id": 979,
+        "categoria": "Português",
+        "tema": "Coesão: elipse",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'Comprei dois livros; (eu) li um', há:",
+        "alternativas": [
+            "Elipse do sujeito",
+            "Anáfora",
+            "Catáfora",
+            "Assíndeto"
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito subentendido no segundo segmento."
+    },
+    {
+        "id": 980,
+        "categoria": "Português",
+        "tema": "Interpretação: gráfico",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Gráfico de barras mostra crescimento contínuo da participação nos clubes de leitura de 2020 a 2024.",
+        "enunciado": "A tendência apresentada é de:",
+        "alternativas": [
+            "Crescimento",
+            "Queda",
+            "Estagnação",
+            "Oscilação aleatória"
+        ],
+        "resposta": 0,
+        "explicacao": "Barras aumentam ano a ano: crescimento."
+    },
+    {
+        "id": 981,
+        "categoria": "Português",
+        "tema": "Interpretação: paratextos",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Legenda: 'Figura 2 – Feira de Troca de Livros organizada pelo 8º ano'.",
+        "enunciado": "A legenda indica:",
+        "alternativas": [
+            "Conteúdo e autoria/organização da imagem",
+            "Opinião do autor",
+            "Conclusão do texto",
+            "Resumo da pesquisa"
+        ],
+        "resposta": 0,
+        "explicacao": "Identifica o que a imagem mostra e quem a realizou."
+    },
+    {
+        "id": 982,
+        "categoria": "Português",
+        "tema": "Regência verbal: assistir (ver filme)",
+        "tipo": "lacuna",
+        "dificuldade": "médio",
+        "enunciado": "Complete: Assisti ___ filme ontem.",
+        "resposta": "ao",
+        "explicacao": "Verbo 'assistir' no sentido de ver é transitivo indireto: 'a'."
+    },
+    {
+        "id": 983,
+        "categoria": "Português",
+        "tema": "Sintaxe: oração subordinada adjetiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'O livro que comprei é raro', 'que comprei' é:",
+        "alternativas": [
+            "Oração subordinada adjetiva restritiva",
+            "Oração coordenada assindética",
+            "Oração subordinada substantiva",
+            "Aposto explicativo"
+        ],
+        "resposta": 0,
+        "explicacao": "Especifica o antecedente 'livro'."
+    },
+    {
+        "id": 984,
+        "categoria": "Português",
+        "tema": "Figuras: hipérbole",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Em 'Esperei um século', há:",
+        "alternativas": [
+            "Hipérbole",
+            "Antítese",
+            "Metáfora",
+            "Eufemismo"
+        ],
+        "resposta": 0,
+        "explicacao": "Exagero expressivo caracteriza hipérbole."
+    },
+    {
+        "id": 985,
+        "categoria": "Português",
+        "tema": "Crase: à moda de",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Assinale a alternativa correta:",
+        "alternativas": [
+            "Bife à moda da casa.",
+            "Bife a moda da casa.",
+            "Bife à a moda da casa.",
+            "Bife a à moda da casa."
+        ],
+        "resposta": 0,
+        "explicacao": "Locução 'à moda de' admite crase."
+    },
+    {
+        "id": 986,
+        "categoria": "Português",
+        "tema": "Ortografia: tem/têm",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: Os grupos ___ encontros semanais.",
+        "resposta": "têm",
+        "explicacao": "3ª pessoa do plural: 'têm'."
+    },
+    {
+        "id": 987,
+        "categoria": "Português",
+        "tema": "Ortografia: exceção",
+        "tipo": "multipla_escolha",
+        "dificuldade": "fácil",
+        "enunciado": "Grafia correta:",
+        "alternativas": [
+            "Exceção",
+            "Execessão",
+            "Exceçâo",
+            "Exeção"
+        ],
+        "resposta": 0,
+        "explicacao": "Forma correta: 'exceção'."
+    },
+    {
+        "id": 988,
+        "categoria": "Português",
+        "tema": "Pontuação: ponto e vírgula",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "Chegamos cedo; contudo, esperamos muito.",
+            "Chegamos cedo contudo esperamos muito.",
+            "Chegamos cedo, contudo esperamos muito;",
+            "Chegamos cedo: contudo, esperamos muito."
+        ],
+        "resposta": 0,
+        "explicacao": "Separa orações coordenadas com conectivo adversativo."
+    },
+    {
+        "id": 989,
+        "categoria": "Português",
+        "tema": "Semântica: conotação",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em 'coração de pedra', o sentido é:",
+        "alternativas": [
+            "Conotativo",
+            "Denotativo",
+            "Técnico",
+            "Metalinguístico"
+        ],
+        "resposta": 0,
+        "explicacao": "Figura que expressa frieza por metáfora."
+    },
+    {
+        "id": 990,
+        "categoria": "Português",
+        "tema": "Regência verbal: assistir (dar assistência)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale o uso correto:",
+        "alternativas": [
+            "O médico assiste os pacientes.",
+            "O médico assiste aos pacientes (presta assistência).",
+            "O médico assiste a os pacientes.",
+            "O médico assiste dos pacientes."
+        ],
+        "resposta": 0,
+        "explicacao": "No sentido de prestar assistência, é transitivo direto."
+    },
+    {
+        "id": 991,
+        "categoria": "Português",
+        "tema": "Interpretação: ideia implícita",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "texto_base": "Aviso: 'Favor não falar alto; há reunião em andamento'.",
+        "enunciado": "Infere-se que:",
+        "alternativas": [
+            "Há pessoas reunidas no local",
+            "O local está vazio",
+            "Não há reuniões",
+            "O aviso é decorativo"
+        ],
+        "resposta": 0,
+        "explicacao": "A necessidade de silêncio indica reunião ocorrendo."
+    },
+    {
+        "id": 992,
+        "categoria": "Português",
+        "tema": "Sintaxe: voz passiva",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Transforme 'A equipe publicou o artigo' em passiva analítica:",
+        "alternativas": [
+            "O artigo foi publicado pela equipe.",
+            "A equipe foi publicada pelo artigo.",
+            "O artigo é publicado pela equipe (sempre).",
+            "Publicou-se o artigo pela equipe."
+        ],
+        "resposta": 0,
+        "explicacao": "Sujeito paciente + locução verbal + agente da passiva."
+    },
+    {
+        "id": 993,
+        "categoria": "Português",
+        "tema": "Pronomes demonstrativos: este/esse/aquele",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Em discurso, 'esse' refere-se a:",
+        "alternativas": [
+            "Aquilo já mencionado",
+            "Aquilo que será mencionado",
+            "Objeto distante no espaço",
+            "Pessoa alheia ao diálogo"
+        ],
+        "resposta": 0,
+        "explicacao": "'Esse' retoma o que foi mencionado."
+    },
+    {
+        "id": 994,
+        "categoria": "Português",
+        "tema": "Pronomes demonstrativos",
+        "tipo": "lacuna",
+        "dificuldade": "fácil",
+        "enunciado": "Complete: ___ é o tema de hoje.",
+        "resposta": "Este",
+        "explicacao": "'Este' aponta para o que será apresentado."
+    },
+    {
+        "id": 995,
+        "categoria": "Português",
+        "tema": "Ortografia: por/pôr",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a frase correta:",
+        "alternativas": [
+            "Vou pôr o livro na mesa.",
+            "Vou por o livro na mesa.",
+            "Vou pôr o livro na meza.",
+            "Vou por o livro na meza."
+        ],
+        "resposta": 0,
+        "explicacao": "Verbo 'pôr' leva acento circunflexo."
+    },
+    {
+        "id": 996,
+        "categoria": "Português",
+        "tema": "Pontuação: oração adverbial anteposta",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Assinale a frase corretamente pontuada:",
+        "alternativas": [
+            "Quando chove, a rua alaga.",
+            "Quando chove a rua alaga.",
+            "Quando chove; a rua alaga.",
+            "Quando chove a rua, alaga."
+        ],
+        "resposta": 0,
+        "explicacao": "Orações adverbiais antepostas pedem vírgula."
+    },
+    {
+        "id": 997,
+        "categoria": "Português",
+        "tema": "Parônimos: ratificar/retificar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "difícil",
+        "enunciado": "Uso adequado:",
+        "alternativas": [
+            "O conselho ratificou a decisão.",
+            "O conselho retificou a aprovação (confirmou).",
+            "O conselho ratificou o erro (corrigiu).",
+            "O conselho retificou a decisão (confirmou)."
+        ],
+        "resposta": 0,
+        "explicacao": "Ratificar = confirmar; retificar = corrigir."
+    },
+    {
+        "id": 998,
+        "categoria": "Português",
+        "tema": "Regência verbal: namorar",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "enunciado": "Uso correto:",
+        "alternativas": [
+            "Ela namora Pedro.",
+            "Ela namora com Pedro.",
+            "Ela namora de Pedro.",
+            "Ela namora a Pedro."
+        ],
+        "resposta": 0,
+        "explicacao": "Transitivo direto: 'namorar alguém'."
+    },
+    {
+        "id": 999,
+        "categoria": "Português",
+        "tema": "Coesão: correferência",
+        "tipo": "multipla_escolha",
+        "dificuldade": "médio",
+        "texto_base": "Ana contou a história a Beatriz. Ela ficou emocionada.",
+        "enunciado": "'Ela' retoma corretamente:",
+        "alternativas": [
+            "Beatriz",
+            "Ana",
+            "A história",
+            "Ninguém"
+        ],
+        "resposta": 0,
+        "explicacao": "Contexto favorece correferência com 'Beatriz'."
+    },
+    {
+        "id": 1000,
+        "categoria": "Português",
+        "tema": "Concordância: verbo haver impessoal",
+        "tipo": "verdadeiro_falso",
+        "dificuldade": "fácil",
+        "enunciado": "O verbo 'haver' com sentido de existir vai para o plural.",
+        "alternativas": [
+            "Verdadeiro",
+            "Falso"
+        ],
+        "resposta": 1,
+        "explicacao": "Impessoal: permanece no singular ('havia', 'houve')."
     }
 ]
