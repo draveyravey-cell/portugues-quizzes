@@ -29,6 +29,14 @@
   </script>
   <!-- SDK Supabase -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script>
+    (function(){
+      try {
+        window.APP_CONFIG = window.APP_CONFIG || {};
+        if (!Array.isArray(window.APP_CONFIG.adminEmails)) window.APP_CONFIG.adminEmails = [];
+      } catch (e) {}
+    })();
+  </script>
 
   <!-- Evita flash de tema -->
   <script>
@@ -132,6 +140,8 @@
         <a href="#editor" data-nav="editor">Editor</a>
         <a href="#conta" data-nav="conta">Conta</a>
         <a href="#colecoes" data-nav="colecoes">Coleções</a>
+        <a href="#ranking" data-nav="ranking">Ranking</a>
+        <a href="#admin" data-nav="admin">Admin</a>
         <a href="#sobre" data-nav="sobre">Sobre</a>
       </nav>
 
@@ -579,6 +589,40 @@
             </button>
           </div>
           <div id="acc-leaderboard-msg" class="msg" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+    <section id="ranking" class="leaderboard">
+      <h2>Ranking</h2>
+      <div class="controls__row">
+        <label for="lb-period" class="sr-only">Período</label>
+        <select id="lb-period" aria-label="Período">
+          <option value="daily">Diário</option>
+          <option value="weekly">Semanal</option>
+          <option value="monthly">Mensal</option>
+          <option value="all" selected>All-time</option>
+        </select>
+        <button id="lb-reload" class="button" type="button" title="Atualizar ranking">
+          <svg class="icon" aria-hidden="true"><use href="#i-sync" /></svg> Atualizar
+        </button>
+        <span id="lb-msg" class="hint" aria-live="polite" style="margin-left:auto"></span>
+      </div>
+      <div id="lb-list"></div>
+      <div id="lb-reward" class="hint" aria-live="polite"></div>
+    </section>
+
+    <section id="admin" class="admin">
+      <h2>Painel Administrativo</h2>
+      <p class="hint">Acesso restrito a moderadores.</p>
+      <div id="admin-msg" class="msg" aria-live="polite"></div>
+      <div class="admin__grid">
+        <div class="account-card">
+          <h3>Entradas suspeitas</h3>
+          <div id="admin-suspect-list"></div>
+        </div>
+        <div class="account-card">
+          <h3>Logs do Leaderboard</h3>
+          <div id="admin-logs"></div>
         </div>
       </div>
     </section>

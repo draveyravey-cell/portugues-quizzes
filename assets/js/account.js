@@ -200,6 +200,13 @@
         els.leaderboardReload?.addEventListener("click", async () => {
             await renderLeaderboard();
         });
+        els.lbReload?.addEventListener("click", async () => {
+            await renderLeaderboard();
+        });
+        els.lbPeriod?.addEventListener("change", async () => {
+            await renderLeaderboard();
+            logLb("filter_change", { period: els.lbPeriod.value });
+        });
 
         // Eventos globais
         window.addEventListener("online", () => renderStatus());
@@ -241,6 +248,16 @@
         els.leaderboardList = qs("#acc-leaderboard-list");
         els.leaderboardMsg = qs("#acc-leaderboard-msg");
         els.leaderboardReload = qs("#acc-leaderboard-reload");
+
+        els.lbList = qs("#lb-list");
+        els.lbMsg = qs("#lb-msg");
+        els.lbReload = qs("#lb-reload");
+        els.lbReward = qs("#lb-reward");
+        els.lbPeriod = qs("#lb-period");
+
+        els.adminMsg = qs("#admin-msg");
+        els.adminLogs = qs("#admin-logs");
+        els.adminSuspects = qs("#admin-suspect-list");
     }
 
     function startTick() {
@@ -266,6 +283,8 @@
         renderTime();
         startTick();
         renderLeaderboard();
+        subscribeLeaderboardRealtime();
+        renderAdmin();
     }
 
     document.addEventListener("DOMContentLoaded", init);
@@ -279,11 +298,16 @@
         let rows = [];
         try {
             if (client) {
-                const { data, error } = await client
-                    .from("leaderboard")
-                    .select("user_id, score, accuracy, speed, streak_days, updated_at")
-                    .order("score", { ascending: false })
-                    .limit(10);
+                const period = els.lbPeriod?.value || "all";
+                let data = null, error = null;
+                try {
+                    const rpc = await client.rpc("get_leaderboard", { p_period: period });
+                    data = rpc.data; error = rpc.error;
+                } catch (_) {
+                    const q = client.from("leaderboard").select("user_id, score, accuracy, speed, streak_days, updated_at").order("score", { ascending: false }).limit(10);
+                    const resp = await q;
+                    data = resp.data; error = resp.error;
+                }
                 if (error) throw error;
                 rows = Array.isArray(data) ? data : [];
             }
@@ -312,6 +336,15 @@
         });
         listEl.innerHTML = "";
         listEl.appendChild(ul);
+
+        if (els.lbList) {
+            els.lbMsg.textContent = msgEl.textContent;
+            const ul2 = ul.cloneNode(true);
+            els.lbList.innerHTML = "";
+            els.lbList.appendChild(ul2);
+            renderRewards(rows);
+        }
+        logLb("render", { count: rows.length, period: els.lbPeriod?.value || "all" });
     }
     function computeLocalEntry() {
         try {
@@ -364,4 +397,124 @@
         const stkS = Math.max(0, Math.min(1, streak / 30));
         return +(accS * accW + spdS * spdW + stkS * stkW).toFixed(4);
     }
+
+    function renderRewards(rows) {
+        if (!els.lbReward) return;
+        const u = getUser();
+        const uid = u?.id || null;
+        let text = "";
+        if (rows && rows.length) {
+            const idx = uid ? rows.findIndex(r => String(r.user_id) === String(uid)) : -1;
+            if (idx === 0) text = "Você está em 1º 🥇";
+            else if (idx === 1) text = "Você está em 2º 🥈";
+            else if (idx === 2) text = "Você está em 3º 🥉";
+            else if (idx >= 0) text = `Sua posição: ${idx + 1}`;
+        }
+        els.lbReward.textContent = text;
+        if (text) awardTop3(rows);
+    }
+    async function awardTop3(rows) {
+        const client = getClient();
+        if (!client || !rows || !rows.length) return;
+        const period = els.lbPeriod?.value || "all";
+        const top = rows.slice(0, 3);
+        try {
+            const payload = top.map((r, i) => ({ user_id: r.user_id, period, place: i + 1, kind: "medal", created_at: new Date().toISOString() }));
+            await client.from("rewards").upsert(payload, { onConflict: "user_id,period,kind" });
+        } catch {}
+    }
+
+    function subscribeLeaderboardRealtime() {
+        const client = getClient();
+        if (!client) return;
+        try {
+            const ch = client.channel("lb");
+            ch.on("postgres_changes", { event: "*", schema: "public", table: "leaderboard" }, () => {
+                renderLeaderboard();
+                logLb("realtime_update", {});
+            }).subscribe();
+        } catch {}
+    }
+
+    function isModerator() {
+        try {
+            const u = getUser();
+            const list = Array.isArray(window.APP_CONFIG?.adminEmails) ? window.APP_CONFIG.adminEmails : [];
+            return !!(u?.email && list.includes(u.email));
+        } catch { return false; }
+    }
+    async function renderAdmin() {
+        const amsg = els.adminMsg;
+        if (!amsg) return;
+        if (!isModerator()) { amsg.textContent = "Acesso negado."; return; }
+        amsg.textContent = "";
+        await loadAdminSuspects();
+        await loadAdminLogs();
+    }
+    async function loadAdminLogs() {
+        if (!els.adminLogs) return;
+        const client = getClient();
+        els.adminLogs.innerHTML = "";
+        if (!client) return;
+        try {
+            const { data } = await client.from("leaderboard_logs").select("created_at, type, detail").order("created_at", { ascending: false }).limit(50);
+            const ul = document.createElement("ul"); ul.className = "options";
+            (data || []).forEach((r) => {
+                const li = document.createElement("li"); li.className = "option";
+                li.innerHTML = `<div style="display:flex; gap:.6rem; align-items:center; width:100%"><span>${new Date(r.created_at).toLocaleString("pt-BR")}</span><span style="flex:1">${r.type}</span><span>${JSON.stringify(r.detail)}</span></div>`;
+                ul.appendChild(li);
+            });
+            els.adminLogs.appendChild(ul);
+        } catch {}
+    }
+    async function loadAdminSuspects() {
+        if (!els.adminSuspects) return;
+        const client = getClient();
+        els.adminSuspects.innerHTML = "";
+        if (!client) return;
+        try {
+            const { data } = await client.from("leaderboard").select("user_id, score, accuracy, speed, streak_days, updated_at").order("score", { ascending: false }).limit(100);
+            const sus = (data || []).filter(r => (r.speed || 0) > 20 || (r.accuracy || 0) > 0.98 && (r.streak_days || 0) < 2);
+            const ul = document.createElement("ul"); ul.className = "options";
+            sus.forEach(r => {
+                const li = document.createElement("li"); li.className = "option";
+                const btnFlag = document.createElement("button"); btnFlag.className = "button"; btnFlag.textContent = "Marcar suspeito";
+                btnFlag.addEventListener("click", () => flagEntry(r.user_id, "suspeito"));
+                const btnValid = document.createElement("button"); btnValid.className = "button"; btnValid.textContent = "Validar";
+                btnValid.addEventListener("click", () => validateEntry(r.user_id));
+                li.innerHTML = `<div style="display:flex; gap:.6rem; align-items:center; width:100%"><span style="flex:1">${r.user_id}</span><span>Acc ${Math.round(r.accuracy*100)}%</span><span>Vel ${r.speed?.toFixed?.(2) || r.speed}</span><span>Seq ${r.streak_days}d</span></div>`;
+                li.appendChild(btnFlag); li.appendChild(btnValid);
+                ul.appendChild(li);
+            });
+            els.adminSuspects.appendChild(ul);
+        } catch {}
+    }
+    async function flagEntry(userId, reason) {
+        const client = getClient(); if (!client) return;
+        try { await client.from("leaderboard_flags").upsert({ user_id: userId, reason, created_at: new Date().toISOString() }); logLb("flag", { userId, reason }); await loadAdminSuspects(); } catch {}
+    }
+    async function validateEntry(userId) {
+        const client = getClient(); if (!client) return;
+        try { await client.from("leaderboard_flags").upsert({ user_id: userId, reason: "validado", created_at: new Date().toISOString() }); logLb("validate", { userId }); await loadAdminSuspects(); } catch {}
+    }
+    async function logLb(type, detail) {
+        const client = getClient();
+        try {
+            await client.from("leaderboard_logs").insert({ type, detail, created_at: new Date().toISOString() });
+        } catch {}
+    }
+
+    function runLbTests() {
+        const attempts = [];
+        const now = Date.now();
+        for (let i = 0; i < 10; i++) attempts.push({ correct: i % 2 === 0, at: now - i * 60000, value: { t: 30000 } });
+        const acc = computeAccuracy(attempts);
+        const spd = computeSpeed(attempts);
+        const stk = computeStreakDays(attempts);
+        const score = computeScore(acc, spd, stk);
+        const ok = acc > 0 && spd > 0 && stk >= 1 && score > 0;
+        try { console.log("LB tests:", { acc, spd, stk, score, ok }); } catch {}
+        return ok;
+    }
+    try { window.__runLbTests = runLbTests; } catch {}
 })();
