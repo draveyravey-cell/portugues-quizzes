@@ -441,3 +441,10 @@ Observação sobre versionamento (2.x):
 - Títulos de exercícios de figuras que revelavam a resposta (ex.: “Ironia”, “Metonímia”, “Hipérbole”) foram trocados por um tema neutro (“Figuras: identificar recurso”).
 ### Files
 - `data/exercicios.json` (ajuste de `tema` em itens pontuais)
+## [3.5.0] — Aleatorização de alternativas
+### Added
+- Alternativas de exercícios de múltipla escolha são embaralhadas na abertura do Player.
+### Changed
+- Correção preservada por mapeamento interno; destaque visual de correta/incorreta respeita a ordem embaralhada.
+### Files
+- `assets/js/player.js` (embaralhamento e verificação baseada no índice exibido)

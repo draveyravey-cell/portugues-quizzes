@@ -104,7 +104,7 @@
 
   function openInternal(q, lastTrigger = null) {
     st.aberto = true; st.mode = "exercise"; st.q = q;
-    st.selecionada = null; st.corrigido = false; st.correta = false; st.lastTrigger = lastTrigger;
+    st.selecionada = null; st.corrigido = false; st.correta = false; st.lastTrigger = lastTrigger; st.mapAlt = null; st.correctIdxDisplay = null;
 
     if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
     if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
@@ -150,18 +150,24 @@
       ul.setAttribute("aria-describedby", enun.id);
       const name = `op-${q.id}`;
 
-      (q.alternativas || []).forEach((alt, i) => {
+      const alts = (q.alternativas || []);
+      const idxs = alts.map((_, i) => i);
+      for (let i = idxs.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [idxs[i], idxs[j]] = [idxs[j], idxs[i]]; }
+      st.mapAlt = idxs.slice();
+      st.correctIdxDisplay = idxs.indexOf(q.resposta);
+
+      idxs.forEach((origIdx, displayIdx) => {
         const li = document.createElement("li"); li.className = "option";
         const label = document.createElement("label"); label.style.flex = "1";
         const input = document.createElement("input");
-        input.type = "radio"; input.name = name; input.value = String(i);
-        input.setAttribute("aria-label", `Alternativa ${i + 1}`);
+        input.type = "radio"; input.name = name; input.value = String(displayIdx);
+        input.setAttribute("aria-label", `Alternativa ${displayIdx + 1}`);
         input.addEventListener("change", () => {
-          st.selecionada = i; els.verify.disabled = false;
+          st.selecionada = displayIdx; els.verify.disabled = false;
           ul.querySelectorAll(".option").forEach((opt) => opt.classList.remove("is-selected"));
           li.classList.add("is-selected");
         });
-        const span = document.createElement("span"); span.textContent = alt;
+        const span = document.createElement("span"); span.textContent = alts[origIdx];
         label.appendChild(input); label.appendChild(span);
         li.appendChild(label); ul.appendChild(li);
       });
@@ -236,7 +242,7 @@
 
     if (tipo === "multipla_escolha") {
       if (st.selecionada == null) return;
-      const corretaIndex = q.resposta;
+      const corretaIndex = Number.isFinite(st?.correctIdxDisplay) ? Number(st.correctIdxDisplay) : Number(q.resposta);
       ok = Number(st.selecionada) === Number(corretaIndex);
 
       if (!st.exam.active) {
