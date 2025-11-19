@@ -8,7 +8,9 @@ const state = {
   filtroDificuldade: "all",
   viewMode: "all", // all | fav | err
   page: 1,
-  pageSize: 12
+  pageSize: 12,
+  idRangeStart: null,
+  idRangeEnd: null
 };
 
 const els = {
@@ -668,6 +670,10 @@ function applyFilters(lista) {
     if (dif && dif !== "all") {
       if (normalizar(it.dificuldade) !== normalizar(dif)) return false;
     }
+    if (Number.isFinite(state.idRangeStart) && Number.isFinite(state.idRangeEnd)) {
+      const idn = typeof it.id === "number" ? it.id : parseInt(String(it.id), 10);
+      if (!Number.isFinite(idn) || idn < state.idRangeStart || idn > state.idRangeEnd) return false;
+    }
     if (state.viewMode === "fav") {
       if (!favSet.has(String(it.id))) return false;
     } else if (state.viewMode === "err") {
@@ -853,5 +859,17 @@ function dispatchDatasetReady(isError = false) {
 /* Expor itens filtrados e dataset completo (para Coleções/Simulado) */
 window.App = {
   getFilteredItems: () => applyFilters(state.questoes),
-  getAllItems: () => state.questoes.slice()
+  getAllItems: () => state.questoes.slice(),
+  setIdRange: (start, end) => {
+    state.idRangeStart = Number.isFinite(start) ? start : null;
+    state.idRangeEnd = Number.isFinite(end) ? end : null;
+    resetToFirstPage();
+    renderLista();
+  },
+  clearIdRange: () => {
+    state.idRangeStart = null;
+    state.idRangeEnd = null;
+    resetToFirstPage();
+    renderLista();
+  }
 };

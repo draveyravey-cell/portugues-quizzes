@@ -34,10 +34,8 @@
 
   <link rel="stylesheet" href="assets/css/styles.css" />
   <style>
-    /* Destaque visual para itens exibidos pelo Range Viewer */
-    .range-view .range-item { border-left: 4px solid #4c8bf5; padding-left: .6rem; }
-    .range-view .texto-base { margin:.4rem 0; font-style: italic; opacity:.9; }
-    .range-view .enunciado { margin-top:.3rem; }
+    .controls__row--range { display:flex; gap:.6rem; align-items:center; flex-wrap:wrap; }
+    .controls__row--range input { max-width: 160px; }
   </style>
 </head>
 
@@ -251,8 +249,17 @@
               <use href="#i-info" />
             </svg> Limpar
           </button>
-        </div>
       </div>
+      </div>
+      <div class="controls__row controls__row--range">
+        <label class="sr-only" for="range-start">ID inicial</label>
+        <input id="range-start" type="number" inputmode="numeric" placeholder="Início (ex.: 1101)" />
+        <label class="sr-only" for="range-end">ID final</label>
+        <input id="range-end" type="number" inputmode="numeric" placeholder="Fim (ex.: 1150)" />
+        <button id="range-btn" class="button" type="button" title="Mostrar itens do intervalo">Mostrar Itens</button>
+        <span id="range-msg" class="hint" aria-live="polite" style="margin-left:auto"></span>
+      </div>
+      <div id="range-output" class="hint" aria-live="polite"></div>
     </section>
 
     <section class="lista">
@@ -266,19 +273,6 @@
 
       <!-- Paginação (rodapé) -->
       <div id="pager-bottom" class="pager" aria-label="Paginação de exercícios"></div>
-    </section>
-
-    <section class="controls" id="range-viewer">
-      <h2>Visualizar por intervalo de ID</h2>
-      <div class="controls__row">
-        <label class="sr-only" for="range-start">ID inicial</label>
-        <input id="range-start" type="number" inputmode="numeric" placeholder="Início (ex.: 1101)" />
-        <label class="sr-only" for="range-end">ID final</label>
-        <input id="range-end" type="number" inputmode="numeric" placeholder="Fim (ex.: 1150)" />
-        <button id="range-btn" class="button primary" type="button" title="Mostrar itens do intervalo">Mostrar Itens</button>
-      </div>
-      <div id="range-msg" class="msg" aria-live="polite"></div>
-      <div id="range-output" class="range-view"></div>
     </section>
 
     <section id="historico" class="history">

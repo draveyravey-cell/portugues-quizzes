@@ -7,7 +7,6 @@
   - Renderiza de forma eficiente (DocumentFragment) e responsiva
 */
 (function () {
-  let dataset = [];
   let ready = false;
 
   const els = {
@@ -18,22 +17,19 @@
     out: null
   };
 
-  // Obtém dataset do app ou faz fetch direto
-  async function ensureData() {
-    if (dataset && dataset.length) return dataset;
+  // Garante que há dados carregados (App ou servidor)
+  async function ensureReady() {
     try {
-      const src = window.App?.getAllItems?.();
-      if (Array.isArray(src) && src.length) { dataset = src.slice(); ready = true; return dataset; }
-    } catch (_) { /* fallback abaixo */ }
+      const arr = window.App?.getAllItems?.() || [];
+      if (Array.isArray(arr) && arr.length) { ready = true; return true; }
+    } catch (_) { }
     try {
       const resp = await fetch("data/exercicios.json", { cache: "no-store" });
       const data = await resp.json();
-      dataset = Array.isArray(data) ? data : (data.questoes || []);
-      ready = true; return dataset;
-    } catch (e) {
-      setMsg("Falha ao carregar o dataset.");
-      return [];
-    }
+      const arr = Array.isArray(data) ? data : (data.questoes || []);
+      if (arr.length) ready = true;
+      return ready;
+    } catch (_) { setMsg("Falha ao carregar o dataset.", "error"); return false; }
   }
 
   function setMsg(text, type = "info") {
@@ -70,73 +66,22 @@
     return { start: s, end: e };
   }
 
-  // Renderização eficiente dos itens selecionados
-  function renderItems(items) {
+  // Mostra contador para feedback rápido
+  function renderCount(n) {
     if (!els.out) return;
-    const frag = document.createDocumentFragment();
-    const count = document.createElement("p");
-    count.className = "hint";
-    count.textContent = `Exibindo ${items.length} item(ns).`;
-    frag.appendChild(count);
-
-    const ul = document.createElement("ul");
-    ul.className = "options";
-    items.forEach((q) => {
-      const li = document.createElement("li");
-      li.className = "option range-item";
-
-      const header = document.createElement("div");
-      header.style.display = "flex";
-      header.style.gap = ".6rem";
-      header.style.alignItems = "center";
-
-      const id = document.createElement("span");
-      id.style.minWidth = "4rem";
-      id.textContent = `Q${q.id}`;
-
-      const meta = document.createElement("span");
-      meta.textContent = `${q.tema || q.categoria || "Português"} • ${q.tipo?.replace("_"," ") || "—"} • ${q.dificuldade || "—"}`;
-
-      header.appendChild(id); header.appendChild(meta);
-      li.appendChild(header);
-
-      if (q.texto_base) {
-        const block = document.createElement("blockquote");
-        block.className = "texto-base";
-        block.textContent = q.texto_base;
-        li.appendChild(block);
-      }
-
-      const enun = document.createElement("div");
-      enun.className = "enunciado";
-      enun.textContent = q.enunciado || "";
-      li.appendChild(enun);
-
-      frag.appendChild(li);
-    });
-    ul.appendChild(frag);
-    els.out.innerHTML = "";
-    els.out.appendChild(ul);
+    els.out.textContent = `Exibindo ${n} item(ns) no bloco principal.`;
   }
 
   async function onShowClick() {
     const range = validateInputs();
     if (!range) return;
-    const data = await ensureData();
-    if (!data.length) { setMsg("Nenhum dado disponível.", "error"); return; }
-
-    // Filtra por id dentro do intervalo (O(n)) — eficiente para datasets médios
-    const selected = data.filter((q) => {
-      const id = (typeof q.id === "number") ? q.id : parseIntSafe(q.id);
-      return Number.isFinite(id) && id >= range.start && id <= range.end;
-    });
-    if (!selected.length) {
-      setMsg("Nenhum item encontrado no intervalo especificado.", "info");
-      els.out.innerHTML = "";
-      return;
-    }
-    setMsg(ready ? "Itens carregados do app." : "Itens carregados do servidor.", "success");
-    renderItems(selected);
+    const ok = await ensureReady();
+    if (!ok) return;
+    window.App?.setIdRange?.(range.start, range.end);
+    const items = window.App?.getFilteredItems?.() || [];
+    if (!items.length) { setMsg("Nenhum item encontrado no intervalo especificado.", "info"); renderCount(0); return; }
+    setMsg("Intervalo aplicado.", "success");
+    renderCount(items.length);
   }
 
   function bind() {
@@ -145,14 +90,13 @@
     els.btn = document.querySelector("#range-btn");
     els.msg = document.querySelector("#range-msg");
     els.out = document.querySelector("#range-output");
-    if (!els.start || !els.end || !els.btn || !els.out) return;
+    if (!els.start || !els.end || !els.btn) return;
     els.btn.addEventListener("click", onShowClick);
   }
 
   // Escuta o evento do app para saber quando o dataset estiver pronto
   window.addEventListener("app:data-ready", (ev) => {
     ready = !ev?.detail?.error;
-    try { dataset = window.App?.getAllItems?.() || dataset; } catch (_) { }
   });
 
   document.addEventListener("DOMContentLoaded", bind);
