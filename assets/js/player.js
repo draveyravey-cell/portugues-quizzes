@@ -12,7 +12,8 @@
     lastTrigger: null,
     seq: null,          // { list, idx, results Map<qid,{selected,correct,tipo,at}>, sessionId }
     trap: null,
-    exam: { active: false, startAt: 0, durationMin: 0 }
+    exam: { active: false, startAt: 0, durationMin: 0 },
+    locked: true
   };
 
   const els = {
@@ -36,6 +37,7 @@
     els.modal = els.overlay ? qs(".modal", els.overlay) : null;
     els.title = qs("#player-title");
     els.close = qs("#player-close");
+    els.lock = qs("#player-lock");
     els.content = qs("#player-content");
     els.verify = qs("#player-verify");
     els.feedback = qs("#player-feedback");
@@ -45,9 +47,14 @@
 
     if (!els.overlay || !els.verify) return;
 
+    const saved = sessionStorage.getItem("pp.locked");
+    st.locked = saved == null ? true : saved === "1";
+    updateLockUI();
+
     els.close?.addEventListener("click", closePlayer);
-    els.overlay.addEventListener("mousedown", (e) => { if (e.target === els.overlay) closePlayer(); });
-    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && st.aberto) { e.preventDefault(); closePlayer(); } });
+    els.overlay.addEventListener("mousedown", (e) => { if (e.target === els.overlay && !st.locked) closePlayer(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && st.aberto) { if (st.locked) { e.preventDefault(); return; } e.preventDefault(); closePlayer(); } });
+    els.lock?.addEventListener("click", toggleLock);
 
     els.verify.addEventListener("click", () => {
       const mode = els.verify.dataset.mode || "verify";
@@ -533,6 +540,37 @@
     const firstRadio = els.content?.querySelector('input[type="radio"]');
     if (firstRadio) { firstRadio.focus(); return; }
     els.close?.focus();
+  }
+
+  function toggleLock() {
+    st.locked = !st.locked;
+    sessionStorage.setItem("pp.locked", st.locked ? "1" : "0");
+    updateLockUI();
+    playLockSound(!st.locked);
+  }
+
+  function updateLockUI() {
+    if (!els.lock) return;
+    const use = els.lock.querySelector("use");
+    if (use) use.setAttribute("href", st.locked ? "#i-lock" : "#i-unlock");
+    els.lock.classList.toggle("is-open", !st.locked);
+    els.lock.setAttribute("aria-pressed", st.locked ? "false" : "true");
+    els.lock.setAttribute("aria-label", st.locked ? "Trancar saída" : "Destrancar saída");
+    els.lock.setAttribute("title", st.locked ? "Trancar saída (só Fechar/Finalizar)" : "Destrancar saída (permite clicar fora)");
+  }
+
+  function playLockSound(open) {
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const o = ctx.createOscillator();
+      const g = ctx.createGain();
+      o.type = "sine";
+      o.frequency.value = open ? 880 : 440;
+      g.gain.value = 0.06;
+      o.connect(g); g.connect(ctx.destination);
+      o.start();
+      setTimeout(() => { o.stop(); ctx.close(); }, 120);
+    } catch {}
   }
 
   function normText(s) { return String(s || "").toLowerCase().trim().replace(/\s+/g, " "); }

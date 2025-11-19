@@ -110,6 +110,12 @@
     <symbol id="i-list" viewBox="0 0 24 24">
       <path fill="currentColor" d="M4 6h16v2H4zM4 11h16v2H4zM4 16h16v2H4z" />
     </symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M6 10V8a6 6 0 1 1 12 0v2h1a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h1Zm2 0h8V8a4 4 0 1 0-8 0v2Z" />
+    </symbol>
+    <symbol id="i-unlock" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M17 8a4 4 0 1 0-8 0h2a2 2 0 1 1 4 0v2h5a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-9a1 1 0 0 1 1-1h12V8Z" />
+    </symbol>
   </svg>
 
   <!-- Skip link -->
@@ -640,7 +646,12 @@
       aria-describedby="player-desc">
       <header class="modal__header">
         <h2 id="player-title">Responder exercício</h2>
-        <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+        <div class="modal__actions">
+          <button id="player-lock" class="icon-btn lock-btn" type="button" aria-label="Trancar saída" title="Trancar saída (só Fechar/Finalizar)">
+            <svg class="icon" aria-hidden="true"><use href="#i-lock" /></svg>
+          </button>
+          <button id="player-close" class="icon-btn" type="button" aria-label="Fechar">✕</button>
+        </div>
       </header>
 
       <div class="modal__body" id="player-content">
