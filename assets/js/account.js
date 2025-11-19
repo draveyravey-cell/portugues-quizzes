@@ -427,12 +427,24 @@
         if (!client) return;
         try {
             const ch = client.channel("lb");
-            ch.on("postgres_changes", { event: "*", schema: "public", table: "leaderboard" }, () => {
-                renderLeaderboard();
-                logLb("realtime_update", {});
-            }).subscribe();
-        } catch {}
+            const onChange = () => { renderLeaderboard(); logLb("realtime_update", {}); };
+            ch.on("postgres_changes", { event: "INSERT", schema: "public", table: "leaderboard" }, onChange);
+            ch.on("postgres_changes", { event: "UPDATE", schema: "public", table: "leaderboard" }, onChange);
+            ch.on("postgres_changes", { event: "DELETE", schema: "public", table: "leaderboard" }, onChange);
+            ch.subscribe((status) => {
+                if (els.lbMsg) {
+                    if (status === "SUBSCRIBED") els.lbMsg.textContent = "Conectado ao Realtime";
+                    else if (status === "CHANNEL_ERROR") els.lbMsg.textContent = "Erro no Realtime (fallback ativo)";
+                    else if (status === "TIMED_OUT") els.lbMsg.textContent = "Realtime timeout (fallback ativo)";
+                }
+                if (status === "SUBSCRIBED") stopLbPoll(); else startLbPoll(10000);
+            });
+        } catch { startLbPoll(10000); }
     }
+
+    let lbPollTimer = null;
+    function startLbPoll(ms) { try { stopLbPoll(); lbPollTimer = setInterval(() => { renderLeaderboard(); }, ms || 10000); } catch {} }
+    function stopLbPoll() { try { if (lbPollTimer) clearInterval(lbPollTimer); lbPollTimer = null; } catch {} }
 
     function isModerator() {
         try {
