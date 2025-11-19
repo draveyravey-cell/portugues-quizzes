@@ -197,6 +197,10 @@
             renderTime();
         });
 
+        els.leaderboardReload?.addEventListener("click", async () => {
+            await renderLeaderboard();
+        });
+
         // Eventos globais
         window.addEventListener("online", () => renderStatus());
         window.addEventListener("offline", () => renderStatus());
@@ -233,6 +237,10 @@
 
         els.logout = qs("#acc-logout");
         els.modalBtn = qs("#acc-open-modal");
+
+        els.leaderboardList = qs("#acc-leaderboard-list");
+        els.leaderboardMsg = qs("#acc-leaderboard-msg");
+        els.leaderboardReload = qs("#acc-leaderboard-reload");
     }
 
     function startTick() {
@@ -257,7 +265,103 @@
         renderStatus();
         renderTime();
         startTick();
+        renderLeaderboard();
     }
 
     document.addEventListener("DOMContentLoaded", init);
+    async function renderLeaderboard() {
+        const listEl = els.leaderboardList;
+        const msgEl = els.leaderboardMsg;
+        if (!listEl || !msgEl) return;
+        listEl.innerHTML = "";
+        msgEl.textContent = "Carregando...";
+        const client = getClient();
+        let rows = [];
+        try {
+            if (client) {
+                const { data, error } = await client
+                    .from("leaderboard")
+                    .select("user_id, score, accuracy, speed, streak_days, updated_at")
+                    .order("score", { ascending: false })
+                    .limit(10);
+                if (error) throw error;
+                rows = Array.isArray(data) ? data : [];
+            }
+        } catch (e) {
+            rows = [];
+        }
+        if (!rows.length) {
+            const local = computeLocalEntry();
+            rows = local ? [local] : [];
+            msgEl.textContent = rows.length ? "Leaderboard local (configure Supabase para global)." : "Sem dados.";
+        } else {
+            msgEl.textContent = "";
+        }
+        const ul = document.createElement("ul");
+        ul.className = "options";
+        rows.forEach((r, idx) => {
+            const li = document.createElement("li");
+            li.className = "option";
+            const rank = String(idx + 1).padStart(2, "0");
+            const uid = String(r.user_id || "");
+            const acc = typeof r.accuracy === "number" ? Math.round(r.accuracy * 100) : r.accuracy;
+            const spd = typeof r.speed === "number" ? r.speed.toFixed(2) : r.speed;
+            const stk = r.streak_days || 0;
+            li.innerHTML = `<div style="display:flex; gap:.6rem; align-items:center; width:100%"><strong>${rank}</strong><span style="flex:1">${uid}</span><span>Acc ${acc}%</span><span>Vel ${spd}</span><span>Seq ${stk}d</span></div>`;
+            ul.appendChild(li);
+        });
+        listEl.innerHTML = "";
+        listEl.appendChild(ul);
+    }
+    function computeLocalEntry() {
+        try {
+            const attempts = window.Store?.getAllAttempts?.() || [];
+            if (!attempts.length) return null;
+            const acc = computeAccuracy(attempts);
+            const speed = computeSpeed(attempts);
+            const streak = computeStreakDays(attempts);
+            const score = computeScore(acc, speed, streak);
+            const u = getUser();
+            return { user_id: u?.id || "local", score, accuracy: acc, speed, streak_days: streak, updated_at: new Date().toISOString() };
+        } catch {
+            return null;
+        }
+    }
+    function computeAccuracy(attempts) {
+        const total = attempts.length;
+        const correct = attempts.filter(a => !!a.correct).length;
+        return total ? (correct / total) : 0;
+    }
+    function computeSpeed(attempts) {
+        const times = attempts.map(a => {
+            const v = a.value;
+            if (v && typeof v === "object" && v.t != null) return Math.max(1, Number(v.t) || 0);
+            return null;
+        }).filter(x => x != null);
+        if (!times.length) return 0;
+        times.sort((a, b) => a - b);
+        const n = Math.min(30, times.length);
+        const recent = times.slice(-n);
+        recent.sort((a, b) => a - b);
+        const med = recent[Math.floor(recent.length / 2)];
+        return med ? (60000 / med) : 0;
+    }
+    function computeStreakDays(attempts) {
+        const days = new Set(attempts.map(a => new Date(a.at || Date.now()).toISOString().slice(0, 10)));
+        const today = new Date();
+        let streak = 0;
+        for (let i = 0; i < 365; i++) {
+            const d = new Date(today.getTime() - i * 86400000);
+            const key = d.toISOString().slice(0, 10);
+            if (days.has(key)) streak += 1; else break;
+        }
+        return streak;
+    }
+    function computeScore(acc, speed, streak) {
+        const accW = 0.5, spdW = 0.3, stkW = 0.2;
+        const accS = Math.max(0, Math.min(1, acc));
+        const spdS = Math.max(0, Math.min(1, speed / 5));
+        const stkS = Math.max(0, Math.min(1, streak / 30));
+        return +(accS * accW + spdS * spdW + stkS * stkW).toFixed(4);
+    }
 })();

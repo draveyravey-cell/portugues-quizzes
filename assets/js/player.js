@@ -13,7 +13,8 @@
     seq: null,          // { list, idx, results Map<qid,{selected,correct,tipo,at}>, sessionId }
     trap: null,
     exam: { active: false, startAt: 0, durationMin: 0 },
-    locked: true
+    locked: true,
+    qStartAt: 0
   };
 
   const els = {
@@ -111,7 +112,7 @@
 
   function openInternal(q, lastTrigger = null) {
     st.aberto = true; st.mode = "exercise"; st.q = q;
-    st.selecionada = null; st.corrigido = false; st.correta = false; st.lastTrigger = lastTrigger; st.mapAlt = null; st.correctIdxDisplay = null;
+    st.selecionada = null; st.corrigido = false; st.correta = false; st.lastTrigger = lastTrigger; st.mapAlt = null; st.correctIdxDisplay = null; st.qStartAt = Date.now();
 
     if (els.title) els.title.textContent = `Questão ${q.id} — ${q.tema || q.categoria || "Português"}`;
     if (els.feedback) { els.feedback.textContent = ""; els.feedback.className = "feedback"; }
@@ -293,15 +294,21 @@
     st.corrigido = true; st.correta = ok;
 
     if (st.seq && st.q && st.q.id != null) {
-      st.seq.results.set(String(st.q.id), { selected: st.selecionada, correct: ok, tipo: tipo, at: Date.now() });
+      const tms = Math.max(0, Date.now() - (st.qStartAt || Date.now()));
+      const sel = st.selecionada;
+      st.seq.results.set(String(st.q.id), { selected: sel, correct: ok, tipo: tipo, at: Date.now(), time_ms: tms });
     }
 
-    window.Store?.recordAttempt({
-      sessionId: st.seq?.sessionId || null,
-      question: q,
-      selected: st.selecionada,
-      correct: ok
-    });
+    {
+      const tms = Math.max(0, Date.now() - (st.qStartAt || Date.now()));
+      const val = { v: st.selecionada, t: tms };
+      window.Store?.recordAttempt({
+        sessionId: st.seq?.sessionId || null,
+        question: q,
+        selected: val,
+        correct: ok
+      });
+    }
 
     if (!st.exam.active) {
       if (els.feedback) {

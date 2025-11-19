@@ -169,9 +169,10 @@
                     correct: !!a.correct,
                     at: a.at ? new Date(a.at).toISOString() : new Date().toISOString()
                 }));
-                const res = await upsertAttempts(rows);
-                pushedAttempts = res.count || 0;
-            }
+            const res = await upsertAttempts(rows);
+            pushedAttempts = res.count || 0;
+            try { await client.rpc("update_leaderboard_for_current_user"); } catch (_) { }
+        }
             window.Store?.setSyncMeta?.(u.id, { lastPushAt: Date.now(), lastPushCount: pushedAttempts });
         } catch (e) {
             console.warn("attempts sync failed:", e);
