@@ -20,6 +20,44 @@ Observação sobre versionamento (2.x):
 
 ---
 
+## [3.3.0] — Limpar intervalo na lista principal
+### Added
+- Botão “Limpar” ao lado de “Mostrar Itens” nos controles principais para remover o filtro por intervalo de IDs.
+### Changed
+- Integração do botão com a API do app para restauração imediata da visão completa.
+### Files
+- `index.html` (botão `#range-clear`)
+- `assets/js/range-viewer.js` (ação de limpar)
+- `assets/js/app.js` (API `App.clearIdRange()`)
+
+## [3.2.0] — Intervalo integrado aos controles principais
+### Changed
+- Seletor de intervalo de IDs movido para a barra de controles em Exercícios, junto à busca/filtros.
+- Itens filtrados pelo intervalo passam a aparecer no bloco de exercícios principais, com paginação/favoritos/player.
+### Files
+- `index.html` (inputs `#range-start`, `#range-end`, botão `#range-btn` e feedback)
+- `assets/js/app.js` (filtro por `idRangeStart`/`idRangeEnd` em `applyFilters`; API `App.setIdRange()`)
+- `assets/js/range-viewer.js` (aplica intervalo via API do app; mensagens de validação)
+
+## [3.1.0] — Visualizador por intervalo (módulo dedicado)
+### Added
+- Módulo Range Viewer para exibir itens por intervalo de ID com validação, correção de intervalos invertidos e mensagens de erro.
+### Files
+- `assets/js/range-viewer.js` (novo)
+- `index.html` (inclusão do script)
+
+## [3.0.0] — Ampliação do dataset (CTI)
+### Added
+- Inclusão de 150 novos exercícios de Língua Portuguesa seguindo os critérios CTI:
+  - Interpretação, Vocabulário (sinônimos/antônimos, padrão e técnico) e Gramática (ortografia, acentuação, flexão, crase, pronomes, conjugação/modos, concordâncias, regência, sintaxe).
+  - Faixas adicionadas: 1101–1150, 1151–1200, 1201–1250.
+### Improved
+- Validação automática pós-inclusão (estruturas, alternativas, respostas e ausência de duplicidades de ID).
+### Files
+- `data/exercicios.json` (novos itens)
+
+---
+
 ## [2.10.6] — Correções e polimentos (Coleções/Supabase)
 ### Fixed
 - Sincronização de coleções em cenários com grande número de itens (paginado no fetch).

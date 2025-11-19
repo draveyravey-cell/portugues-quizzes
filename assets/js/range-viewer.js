@@ -13,6 +13,7 @@
     start: null,
     end: null,
     btn: null,
+    clear: null,
     msg: null,
     out: null
   };
@@ -88,10 +89,18 @@
     els.start = document.querySelector("#range-start");
     els.end = document.querySelector("#range-end");
     els.btn = document.querySelector("#range-btn");
+    els.clear = document.querySelector("#range-clear");
     els.msg = document.querySelector("#range-msg");
     els.out = document.querySelector("#range-output");
     if (!els.start || !els.end || !els.btn) return;
     els.btn.addEventListener("click", onShowClick);
+    els.clear?.addEventListener("click", () => {
+      try { window.App?.clearIdRange?.(); } catch (_) {}
+      if (els.start) els.start.value = "";
+      if (els.end) els.end.value = "";
+      setMsg("Intervalo limpo.", "info");
+      if (els.out) els.out.textContent = "";
+    });
   }
 
   // Escuta o evento do app para saber quando o dataset estiver pronto
