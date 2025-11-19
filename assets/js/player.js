@@ -154,7 +154,7 @@
       const idxs = alts.map((_, i) => i);
       for (let i = idxs.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [idxs[i], idxs[j]] = [idxs[j], idxs[i]]; }
       st.mapAlt = idxs.slice();
-      st.correctIdxDisplay = idxs.indexOf(q.resposta);
+      st.correctIdxDisplay = idxs.indexOf(Number(q.resposta));
 
       idxs.forEach((origIdx, displayIdx) => {
         const li = document.createElement("li"); li.className = "option";
