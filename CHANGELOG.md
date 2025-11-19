@@ -448,3 +448,10 @@ Observação sobre versionamento (2.x):
 - Correção preservada por mapeamento interno; destaque visual de correta/incorreta respeita a ordem embaralhada.
 ### Files
 - `assets/js/player.js` (embaralhamento e verificação baseada no índice exibido)
+## [3.6.0] — Deep link para intervalo de IDs
+### Added
+- Parâmetro `rng=START-END` na URL para aplicar/restaurar o intervalo de IDs na listagem e manter estado em navegação/browser.
+### Changed
+- `App.setIdRange()` e `App.clearIdRange()` passam a sincronizar o estado com o deep link.
+### Files
+- `assets/js/app.js` (updateUrl/restoreFromUrl e sincronização do intervalo)

@@ -608,6 +608,9 @@ function updateUrl(push = true) {
   if (state.viewMode && state.viewMode !== "all") params.set("view", state.viewMode);
   if (state.page && state.page !== 1) params.set("p", String(state.page));
   if (state.pageSize && state.pageSize !== 12) params.set("ps", String(state.pageSize));
+  if (Number.isFinite(state.idRangeStart) && Number.isFinite(state.idRangeEnd)) {
+    params.set("rng", `${state.idRangeStart}-${state.idRangeEnd}`);
+  }
 
   const newUrl = `${location.pathname}${params.toString() ? "?" + params.toString() : ""}${location.hash || ""}`;
   const stObj = { ...state };
@@ -620,7 +623,7 @@ function updateUrl(push = true) {
 function restoreFromUrl(applyOnly = false) {
   try {
     const sp = new URLSearchParams(location.search);
-    const hasAny = ["q", "cat", "dif", "p", "ps", "view"].some(k => sp.has(k));
+    const hasAny = ["q", "cat", "dif", "p", "ps", "view", "rng"].some(k => sp.has(k));
     if (!hasAny) return false;
 
     state.filtroTexto = sp.get("q") || "";
@@ -629,6 +632,21 @@ function restoreFromUrl(applyOnly = false) {
     state.viewMode = sp.get("view") || "all";
     const p = parseInt(sp.get("p") || "1", 10); state.page = isFinite(p) && p > 0 ? p : 1;
     const ps = parseInt(sp.get("ps") || "12", 10); state.pageSize = isFinite(ps) && ps > 0 ? ps : 12;
+
+    // intervalo de IDs (rng=START-END)
+    if (sp.has("rng")) {
+      const raw = (sp.get("rng") || "").trim();
+      const m = raw.match(/^(\d+)\-(\d+)$/);
+      if (m) {
+        const a = parseInt(m[1], 10); const b = parseInt(m[2], 10);
+        if (isFinite(a) && isFinite(b)) {
+          state.idRangeStart = Math.min(a, b);
+          state.idRangeEnd = Math.max(a, b);
+        }
+      }
+    } else {
+      state.idRangeStart = null; state.idRangeEnd = null;
+    }
 
     // persiste também em localStorage para consistência
     persist("q", state.filtroTexto);
@@ -865,11 +883,13 @@ window.App = {
     state.idRangeEnd = Number.isFinite(end) ? end : null;
     resetToFirstPage();
     renderLista();
+    updateUrl(true);
   },
   clearIdRange: () => {
     state.idRangeStart = null;
     state.idRangeEnd = null;
     resetToFirstPage();
     renderLista();
+    updateUrl(true);
   }
 };
