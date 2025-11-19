@@ -20,6 +20,16 @@ Observação sobre versionamento (2.x):
 
 ---
 
+## [3.4.0] — SEO, desempenho e acessibilidade
+### Added
+- Metatags de SEO e Open Graph (título, descrição, imagem, keywords, robots) e JSON-LD para Website.
+- Atalho de teclado Shift+Esc para limpar o intervalo de IDs.
+### Changed
+- Carregamento do SDK Supabase com `defer` e conexões antecipadas (`preconnect`/`dns-prefetch`).
+### Files
+- `index.html` (meta SEO/OG, JSON-LD, preconnect/dns-prefetch, defer do Supabase)
+- `assets/js/range-viewer.js` (atalho Shift+Esc)
+
 ## [3.3.0] — Limpar intervalo na lista principal
 ### Added
 - Botão “Limpar” ao lado de “Mostrar Itens” nos controles principais para remover o filtro por intervalo de IDs.

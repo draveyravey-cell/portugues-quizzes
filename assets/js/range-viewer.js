@@ -109,4 +109,13 @@
   });
 
   document.addEventListener("DOMContentLoaded", bind);
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && e.shiftKey) {
+      try { window.App?.clearIdRange?.(); } catch (_) {}
+      if (els.start) els.start.value = "";
+      if (els.end) els.end.value = "";
+      setMsg("Intervalo limpo.", "info");
+      if (els.out) els.out.textContent = "";
+    }
+  });
 })();
