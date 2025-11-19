@@ -436,3 +436,8 @@ Observação sobre versionamento (2.x):
 - `x.y.Z`: correções/melhorias sobre a versão principal `y`.
 
 [SemVer]: https://semver.org/lang/pt-BR/
+## [3.4.1] — Higienização de títulos (Figuras)
+### Changed
+- Títulos de exercícios de figuras que revelavam a resposta (ex.: “Ironia”, “Metonímia”, “Hipérbole”) foram trocados por um tema neutro (“Figuras: identificar recurso”).
+### Files
+- `data/exercicios.json` (ajuste de `tema` em itens pontuais)
