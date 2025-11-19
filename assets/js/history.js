@@ -3,6 +3,77 @@
 /* Histórico (7.2 safe) — sessões, por questão, import/CSV, cards, recentes */
 (function () {
   let datasetCache = null; // cache do JSON de exercícios
+  const ls = {
+    attPage: "hist.att.page",
+    attSize: "hist.att.size",
+    sesPage: "hist.ses.page",
+    sesSize: "hist.ses.size",
+    perPage: "hist.per.page",
+    perSize: "hist.per.size"
+  };
+  const st = {
+    attPage: 1,
+    attSize: 10,
+    sesPage: 1,
+    sesSize: 10,
+    perPage: 1,
+    perSize: 20
+  };
+  function restorePagerState() {
+    try {
+      const ap = parseInt(localStorage.getItem(ls.attPage) || "1", 10); st.attPage = isFinite(ap) && ap > 0 ? ap : 1;
+      const as = parseInt(localStorage.getItem(ls.attSize) || "10", 10); st.attSize = isFinite(as) && as > 0 ? as : 10;
+      const sp = parseInt(localStorage.getItem(ls.sesPage) || "1", 10); st.sesPage = isFinite(sp) && sp > 0 ? sp : 1;
+      const ss = parseInt(localStorage.getItem(ls.sesSize) || "10", 10); st.sesSize = isFinite(ss) && ss > 0 ? ss : 10;
+      const pp = parseInt(localStorage.getItem(ls.perPage) || "1", 10); st.perPage = isFinite(pp) && pp > 0 ? pp : 1;
+      const ps = parseInt(localStorage.getItem(ls.perSize) || "20", 10); st.perSize = isFinite(ps) && ps > 0 ? ps : 20;
+    } catch {}
+  }
+  function persistPagerState() {
+    try {
+      localStorage.setItem(ls.attPage, String(st.attPage));
+      localStorage.setItem(ls.attSize, String(st.attSize));
+      localStorage.setItem(ls.sesPage, String(st.sesPage));
+      localStorage.setItem(ls.sesSize, String(st.sesSize));
+      localStorage.setItem(ls.perPage, String(st.perPage));
+      localStorage.setItem(ls.perSize, String(st.perSize));
+    } catch {}
+  }
+  function renderPager(root, cfg) {
+    if (!root) return;
+    const total = Math.max(0, cfg.totalItems || 0);
+    const pageSize = Math.max(1, cfg.pageSize || 10);
+    const totalPages = Math.max(1, Math.ceil(total / pageSize));
+    let page = Math.max(1, Math.min(cfg.page || 1, totalPages));
+    const summary = document.createElement("div"); summary.className = "pager__summary";
+    const start = total ? (page - 1) * pageSize + 1 : 0;
+    const end = total ? Math.min(page * pageSize, total) : 0;
+    summary.textContent = `Exibindo ${start}–${end} de ${total}`;
+    const nav = document.createElement("div"); nav.className = "pager__nav";
+    const makeBtn = (label, targetPage, disabled, active, title, aria) => {
+      const b = document.createElement("button"); b.type = "button"; b.className = "pager__btn";
+      if (active) b.classList.add("is-active"); if (disabled) b.disabled = true;
+      b.textContent = label; if (title) b.title = title; b.setAttribute("aria-label", aria || label);
+      if (active) b.setAttribute("aria-current", "page");
+      b.addEventListener("click", () => { if (disabled || targetPage === page) return; page = targetPage; cfg.onChange?.({ page, pageSize }); });
+      return b;
+    };
+    const first = makeBtn("«", 1, page === 1, false, "Primeira página");
+    const prev = makeBtn("‹", Math.max(1, page - 1), page === 1, false, "Página anterior");
+    nav.appendChild(first); nav.appendChild(prev);
+    const windowSize = 5; const startPage = Math.max(1, page - 2); const endPage = Math.min(totalPages, startPage + windowSize - 1);
+    for (let p = startPage; p <= endPage; p++) nav.appendChild(makeBtn(String(p), p, false, p === page));
+    if (endPage < totalPages) { const ell = document.createElement("span"); ell.className = "pager__ellipsis"; ell.textContent = "…"; nav.appendChild(ell); nav.appendChild(makeBtn(String(totalPages), totalPages, false, page === totalPages)); }
+    const next = makeBtn("›", Math.min(totalPages, page + 1), page === totalPages, false, "Próxima página");
+    const last = makeBtn("»", totalPages, page === totalPages, false, "Última página");
+    nav.appendChild(next); nav.appendChild(last);
+    const sizeWrap = document.createElement("div"); sizeWrap.className = "pager__size";
+    const lab = document.createElement("label"); lab.textContent = "Itens por página:"; lab.className = "sr-only";
+    const sel = document.createElement("select"); sel.setAttribute("aria-label", "Itens por página");
+    [5,10,20,30,50].forEach(n => { const opt = document.createElement("option"); opt.value = String(n); opt.textContent = String(n); if (n === pageSize) opt.selected = true; sel.appendChild(opt); });
+    sel.addEventListener("change", () => { const n = parseInt(sel.value, 10) || pageSize; cfg.onChange?.({ page: 1, pageSize: Math.max(1, n) }); });
+    root.innerHTML = ""; root.appendChild(summary); root.appendChild(nav); if (cfg.includePageSize) { sizeWrap.appendChild(lab); sizeWrap.appendChild(sel); root.appendChild(sizeWrap); }
+  }
 
   function fmtPerc(p) { return `${Math.round((p || 0) * 100)}%`; }
   function fmtDate(ts) {
@@ -65,14 +136,23 @@
 
   function renderRecent(stats) {
     const elAttempts = document.querySelector("#hist-attempts");
+    const elPager = document.querySelector("#hist-attempts-pager");
     if (!elAttempts) return;
     if (!stats.lastAttempts.length) {
       elAttempts.innerHTML = `<p class="empty">Ainda não há tentativas registradas.</p>`;
+      if (elPager) elPager.innerHTML = "";
       return;
     }
+    const total = stats.lastAttempts.length;
+    const totalPages = Math.max(1, Math.ceil(total / st.attSize));
+    if (st.attPage > totalPages) st.attPage = totalPages;
+    if (st.attPage < 1) st.attPage = 1;
+    const start = (st.attPage - 1) * st.attSize;
+    const end = Math.min(start + st.attSize, total);
+    const pageItems = stats.lastAttempts.slice(start, end);
     const ul = document.createElement("ul");
     ul.className = "options";
-    stats.lastAttempts.forEach((a) => {
+    pageItems.forEach((a) => {
       const li = document.createElement("li");
       li.className = "option";
       const icon = a.correct ? "✅" : "❌";
@@ -87,13 +167,15 @@
     });
     elAttempts.innerHTML = "";
     elAttempts.appendChild(ul);
+    renderPager(elPager, { totalItems: total, page: st.attPage, pageSize: st.attSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.attPage = page; st.attSize = pageSize; persistPagerState(); renderRecent(stats); } });
   }
 
   function renderSessions(stats) {
     const root = document.querySelector("#hist-sessions");
+    const elPager = document.querySelector("#hist-sessions-pager");
     if (!root) return;
     const list = stats.sessions || [];
-    if (!list.length) { root.innerHTML = `<p class="hint">Nenhuma sessão registrada ainda.</p>`; return; }
+    if (!list.length) { root.innerHTML = `<p class="hint">Nenhuma sessão registrada ainda.</p>`; if (elPager) elPager.innerHTML = ""; return; }
 
     const table = document.createElement("table");
     table.className = "table";
@@ -113,7 +195,15 @@
     `;
     const tb = table.querySelector("tbody");
 
-    list.forEach((s) => {
+    const total = list.length;
+    const totalPages = Math.max(1, Math.ceil(total / st.sesSize));
+    if (st.sesPage > totalPages) st.sesPage = totalPages;
+    if (st.sesPage < 1) st.sesPage = 1;
+    const startIdx = (st.sesPage - 1) * st.sesSize;
+    const endIdx = Math.min(startIdx + st.sesSize, total);
+    const pageItems = list.slice(startIdx, endIdx);
+
+    pageItems.forEach((s) => {
       const total = s.questionIds?.length || (s.results?.length || 0);
       const answered = s.results?.length || 0;
       const correct = s.results ? s.results.filter(r => r.correct).length : 0;
@@ -141,14 +231,16 @@
 
     root.innerHTML = "";
     root.appendChild(table);
+    renderPager(elPager, { totalItems: list.length, page: st.sesPage, pageSize: st.sesSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.sesPage = page; st.sesSize = pageSize; persistPagerState(); renderSessions(stats); } });
   }
 
   async function renderPerQuestion(stats) {
     const root = document.querySelector("#hist-perq");
+    const elPager = document.querySelector("#hist-perq-pager");
     if (!root) return;
     const perQ = stats.perQ || {};
     const keys = Object.keys(perQ);
-    if (!keys.length) { root.innerHTML = `<p class="hint">Estatísticas por questão aparecerão aqui após você praticar.</p>`; return; }
+    if (!keys.length) { root.innerHTML = `<p class="hint">Estatísticas por questão aparecerão aqui após você praticar.</p>`; if (elPager) elPager.innerHTML = ""; return; }
 
     const { map } = await ensureDataset();
 
@@ -172,7 +264,15 @@
     `;
     const tb = table.querySelector("tbody");
 
-    keys.forEach((qid) => {
+    const total = keys.length;
+    const totalPages = Math.max(1, Math.ceil(total / st.perSize));
+    if (st.perPage > totalPages) st.perPage = totalPages;
+    if (st.perPage < 1) st.perPage = 1;
+    const startIdx = (st.perPage - 1) * st.perSize;
+    const endIdx = Math.min(startIdx + st.perSize, total);
+    const pageKeys = keys.slice(startIdx, endIdx);
+
+    pageKeys.forEach((qid) => {
       const s = perQ[qid];
       const q = map.get(String(qid));
       const tema = q?.tema || q?.categoria || "—";
@@ -193,6 +293,7 @@
 
     root.innerHTML = "";
     root.appendChild(table);
+    renderPager(elPager, { totalItems: keys.length, page: st.perPage, pageSize: st.perSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.perPage = page; st.perSize = pageSize; persistPagerState(); renderPerQuestion(stats); } });
   }
 
   function bindActions() {
@@ -288,6 +389,7 @@
     if (!document.querySelector("#historico")) return;
     // Garante a Store pronta antes do primeiro render
     try { window.Store?.init?.(); } catch (_) {}
+    restorePagerState();
     bindActions();
     renderAll();
   });
