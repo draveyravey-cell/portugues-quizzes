@@ -13,20 +13,20 @@
   };
   const st = {
     attPage: 1,
-    attSize: 10,
+    attSize: 12,
     sesPage: 1,
-    sesSize: 10,
+    sesSize: 12,
     perPage: 1,
-    perSize: 20
+    perSize: 12
   };
   function restorePagerState() {
     try {
       const ap = parseInt(localStorage.getItem(ls.attPage) || "1", 10); st.attPage = isFinite(ap) && ap > 0 ? ap : 1;
-      const as = parseInt(localStorage.getItem(ls.attSize) || "10", 10); st.attSize = isFinite(as) && as > 0 ? as : 10;
+      const as = parseInt(localStorage.getItem(ls.attSize) || "12", 10); st.attSize = isFinite(as) && as > 0 ? as : 12;
       const sp = parseInt(localStorage.getItem(ls.sesPage) || "1", 10); st.sesPage = isFinite(sp) && sp > 0 ? sp : 1;
-      const ss = parseInt(localStorage.getItem(ls.sesSize) || "10", 10); st.sesSize = isFinite(ss) && ss > 0 ? ss : 10;
+      const ss = parseInt(localStorage.getItem(ls.sesSize) || "12", 10); st.sesSize = isFinite(ss) && ss > 0 ? ss : 12;
       const pp = parseInt(localStorage.getItem(ls.perPage) || "1", 10); st.perPage = isFinite(pp) && pp > 0 ? pp : 1;
-      const ps = parseInt(localStorage.getItem(ls.perSize) || "20", 10); st.perSize = isFinite(ps) && ps > 0 ? ps : 20;
+      const ps = parseInt(localStorage.getItem(ls.perSize) || "12", 10); st.perSize = isFinite(ps) && ps > 0 ? ps : 12;
     } catch {}
   }
   function persistPagerState() {
@@ -70,7 +70,7 @@
     const sizeWrap = document.createElement("div"); sizeWrap.className = "pager__size";
     const lab = document.createElement("label"); lab.textContent = "Itens por página:"; lab.className = "sr-only";
     const sel = document.createElement("select"); sel.setAttribute("aria-label", "Itens por página");
-    [5,10,20,30,50].forEach(n => { const opt = document.createElement("option"); opt.value = String(n); opt.textContent = String(n); if (n === pageSize) opt.selected = true; sel.appendChild(opt); });
+    [8,12,16,24,32,48].forEach(n => { const opt = document.createElement("option"); opt.value = String(n); opt.textContent = String(n); if (n === pageSize) opt.selected = true; sel.appendChild(opt); });
     sel.addEventListener("change", () => { const n = parseInt(sel.value, 10) || pageSize; cfg.onChange?.({ page: 1, pageSize: Math.max(1, n) }); });
     root.innerHTML = ""; root.appendChild(summary); root.appendChild(nav); if (cfg.includePageSize) { sizeWrap.appendChild(lab); sizeWrap.appendChild(sel); root.appendChild(sizeWrap); }
   }
@@ -136,11 +136,13 @@
 
   function renderRecent(stats) {
     const elAttempts = document.querySelector("#hist-attempts");
-    const elPager = document.querySelector("#hist-attempts-pager");
+    const elPagerTop = document.querySelector("#hist-attempts-pager-top");
+    const elPagerBottom = document.querySelector("#hist-attempts-pager");
     if (!elAttempts) return;
     if (!stats.lastAttempts.length) {
       elAttempts.innerHTML = `<p class="empty">Ainda não há tentativas registradas.</p>`;
-      if (elPager) elPager.innerHTML = "";
+      if (elPagerTop) elPagerTop.innerHTML = "";
+      if (elPagerBottom) elPagerBottom.innerHTML = "";
       return;
     }
     const total = stats.lastAttempts.length;
@@ -167,15 +169,18 @@
     });
     elAttempts.innerHTML = "";
     elAttempts.appendChild(ul);
-    renderPager(elPager, { totalItems: total, page: st.attPage, pageSize: st.attSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.attPage = page; st.attSize = pageSize; persistPagerState(); renderRecent(stats); } });
+    const onChange = ({ page, pageSize }) => { st.attPage = page; st.attSize = pageSize; persistPagerState(); renderRecent(stats); };
+    renderPager(elPagerTop, { totalItems: total, page: st.attPage, pageSize: st.attSize, includePageSize: true, onChange });
+    renderPager(elPagerBottom, { totalItems: total, page: st.attPage, pageSize: st.attSize, includePageSize: false, onChange });
   }
 
   function renderSessions(stats) {
     const root = document.querySelector("#hist-sessions");
-    const elPager = document.querySelector("#hist-sessions-pager");
+    const elPagerTop = document.querySelector("#hist-sessions-pager-top");
+    const elPagerBottom = document.querySelector("#hist-sessions-pager");
     if (!root) return;
     const list = stats.sessions || [];
-    if (!list.length) { root.innerHTML = `<p class="hint">Nenhuma sessão registrada ainda.</p>`; if (elPager) elPager.innerHTML = ""; return; }
+    if (!list.length) { root.innerHTML = `<p class="hint">Nenhuma sessão registrada ainda.</p>`; if (elPagerTop) elPagerTop.innerHTML = ""; if (elPagerBottom) elPagerBottom.innerHTML = ""; return; }
 
     const table = document.createElement("table");
     table.className = "table";
@@ -231,16 +236,19 @@
 
     root.innerHTML = "";
     root.appendChild(table);
-    renderPager(elPager, { totalItems: list.length, page: st.sesPage, pageSize: st.sesSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.sesPage = page; st.sesSize = pageSize; persistPagerState(); renderSessions(stats); } });
+    const onChangeSes = ({ page, pageSize }) => { st.sesPage = page; st.sesSize = pageSize; persistPagerState(); renderSessions(stats); };
+    renderPager(elPagerTop, { totalItems: list.length, page: st.sesPage, pageSize: st.sesSize, includePageSize: true, onChange: onChangeSes });
+    renderPager(elPagerBottom, { totalItems: list.length, page: st.sesPage, pageSize: st.sesSize, includePageSize: false, onChange: onChangeSes });
   }
 
   async function renderPerQuestion(stats) {
     const root = document.querySelector("#hist-perq");
-    const elPager = document.querySelector("#hist-perq-pager");
+    const elPagerTop = document.querySelector("#hist-perq-pager-top");
+    const elPagerBottom = document.querySelector("#hist-perq-pager");
     if (!root) return;
     const perQ = stats.perQ || {};
     const keys = Object.keys(perQ);
-    if (!keys.length) { root.innerHTML = `<p class="hint">Estatísticas por questão aparecerão aqui após você praticar.</p>`; if (elPager) elPager.innerHTML = ""; return; }
+    if (!keys.length) { root.innerHTML = `<p class="hint">Estatísticas por questão aparecerão aqui após você praticar.</p>`; if (elPagerTop) elPagerTop.innerHTML = ""; if (elPagerBottom) elPagerBottom.innerHTML = ""; return; }
 
     const { map } = await ensureDataset();
 
@@ -293,7 +301,9 @@
 
     root.innerHTML = "";
     root.appendChild(table);
-    renderPager(elPager, { totalItems: keys.length, page: st.perPage, pageSize: st.perSize, includePageSize: true, onChange: ({ page, pageSize }) => { st.perPage = page; st.perSize = pageSize; persistPagerState(); renderPerQuestion(stats); } });
+    const onChangePer = ({ page, pageSize }) => { st.perPage = page; st.perSize = pageSize; persistPagerState(); renderPerQuestion(stats); };
+    renderPager(elPagerTop, { totalItems: keys.length, page: st.perPage, pageSize: st.perSize, includePageSize: true, onChange: onChangePer });
+    renderPager(elPagerBottom, { totalItems: keys.length, page: st.perPage, pageSize: st.perSize, includePageSize: false, onChange: onChangePer });
   }
 
   function bindActions() {

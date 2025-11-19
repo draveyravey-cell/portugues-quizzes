@@ -176,7 +176,7 @@
 
     return {
       totals: { attempts: total, correct, accuracy: total ? correct / total : 0, uniqueQ, lastAt },
-      lastAttempts: attempts.slice(0, 20),
+      lastAttempts: attempts,
       sessions,
       perQ: db.perQ,
       byCategory,
