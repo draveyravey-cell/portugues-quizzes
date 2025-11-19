@@ -417,10 +417,8 @@
         const client = getClient();
         if (!client || !rows || !rows.length) return;
         const period = els.lbPeriod?.value || "all";
-        const top = rows.slice(0, 3);
         try {
-            const payload = top.map((r, i) => ({ user_id: r.user_id, period, place: i + 1, kind: "medal", created_at: new Date().toISOString() }));
-            await client.from("rewards").upsert(payload, { onConflict: "user_id,period,kind" });
+            await client.rpc("award_top3", { p_period: period });
         } catch {}
     }
 
