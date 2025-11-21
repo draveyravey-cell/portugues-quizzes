@@ -18439,5 +18439,165 @@
         ],
         "resposta": 0,
         "explicacao": "No sentido de desejar, 'aspirar a'."
+    },
+    {
+        "id": 1251,
+        "categoria": "Português",
+        "tema": "Concordância verbal: Sujeito Oracional",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Assinale a alternativa em que a concordância verbal respeita a norma-padrão.",
+        "alternativas": [
+            "Falta esclarecer alguns pontos da matéria.",
+            "Faltam esclarecer alguns pontos da matéria.",
+            "Falta esclarecerem alguns pontos da matéria.",
+            "Faltam para esclarecer alguns pontos da matéria."
+        ],
+        "resposta": 0,
+        "explicacao": "Quando o sujeito é uma oração ('esclarecer alguns pontos'), o verbo principal ('Falta') fica no singular. O truque é substituir a oração por 'ISSO': 'ISSO falta'."
+    },
+    {
+        "id": 1252,
+        "categoria": "Português",
+        "tema": "Concordância: 'É proibido/bom/necessário'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Assinale a única frase incorreta de acordo com a norma culta.",
+        "alternativas": [
+            "Para quem tem sede, água é boa.",
+            "É necessária a apresentação de documentos.",
+            "É necessário paciência com os calouros.",
+            "É bom a leitura de jornais para se manter informado."
+        ],
+        "resposta": 3,
+        "explicacao": "A alternativa (D) está incorreta. Como o substantivo 'leitura' está precedido pelo artigo 'a', o adjetivo 'bom' deveria concordar, resultando em 'É boa a leitura'."
+    },
+    {
+        "id": 1253,
+        "categoria": "Português",
+        "tema": "Concordância: Verbo SER entre Singular e Plural",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Indique a opção com a concordância correta do verbo SER.",
+        "alternativas": [
+            "A causa da confusão foi as notícias falsas.",
+            "O problema eram os constantes atrasos da equipe.",
+            "Tudo são flores nesta fase do projeto.",
+            "Hoje é 25 de dezembro."
+        ],
+        "resposta": 1,
+        "explicacao": "Na estrutura 'Sujeito (singular) + SER + Predicativo (plural)', o verbo 'ser' deve concordar com o predicativo plural. Portanto, 'O problema eram os constantes atrasos' está correto. Em (A) seria 'foram'; em (C) seria 'é'; em (D) seria 'são 25'."
+    },
+    {
+        "id": 1254,
+        "categoria": "Português",
+        "tema": "Concordância: Casos Especiais ('Mais de um')",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Qual frase apresenta uma concordância verbal correta?",
+        "alternativas": [
+            "Mais de um atleta se cumprimentou após a prova.",
+            "Mais de um político e mais de um assessor foi exonerado.",
+            "Mais de uma pessoa comentaram sobre o ocorrido.",
+            "Mais de um manifestante se abraçaram durante o protesto."
+        ],
+        "resposta": 3,
+        "explicacao": "A regra geral de 'mais de um' pede verbo no singular. No entanto, quando o verbo indica reciprocidade (um ao outro), o verbo vai para o plural. 'Abraçaram-se' é uma ação recíproca, logo a alternativa (D) está correta."
+    },
+    {
+        "id": 1255,
+        "categoria": "Português",
+        "tema": "Concordância: Partícula Apassivadora 'SE'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Assinale a alternativa que segue a norma-padrão.",
+        "alternativas": [
+            "Aluga-se apartamentos para temporada.",
+            "Precisa-se de funcionários com experiência.",
+            "Conserta-se relógios de todos os tipos.",
+            "Vende-se carros usados a bom preço."
+        ],
+        "resposta": 1,
+        "explicacao": "Em (A), (C) e (D), o 'se' é partícula apassivadora e o verbo deveria estar no plural para concordar com o sujeito (apartamentos, relógios, carros). Em (B), o 'se' é índice de indeterminação do sujeito (pois o verbo 'precisar' pede preposição 'de'), e o verbo fica obrigatoriamente no singular."
+    },
+    {
+        "id": 1256,
+        "categoria": "Português",
+        "tema": "Concordância: Sujeito Partitivo (%)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "A concordância verbal está correta em:",
+        "alternativas": [
+            "Cerca de 1% dos candidatos desistiu da prova.",
+            "Aproximadamente 30% da turma faltou à excursão.",
+            "Dos entrevistados, 50% não soube responder.",
+            "Apenas 2% do eleitorado votaram nulo."
+        ],
+        "resposta": 0,
+        "explicacao": "Com sujeitos partitivos (%), o verbo pode concordar com o número ou com o substantivo. Em (A), 'desistiu' concorda com '1%'. Em (B), o correto seria 'faltou' ou 'faltaram'. Em (C), '50%' (plural) pede 'souberam'. Em (D), 'votaram' concorda com '2%', mas o mais comum seria concordar com 'eleitorado' (votou)."
+    },
+    {
+        "id": 1257,
+        "categoria": "Português",
+        "tema": "Concordância: 'Um dos que'",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Assinale a alternativa que apresenta uma concordância não aceita pela norma-padrão.",
+        "alternativas": [
+            "Ele foi um dos que mais contribuiu para o projeto.",
+            "Ela é uma das que sempre chegam no horário.",
+            "Fui eu um dos que defenderam a proposta.",
+            "Ele é um dos que mais trabalha e se esforçaste."
+        ],
+        "resposta": 3,
+        "explicacao": "A estrutura 'um dos que' aceita verbo no singular (atração por 'um') ou plural (concordância com 'os'). As alternativas (A) e (B) são exemplos disso. Em (D), o verbo 'esforçaste' (2ª pessoa 'tu') não concorda com nenhum termo da frase."
+    },
+    {
+        "id": 1258,
+        "categoria": "Português",
+        "tema": "Concordância: Sujeito Composto Resumido",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "A concordância está correta em:",
+        "alternativas": [
+            "Amigos, parentes, vizinhos, ninguém o ajudaram.",
+            "As notas baixas, a falta de estudo, tudo contribuíram para a reprovação.",
+            "O planejamento e a execução, ambos foram perfeitos.",
+            "Sonhos, metas, ambições, nada parecia importar mais."
+        ],
+        "resposta": 3,
+        "explicacao": "Quando um sujeito composto é resumido por um pronome indefinido (nada, tudo, ninguém), o verbo concorda com este pronome. Em (D), 'parecia' (singular) concorda com 'nada' (singular). Em (A) e (B), os verbos deveriam estar no singular. Em (C), a concordância com 'ambos' está correta, mas a vírgula antes de 'ambos' é preferível."
+    },
+    {
+        "id": 1259,
+        "categoria": "Português",
+        "tema": "Concordância: Pronome de Tratamento",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "Indique a frase gramaticalmente correta.",
+        "alternativas": [
+            "Vossa Excelência sois muito gentil com vossos assessores.",
+            "Vossa Senhoria deveis encaminhar o seu relatório amanhã.",
+            "Vossas Excelências estão cientes de suas responsabilidades.",
+            "Vossa Majestade estáis preocupado com o futuro do reino."
+        ],
+        "resposta": 2,
+        "explicacao": "Com pronomes de tratamento, a concordância verbal e pronominal é feita na 3ª pessoa. 'Vossas Excelências' (plural) concorda com 'estão' (3ª do plural) e 'suas' (3ª do plural)."
+    },
+    {
+        "id": 1260,
+        "categoria": "Português",
+        "tema": "Concordância: Verbos Impessoais (Haver/Fazer)",
+        "tipo": "multipla_escolha",
+        "dificuldade": "Vestibulinho",
+        "enunciado": "A concordância verbal está incorreta em:",
+        "alternativas": [
+            "Deve haver muitas razões para sua ausência.",
+            "Houveram sérios desentendimentos na reunião.",
+            "Faz cinco anos que não o vejo.",
+            "Havia poucos ingressos disponíveis para o show."
+        ],
+        "resposta": 1,
+        "explicacao": "O verbo 'Haver' no sentido de 'existir' é impessoal e fica sempre na 3ª pessoa do singular. O mesmo vale para verbos auxiliares que o acompanham, como em 'Deve haver'. Em (B), o correto seria 'Houve sérios desentendimentos'."
     }
 ]
