@@ -18526,14 +18526,14 @@
         "tema": "Concordância: Sujeito Partitivo (%)",
         "tipo": "multipla_escolha",
         "dificuldade": "Vestibulinho",
-        "enunciado": "A concordância verbal está correta em:",
+        "enunciado": "A concordância verbal está incorreta em:",
         "alternativas": [
             "Cerca de 1% dos candidatos desistiu da prova.",
             "Aproximadamente 30% da turma faltou à excursão.",
             "Dos entrevistados, 50% não soube responder.",
             "Apenas 2% do eleitorado votaram nulo."
         ],
-        "resposta": 0,
+        "resposta": 3,
         "explicacao": "Com sujeitos partitivos (%), o verbo pode concordar com o número ou com o substantivo. Em (A), 'desistiu' concorda com '1%'. Em (B), o correto seria 'faltou' ou 'faltaram'. Em (C), '50%' (plural) pede 'souberam'. Em (D), 'votaram' concorda com '2%', mas o mais comum seria concordar com 'eleitorado' (votou)."
     },
     {
